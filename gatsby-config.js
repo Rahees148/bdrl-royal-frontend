@@ -1,17 +1,20 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+//gatsby-config.js
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL || "http://127.0.0.1:1337",
+  collectionTypes: ["post", "category", "author"],
+};
+
+
 module.exports = {
-  siteMetadata: {
-    title: `bdrl-royal`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    {
+      resolve: `gatsby-source-strapi`,
+      options: strapiConfig,
     },
-    __key: "images"
-  }]
+    "gatsby-transformer-remark",
+  ],
 };
