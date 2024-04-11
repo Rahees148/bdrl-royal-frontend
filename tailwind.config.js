@@ -15,6 +15,7 @@ module.exports = {
       colors:{
         primary: '#023321',
         secondary:'#2A5D4A',
+        bdrlGray:'#F5F5F7',
         bodyCopy: '#474747'
         
       },
@@ -25,6 +26,9 @@ module.exports = {
         '24.5': '4.5rem',
         '144': '36rem',
       },
+      borderRadius:{
+        '10': '40px'
+      }
     },
   },
   plugins: [],
