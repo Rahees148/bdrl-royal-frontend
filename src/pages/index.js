@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
                         test
                 </div>
                 <div className='col-span-3  py-12'>
-                    trdf
+                    122
                 </div>
                 <div className='col-span-3  py-12'>
                     trdf
