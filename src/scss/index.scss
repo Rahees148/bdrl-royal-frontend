@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(./_button.scss);
+
+img {
+	border:none;
+}
+*{
+    font-family: "Urbanist", sans-serif;
+    font-weight: 500;
+    box-sizing:border-box;
+    margin:0;
+	padding:0;
+}
+
+.pageWrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1210px;
+    padding:0 15px;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    background: #f9f9f9;
+}
+
+
+
+.swiper {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    position: relative;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+  }
+  

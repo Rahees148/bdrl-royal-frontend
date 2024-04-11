@@ -2,11 +2,13 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/global/layout'
+import HeroBanner from '../components/hero-banner'
 
 const IndexPage = ({ data }) => {
 console.log(data)
     return (
         <Layout pageTitle="Home Page">
+          <HeroBanner />
         <ul className="postlist">
             {
                 data.allStrapiPost.nodes.map(node => (

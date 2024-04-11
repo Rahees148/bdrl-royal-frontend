@@ -4,7 +4,7 @@ require("dotenv").config({
 });
 
 const strapiConfig = {
-  apiURL: process.env.STRAPI_API_URL || "http://127.0.0.1:1337",
+  apiURL: process.env.STRAPI_API_URL,
   collectionTypes: ["post", "category", "author"],
 };
 
@@ -15,6 +15,15 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     },
-    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [
+          require("tailwindcss"),
+          require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
+        ],
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 };

@@ -8,13 +8,14 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "./build.sh",
+    "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "./build.sh",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "gatsby": "^5.13.3",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-sass": "^6.13.1",
@@ -26,6 +27,13 @@
     "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.74.1"
+    "sass": "^1.74.1",
+    "swiper": "^11.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "gatsby-plugin-postcss": "^6.13.1",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
   }
 }
