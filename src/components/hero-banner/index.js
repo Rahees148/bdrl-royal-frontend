@@ -8,9 +8,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-function HeroBanner() {
+function HeroBanner({sliderItems}) {
   return (
-    <>
     <Swiper
       pagination={{
         dynamicBullets: true,
@@ -20,26 +19,16 @@ function HeroBanner() {
       modules={[Pagination, Navigation]}
       className="mySwiper"
     >
-      <SwiperSlide>
-        <img src={'https://picsum.photos/id/183/1440/515'} alt="banner" />
-        <div className='pageWrapper bannerOverlayText'>
-            
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={'https://picsum.photos/id/184/1440/515'} alt="banner" />
-    </SwiperSlide>
-    <SwiperSlide>
-        <img src={'https://picsum.photos/id/185/1440/515'} alt="banner" />
-    </SwiperSlide>
-    <SwiperSlide>
-        <img src={'https://picsum.photos/id/186/1440/515'} alt="banner" />
-    </SwiperSlide>
-    <SwiperSlide>
-        <img src={'https://picsum.photos/id/187/1440/515'} alt="banner" />
-    </SwiperSlide>
+      {sliderItems && sliderItems.map((slider, index) =>(
+        <SwiperSlide key={index}>
+          <img src={slider.image} alt="banner" />
+          <div className='pageWrapper bannerOverlayText'>
+              {/* {slider.title} */}
+          </div>
+        </SwiperSlide>
+      ))}
+      
     </Swiper>
-  </>
   )
 }
 
