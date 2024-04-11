@@ -22,7 +22,7 @@ console.log(data)
                         </div>
                         <p className="date">{node.date}</p>
                         {node.author?.name &&
-                          <p className="name">Written by {node.author?.name}</p>
+                          <p className="name">Written bddy {node.author?.name}</p>
                         }
                         {node.category?.name &&
                           <p className="postcategory"><Link to={`/${node.category.slug}`}>Category: {node.category.name}</Link></p>
