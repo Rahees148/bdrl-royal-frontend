@@ -1,6 +1,8 @@
 import React, {useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+
+import { Fade } from "react-awesome-reveal";
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -50,9 +52,11 @@ function HeroBanner({sliderItems}) {
           
           <div className={s.bannerOverlay} ></div>
             <div className={classNames(s.bannerOverlayText, 'pageWrapper text-white text-left')}>
-                <h2 className='text-4xl w-[17rem] font-light leading-[67px] mb-4'>{slider.title}</h2>
-                <p className='text-base'>{slider.description}</p>
-                <button className='border rounded-10 py-2 px-5 bg-transparent mt-14'>{slider.buttonLabel}</button>
+                <Fade cascade direction='down' damping={0.5}> 
+                  <h2 className='text-4xl w-[17rem] font-light leading-[67px] mb-4'>{slider.title}</h2>
+                  <p className='text-base'>{slider.description}</p>
+                  <button className='border rounded-10 py-2 px-5 bg-transparent mt-14'>{slider.buttonLabel}</button>
+                </Fade>
             </div>
         </SwiperSlide>
       ))}

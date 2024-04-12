@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import './layout.css'
 import Header from './header'
 import Footer from './footer'
-import Fade from 'react-reveal/Fade'
+import { Fade } from "react-awesome-reveal";
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -22,7 +22,9 @@ const Layout = ({ pageTitle, children }) => {
     <>
       <Header data={data} />
       <main>
-        <Fade top distance="10%" duration="1500">{children}</Fade></main>
+        <Fade duration="1500" triggerOnce damping={1} >{children}</Fade> 
+     
+      </main>
       <Footer />
     </>
   )
