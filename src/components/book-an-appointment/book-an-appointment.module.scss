@@ -1,9 +1,48 @@
 .BookAnAppointment{
     width: 100%;
     max-width: 736px;
-    margin: -45px auto 0;
-    border: 1px solid #333;
+    margin: 0 auto 0; 
+    top: -45px;
     position: relative;
-    z-index: 1;
-    min-height: 90px;
+    z-index: 2; 
+    .SpecialitySelectBox { 
+        position: relative;
+        padding-right: 55px;
+        width: 100%;
+        max-width: 366px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 23px;
+            height: 23px;
+            background: url(../../images/icons/dropdown_arw.svg) no-repeat right center;
+             
+          }
+          .SpecialitySelectList{
+            border-bottom: 1px solid #b7b7b7;
+            padding: 10px 0;
+            img {
+                margin-right: 10px;
+            }
+          }
+    }
+    .SpecialitySelectBoxOpen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: 8px;
+    }
+    .BookAnAppointmentBtn {
+        width: 100%;
+        max-width: 254px;
+        background: linear-gradient(81.39deg, #FFDAA1 -11.85%, #023321 105.73%);
+        transition: all 100ms ease-in-out;
+            &:hover {
+                background: linear-gradient(150deg, #FFDAA1 -11.85%, #023321 105.73%);
+            }
+    }
+    
+    
 }
