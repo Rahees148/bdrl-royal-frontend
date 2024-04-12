@@ -7,19 +7,31 @@ function About({ data }) {
     const sliderData = [
         {
           image:'https://picsum.photos/id/187/1440/515',
-          title:'Image 1'
+          title:'The Royal Experience.',
+          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+          buttonLabel: 'Experience Healthcare',
+          buttonUrl: 'https://picsum.photos/id/1/1440/122'
         },
         {
           image:'https://picsum.photos/id/188/1440/515',
-          title:'Image 2'
+          title:'The Royal Experience.',
+          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+          buttonLabel: 'Experience Healthcare',
+          buttonUrl: 'https://picsum.photos/id/1/1440/122'
         },
         {
           image:'https://picsum.photos/id/189/1440/515',
-          title:'Image 3'
+          title:'The Royal Experience.',
+          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+          buttonLabel: 'Experience Healthcare',
+          buttonUrl: 'https://picsum.photos/id/1/1440/122'
         },
         {
           image:'https://picsum.photos/id/190/1440/515',
-          title:'Image 4'
+          title:'The Royal Experience.',
+          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+          buttonLabel: 'Experience Healthcare',
+          buttonUrl: 'https://picsum.photos/id/1/1440/122'
         }
       ]
   return (

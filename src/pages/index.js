@@ -3,24 +3,42 @@ import * as React from 'react'
 import Layout from '../components/global/layout'
 import HeroBanner from '../components/hero-banner'
 import BookAnAppointment from '../components/book-an-appointment'
+import bannerVideo from '../videos/welcomePageDeskCn.mp4'
 
 const IndexPage = ({ data }) => {
   const sliderData = [
     {
       image:'https://picsum.photos/id/183/1440/515',
-      title:'Image 1'
+      video:bannerVideo,
+      title:'The Royal Experience.',
+      description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+      buttonLabel: 'Experience Healthcare',
+      buttonUrl: 'https://picsum.photos/id/1/1440/122',
+      bannerType:'video',
     },
     {
-      image:'https://picsum.photos/id/184/1440/515',
-      title:'Image 2'
+      image:'https://picsum.photos/id/184/1920/1080',
+      title:'The Royal Experience.',
+      description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+      buttonLabel: 'Experience Healthcare',
+      buttonUrl: 'https://picsum.photos/id/1/1440/122',
+      bannerType:'image',
     },
     {
-      image:'https://picsum.photos/id/185/1440/515',
-      title:'Image 3'
+      image:'https://picsum.photos/id/185/1920/1080',
+      title:'The Royal Experience.',
+      description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+      buttonLabel: 'Experience Healthcare',
+      buttonUrl: 'https://picsum.photos/id/1/1920/1080',
+      bannerType:'image',
     },
     {
       image:'https://picsum.photos/id/186/1440/515',
-      title:'Image 4'
+      title:'The Royal Experience.',
+      description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
+      buttonLabel: 'Experience Healthcare',
+      buttonUrl: 'https://picsum.photos/id/1/1440/122',
+      bannerType:'image',
     }
   ]
     return (

@@ -4,12 +4,12 @@ module.exports = {
     fontSize: {
       sm: '11.5px',
       m: '14px',
-      base: '18px',
-      xl: '32px',
-      '2xl': '52px',
-      '3xl': '82px',
-      '4xl': '2.441rem',
-      '5xl': '3.052rem',
+      base: '16px',
+      xl: '24px',
+      '2xl': '36px',
+      '3xl': '48px',
+      '4xl': '60px',
+      '5xl': '72px',
     },
     extend: {
       colors:{

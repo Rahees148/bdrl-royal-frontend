@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import './layout.css'
 import Header from './header'
 import Footer from './footer'
+import Fade from 'react-reveal/Fade'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -20,7 +21,8 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <>
       <Header data={data} />
-      <main>{children}</main>
+      <main>
+        <Fade top distance="10%" duration="1500">{children}</Fade></main>
       <Footer />
     </>
   )
