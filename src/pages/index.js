@@ -5,7 +5,11 @@ import HeroBanner from '../components/hero-banner'
 import BookAnAppointment from '../components/book-an-appointment'
 import bannerVideo from '../videos/welcomePageDeskCn.mp4'
 
+import { Content } from "../graphql/home";
+
 const IndexPage = ({ data }) => {
+  const pageData = Content().allStrapiPage.nodes[0];
+  console.log(pageData)
   const sliderData = [
     {
       image:'https://picsum.photos/id/183/1440/515',
