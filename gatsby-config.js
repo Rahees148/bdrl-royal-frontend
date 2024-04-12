@@ -6,7 +6,32 @@ console.log(process.env.STRAPI_API_URL);
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   collectionTypes: ["post", "category", "author", 
-  { name: "page", endpoint: "pages?populate=*" },,
+  { singularName: "page", queryParams:{
+    populate:{
+      banner:{
+        populate:{
+          desktop_media:"*",
+          mobile_media:"*"
+        }
+      },
+      centres_of_excellence:{
+        populate:{
+          card:{
+            populate:{
+              icon:"*",
+              image:"*"
+            }
+          }
+        }
+      },
+      sliding_card:{
+        populate:{
+          icon:"*",
+          image:"*"
+        }
+      }
+    }
+  } },
 ],
 };
 
@@ -27,5 +52,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };

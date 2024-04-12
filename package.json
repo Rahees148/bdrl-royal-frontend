@@ -37,5 +37,8 @@
     "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
+  },
+  "resolutions": {
+    "sharp": "^0.29.0"
   }
 }
