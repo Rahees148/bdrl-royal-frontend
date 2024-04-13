@@ -8,7 +8,8 @@ import bannerVideo from '../videos/welcomePageDeskCn.mp4'
 import { Fade } from "react-awesome-reveal";
 
 import { Content } from "../graphql/home";
-import FullWidthContentCarousel from '../components/full-width-content-carousel'
+import SlidingCard from '../components/sliding-card'
+import PatientTestimonials from '../components/patient-testimonials'
 
 const IndexPage = ({ data }) => {
   const pageData = Content().allStrapiPage.nodes[0];
@@ -55,14 +56,14 @@ const IndexPage = ({ data }) => {
           </Fade>
           <BookAnAppointment />
           <CentresOfExcellence />
-          <FullWidthContentCarousel />
+          <SlidingCard />
           {/* Centres Of Excellence component */}
-          {/* <section className='bg-bdrlGray py-12'>
+          <section className='bg-white py-12'>
             <div className='pageWrapper'>
               test
             </div>
-          </section> */}
-
+          </section>
+        <PatientTestimonials/>
           
         
         </Layout>
