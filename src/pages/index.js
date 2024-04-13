@@ -19,8 +19,8 @@ const IndexPage = () => {
             <HeroBanner sliderItems={pageData?.banner} />
           </Fade>
           <BookAnAppointment />
-          <CentresOfExcellence />
-          <SlidingCard />
+          <CentresOfExcellence data={pageData.centres_excellence} />
+          <SlidingCard data={pageData.sliding_card} />
           {/* Centres Of Excellence component */}
           <section className='bg-white py-12'>
             <div className='pageWrapper'>
