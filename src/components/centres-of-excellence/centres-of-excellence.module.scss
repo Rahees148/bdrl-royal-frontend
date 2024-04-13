@@ -1,0 +1,37 @@
+.CentresOfExcellence{ 
+    .SectionTitle{
+        font-size: 52px;
+    }
+    .SectionTagline{
+        display: block; 
+        font-size: 30px;
+    }
+}
+.COEcardWrap {
+    padding-top: 126px;
+}
+.COEcard{
+    width: 100%;
+    max-width: 415px; 
+}
+.COEcardtop{ 
+    h4 {
+        font-size: 30px;
+        line-height: 36px;
+        margin-top: 15px ;
+    }
+} 
+.COEcardContent {
+    padding-top: 50px;
+    a {
+        margin-top: 40px;
+    }
+}
+.COEcardIcon{
+    width: 80px;
+    height: 80px;
+    background: white;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}

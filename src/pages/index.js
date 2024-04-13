@@ -3,6 +3,7 @@ import * as React from 'react'
 import Layout from '../components/global/layout'
 import HeroBanner from '../components/hero-banner'
 import BookAnAppointment from '../components/book-an-appointment'
+import CentresOfExcellence from '../components/centres-of-excellence'
 import bannerVideo from '../videos/welcomePageDeskCn.mp4'
 
 import { Content } from "../graphql/home";
@@ -49,6 +50,7 @@ const IndexPage = ({ data }) => {
         <Layout pageTitle="Home Page">
           <HeroBanner sliderItems={sliderData} />
           <BookAnAppointment />
+          <CentresOfExcellence />
           {/* Centres Of Excellence component */}
           <section className='bg-bdrlGray py-12'>
             <div className='pageWrapper'>
