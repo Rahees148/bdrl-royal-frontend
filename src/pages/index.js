@@ -8,6 +8,7 @@ import bannerVideo from '../videos/welcomePageDeskCn.mp4'
 import { Fade } from "react-awesome-reveal";
 
 import { Content } from "../graphql/home";
+import FullWidthContentCarousel from '../components/full-width-content-carousel'
 
 const IndexPage = ({ data }) => {
   const pageData = Content().allStrapiPage.nodes[0];
@@ -53,31 +54,16 @@ const IndexPage = ({ data }) => {
             <HeroBanner sliderItems={sliderData} />
           </Fade>
           <BookAnAppointment />
-          <Fade>
-            <CentresOfExcellence />
-          </Fade>
+          <CentresOfExcellence />
+          <FullWidthContentCarousel />
           {/* Centres Of Excellence component */}
-          <section className='bg-bdrlGray py-12'>
+          {/* <section className='bg-bdrlGray py-12'>
             <div className='pageWrapper'>
               test
             </div>
-          </section>
+          </section> */}
 
-          <section className='bg-bdrlGray py-12'>
-            <div className='pageWrapper'>
-              <div className='grid grid-cols-12 gap-8 bg-primary'>
-                <div className='col-span-6  py-12'>
-                        test
-                </div>
-                <div className='col-span-3  py-12'>
-                    122
-                </div>
-                <div className='col-span-3  py-12'>
-                    trdf
-                </div>
-              </div>
-            </div>
-          </section>
+          
         
         </Layout>
         )
