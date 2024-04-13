@@ -1,0 +1,57 @@
+@import '../../scss/colors';
+.PatientTestimonials{
+    background: url(../../images/bg-pattern2.png) center $color-bdrlGray;
+    .TestimonialscardWrap{
+        padding-top: 80px;
+        .TestimonialsCard{
+            width: 100%;
+            max-width: 765px;
+            margin-right: 25px;
+
+            .TestimonialsCardDec{
+                grid-column: 1 / 5; 
+                grid-row: 1;
+                padding:150px 125px 65px 65px;
+                position: relative;
+
+                h4{
+                    font-size: 28px;
+                    line-height: 30px;
+                }
+
+                aside{
+                    font-size: 18px;
+                    color: $color-bodyCopy;
+                    font-weight: normal;
+                    margin: 30px 0 40px 0;
+                }
+                .TestimonialsCardIcon{
+                    position: absolute;
+                    left: 35px;
+                    top: 35px;
+                }
+                .PatientTestimonialsCustomerSec{
+
+                    .PatientTestimonialsCustomer {
+                        font-size: 20px;
+                        margin-top: 20px;
+                    }
+                    .PatientTestimonialsCustomerDec{
+                        color: $color-bodyCopy;
+                        margin: 10px 0;
+                    }
+                }
+                
+            }
+        
+            .TestimonialsCardImage {
+                grid-column: 4 / 7; 
+                grid-row: 1;
+                z-index: 1;
+                margin-top: 50px;
+            }
+        }
+    }
+    
+   
+}

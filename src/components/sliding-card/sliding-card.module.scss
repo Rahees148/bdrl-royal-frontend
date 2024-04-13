@@ -2,7 +2,8 @@
 .SlidingCardWrap{
     position: relative;
     .SlidingCardDescription{
-        grid-column: 1 / 8; grid-row: 1;
+        grid-column: 1 / 8; 
+        grid-row: 1;
         background: url(../../images/bg-pattern1.png) #fff;
        padding: 50px 138px 50px 45px;
 
@@ -20,7 +21,8 @@
        }
     }
     .SlidingCardImage{
-        grid-column: 7 / 13; grid-row: 1;
+        grid-column: 7 / 13; 
+        grid-row: 1;
         z-index: 1;
         margin: 25px 0;
         img{
