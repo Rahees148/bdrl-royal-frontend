@@ -35,25 +35,25 @@ function HeroBanner({sliderItems}) {
     >
       {sliderItems && sliderItems.map((slider, index) =>(
         <SwiperSlide key={index}>
-          {slider.bannerType  && slider.bannerType === 'video' ? (
+          {slider.media_type  && slider.media_type === 'video' ? (
             <video  height="100%"
             width="100%"
             loop
             muted
             autoPlay
             playsInline>
-                <source src={slider.video} type="video/mp4" /> 
+                <source src={slider.desktop_media?.url} type="video/mp4" /> 
             </video>
           ):(
-            <img src={slider.image} alt="banner" />
+            <img src={slider.desktop_media.url} alt="banner" />
           )}
           
           <div className={s.bannerOverlay} ></div>
             <div className={classNames(s.bannerOverlayText, 'pageWrapper text-white text-left')}>
                 <Fade cascade direction='down' damping={0.5}> 
-                  <h2 className='text-4xl w-[17rem] font-light leading-[67px] mb-4'>{slider.title}</h2>
-                  <p className='text-base'>{slider.description}</p>
-                  <button className='border rounded-10 py-2 px-5 bg-transparent mt-14'>{slider.buttonLabel}</button>
+                  <h2 className='text-4xl w-[17rem] font-light leading-[67px] mb-4'>{slider.Title}</h2>
+                  <div className='text-base' dangerouslySetInnerHTML={{__html: slider.Description.data.childMarkdownRemark.html}}></div>
+                  <button className='border rounded-10 py-2 px-5 bg-transparent mt-14'>{slider.Button_label}</button>
                 </Fade>
             </div>
         </SwiperSlide>
