@@ -8,8 +8,8 @@ import { Fade } from "react-awesome-reveal";
 
 import { Content } from "../graphql/home";
 
-const IndexPage = ({ data }) => {
-  const pageData = Content().allStrapiPage.nodes[0];
+const IndexPage = () => {
+  const pageData = Content().allStrapiHome.nodes[0];
   console.log(pageData)
     return (
         <Layout pageTitle="Home Page">
@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
           </Fade>
           <BookAnAppointment />
           <Fade>
-            <CentresOfExcellence data={pageData.centres_of_excellence} />
+            <CentresOfExcellence data={pageData?.centres_excellence} />
           </Fade>
           {/* Centres Of Excellence component */}
           <section className='bg-bdrlGray py-12'>
