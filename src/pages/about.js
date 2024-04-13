@@ -4,41 +4,10 @@ import Layout from '../components/global/layout'
 import HeroBanner from '../components/hero-banner'
 
 function About({ data }) {
-    const sliderData = [
-        {
-          image:'https://picsum.photos/id/187/1440/515',
-          title:'The Royal Experience.',
-          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
-          buttonLabel: 'Experience Healthcare',
-          buttonUrl: 'https://picsum.photos/id/1/1440/122'
-        },
-        {
-          image:'https://picsum.photos/id/188/1440/515',
-          title:'The Royal Experience.',
-          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
-          buttonLabel: 'Experience Healthcare',
-          buttonUrl: 'https://picsum.photos/id/1/1440/122'
-        },
-        {
-          image:'https://picsum.photos/id/189/1440/515',
-          title:'The Royal Experience.',
-          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
-          buttonLabel: 'Experience Healthcare',
-          buttonUrl: 'https://picsum.photos/id/1/1440/122'
-        },
-        {
-          image:'https://picsum.photos/id/190/1440/515',
-          title:'The Royal Experience.',
-          description: 'Elevating Healthcare Experience to New Heights of Comfort & Excellence',
-          buttonLabel: 'Experience Healthcare',
-          buttonUrl: 'https://picsum.photos/id/1/1440/122'
-        }
-      ]
+    
   return (
     <Layout>
         <div >
-            <HeroBanner sliderItems={sliderData} />
-
             <ul className="postlist">
             {
                 data.allStrapiPost.nodes.map(node => (
