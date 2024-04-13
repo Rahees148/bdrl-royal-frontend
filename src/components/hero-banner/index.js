@@ -4,9 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 import { Fade } from "react-awesome-reveal";
 // import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 import classNames from "classnames";
 import * as s from "./hero-banner.module.scss";
 

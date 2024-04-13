@@ -5,6 +5,7 @@ import HeroBanner from '../components/hero-banner'
 import BookAnAppointment from '../components/book-an-appointment'
 import CentresOfExcellence from '../components/centres-of-excellence'
 import bannerVideo from '../videos/welcomePageDeskCn.mp4'
+import { Fade } from "react-awesome-reveal";
 
 import { Content } from "../graphql/home";
 
@@ -48,9 +49,13 @@ const IndexPage = ({ data }) => {
   ]
     return (
         <Layout pageTitle="Home Page">
-          <HeroBanner sliderItems={sliderData} />
+          <Fade>
+            <HeroBanner sliderItems={sliderData} />
+          </Fade>
           <BookAnAppointment />
-          <CentresOfExcellence />
+          <Fade>
+            <CentresOfExcellence />
+          </Fade>
           {/* Centres Of Excellence component */}
           <section className='bg-bdrlGray py-12'>
             <div className='pageWrapper'>
