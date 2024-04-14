@@ -17,13 +17,12 @@ function TitleDescription({ data }) {
                     {data.description}
                 </div>
             </div>
-            {data.button_label && (
-                <a className="moreBtn" href={data.button_link}>
-                    {data.button_label}
-                </a>
-            )}
+            {data.button_label &&
+            <a className={classNames('moreBtn', data.theme)} href={data.button_link} >{data.button_label}</a>
+        }
         </div>
-    );
+    
+  )
 }
 
 export default TitleDescription;
