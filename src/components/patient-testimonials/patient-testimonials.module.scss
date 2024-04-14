@@ -1,0 +1,101 @@
+@import '../../scss/colors';
+.PatientTestimonials{
+    background: url(../../images/bg-pattern2.png) center $color-bdrlGray;
+    .TestimonialscardWrap{
+        position: relative;
+        padding-top: 80px;
+        .TestimonialsCard{
+            width: 100%;
+            max-width: 765px;
+            margin-right: 25px;
+
+            .TestimonialsCardDec{
+                grid-column: 1 / 6; 
+                grid-row: 1;
+                padding:150px 125px 65px 65px;
+                position: relative;
+
+                h4{
+                    font-size: 22px;
+                    line-height: 24px;
+                }
+
+                aside{
+                    font-size: 16px;
+                    color: $color-bodyCopy;
+                    font-weight: normal;
+                    margin: 10px 0 25px 0;
+                }
+                .TestimonialsCardIcon{
+                    position: absolute;
+                    left: 35px;
+                    top: 35px;
+                }
+                .PatientTestimonialsCustomerSec{
+
+                    .PatientTestimonialsCustomer {
+                        font-size: 20px;
+                        margin-top: 20px;
+                    }
+                    .PatientTestimonialsCustomerDec{
+                        color: $color-bodyCopy;
+                        margin: 10px 0;
+                    }
+                }
+                
+            }
+        
+            .TestimonialsCardImage {
+                grid-column: 5 / 7; 
+                grid-row: 1;
+                z-index: 1;
+                margin-top: 50px;
+            }
+        }
+        .sliderNavigation{
+            margin: 50px auto 0;
+            width: 100%;
+            z-index: 5;
+            text-align: right;
+            color: white;
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            .swiperButton{
+                text-indent: -9999px;
+                background-color: rgb(57, 57, 57);
+                -webkit-mask-image: url(../../images/icons/rounded-arrow.svg);
+                mask-image: url(../../images/icons/rounded-arrow.svg);
+                width: 38px;
+                height: 38px;
+                background-size: cover;
+                &.prev{
+                    rotate: -180deg;
+                }
+                &[disabled]{
+                    opacity: .5;
+                }
+            }
+            .pagination{
+                transform: unset;
+            }
+        }
+    }
+    
+   
+}
+:global(.testimonialSwiper ){
+    overflow: visible;
+}
+:global(.testimonialSwiper .swiper-wrapper) {
+    overflow: visible;
+    align-items: baseline;
+    text-align: left;
+}
+:global(.testimonialSwiper .swiper-slide) {
+    text-align: left;
+    background-color: transparent;
+}
+

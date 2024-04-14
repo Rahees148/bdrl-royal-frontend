@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import * as style from './centres-of-excellence.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import TitleDescription from '../global/title-description';
 
 function CentresOfExcellence({data}) {  
   const navigationNextRef = useRef(null);
@@ -10,13 +11,13 @@ function CentresOfExcellence({data}) {
   return (
     <section className={classNames(style.CentresOfExcellence, 'py-20')}>
     <div className="pageWrapper CentresOfExcellence">
-      <div className={classNames(style.SectionTitle, 'flex items-end justify-between')}>
-        <div className={classNames(style.SectionTitleLeft)}>
-            <h3>{data.Title}</h3>
-            <div className={classNames(style.SectionTagline, 'font-normal')}>{data.description}</div>
-        </div>
-        <a className='moreBtn' href={data.button_link} >{data.button_label}</a>
-      </div> 
+      <TitleDescription data={{
+        theme:"green",
+        title:data.Title,
+        description: data.description,
+        button_label: data.button_label,
+        button_link:data.button_link
+      }} />
      
         <div className={classNames(style.COEcardWrap)}>
           <Swiper

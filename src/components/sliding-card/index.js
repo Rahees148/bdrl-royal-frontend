@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import * as style from './sliding-card.module.scss';
+import TitleDescription from '../global/title-description';
 
-import SlidingCardpic from '../../images/SlidingCard-pic.jpg'
 
 function SlidingCard({data}) {  
     const navigationNextRef = useRef(null);
@@ -35,10 +35,11 @@ function SlidingCard({data}) {
             <div className='pageWrapper'>
                   <div className={classNames('grid grid-cols-12 gap-8')}>
                     <div className={classNames( style.SlidingCardDescription,'rounded-3xl')}>
-                            <div className='section-title'> 
-                              <h3>{slider.Title}</h3>
-                              <div className='section-tagline'>{slider.sub_title}</div>
-                            </div> 
+                            <TitleDescription data={{
+                              theme:"black",
+                              title:slider.Title,
+                              description: slider.sub_title
+                            }}/>
                             <div className={classNames(style.SlidingCardbtn, 'button bg-primary')}>{slider.button_label}</div>
                             <div className={classNames(style.SlidingCardDec, '')}  dangerouslySetInnerHTML={{__html: slider.description.data.childMarkdownRemark.html}}></div> 
                     </div>
