@@ -1,0 +1,41 @@
+@import '../../../scss/colors';
+.SectionTitle{
+   
+    h3 {
+        font-size: 52px;
+        line-height: 130%;
+        color: $color-primary;
+    }
+
+    .SectionTagline{
+        display: block; 
+        font-size: 30px;
+        line-height: 130%;
+        margin-top: 15px;
+        font-weight: 400;
+    }
+    &.green{
+        h3{
+            color: $color-primary;
+        }
+        .SectionTagline{
+            color: $color-primary;
+        }
+    }
+    &.black{
+        h3{
+            color: $color-black;
+        }
+        .SectionTagline{
+            color: $color-bodyCopy;
+        }
+    }
+    &.white{
+        h3{
+            color: $color-white;
+        }
+        .SectionTagline{
+            color: $color-white;
+        }
+    }
+}

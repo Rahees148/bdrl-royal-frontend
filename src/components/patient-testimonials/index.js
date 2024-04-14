@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import * as style from './patient-testimonials.module.scss';
 import TestimonialsIcon from '../../images/icons/TestimonialsIcon.svg'
 import { Content } from "../../graphql/testimonials/testimonials";
+import TitleDescription from '../global/title-description';
 
 function PatientTestimonials({titleDescription}) {  
   const navigationNextRef = useRef(null);
@@ -14,13 +15,15 @@ function PatientTestimonials({titleDescription}) {
   return (
     <section className={classNames(style.PatientTestimonials, 'py-20')}>
     <div className="pageWrapper ">
-      <div className= 'flex items-end justify-between'>
-        <div className='section-title'>
-            <h3>{titleDescription.title}</h3>
-            <div className='section-tagline'>{titleDescription.description}</div>
-        </div>
-        <a className='moreBtn' href='#' >{titleDescription.button_label}</a>
-      </div> 
+      <TitleDescription 
+        data={{
+          title:titleDescription.title,
+          description:titleDescription.description,
+          button_label:titleDescription.button_label,
+          button_link:titleDescription.button_link
+        }} 
+      />
+     
         <div className={classNames(style.TestimonialscardWrap)}>
         <Swiper
             speed={1000}
