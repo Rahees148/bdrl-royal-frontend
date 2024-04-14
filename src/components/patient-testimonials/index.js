@@ -50,7 +50,7 @@ function PatientTestimonials({titleDescription}) {
                     </div>
                     <h4>{testimonial.title}</h4>
                     <aside dangerouslySetInnerHTML={{__html: testimonial.description.data.childMarkdownRemark.html}}></aside>
-                    <a className='moreBtn' href='#'>{testimonial.button_label}</a>
+                    <a className='moreBtn' href={'/testimonials/'+testimonial.slug}>{testimonial.button_label}</a>
                     <div className={classNames(style.PatientTestimonialsCustomerSec)}>
                         <div className={classNames(style.PatientTestimonialsCustomer)}>{testimonial.author_name}</div>
                         <div className={classNames(style.PatientTestimonialsCustomerDec)}>{testimonial.author_description}</div>

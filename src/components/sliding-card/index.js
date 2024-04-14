@@ -19,8 +19,8 @@ function SlidingCard({data}) {
               speed={1000}
               effect='fade'
               navigation={{
-                nextEl: '.swiper-button-next1',
-                prevEl: '.swiper-button-prev1',
+                nextEl: '.sliding-content-swiper-button-next',
+                prevEl: '.sliding-content-swiper-button-prev',
               }}
               onBeforeInit={(swiper) => {
                 swiper.navigation.nextEl = navigationNextRef.current;
@@ -54,8 +54,8 @@ function SlidingCard({data}) {
             </Swiper>
             <div className={style.sliderNavigation}>
               <div>
-                <button className={classNames(style.swiperButton, style.prev, 'swiper-button-prev1')}>Prev</button>
-                <button className={classNames(style.swiperButton, 'swiper-button-next1')}>Next</button>
+                <button className={classNames(style.swiperButton, style.prev, 'sliding-content-swiper-button-prev')}>Prev</button>
+                <button className={classNames(style.swiperButton, 'sliding-content-swiper-button-next')}>Next</button>
               </div>
               <div className={classNames(style.pagination, 'contentSliderSwiper-pagination')}></div>
             </div>
