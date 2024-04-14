@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import * as style from './sliding-card.module.scss';
 
-import SlidingCardpic from '../../images/SlidingCard-pic.jpg'
 
 function SlidingCard({data}) {  
     const navigationNextRef = useRef(null);

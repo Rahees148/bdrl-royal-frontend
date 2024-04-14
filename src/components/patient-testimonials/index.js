@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import * as style from './patient-testimonials.module.scss';
-import TestimonialsPic from '../../images/TestimonialsPic1.png'
 import TestimonialsIcon from '../../images/icons/TestimonialsIcon.svg'
 import { Content } from "../../graphql/testimonials/testimonials";
 
