@@ -38,19 +38,6 @@ const IndexPage = () => {
                 </div>
             </section>
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
-          <Fade>
-            <HeroBanner sliderItems={pageData?.banner} />
-          </Fade>
-          <BookAnAppointment />
-          <CentresOfExcellence data={pageData.centres_excellence} />
-          <SlidingCard data={pageData.sliding_card} />
-          {/* Centres Of Excellence component */}
-          <section className='bg-white py-12'>
-            <div className='pageWrapper'>
-              test
-            </div>
-          </section>
-          <PatientTestimonials titleDescription={pageData.testimonials_title} />
           <NewsEvents/>
         
         </Layout>
