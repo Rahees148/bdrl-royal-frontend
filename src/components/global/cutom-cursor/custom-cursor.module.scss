@@ -1,4 +1,4 @@
-.cursor{
+.cursor {
     width: 550px;
     height: 550px;
     background: url(../../../images/cursor-bg.png) no-repeat center center;
@@ -8,20 +8,22 @@
     display: none;
     pointer-events: none;
 
-    &::after{
+    &::after {
         content: '';
         width: 30px;
         height: 30px;
-        border: 1px solid #FFF;
+        border: 1px solid #fff;
         position: absolute;
         border-radius: 15px;
-        left: 0; right: 0; top: 0; bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         margin: auto;
     }
-    
 }
-:global(.exceptionCareContainer:hover){
-    .cursor{
+:global(.exceptionCareContainer:hover) {
+    .cursor {
         display: block;
     }
 }

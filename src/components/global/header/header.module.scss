@@ -1,20 +1,17 @@
-
-.topHeader{
-    
+.topHeader {
 }
 .header {
-    background-color: #FFF;
+    background-color: #fff;
     padding: 18px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    >div{
+    > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .logo{
+        .logo {
             max-width: 190px;
         }
-
     }
 }
