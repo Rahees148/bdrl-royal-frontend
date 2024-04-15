@@ -35,3 +35,38 @@ body {
 .swiper {
     width: 100%;
 }
+
+
+
+.bg-gradient-golden{
+    background: rgb(135,110,46);
+    background:linear-gradient(180deg, rgba(135,110,46,1) 0%, rgba(255,213,157,1) 100%);
+    position: relative;
+    overflow: hidden;
+    &:before{
+        content: '';
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-image: url(../images/pattern-circle.png);
+    }
+    .clipContainer{
+        position: relative;
+        .clip{
+            width: 60%;
+            -webkit-clip-path: polygon(0 0, 100% 0%, 35% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, 35% 100%, 0% 100%);
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        img{
+            position: relative;
+            z-index: 10;
+        }
+    }
+}
