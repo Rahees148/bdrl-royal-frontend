@@ -1,0 +1,27 @@
+.cursor{
+    width: 550px;
+    height: 550px;
+    background: url(../../../images/cursor-bg.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    pointer-events: none;
+
+    &::after{
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 1px solid #FFF;
+        position: absolute;
+        border-radius: 15px;
+        left: 0; right: 0; top: 0; bottom: 0;
+        margin: auto;
+    }
+    
+}
+:global(.exceptionCareContainer:hover){
+    .cursor{
+        display: block;
+    }
+}

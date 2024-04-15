@@ -7,8 +7,48 @@
         width: 50%;
 
         &.imageContainer{
-            background: url(../../images/slip-1.jpeg) no-repeat;
-            background-size: cover;
+           position: relative;
+           :global(.swiper){
+                height: 100%;
+            }
+           :global(.swiper-slide){
+                height: 100%;
+                background-size: cover ;
+                background-repeat: no-repeat;
+                max-height: unset;
+            }
+           img{
+            width: 100%;
+            object-fit: cover;
+           }
+            .autoplayProgress {
+                position: absolute;
+                right: 16px;
+                bottom: 16px;
+                z-index: 10;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                color: $color-primary;
+                svg {
+                    --progress: 0;
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                    z-index: 10;
+                    width: 100%;
+                    height: 100%;
+                    stroke-width: 4px;
+                    stroke: $color-primary;
+                    fill: none;
+                    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+                    stroke-dasharray: 125.6;
+                    transform: rotate(-90deg);
+                }
+            }
         }
         &.rightColumn{
             background-color: $color-primary;
@@ -45,6 +85,7 @@
                             height: 25px;
                             border: 1px solid $color-white;
                             border-radius: 25px;
+                            
                         }
                         &::before{
                             content: "";
@@ -59,10 +100,41 @@
                             &::after{
                                 background-color: $color-bdrlDarkGray;
                             }
+                            .autoplayProgress{
+                                display: flex;
+                            }
                         }
                         &:last-child{
                             &::before{
                                 display: none;
+                            }
+                        }
+                        .autoplayProgress {
+                            position: absolute;
+                            display: none;
+                            left: -53px;
+                            top: 22px;
+                            z-index: 10;
+                            width: 30px;
+                            height: 30px;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            color: $color-primary;
+                            svg {
+                                --progress: 0;
+                                position: absolute;
+                                left: 0;
+                                top: 0px;
+                                z-index: 10;
+                                width: 100%;
+                                height: 100%;
+                                stroke-width: 8px;
+                                stroke: $color-primary;
+                                fill: none;
+                                stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+                                stroke-dasharray: 125.6;
+                                transform: rotate(-90deg);
                             }
                         }
                        

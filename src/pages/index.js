@@ -22,7 +22,7 @@ const IndexPage = () => {
           <BookAnAppointment />
           <CentresOfExcellence data={pageData.centres_excellence} />
           <SlidingCard data={pageData.sliding_card} />
-          <ExceptionalCare />
+          <ExceptionalCare data={pageData.exceptional_care} />
           {/* Centres Of Excellence component */}
           <section className='bg-white py-12'>
             <div className='pageWrapper'>
