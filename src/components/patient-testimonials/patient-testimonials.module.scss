@@ -98,5 +98,6 @@
 :global(.testimonialSwiper .swiper-slide) {
     text-align: left;
     background-color: transparent;
+    max-height: unset;
 }
 

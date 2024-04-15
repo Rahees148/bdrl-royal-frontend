@@ -6,6 +6,7 @@
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 @import './_button.scss';
+@import './breakpoints';
 
 img {
     border: none;
@@ -23,6 +24,9 @@ img {
     width: 100%;
     max-width: 1210px;
     padding: 0 15px;
+    @media #{$breakpoint-lg-tablet} {
+        max-width: 900px;
+    }
 }
 
 body {
@@ -34,6 +38,9 @@ body {
 
 .swiper {
     width: 100%;
+    .swiper-slide{
+        max-height: unset;
+    }
 }
 
 

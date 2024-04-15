@@ -2,7 +2,7 @@
 .NewsEvents{
     margin-top: -255px;
     .NewsEventsTop{
-        width: 80%;
+        width: calc(100% - 60px);
         margin: 0 auto;
         border-radius: 30px;
         padding: 80px 0px 215px;
@@ -22,12 +22,12 @@
                 }
                 .NewsEventsCardImage{
                     margin-bottom: 20px;
-                    img{
-                        border-radius: 15px;
-                    } 
+                    border-radius: 15px;
+                    height: 230px;
+                    overflow: hidden;
+                    background-color: $color-bdrlLightGray;
                 }
                 .NewsEventsCardTag{
-                    
                     padding: 5px 15px;
                     min-width: 85px;
                     text-transform: uppercase;

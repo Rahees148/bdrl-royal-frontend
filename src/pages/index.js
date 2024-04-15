@@ -38,7 +38,7 @@ const IndexPage = () => {
                 </div>
             </section>
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
-          <NewsEvents/>
+            <NewsEvents/>
         
         </Layout>
     );

@@ -5,10 +5,13 @@ import { Autoplay } from 'swiper/modules';
 import classNames from 'classnames';
 import TitleDescription from '../global/title-description';
 import CustomCursor from '../global/cutom-cursor';
+import { useEffect } from 'react';
 
 function ExceptionalCare({data}) {
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
+    const targetRef = useRef(null);
+    const [sectionHeight, setSectionHeight] = useState('100vh');
     const [progress, setProgress] = useState(0);
     const [swiper, setSwiper] = useState(null);
     const [activeSlide, setActiveSlide] = useState(0);
@@ -20,9 +23,20 @@ function ExceptionalCare({data}) {
     const onSlideChange = (s) =>{
         setActiveSlide(s.activeIndex)
     }
+    useEffect(()=>{
+        if(targetRef && typeof window !== 'undefined'){
+            if(targetRef?.current?.offsetHeight > window.innerHeight) {
+                setSectionHeight(targetRef?.current?.offsetHeight+'px')
+            }else{
+                setSectionHeight(window.innerHeight - 80 +'px')
+            }
+        }
+    },[targetRef])
   return (
     <div className='overflow-hidden exceptionCareContainer'>
-        <section className={style.exceptionalCare}>
+        <section className={style.exceptionalCare} style={{
+            minHeight: sectionHeight
+        }}>
             <div className={style.imageContainer}>
             <Swiper
                 onSwiper={setSwiper}
@@ -38,7 +52,7 @@ function ExceptionalCare({data}) {
                 onSlideChange={onSlideChange}
             >
             {data.card && data.card.map((item, index) => (
-                <SwiperSlide style={{
+                <SwiperSlide key={index} style={{
                     backgroundImage:`url(${item.image.url})`,
                 }}>
                 </SwiperSlide>
@@ -52,7 +66,7 @@ function ExceptionalCare({data}) {
             </Swiper>
             </div>
             <div className={style.rightColumn}></div>
-            <div className={classNames('pageWrapper', style.textContainer)}>
+            <div ref={targetRef} className={classNames('pageWrapper', style.textContainer)}>
                 <div></div>
                 <div>
                     <TitleDescription data={{
