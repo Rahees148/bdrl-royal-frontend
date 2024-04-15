@@ -8,21 +8,21 @@
 @import url(./_button.scss);
 
 img {
-	border:none;
+    border: none;
 }
-*{
-    font-family: "Urbanist", sans-serif;
+* {
+    font-family: 'Urbanist', sans-serif;
     font-weight: 500;
-    box-sizing:border-box;
-    margin:0;
-	padding:0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .pageWrapper {
     margin: 0 auto;
     width: 100%;
     max-width: 1210px;
-    padding:0 15px;
+    padding: 0 15px;
 }
 
 body {
@@ -33,5 +33,5 @@ body {
 }
 
 .swiper {
-  width: 100%;
+    width: 100%;
 }
