@@ -31,6 +31,7 @@ function ExceptionalCare({data}) {
                     delay: 5500,
                     disableOnInteraction: false,
                 }}
+                speed={1000}
                 modules={[Autoplay]}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
                 className="exceptionalSwiper"
