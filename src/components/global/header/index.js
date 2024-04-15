@@ -41,7 +41,7 @@ function Header({ data }) {
                             </li>
                         ))}
                         <li>
-                            <a className="button ml-6" href="#">
+                            <a className="button ml-6 bg-black" href="#">
                                 Book appointment
                             </a>
                         </li>
