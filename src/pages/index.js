@@ -11,6 +11,7 @@ import PatientTestimonials from '../components/patient-testimonials';
 import ExceptionalCare from '../components/exceptional-care';
 import NewsEvents from '../components/news-events';
 import TextImage from '../components/text-image'
+import NewsletterSubscribe from '../components/newsletter-subscribe';
 const IndexPage = () => {
     const pageData = Content().allStrapiHome.nodes[0];
     console.log(pageData);
@@ -28,6 +29,7 @@ const IndexPage = () => {
             
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
             <NewsEvents/>
+            <NewsletterSubscribe/>
         
         </Layout>
     );
