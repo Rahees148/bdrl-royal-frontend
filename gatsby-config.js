@@ -11,7 +11,11 @@ const strapiConfig = {
       mainmenu:{
         populate:{
           title:"*",
-          dropdown:"*"
+          dropdown:{
+            populate:{
+              icon: "*"
+            }
+          }
         }
       }
     }
