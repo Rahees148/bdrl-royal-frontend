@@ -27,6 +27,9 @@ img {
     @media #{$breakpoint-lg-tablet} {
         max-width: 900px;
     }
+    @media #{$breakpoint-mobile} {
+        max-width: calc(100% - 30px);
+    }
 }
 
 body {

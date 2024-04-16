@@ -28,7 +28,15 @@ function PatientTestimonials({titleDescription}) {
         <Swiper
             speed={1000}
             spaceBetween={32}
-            slidesPerView={2}
+            slidesPerView={1}
+            breakpoints={
+              {
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 32,
+               }
+              }
+            }
             effect='fade'
             navigation={{
               nextEl: '.testimonial-swiper-button-next',
@@ -43,24 +51,24 @@ function PatientTestimonials({titleDescription}) {
           >
             {testimonials && testimonials.map( (testimonial, index) => (
               <SwiperSlide key={index}>
-              <div className={classNames(style.TestimonialsCard,'grid grid-cols-6 gap-8')}>
-                <div className={classNames(style.TestimonialsCardDec,'rounded-3xl bg-white')}>
-                    <div className={classNames(style.TestimonialsCardIcon)}>
-                        <img src={TestimonialsIcon} alt='Testimonials'/>
-                    </div>
-                    <h4>{testimonial.title}</h4>
-                    <aside dangerouslySetInnerHTML={{__html: testimonial.description.data.childMarkdownRemark.html}}></aside>
-                    <a className='moreBtn' href={'/testimonials/'+testimonial.slug}>{testimonial.button_label}</a>
-                    <div className={classNames(style.PatientTestimonialsCustomerSec)}>
-                        <div className={classNames(style.PatientTestimonialsCustomer)}>{testimonial.author_name}</div>
-                        <div className={classNames(style.PatientTestimonialsCustomerDec)}>{testimonial.author_description}</div>
-                        <div><b>Treated by: </b>{testimonial.treated_by[0]?.Name}</div>
-                    </div>
+                <div className={classNames(style.TestimonialsCard,'grid grid-cols-6 gap-8')}>
+                  <div className={classNames(style.TestimonialsCardDec,'rounded-3xl bg-white')}>
+                      <div className={classNames(style.TestimonialsCardIcon)}>
+                          <img src={TestimonialsIcon} alt='Testimonials'/>
+                      </div>
+                      <h4>{testimonial.title}</h4>
+                      <aside dangerouslySetInnerHTML={{__html: testimonial.description.data.childMarkdownRemark.html}}></aside>
+                      <a className='moreBtn' href={'/testimonials/'+testimonial.slug}>{testimonial.button_label}</a>
+                      <div className={classNames(style.PatientTestimonialsCustomerSec)}>
+                          <div className={classNames(style.PatientTestimonialsCustomer)}>{testimonial.author_name}</div>
+                          <div className={classNames(style.PatientTestimonialsCustomerDec)}>{testimonial.author_description}</div>
+                          <div><b>Treated by: </b>{testimonial.treated_by[0]?.Name}</div>
+                      </div>
+                  </div>
+                  <div className={classNames( style.TestimonialsCardImage,'')}>
+                      <img src={testimonial.image.url} alt='Testimonials Pic' className='rounded-3xl'/>
+                  </div> 
                 </div>
-                <div className={classNames( style.TestimonialsCardImage,'')}>
-                    <img src={testimonial.image.url} alt='Testimonials Pic' className='rounded-3xl'/>
-                </div> 
-            </div>
             </SwiperSlide>
             ))}
             
