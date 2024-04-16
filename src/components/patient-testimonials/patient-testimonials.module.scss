@@ -1,6 +1,7 @@
 @import '../../scss/colors';
 .PatientTestimonials{
     background: url(../../images/bg-pattern2.png) center $color-bdrlGray;
+    padding-bottom: 320px;
     .TestimonialscardWrap{
         position: relative;
         padding-top: 80px;
@@ -97,5 +98,6 @@
 :global(.testimonialSwiper .swiper-slide) {
     text-align: left;
     background-color: transparent;
+    max-height: unset;
 }
 
