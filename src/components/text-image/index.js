@@ -8,17 +8,17 @@ function TextImage({ data }) {
     return (
         <section className={classNames(style.BgGradientGolden)}>
                 <div className='bg-white absolute top-0 left-0 w-[50%] h-[100%] z-0'></div>
-                <div className="pageWrapper flex relative z-30 ">
-                    <div className={classNames(style.TextImageDec, 'w-[55%] bg-white py-40 pr-48')}>
+                <div className="pageWrapper flex relative z-30 align-middle ">
+                    <div className={classNames(style.TextImageDec, 'w-[45%] bg-white py-24 pr-40 flex flex-col justify-center items-start')}>
                         <div className={classNames(style.TextImageTagline,'flex items-center')}>
-                        <img src={opinionIcon} alt='Second Opinion' />
-                            Second Opinion</div>
-                        <h4>Advised for Surgery?</h4>
-                        <aside>Be Sure of diagnosis before getting operated! Consult our expert surgeons to get a second opinion.</aside>
-                        <div className={classNames(style.TextImagebtn, 'button bg-primary')}>Consult our expert surgeons</div>
+                        <img src={data.icon.url} alt='Second Opinion' />
+                        {data.sub_title}</div>
+                        <h4>{data.Title}</h4>
+                        <aside dangerouslySetInnerHTML={{__html: data.description.data.childMarkdownRemark.html}}></aside>
+                        <a href={data.button_link} className={classNames(style.TextImagebtn, 'button bg-primary')}>{data.button_label}</a>
                     </div>
-                    <div className={classNames(style.ClipContainer,'w-[45%]  pt-8')} >
-                        <img src={doctorImage} alt='test' />
+                    <div className={classNames(style.ClipContainer,'w-[55%]  pt-8')} >
+                        <img src={data.image.url} alt={data.title} />
                         <div className={classNames(style.Clip,'bg-white')}></div>
                     </div>
                 </div>

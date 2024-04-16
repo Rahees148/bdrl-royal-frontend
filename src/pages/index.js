@@ -23,7 +23,7 @@ const IndexPage = () => {
             <CentresOfExcellence data={pageData.centres_excellence} />
             <SlidingCard data={pageData.sliding_card} />
             <ExceptionalCare data={pageData.exceptional_care} />
-            <TextImage/>
+            <TextImage data={pageData.image_text} />
             {/* Centres Of Excellence component */}
             
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
