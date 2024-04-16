@@ -5,7 +5,21 @@ require("dotenv").config({
 console.log(process.env.STRAPI_API_URL);
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
-  collectionTypes: ["post", "category", "author",
+  collectionTypes: ["post", "category", "author", 
+  { singularName: "main-menu",queryParams:{
+    populate:{
+      mainmenu:{
+        populate:{
+          title:"*",
+          dropdown:{
+            populate:{
+              icon: "*"
+            }
+          }
+        }
+      }
+    }
+  } },
   { singularName: "testimonial", queryParams:{
     populate:{
       author_photo:"*",

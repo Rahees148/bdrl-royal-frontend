@@ -2,7 +2,7 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontSize: {
-      sm: '11.5px',
+      sm: '12px',
       m: '14px',
       base: '16px',
       xl: '24px',

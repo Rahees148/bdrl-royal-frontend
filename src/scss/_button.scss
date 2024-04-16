@@ -15,4 +15,12 @@
         color: $color-white;
         border-color: $color-white;
     }
+    &.green{
+        color: $color-primary;
+        border-color: $color-primary;
+    }
+    &.black{
+        color: $color-black;
+        border-color: $color-black;
+    }
 }

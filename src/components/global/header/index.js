@@ -3,9 +3,12 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 import * as s from './header.module.scss';
 
+import { Content } from '../../../graphql/main-menu';
+
 import logo from '../../../images/logo.svg';
 
 function Header({ data }) {
+    const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
     return (
         <>
             <div className={classNames(s.topHeader, 'bg-primary')}>
@@ -28,16 +31,37 @@ function Header({ data }) {
                 <div className="pageWrapper">
                     <img src={logo} alt="Bdrl" className={s.logo} />
                     <ul className="flex gap-6">
-                        <li>
-                            <Link to="/" className="text-bodyCopy text-m">
-                                Home
-                            </Link>
-                        </li>
-                        {data.allStrapiCategory.nodes.map((node) => (
-                            <li key={node.id}>
-                                <Link to={`/${node.slug}`} className="text-bodyCopy text-m">
-                                    {node.name}
-                                </Link>
+                        {mainMenu.map((menu) => (
+                            <li className={s.menuItem} key={menu.id}>
+                                {menu.dropdown ? (
+                                    <>
+                                        <a href="#"  className="text-bodyCopy text-sm ">{menu.title}</a>
+                                        <ul className={s.dropdown}>
+                                            {menu.dropdown.map((drop, index) => (
+                                                <li key={index}>
+                                                    <i>
+                                                        {drop?.icon && (
+                                                            <img
+                                                                src={drop?.icon?.url}
+                                                                alt={drop.title}
+                                                            />
+                                                        )}
+                                                    </i>
+                                                    <Link
+                                                        to={`/${drop.url}`}
+                                                        className="text-bodyCopy text-sm"
+                                                    >
+                                                        {drop.title}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                ) : (
+                                    <Link to={`/${menu.url}`} className="text-bodyCopy text-sm">
+                                        {menu.title}
+                                    </Link>
+                                )}
                             </li>
                         ))}
                         <li>
