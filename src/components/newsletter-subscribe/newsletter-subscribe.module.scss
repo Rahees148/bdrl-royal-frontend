@@ -11,6 +11,12 @@
         min-width: 128px;
         padding: 14px 28px;
         margin-left: 8px;
+        border: 1px solid transparent;
+        &:hover{
+            background: transparent;
+            color: #E4FF85;
+            border-color: #E4FF85;
+        }
     }
     .NewsletterSubscribeInputSec{
         position: relative;

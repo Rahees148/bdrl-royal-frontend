@@ -16,10 +16,15 @@
 
         .menuItem{
             position: relative;
+            .hasChild{ 
+                    background: url(../../../images/icons/menu-arw.svg) no-repeat right center;
+                    padding-right: 18px;
+                
+            }
             .dropdown{
                 display: none;
                 position: absolute;
-                width: 230px;
+                width: 265px;
                 left: 0;
                 top: 30px;
                 padding: 15px 20px;
@@ -32,6 +37,11 @@
                 li{
                     display: flex;
                     gap: 10px;
+                    padding: 10px 0;
+                    border-top: 1px solid #BEBEBE;
+                    &:first-child{
+                        border-top:0 ;
+                    }
                     i {
                         width: 18px;  
                         > img{

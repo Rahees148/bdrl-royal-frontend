@@ -6,7 +6,7 @@ import * as s from './header.module.scss';
 import { Content } from '../../../graphql/main-menu';
 
 import logo from '../../../images/logo.svg';
-
+import menuIcon from '../../../images/icons/menu-icon.svg';
 function Header({ data }) {
     const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
     return (
@@ -30,12 +30,12 @@ function Header({ data }) {
             <header className={classNames(s.header)}>
                 <div className="pageWrapper">
                     <img src={logo} alt="Bdrl" className={s.logo} />
-                    <ul className="flex gap-6">
+                    <ul className="flex gap-6 ml-auto">
                         {mainMenu.map((menu) => (
                             <li className={s.menuItem} key={menu.id}>
                                 {menu.dropdown ? (
                                     <>
-                                        <a href="#"  className="text-bodyCopy text-sm ">{menu.title}</a>
+                                        <a href="#"  className={classNames(s.hasChild,'text-bodyCopy text-sm ')}>{menu.title}</a>
                                         <ul className={s.dropdown}>
                                             {menu.dropdown.map((drop, index) => (
                                                 <li key={index}>
@@ -64,9 +64,16 @@ function Header({ data }) {
                                 )}
                             </li>
                         ))}
+                        </ul>
+                        <ul className="flex items-center">
                         <li>
-                            <a className="button ml-6 bg-black" href="#">
+                            <a className="button ml-6 mr-4 bg-black" href="#">
                                 Book appointment
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="#">
+                                <img src={menuIcon} alt="Menu" className={s.menuIcon} />
                             </a>
                         </li>
                     </ul>
