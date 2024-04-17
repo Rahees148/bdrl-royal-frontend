@@ -8,6 +8,9 @@
 @import './_button.scss';
 @import './breakpoints';
 
+html{
+    overflow-x: hidden;
+}
 img {
     border: none;
 }
