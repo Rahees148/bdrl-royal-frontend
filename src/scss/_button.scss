@@ -1,9 +1,14 @@
 @import './colors';
+@import './breakpoints';
 .button{
     padding: 10px 18px;
     border-radius: 42px; 
     color: #fff;
     font-size: 14px;
+    @media #{$breakpoint-mobile} {
+        font-size: 12px;
+    }
+
 }
 .moreBtn {
     border: 1px solid #023321;

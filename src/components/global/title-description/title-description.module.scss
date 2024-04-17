@@ -1,21 +1,27 @@
 @import '../../../scss/colors';
+@import '../../../scss/breakpoints';
 .SectionTitle {
-    h3 {
-        font-size: 52px;
+    h2 {
+        font-size: $font-h2;
         line-height: 120%;
         color: $color-primary;
-        
+        @media #{$breakpoint-mobile} {
+            font-size: $font-h2-mob;
+        }
     }
 
     .SectionTagline {
         display: block;
-        font-size: 30px;
+        font-size: $font-h4;
         line-height: 120%;
         margin-top: 15px;
         font-weight: 400;
+        @media #{$breakpoint-mobile} {
+            font-size: $font-h4-mob;
+        }
     }
     &.green {
-        h3 {
+        h2 {
             color: $color-primary;
         }
         .SectionTagline {
@@ -23,7 +29,7 @@
         }
     }
     &.black {
-        h3 {
+        h2 {
             color: $color-black;
         }
         .SectionTagline {
@@ -31,7 +37,7 @@
         }
     }
     &.white {
-        h3 {
+        h2 {
             color: $color-white;
         }
         .SectionTagline {

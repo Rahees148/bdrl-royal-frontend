@@ -1,18 +1,26 @@
 @import '../../scss/colors';
 @import '../../scss/breakpoints';
+
 .NewsEvents{
     margin-top: -255px;
+    @media #{$breakpoint-mobile} {
+        margin-top: 0;
+      }
     .NewsEventsTop{
         width: calc(100% - 60px);
         margin: 0 auto;
         border-radius: 30px;
         padding: 80px 0px 215px;
-        @media #{$breakpoint-lg-tablet} {
+        @media #{$breakpoint-mobile} {
             width: calc(100% - 30px);
-          }
+        }
+        
     }
     .NewsEventsBtm{
         margin-top: -125px;
+        @media #{$breakpoint-mobile} {
+            padding: 0 15px;
+          }
         .NewsEventsCard{
             width: 100%; 
                 h4{
