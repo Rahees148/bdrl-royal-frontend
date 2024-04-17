@@ -1,14 +1,29 @@
+@import '../../scss/breakpoints';
+
 .BookAnAppointment{
     width: 100%;
     max-width: 736px;
     margin: -45px auto 0;  
     position: relative;
     z-index: 2; 
+    @media #{$breakpoint-mobile} {
+        max-width: calc(100% - 30px);
+        padding: 8px 10px;
+        gap: 8px;
+        margin-top: -25px;
+        > img{
+            max-width: 17.5px;
+        }
+    }
     .SpecialitySelectBox { 
         position: relative;
         padding-right: 55px;
         width: 100%;
         max-width: 366px;
+        @media #{$breakpoint-mobile} {
+            padding: 10px 25px 10px 15px;
+            font-size: 10px;
+        }
           &:before {
             content: '';
             position: absolute;
@@ -17,7 +32,13 @@
             width: 23px;
             height: 23px;
             background: url(../../images/icons/dropdown_arw.svg) no-repeat right center;
-             
+            @media #{$breakpoint-mobile} {
+                background-size: 100%;
+                top: 12px;
+                right: 12px;
+                width: 11px;
+                height: 11px;
+            }
           }
           .SpecialitySelectList{
             border-bottom: 1px solid #b7b7b7;
@@ -39,9 +60,16 @@
         max-width: 250px;
         background: linear-gradient(81.39deg, #FFDAA1 -11.85%, #023321 105.73%);
         transition: all 100ms ease-in-out;
-            &:hover {
-                background: linear-gradient(150deg, #FFDAA1 -11.85%, #023321 105.73%);
+        &:hover {
+            background: linear-gradient(150deg, #FFDAA1 -11.85%, #023321 105.73%);
+        }
+        @media #{$breakpoint-mobile} {
+            padding: 12px;
+            font-size: 10px;
+            > img{
+                max-width: 12px;
             }
+        }
     }
     
     

@@ -16,7 +16,7 @@ const IndexPage = () => {
     const pageData = Content().allStrapiHome.nodes[0];
     console.log(pageData);
     return (
-        <Layout pageTitle="Home Page">
+        <Layout pageTitle="Home Page" variant={'home'}>
             <Fade>
                 <HeroBanner sliderItems={pageData?.banner} />
             </Fade>
@@ -29,8 +29,6 @@ const IndexPage = () => {
             
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
             <NewsEvents/>
-            <NewsletterSubscribe/>
-        
         </Layout>
     );
 };

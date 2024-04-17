@@ -4,7 +4,7 @@ import './layout.css'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, variant, children }) => {
   const data = useStaticQuery(graphql`
         query {
             allStrapiCategory {
@@ -23,7 +23,7 @@ const Layout = ({ pageTitle, children }) => {
       <main>
         {children}
       </main>
-      <Footer />
+      <Footer variant={variant} />
     </>
   )
 }

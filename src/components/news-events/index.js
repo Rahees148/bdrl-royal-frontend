@@ -3,9 +3,12 @@ import classNames from 'classnames'
 import * as style from './news-events.module.scss'; 
 import TitleDescription from '../global/title-description';
 import { Content } from "../../graphql/news-and-events"
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 function NewsEvents() {   
-    const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
+    let newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
+    const { isMobile } = useWindowSize(); 
+    if(isMobile) newsAndEvents = [newsAndEvents[0]]
     console.log(Content().allStrapiNewsAndEvent.nodes)
   return (
     <section className={classNames(style.NewsEvents, '')}>
