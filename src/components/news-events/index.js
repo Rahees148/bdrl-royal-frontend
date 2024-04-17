@@ -1,15 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
 import * as style from './news-events.module.scss'; 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import TitleDescription from '../global/title-description';
 import { Content } from "../../graphql/news-and-events"
 import useWindowSize from '../../libs/hooks/useWindowSize';
 
 function NewsEvents() {   
-    let newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
-    const { isMobile } = useWindowSize(); 
-    if(isMobile) newsAndEvents = [newsAndEvents[0]]
-    console.log(Content().allStrapiNewsAndEvent.nodes)
+    const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
+
   return (
     <section className={classNames(style.NewsEvents, '')}>
         <div className={classNames(style.NewsEventsTop,'bg-primary')}>
@@ -25,22 +25,50 @@ function NewsEvents() {
         </div>
         <div className={classNames(style.NewsEventsBtm)}>
             <div className="pageWrapper">
-                <div className={classNames(style.NewsEventsCardwrap,'grid grid-cols-12 gap-6')}>
+                <div className={classNames(style.NewsEventsCardwrap)}>
+                <Swiper
+                    speed={1000}
+                    spaceBetween={32}
+                    slidesPerView={1}
+                    breakpoints={
+                    {
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 32,
+                        },
+                        980: {
+                            slidesPerView: 3,
+                            spaceBetween: 32,
+                        }
+                    }
+                    }
+                    effect='fade'
+                    pagination={{
+                        clickable: true ,
+                        el: '.newsSlider-pagination',
+                      }}
+                    modules={[ Pagination]}
+                    className="NewsSwiper"
+                    
+                >
                     {newsAndEvents && newsAndEvents.map((item, index)=>(
-                        <div key={index} className={classNames(style.NewsEventsCard,'col-span-4')}>
-                            <div className={classNames(style.NewsEventsCardImage)}>
-                                <img src={item.image?.url} alt={item.title}/>
+                        <SwiperSlide key={index}>
+                            <div  className={classNames(style.NewsEventsCard,'col-span-4')}>
+                                <div className={classNames(style.NewsEventsCardImage)}>
+                                    <img src={item.image?.url} alt={item.title}/>
+                                </div>
+                                <div className={classNames(style.NewsEventsCardTag, item.category === 'News' ? style.NewsTag : style.EventsTag)}>{item.category}</div>
+                                <h4>{item.title}</h4>
+                                <aside>{item.summary}</aside>
+                                <a className='moreBtn' href={'/news-and-events/'+item.slug} >{item.button_label}</a>
                             </div>
-                            <div className={classNames(style.NewsEventsCardTag, item.category === 'News' ? style.NewsTag : style.EventsTag)}>{item.category}</div>
-                            <h4>{item.title}</h4>
-                            <aside>{item.summary}</aside>
-                            <a className='moreBtn' href={'/news-and-events/'+item.slug} >{item.button_label}</a>
-                        </div>
+                        </SwiperSlide>
                     ))}
                     
-
+                </Swiper>
                     
                 </div>
+                <div className={classNames(style.pagination, 'newsSlider-pagination')}></div>
             </div>
         </div>
     </section>

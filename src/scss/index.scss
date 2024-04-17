@@ -25,11 +25,9 @@ img {
     max-width: 1210px;
     padding: 0 15px;
     @media #{$breakpoint-lg-tablet} {
-        max-width: 900px;
-    }
-    @media #{$breakpoint-mobile} {
         max-width: calc(100% - 30px);
     }
+  
 }
 
 body {
