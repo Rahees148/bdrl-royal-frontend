@@ -4,6 +4,24 @@ import * as style from './title-description.module.scss';
 
 function TitleDescription({ data }) {
     return (
+        <>
+        {data.variant === 'details' ?(
+            <>
+            <div
+            className={classNames(
+                style.SectionTitleDetails,
+                data.theme ? style[data.theme] : style['green'],
+            )}
+        >
+            <h3  dangerouslySetInnerHTML={{ __html: data.title }} />
+            <div className={style.spacer}></div>
+            <div className={classNames(style.description)}
+                dangerouslySetInnerHTML={{ __html: data.description }}
+            />
+        </div>
+        <div className={style.curve}></div>
+        </>
+        ):(
         <div
             className={classNames(
                 style.SectionTitle,
@@ -21,6 +39,9 @@ function TitleDescription({ data }) {
             <a className={classNames('moreBtn', data.theme)} href={data.button_link} >{data.button_label}</a>
         }
         </div>
+        )}
+        
+        </>
     
   )
 }

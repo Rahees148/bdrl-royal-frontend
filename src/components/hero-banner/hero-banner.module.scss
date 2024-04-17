@@ -22,8 +22,7 @@
         height: 100%;
         width: 100%;
         z-index: 2;
-        opacity: .45;
-        background: url(../../images/banner-overlay.svg) no-repeat 70% center rgba(0, 0, 0);
+        background: url(../../images/banner-overlay.svg) no-repeat 70% center rgba(0, 0, 0, .4);
 
     }
     .bannerOverlayText{

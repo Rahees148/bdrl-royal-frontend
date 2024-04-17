@@ -42,3 +42,76 @@
         }
     }
 }
+.SectionTitleDetails {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    padding: 120px 0 60px;
+
+    @media #{$breakpoint-mobile} {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 24px;
+        
+    }
+    h3 {
+        grid-column: span 4;
+        font-size: 52px;
+        line-height: 120%;
+        letter-spacing: -2%;
+        color: $color-primary;
+        @media #{$breakpoint-mobile} {
+            grid-column: span 12;
+        }
+    }
+
+    .spacer{
+        grid-column: span 1; 
+        @media #{$breakpoint-mobile} {
+            grid-column: span 12;
+        }
+    }
+
+    .description {
+        grid-column: span 7;
+        font-size: $font-base;
+        line-height: 170%;
+        color: $color-primary;
+        letter-spacing: 3%;
+
+        p{
+            margin-bottom: 20px;
+        }
+        @media #{$breakpoint-mobile} {
+            grid-column: span 12;
+        }
+    }
+    &.green {
+        h3 {
+            color: $color-primary;
+        }
+        .description {
+            color: $color-primary;
+        }
+    }
+    &.black {
+        h3 {
+            color: $color-black;
+        }
+        .description {
+            color: $color-bodyCopy;
+        }
+    }
+    &.white {
+        h3 {
+            color: $color-white;
+        }
+        .description {
+            color: $color-white;
+        }
+        .moreBtn{
+            color: $color-white;
+            border-color: $color-white;
+        }
+    }
+}
