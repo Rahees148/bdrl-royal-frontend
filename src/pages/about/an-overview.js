@@ -112,7 +112,7 @@ const AnOverviewPage = () => {
             </section>
             <section className='mt-[-155px]'>
                 <div className='pageWrapper'>
-                <Row breakpoints={[768, 990]} spacing={[16, 10]}>
+                    <Row breakpoints={[768, 990]} spacing={[16, 10]}>
                         <Column widths={[6, 4]} >
                             <ImageCard data={{
                                 title: 'Unrivaled Patient Experience',

@@ -35,7 +35,7 @@ function ExceptionalCare({data}) {
             }
         }
     },[targetRef])
-    
+
   return (
     <div className='overflow-hidden exceptionCareContainer'>
         <section className={style.exceptionalCare} style={{
@@ -86,13 +86,13 @@ function ExceptionalCare({data}) {
                         title: data.Title,
                         description: data.description,
                     }} />
-                    <ul className={classNames(style.listItem, 'text-white mt-[45px] sm:mt-[65px]')}>
+                    <ul className={classNames(style.listItem, 'text-white mt-[45px] md:mt-[65px]')}>
                         {data.card && data.card.map((item, index) => (
                              <li onClick={()=>{
                                 swiper.slideTo(index);
                              }} key={index} className={activeSlide === index ? style.active :''}>
-                                <span className='text-[9px] sm:text-sm uppercase'>{item.sub_title}</span>
-                                <h4 className='text-[16px] sm:text-[20px] font-semibold'>{item.Title}</h4>
+                                <span className='text-[9px] md:text-sm uppercase'>{item.sub_title}</span>
+                                <h4 className='text-[16px] md:text-[20px] font-semibold'>{item.Title}</h4>
                                 <div className={style.autoplayProgress}>
                                     <svg viewBox="0 0 48 48" className='circle' style={{
                                         '--progress': -progress
