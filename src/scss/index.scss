@@ -43,6 +43,15 @@ body {
         max-height: unset;
     }
 }
+.full-width-image{
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.circle-pattern-bg{
+    background: url(../images/bg-pattern3.png) repeat left center;
+}
 
 
 

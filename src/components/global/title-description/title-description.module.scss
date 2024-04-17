@@ -15,7 +15,7 @@
         font-size: $font-h4;
         line-height: 120%;
         margin-top: 15px;
-        font-weight: 400;
+        font-weight: 300;
         @media #{$breakpoint-mobile} {
             font-size: $font-h4-mob;
         }
@@ -53,7 +53,6 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 32px;
-    padding: 120px 0 60px;
 
     @media #{$breakpoint-mobile} {
         grid-template-columns: 1fr;
