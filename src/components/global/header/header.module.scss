@@ -1,4 +1,8 @@
+@import '../../../scss/breakpoints';
 .topHeader {
+    @media #{$breakpoint-mobile} {
+        display: none;
+    }
 }
 .header {
     background-color: #fff;
@@ -13,48 +17,53 @@
         .logo {
             max-width: 160px;
         }
-
-        .menuItem{
-            position: relative;
-            .hasChild{ 
-                    background: url(../../../images/icons/menu-arw.svg) no-repeat right center;
-                    padding-right: 18px;
-                
-            }
-            .dropdown{
+        .mainMenuSec{
+            @media #{$breakpoint-mobile} {
                 display: none;
-                position: absolute;
-                width: 265px;
-                left: 0;
-                top: 30px;
-                padding: 15px 20px;
-                background-color: #fff;
-                border-radius: 8px;
-                -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-                -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-                box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-
-                li{
-                    display: flex;
-                    gap: 10px;
-                    padding: 10px 0;
-                    border-top: 1px solid #BEBEBE;
-                    &:first-child{
-                        border-top:0 ;
-                    }
-                    i {
-                        width: 18px;  
-                        > img{
-                            width: 100%;
+            }
+            .menuItem{
+                position: relative;
+                .hasChild{ 
+                        background: url(../../../images/icons/menu-arw.svg) no-repeat right center;
+                        padding-right: 18px;
+                    
+                }
+                .dropdown{
+                    display: none;
+                    position: absolute;
+                    width: 265px;
+                    left: 0;
+                    top: 30px;
+                    padding: 15px 20px;
+                    background-color: #fff;
+                    border-radius: 8px;
+                    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+                    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+                    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+    
+                    li{
+                        display: flex;
+                        gap: 10px;
+                        padding: 10px 0;
+                        border-top: 1px solid #BEBEBE;
+                        &:first-child{
+                            border-top:0 ;
+                        }
+                        i {
+                            width: 18px;  
+                            > img{
+                                width: 100%;
+                            }
                         }
                     }
                 }
-            }
-            &:hover{
-                .dropdown{
-                    display: block;
+                &:hover{
+                    .dropdown{
+                        display: block;
+                    }
                 }
             }
         }
+        
     }
 }

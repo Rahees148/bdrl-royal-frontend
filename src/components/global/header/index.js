@@ -30,7 +30,7 @@ function Header({ data }) {
             <header className={classNames(s.header)}>
                 <div className="pageWrapper">
                     <img src={logo} alt="Bdrl" className={s.logo} />
-                    <ul className="flex gap-6 ml-auto">
+                    <ul className={classNames(s.mainMenuSec, 'flex gap-6 ml-auto')}>
                         {mainMenu.map((menu) => (
                             <li className={s.menuItem} key={menu.id}>
                                 {menu.dropdown ? (

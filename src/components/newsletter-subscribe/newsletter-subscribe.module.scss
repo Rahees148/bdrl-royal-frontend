@@ -1,38 +1,77 @@
 @import '../../scss/colors';
-.NewsletterSubscribeLeft {
-    color: $color-white;
-    font-size: 24px;
-}
-.NewsletterSubscribeRight{
-    .NewsletterSubscribeBtn{
-        background: #E4FF85;
-        color: $color-black;
-        border-radius: 42px;
-        min-width: 128px;
-        padding: 14px 28px;
-        margin-left: 8px;
-        border: 1px solid transparent;
-        &:hover{
-            background: transparent;
-            color: #E4FF85;
-            border-color: #E4FF85;
+@import '../../scss/breakpoints';
+.NewsletterSubscribeSec{
+    @media #{$breakpoint-mobile} {
+        padding-top: 45px;
+    }
+    .NewsletterSubscribeWrap{
+        @media #{$breakpoint-mobile} {
+                 display: flex;
+                 flex-direction: column;
+              }
+        .NewsletterSubscribeLeft {
+            color: $color-white;
+            font-size: 24px;
+            @media #{$breakpoint-mobile} {
+                text-align: center;
+                font-size: 16px;
+            }
+        }
+        .NewsletterSubscribeRight{
+            @media #{$breakpoint-mobile} {
+                margin-left: 0;
+                width: 100%;
+            }
+            .NewsletterSubscribeBtn{
+                background: #E4FF85;
+                color: $color-black;
+                border-radius: 42px;
+                min-width: 128px;
+                padding: 14px 28px;
+                margin-left: 8px;
+                border: 1px solid transparent;
+                &:hover{
+                    background: transparent;
+                    color: #E4FF85;
+                    border-color: #E4FF85;
+                }
+                @media #{$breakpoint-mobile} {
+                    padding: 7px 28px;
+                    font-size: 14px;
+                }
+            }
+            .NewsletterSubscribeInputSec{
+                position: relative;
+                @media #{$breakpoint-mobile} {
+                    width: 100%;
+                }
+                img{
+                    position: absolute;
+                    left: 24px;
+                    top: 15px;
+                    @media #{$breakpoint-mobile} {
+                        left: 18px;
+                        top: 7px;
+                    }
+                }
+                .NewsletterSubscribeInput{
+                    border-radius: 42px;
+                    border: 1px solid rgba(255, 255, 255, 0.32);
+                    background: transparent;
+                    font-size: 16px;
+                    padding: 14px 24px 14px 55px ;
+                    min-height: 52px;
+                    @media #{$breakpoint-mobile} {
+                        width: 100%;
+                        padding: 7px 24px 7px 45px ;
+                        min-height: auto;
+                        font-size: 14px;
+                    }
+                }
+            }
+            
         }
     }
-    .NewsletterSubscribeInputSec{
-        position: relative;
-        img{
-            position: absolute;
-            left: 24px;
-            top: 15px;
-        }
-        .NewsletterSubscribeInput{
-            border-radius: 42px;
-            border: 1px solid rgba(255, 255, 255, 0.32);
-            background: transparent;
-            font-size: 16px;
-            padding: 14px 24px 14px 55px ;
-            min-height: 52px;
-        }
-    }
-    
 }
+
+

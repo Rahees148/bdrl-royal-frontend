@@ -5,9 +5,9 @@ import NlUserIcon from '../../images/icons/user-icon.svg';
 
 function NewsletterSubscribe({ data }) {
     return (
-        <section className='bg-primary pt-24.5 mt-24.5'>
+        <section className={classNames(style.NewsletterSubscribeSec,'bg-primary pt-24.5 mt-24.5')}>
             <div className='pageWrapper'>
-                <div className='grid grid-cols-12 gap-8 justify-between items-center'>
+                <div className={classNames(style.NewsletterSubscribeWrap,'grid grid-cols-12 gap-8 justify-between items-center')}>
                     <div className={classNames(style.NewsletterSubscribeLeft,'col-span-4')}>Join our newsletter to keep up to date with us!</div>
                     <div className={classNames(style.NewsletterSubscribeRight,'col-span-8 flex ml-auto')}>
                         <div className={classNames(style.NewsletterSubscribeInputSec,'')}>
