@@ -74,12 +74,12 @@ function ExceptionalCare({data}) {
                         title: data.Title,
                         description: data.description,
                     }} />
-                    <ul className={classNames(style.listItem, 'text-white mt-[25px]')}>
+                    <ul className={classNames(style.listItem, 'text-white mt-[65px]')}>
                         {data.card && data.card.map((item, index) => (
                              <li onClick={()=>{
                                 swiper.slideTo(index);
                              }} key={index} className={activeSlide === index ? style.active :''}>
-                                <span className='text-sm'>{item.sub_title}</span>
+                                <span className='text-sm uppercase'>{item.sub_title}</span>
                                 <h4 className='text-[20px] font-semibold'>{item.Title}</h4>
                                 <div className={style.autoplayProgress}>
                                     <svg viewBox="0 0 48 48" className='circle' style={{
