@@ -1,8 +1,13 @@
 @import '../../scss/colors';
+@import '../../scss/breakpoints';
 .exceptionalCare{
     min-height: calc(100vh - 85px);
     display: flex;
     position: relative;
+    background-color: $color-primary;
+    @media #{$breakpoint-mobile} {
+        min-height: unset;
+     }
     >div{
         width: 50%;
 
@@ -60,15 +65,24 @@
             top: 0;
             left: 0;
             right: 0;
+            @media #{$breakpoint-mobile} {
+                position: static;
+             }
             >div{
                 width: 50%;
-                padding: 50px 0 80px 120px;
-
+                padding: 80px 0 80px 120px;
+                @media #{$breakpoint-mobile} {
+                    width:100%;
+                    padding: 46px 0 70px;
+                 }
                 .listItem{
                     list-style: none;
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+                    @media #{$breakpoint-mobile} {
+                        padding-left: 45px;
+                    }
 
                     li{
                         position: relative;
@@ -85,6 +99,11 @@
                             height: 25px;
                             border: 1px solid $color-white;
                             border-radius: 25px;
+                            @media #{$breakpoint-mobile} {
+                                width: 20px;
+                                height: 20px;
+                                left: -45px;
+                            }
                             
                         }
                         &::before{
@@ -95,6 +114,12 @@
                             width: 1px;
                             height: 50px;
                             border: 1px dashed #FFFFFF;
+                            @media #{$breakpoint-mobile} {
+                                left: -36px;
+                                top: 45px;
+                                height: 47px;
+
+                            }
                         }
                         &.active{
                             &::after{
@@ -102,6 +127,9 @@
                             }
                             .autoplayProgress{
                                 display: flex;
+                                @media #{$breakpoint-mobile} {
+                                    display: none;
+                                 }
                             }
                         }
                         &:last-child{
@@ -121,6 +149,9 @@
                             justify-content: center;
                             font-weight: bold;
                             color: $color-primary;
+                            @media #{$breakpoint-mobile} {
+                               display: none;
+                            }
                             svg {
                                 --progress: 0;
                                 position: absolute;

@@ -1,0 +1,45 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+
+.innerBannerWrapper{
+    width: 100%;
+    position: relative;
+    > img{
+        width: 100%;
+    }
+    .bannerText{
+        position: absolute;
+        top: 0;
+        left: 0; right: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .bannerTextWrapper{
+            position: relative;
+            h1{
+                font-size: $font-h1;
+                color: $color-primary;
+                font-weight: 300;
+                @media #{$breakpoint-mobile} {
+                    font-size: $font-h1-mob;
+                 }
+            }
+            p{
+                font-size: $font-base;
+                color: $color-primary;
+
+            }
+            >img{
+                position: absolute;
+                right: -200px;
+                top: -60px;
+                max-width: 500px;
+                @media #{$breakpoint-mobile} {
+                    max-width: 250px;
+                    top: 0;
+                    right: -150px;
+                 }
+            }
+        }
+    }
+}

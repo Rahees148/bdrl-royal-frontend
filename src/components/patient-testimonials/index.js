@@ -11,7 +11,6 @@ function PatientTestimonials({titleDescription}) {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null); 
   const testimonials = Content().allStrapiTestimonial.nodes;
-  console.log('testimonials', testimonials)
   return (
     <section className={classNames(style.PatientTestimonials, 'py-20')}>
     <div className="pageWrapper ">

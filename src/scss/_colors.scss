@@ -1,3 +1,4 @@
+@import './breakpoints';
 $color-primary: #023321;
 $color-secondary: #2a5d4a;
 $color-bdrlGray: #f5f5f7;
@@ -7,3 +8,19 @@ $color-bodyCopy: #474747;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-brook-green: #B2DDCE;
+
+
+// Font Size
+$font-base: 16px;
+$font-h1: 62px;
+$font-h2: 52px;
+$font-h3: 40px;
+$font-h4: 30px;
+$font-h5: 24px;
+
+// mobile font size
+$font-h1-mob: 40px;
+$font-h2-mob: 24px;
+$font-h3-mob: 18px;
+$font-h4-mob: 12px;
+$font-h5-mob: 14px;

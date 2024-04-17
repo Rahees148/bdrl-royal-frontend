@@ -12,7 +12,7 @@ function Footer({variant}) {
     return (
         <>
             <NewsletterSubscribe/>
-            <footer className="bg-primary pt-24.5 ">
+            <footer className={classNames(s.FooterSec, 'bg-primary pt-24.5')}>
                 <div className="pageWrapper ">
                     <div className={classNames(s.FooterTopSec,'py-16 grid grid-cols-12 gap-8 ')}>
                     <div className={classNames(s.FooterLeft,'col-span-4 ')}>
