@@ -7,6 +7,7 @@
     font-size: 14px;
     @media #{$breakpoint-mobile} {
         font-size: 12px;
+       
     }
 
 }
@@ -16,6 +17,10 @@
     font-size: 17px;
     padding: 10px 22px;
     display: inline-block;
+    @media #{$breakpoint-mobile} {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
     &:hover{
         background: $color-primary;
         border-color: $color-primary;

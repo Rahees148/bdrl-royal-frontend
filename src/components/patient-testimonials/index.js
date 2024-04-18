@@ -61,7 +61,7 @@ function PatientTestimonials({titleDescription}) {
                       <div className={classNames(style.PatientTestimonialsCustomerSec)}>
                           <div className={classNames(style.PatientTestimonialsCustomer)}>{testimonial.author_name}</div>
                           <div className={classNames(style.PatientTestimonialsCustomerDec)}>{testimonial.author_description}</div>
-                          <div><b>Treated by: </b>{testimonial.treated_by[0]?.Name}</div>
+                          <div className={classNames(style.PatientTestimonialsCustomerDecNme)}><b>Treated by: </b>{testimonial.treated_by[0]?.Name}</div>
                       </div>
                   </div>
                   <div className={classNames( style.TestimonialsCardImage,'')}>

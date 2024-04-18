@@ -18,6 +18,7 @@
         font-weight: 300;
         @media #{$breakpoint-mobile} {
             font-size: $font-h4-mob;
+            margin-top: 8px;
         }
     }
     &.green {

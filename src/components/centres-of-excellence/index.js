@@ -9,7 +9,7 @@ function CentresOfExcellence({data}) {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   return (
-    <section className={classNames(style.CentresOfExcellence, 'py-20')}>
+    <section className={classNames(style.CentresOfExcellence, 'sm:py-20 py-8')}>
     <div className="pageWrapper CentresOfExcellence">
       <TitleDescription data={{
         theme:"green",
@@ -37,8 +37,8 @@ function CentresOfExcellence({data}) {
         {data.card && data.card.map((card, index) =>(
           <SwiperSlide key={index} virtualIndex={index}>
           <div className={classNames(style.COEcard, 'COEcard')}>
-              <div className={classNames(style.COEcardtop,'bg-bdrlGray p-11 pb-0 relative')}>
-              <div className='text-bodyCopy font-normal'>{card.sub_title}</div>
+              <div className={classNames(style.COEcardtop,'bg-bdrlGray p-6 sm:p-11 pb-0 relative')}>
+              <div className={classNames(style.COEcardSubTitle,'text-bodyCopy font-normal')}>{card.sub_title}</div>
               <h4 className='text-secondary'>{card.Title}</h4>
               <div className={classNames(style.COEcardImage)}>
                   <img src={card.image?.url} alt='Restoring mobility, Renewing lives' />
