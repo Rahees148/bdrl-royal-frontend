@@ -22,7 +22,8 @@
         max-width: 366px;
         @media #{$breakpoint-mobile} {
             padding: 10px 25px 10px 15px;
-            font-size: 10px;
+            font-size: 14px;
+            font-weight: 600;
         }
           &:before {
             content: '';
@@ -65,10 +66,9 @@
         }
         @media #{$breakpoint-mobile} {
             padding: 12px;
-            font-size: 10px;
-            > img{
-                max-width: 12px;
-            }
+            font-size: 14px;
+            font-weight: 600;
+            justify-content: center;
         }
     }
     

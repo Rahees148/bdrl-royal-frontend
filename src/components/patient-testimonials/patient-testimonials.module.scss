@@ -23,6 +23,7 @@
                 padding:150px 125px 65px 65px;
                 position: relative;
                 @media #{$breakpoint-mobile} {
+                    grid-column: 1 / 7; 
                     padding:150px 20px 20px 20px;
                     border-radius: 10px;
                 }
@@ -92,6 +93,13 @@
                 margin-top: 50px;
                 @media #{$breakpoint-mobile} {
                     border-radius: 10px;
+                    grid-column: 3 / 7; 
+                    max-height: 136px;
+                    overflow: hidden;
+                    margin-top: -35px;
+                    > img{
+                        width: 100%;
+                    }
                 }
             }
         }

@@ -1,8 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as style from './title-description.module.scss';
+import useWindowSize from '../../../libs/hooks/useWindowSize'
 
 function TitleDescription({ data }) {
+    const {isMobile} = useWindowSize();
     return (
         <>
             {data.variant === 'details' ? (
@@ -13,7 +15,7 @@ function TitleDescription({ data }) {
                     )}
                 >
                     <h3 dangerouslySetInnerHTML={{ __html: data.title }} />
-                    <div className={style.spacer}></div>
+                    {!isMobile && <div className={style.spacer}></div>}
                     <div
                         className={classNames(style.description)}
                         dangerouslySetInnerHTML={{ __html: data.description }}

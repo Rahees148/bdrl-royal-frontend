@@ -50,7 +50,7 @@ const AnOverviewPage = () => {
                             description:pageData.highlights?.description
                         }}
                     />
-                    <div className='h-[60px]' />
+                    <div className='h-[30px] md:h-[60px]' />
                     <Row breakpoints={[768]} spacing={[16, 10]}>
                         {pageData.highlight_card && pageData.highlight_card.map((card, index) => (
                             <Column widths={[6]} key={index} >

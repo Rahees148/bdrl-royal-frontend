@@ -1,12 +1,14 @@
 import React, {useState, useRef} from 'react'
 import classNames from 'classnames'
 import * as style from './book-an-appointment.module.scss';
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 import CalendarIcon from '../../images/icons/CalendarIcon.svg';
 import BookBtnIcon from '../../images/icons/lens-btn-icon.svg';
 import useClickOutside from '../../libs/hooks/useClickOutside';
 
 function BookAnAppointment() {
+  const {isMobile} = useWindowSize();
   const selectRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   useClickOutside(
@@ -21,7 +23,7 @@ function BookAnAppointment() {
 
   return (
     <div className={classNames(style.BookAnAppointment, 'py-4 px-8 rounded-10 bg-white flex items-center gap-4')}>
-      <img src={CalendarIcon} alt='Book An Appointment' />
+      {!isMobile && <img src={CalendarIcon} alt='Book An Appointment' /> }
       <div ref={selectRef} className={classNames( style.SpecialitySelectBox, 'bg-gray-100 p-6 rounded-5')} onClick={handleDropDownClick}>Select Speciality
       {isOpen &&
         <div className={classNames( style.SpecialitySelectBoxOpen, 'bg-gray-100 p-6 pt-0 rounded-b-5')}>
@@ -41,7 +43,7 @@ function BookAnAppointment() {
       </div>
       
       <button className={classNames( style.BookAnAppointmentBtn, 'p-6 rounded-5 text-white flex')}>
-        <img src={BookBtnIcon} alt='Book An Appointment' className='mr-4'/>
+      {!isMobile &&<img src={BookBtnIcon} alt='Book An Appointment' className='mr-4'/>}
         Book Appointment</button>
     </div>
   )
