@@ -1,10 +1,17 @@
 @import '../../scss/colors';
+@import '../../scss/breakpoints';
 .PatientTestimonials{
     background: url(../../images/bg-pattern2.png) center $color-bdrlGray;
     padding-bottom: 320px;
+    @media #{$breakpoint-mobile} {
+        padding: 44px 0; 
+    }
     .TestimonialscardWrap{
         position: relative;
         padding-top: 80px;
+        @media #{$breakpoint-mobile} {
+            padding-top: 44px;
+        }
         .TestimonialsCard{
             width: 100%;
             max-width: 765px;
@@ -15,10 +22,17 @@
                 grid-row: 1;
                 padding:150px 125px 65px 65px;
                 position: relative;
+                @media #{$breakpoint-mobile} {
+                    padding:150px 20px 20px 20px;
+                    border-radius: 10px;
+                }
 
                 h4{
                     font-size: 24px;
                     line-height: 120%;
+                    @media #{$breakpoint-mobile} {
+                        font-size: $font-base;
+                    }
                 }
 
                 aside{
@@ -26,21 +40,46 @@
                     color: $color-bodyCopy;
                     font-weight: normal;
                     margin: 10px 0 25px 0;
+                    @media #{$breakpoint-mobile} {
+                        font-size: $font-h4-mob;
+                    }
                 }
                 .TestimonialsCardIcon{
                     position: absolute;
                     left: 35px;
                     top: 35px;
+                    @media #{$breakpoint-mobile} {
+                        left: 20px;
+                        top: 20px;
+                    }
+                    img{
+                        @media #{$breakpoint-mobile} {
+                            width: 59px;
+                            height: auto;
+                        }
+                    }
                 }
                 .PatientTestimonialsCustomerSec{
 
                     .PatientTestimonialsCustomer {
                         font-size: 20px;
                         margin-top: 20px;
+                        @media #{$breakpoint-mobile} {
+                            font-size: $font-h4-mob;
+                        }
                     }
                     .PatientTestimonialsCustomerDec{
                         color: $color-bodyCopy;
                         margin: 10px 0;
+                        @media #{$breakpoint-mobile} {
+                            font-size:10px;
+                            margin: 3px 0;
+                        }
+                    }
+                    .PatientTestimonialsCustomerDecNme {
+                        @media #{$breakpoint-mobile} {
+                            font-size:10px;
+                        }
                     }
                 }
                 
@@ -51,6 +90,9 @@
                 grid-row: 1;
                 z-index: 1;
                 margin-top: 50px;
+                @media #{$breakpoint-mobile} {
+                    border-radius: 10px;
+                }
             }
         }
         .sliderNavigation{
@@ -64,6 +106,9 @@
             flex-direction: column;
             justify-content: flex-end;
             align-items: flex-end;
+            @media #{$breakpoint-mobile} {
+                margin-top: 10px;
+            }
             .swiperButton{
                 text-indent: -9999px;
                 background-color: rgb(57, 57, 57);

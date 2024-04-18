@@ -1,33 +1,62 @@
 @import '../../scss/colors';
+@import '../../scss/breakpoints';
 .SlidingCardWrap{
     position: relative;
-    .SlidingCardDescription{
-        grid-column: 1 / 8; 
-        grid-row: 1;
-        background: url(../../images/bg-pattern1.png) #fff;
-       padding: 50px 138px 50px 45px;
-
-       .SlidingCardbtn{
-        display: inline-block;
-        margin-top: 50px;
-        font-size: 18px;
-        font-weight: 400;
-       }
-       .SlidingCardDec {
-        font-size: 18px;
-        font-weight: 400;
-        margin-top: 25px;
-        color: $color-bodyCopy;
-       }  
+    
+    .SlidingCardWrapSec{
+        @media #{$breakpoint-mobile} {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0;
+        }
+        .SlidingCardDescription{
+            grid-column: 1 / 8; 
+            grid-row: 1;
+            background: url(../../images/bg-pattern1.png) #fff;
+            padding: 50px 138px 50px 45px;
+            @media #{$breakpoint-mobile} {
+                padding: 60px 30px 30px 30px;
+                border-radius: 10px;
+            }
+    
+           .SlidingCardbtn{
+            display: inline-block;
+            margin-top: 50px;
+            font-size: 18px;
+            font-weight: 400;
+            @media #{$breakpoint-mobile} {
+                margin-top: 20px;
+                font-size: 12px;
+            }
+           }
+           .SlidingCardDec {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 25px;
+            color: $color-bodyCopy;
+            @media #{$breakpoint-mobile} {
+                margin-top: 15px;
+                font-size: 12px;
+            }
+           } 
+    }
+     
     }
     .SlidingCardImage{
         grid-column: 7 / 13; 
         grid-row: 1;
         z-index: 1;
         margin: 25px 0;
+        @media #{$breakpoint-mobile} {
+            margin: 0 auto -40px auto;
+            max-width: 80%;
+        }
         img{
             width: 100%;
             height: auto; 
+            @media #{$breakpoint-mobile} {
+                border-radius: 10px;
+            }
         }
     }
     .sliderNavigation{
@@ -43,6 +72,10 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        @media #{$breakpoint-mobile} {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
         .swiperButton{
             text-indent: -9999px;
             background-color: rgb(57, 57, 57);

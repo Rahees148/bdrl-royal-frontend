@@ -1,4 +1,5 @@
 @import '../../scss/colors';
+@import '../../scss/breakpoints';
 .BgGradientGolden{
     background: rgb(135,110,46);
     background:linear-gradient(180deg, rgba(135,110,46,1) 0%, rgba(255,213,157,1) 100%);
@@ -13,41 +14,77 @@
         top: 0;
         background-image: url(../../images/pattern-circle.png);
     }
-    .TextImageDec {
-        .TextImageTagline{
-            font-size: 26px;
-            line-height: 120%;
-            font-weight: normal;
-            margin-bottom: 30px;
-            img{
-                margin-right: 15px;
+    .TextImageWrap{
+        @media #{$breakpoint-mobile} {
+            flex-direction: column;
+        }
+        .TextImageDec {
+            @media #{$breakpoint-mobile} {
+                width: calc(100% + 30px);
+                margin-left: -15px;
+                margin-right: -15px;
+                padding: 30px 15px 10px;
             }
-        }
-        h4{
-            font-size: 52px;
-            line-height: 120%;
-            color: $color-primary;
-            margin-bottom: 50px;
-        }
-        aside{
-            font-size: 24px;
-            line-height: 120%;
-            font-weight: normal;
-            margin-bottom: 30px;
-            p{
+            .TextImageTagline{
+                font-size: 26px;
+                line-height: 120%;
                 font-weight: normal;
+                margin-bottom: 30px;
+                @media #{$breakpoint-mobile} {
+                    font-size: $font-base;
+                }
+                img{
+                    margin-right: 15px;
+                    @media #{$breakpoint-mobile} {
+                        max-width: 36px;
+                        height: auto;
+                        margin-right: 10px;
+                    }
+                }
             }
-        }
-        .TextImagebtn{
-        display: inline-block; 
-        font-size: 18px;
-        font-weight: 400;
+            h2{
+                font-size: $font-h2;
+                line-height: 120%;
+                color: $color-primary;
+                margin-bottom: 50px;
+                @media #{$breakpoint-mobile} {
+                    font-size: $font-h2-mob;
+                    margin-bottom: 30px;
+                }
+            }
+            aside{
+                font-size: 24px;
+                line-height: 120%;
+                font-weight: normal;
+                margin-bottom: 30px;
+                @media #{$breakpoint-mobile} {
+                    margin-bottom: 15px;
+                }
+                p{
+                    font-weight: normal;
+                    @media #{$breakpoint-mobile} {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .TextImagebtn{
+            display: inline-block; 
+            font-size: 18px;
+            font-weight: 400;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h4-mob;
+            }
+            }
         }
     }
+
     .ClipContainer{
         position: relative;
         display: inline-flex;
         align-items: flex-end;
+        @media #{$breakpoint-mobile} {
+            width: 100%;
+        }
         &:before{
             content: '';
             width: 100%;
@@ -59,6 +96,9 @@
             pointer-events: none;
             background: url(../../images/text-image-doctor-bg.png) no-repeat left top;
             background-size: cover;
+            @media #{$breakpoint-mobile} {
+                left: 0;
+            }
         }
         .Clip{
             width: 60%;
@@ -69,6 +109,13 @@
             left: 0;
             top: 0;
             z-index: 1;
+            @media #{$breakpoint-mobile} {
+                width: auto;
+                right: -15px;
+                left: -15px;
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 24% 50%, 0 100%);
+                -webkit-clip-path:polygon(0 0, 100% 0, 100% 50%, 24% 50%, 0 100%);
+            }
         }
         img{
             position: relative;

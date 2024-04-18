@@ -33,7 +33,7 @@ function SlidingCard({data}) {
                 <SwiperSlide key={index}>
                   
             <div className='pageWrapper'>
-                  <div className={classNames('grid grid-cols-12 gap-8')}>
+                  <div className={classNames(style.SlidingCardWrapSec,'grid grid-cols-12 gap-8')}>
                     <div className={classNames( style.SlidingCardDescription,'rounded-3xl')}>
                             <TitleDescription data={{
                               theme:"black",
