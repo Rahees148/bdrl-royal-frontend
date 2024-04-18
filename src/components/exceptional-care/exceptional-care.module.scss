@@ -89,6 +89,9 @@
                         cursor: pointer;
                         h4{
                             background: url(../../images/icons/right-arrow-circle.svg) no-repeat right center;
+                            @media #{$breakpoint-mobile} {
+                                background-size: 16px;
+                            }
                         }
                         &::after{
                             content: '';

@@ -25,6 +25,7 @@ export const Content = () => {
                 treated_by {
                   Name
                 }
+                locale
               }
         }
     }

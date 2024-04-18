@@ -3,7 +3,6 @@ import * as React from 'react';
 import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import { Row, Column} from '@react-tiny-grid/core';
-import { Content } from '../../graphql/home';
 import InnerBanner from '../../components/inner-banner';
 import TitleDescription from '../../components/global/title-description';
 import HSPTLImage from '../../images/about-imag.jpeg'
@@ -11,87 +10,56 @@ import icon1 from '../../images/icons/about-1.png'
 import cardImage from '../../images/about-imag-card.png'
 import IconCard from '../../components/global/icon-card';
 import ImageCard from '../../components/global/image-card';
+
+import { Content } from '../../graphql/about/an-overview';
+
+
 const AnOverviewPage = () => {
-    const pageData = Content().allStrapiHome.nodes[0];
+    const pageData = Content().allStrapiAboutAnOverview.nodes[0];
     console.log(pageData);
     return (
         <Layout pageTitle="Home Page" variant={'home'}>
             <Fade>
-                <InnerBanner />
+                <InnerBanner data={
+                    {
+                        title:pageData.banner?.Title,
+                        description:pageData.banner?.Description?.data?.childMarkdownRemark?.html,
+                        desktopMedia: pageData.banner?.desktop_media?.url,
+                        mobileMedia: pageData.banner?.mobile_media?.url,
+                    }
+                } />
             </Fade>
             <section className='pageWrapper'>
                 <div className='pt-[120px] pb-[60px]'>
                     <TitleDescription data={{
                         variant: 'details',
-                        title: 'About <br/> Badr Al Sama <br/> Royal Hospital',
-                        description: `<p>Badr Al Samaa Royal Hospital, a flagship premium hospital of the largest private healthcare provider of Oman - Badr Al Samaa Group of Hospitals, is a premium hospital where healthcare experience will transcend meagre treatment to become an unparalleled experience of premium services, advanced medical care, and an exquisite healing environment. Nestled in the heart of Muscat, this hospital will redefine premium healthcare by setting new standards of excellence. </p>
-                        <p>Since long Badr Al Samaa Group was being demand for a premium category hospital with luxury ambience by the people of Oman. Their vow is fulfilled now. </p>
-                        <p>Exceptional Medical Expertise will be offered by extraordinary doctors of all specialties. We have the best consultants and specialists on board who are the leaders of their respective fields and thereby making many specialties as the Centre of Excellence. </p>`,
+                        title: pageData.title_description?.title,
+                        description: pageData.title_description.description,
                     }} />
                 </div>
             </section>
             <section className='full-width-image' style={{
-                backgroundImage:`url('${HSPTLImage}')`
+                backgroundImage:`url('${pageData.media?.desktop_media?.url}')`
             }} />
             <section className='circle-pattern-bg py-[90px]'>
                 <div className='pageWrapper'>
                     <TitleDescription
                         data={{
                             theme: 'green',
-                            title:'Highlights',
-                            description:'Key Highlights and Strengths'
+                            title: pageData.highlights?.title,
+                            description:pageData.highlights?.description
                         }}
                     />
-                    <div className='h-[60px]' />
+                    <div className='h-[30px] md:h-[60px]' />
                     <Row breakpoints={[768]} spacing={[16, 10]}>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
-                        <Column widths={[6]} >
-                            <IconCard data={{
-                                title: 'Band-A and Premium healthcare facility at the heart of Muscat',
-                                icon:icon1
-                            }} />
-                        </Column>
+                        {pageData.highlight_card && pageData.highlight_card.map((card, index) => (
+                            <Column widths={[6]} key={index} >
+                                <IconCard data={{
+                                    title: card.title,
+                                    icon:card.icon.url
+                                }} />
+                            </Column>
+                        ))}
                     </Row>
                 </div>
             </section>
@@ -102,10 +70,8 @@ const AnOverviewPage = () => {
                         data={{
                             variant: 'details',
                             theme: 'white',
-                            title:`Why <br/>
-                            Badr Al Sama <br/>
-                            Royal Hospital`,
-                            description:'<p>With the need of making exceptional healthcare services meet unparalleled comfort and luxury, Badr Al Samaa Royal Hospital was born. We are here to set a benchmark for excellence in medical services, patient experience, and luxurious amenities. Our commitment to delivering world-class healthcare in a sophisticated and welcoming environment is what sets us apart.</p>'
+                            title:pageData.why_us_title_description?.title,
+                            description:pageData.why_us_title_description?.description
                         }}
                     />
                 </div>
@@ -113,55 +79,16 @@ const AnOverviewPage = () => {
             <section className='mt-[-155px]'>
                 <div className='pageWrapper'>
                     <Row breakpoints={[768, 990]} spacing={[16, 10]}>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
-                        <Column widths={[6, 4]} >
-                            <ImageCard data={{
-                                title: 'Unrivaled Patient Experience',
-                                image:cardImage,
-                                description:'Experience heart-touching empathy & personalized Care '
-                            }} />
-                        </Column>
+                        {pageData.why_us_cards && pageData.why_us_cards.map((imageCard, indexs)=>(
+                            <Column widths={[6, 4]} key={indexs} >
+                                <ImageCard data={{
+                                    title: imageCard.title,
+                                    image:imageCard.image.url,
+                                    description:imageCard.description
+                                }} />
+                            </Column>
+                        ))}
+                        
                     </Row>
                 </div>
             </section>

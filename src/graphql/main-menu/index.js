@@ -10,11 +10,11 @@ export const Content = () => {
                 id
                 title
                 dropdown {
-                url
-                title
-                icon {
                     url
-                }
+                    title
+                    icon {
+                        url
+                    }
                 }
             }
             ... on STRAPI__COMPONENT_MENU_MENU_ITEM {
@@ -23,6 +23,7 @@ export const Content = () => {
                 title
             }
             }
+            locale
         }
     }
     }

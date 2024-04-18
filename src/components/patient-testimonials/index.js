@@ -51,7 +51,7 @@ function PatientTestimonials({titleDescription}) {
             {testimonials && testimonials.map( (testimonial, index) => (
               <SwiperSlide key={index}>
                 <div className={classNames(style.TestimonialsCard,'grid grid-cols-6 gap-8')}>
-                  <div className={classNames(style.TestimonialsCardDec,'rounded-3xl bg-white')}>
+                  <div className={classNames(style.TestimonialsCardDec,'rounded-3xl bg-white order-[2]')}>
                       <div className={classNames(style.TestimonialsCardIcon)}>
                           <img src={TestimonialsIcon} alt='Testimonials'/>
                       </div>
@@ -61,11 +61,11 @@ function PatientTestimonials({titleDescription}) {
                       <div className={classNames(style.PatientTestimonialsCustomerSec)}>
                           <div className={classNames(style.PatientTestimonialsCustomer)}>{testimonial.author_name}</div>
                           <div className={classNames(style.PatientTestimonialsCustomerDec)}>{testimonial.author_description}</div>
-                          <div><b>Treated by: </b>{testimonial.treated_by[0]?.Name}</div>
+                          <div className={classNames(style.PatientTestimonialsCustomerDecNme)}><b>Treated by: </b>{testimonial.treated_by[0]?.Name}</div>
                       </div>
                   </div>
-                  <div className={classNames( style.TestimonialsCardImage,'')}>
-                      <img src={testimonial.image.url} alt='Testimonials Pic' className='rounded-3xl'/>
+                  <div className={classNames( style.TestimonialsCardImage)}>
+                      <img src={testimonial.image.url} alt='Testimonials Pic' className='rounded-[10px] md:rounded-3xl'/>
                   </div> 
                 </div>
             </SwiperSlide>

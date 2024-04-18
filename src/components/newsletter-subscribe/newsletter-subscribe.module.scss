@@ -3,6 +3,7 @@
 .NewsletterSubscribeSec{
     @media #{$breakpoint-mobile} {
         padding-top: 45px;
+        margin-top: 40px;
     }
     .NewsletterSubscribeWrap{
         @media #{$breakpoint-mobile} {

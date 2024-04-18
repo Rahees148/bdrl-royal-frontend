@@ -57,7 +57,7 @@
     .FooterBtmSec {
         border-top: 1px solid rgba(255, 255, 255, 0.32);
         @media #{$breakpoint-mobile} { 
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: center;
             padding: 35px 0;
         }
@@ -69,6 +69,7 @@
         .FooterBtmRight {
             @media #{$breakpoint-mobile} {
                 justify-content: center;
+                margin-bottom: 20px;
             }
             img{
                 margin-left: 15px;

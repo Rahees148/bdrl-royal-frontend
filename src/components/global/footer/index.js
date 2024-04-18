@@ -7,8 +7,11 @@ import XIcon from '.././../../images/icons/x-icon.svg';
 import InstaIcon from '.././../../images/icons/insta-icon.svg';
 import YoutubeIcon from '.././../../images/icons/youtube-icon.svg';
 import NewsletterSubscribe from '../../newsletter-subscribe';
-
+import Accordion from '../accordion';
+import useWindowSize from '../../../libs/hooks/useWindowSize';
 function Footer({variant}) {
+    const {isMobile} = useWindowSize()
+    
     return (
         <>
             <NewsletterSubscribe/>
@@ -25,6 +28,19 @@ function Footer({variant}) {
                     </div>
                     <div className={classNames(s.FooterRight,'col-span-8 flex justify-between')}>
                         <div className={classNames(s.FooterLinkSec)}>
+                        {isMobile ?(
+                                <Accordion title={'Quick Links'} item={`
+                                    <ul>
+                                        <li><a href="#">Doctors</a></li>
+                                        <li><a href="#">Book an Appointment</a></li>
+                                        <li><a href="#">Top Procedures</a></li>
+                                        <li><a href="#">Technologies</a></li>
+                                        <li><a href="#">Health & Wellness</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                `} />
+                            ):(
+                                <>
                             <h4>Quick Links</h4>
                             <ul>
                                 <li><a href="#">Doctors</a></li>
@@ -34,18 +50,49 @@ function Footer({variant}) {
                                 <li><a href="#">Health & Wellness</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
+                            </>
+                            )}
                         </div>
                         <div className={classNames(s.FooterLinkSec)}>
-                            <h4>About</h4>
+                            {isMobile ?(
+                                <Accordion title={'About'} item={`
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Rich Legacy</a></li>
+                                    <li><a href="#">Leadership</a></li>
+                                    <li><a href="#">Quality Policy</a></li>
+                                    <li><a href="#">Vision & Mission</a></li> 
+                                </ul>
+                            `} />
+                            ):(
+                                <>
+                                <h4>About</h4>
                             <ul>
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Rich Legacy</a></li>
                                 <li><a href="#">Leadership</a></li>
                                 <li><a href="#">Quality Policy</a></li>
                                 <li><a href="#">Vision & Mission</a></li> 
-                            </ul>
+                            </ul></>
+                            )}
+                            
+                            
                         </div>
                         <div className={classNames(s.FooterLinkSec)}>
+                        {isMobile ?(
+                                <Accordion title={'Centres Of Excellence'} item={`
+                                <ul>
+                                    <li><a href="#">Orthopaedics & Joint Replacements</a></li>
+                                    <li><a href="#">Urology & Andrology</a></li>
+                                    <li><a href="#">Gastroenterology</a></li>
+                                    <li><a href="#">Mother & Child</a></li>
+                                    <li><a href="#">General & Laparoscopic Surgery</a></li>
+                                    <li><a href="#">Emergency & Critical Care</a></li>
+                                    <li><a href="#">ENT</a></li>
+                                </ul>
+                                `} />
+                            ):(
+                                <>
                             <h4>Centres Of Excellence</h4>
                             <ul>
                                 <li><a href="#">Orthopaedics & Joint Replacements</a></li>
@@ -56,8 +103,21 @@ function Footer({variant}) {
                                 <li><a href="#">Emergency & Critical Care</a></li>
                                 <li><a href="#">ENT</a></li>
                             </ul>
+                            </>)}
                         </div>
                         <div className={classNames(s.FooterLinkSec)}>
+                        {isMobile ?(
+                                <Accordion title={'Others'} item={`
+                                <ul>
+                                    <li><a href="#">Specialities</a></li>
+                                    <li><a href="#">OPD Schedule</a></li>
+                                    <li><a href="#">Feedback</a></li>
+                                    <li><a href="#">Insurance</a></li>
+                                    <li><a href="#">Careers</a></li> 
+                                </ul>
+                                `} />
+                            ):(
+                                <>
                             <h4>Others</h4>
                             <ul>
                                 <li><a href="#">Specialities</a></li>
@@ -66,6 +126,8 @@ function Footer({variant}) {
                                 <li><a href="#">Insurance</a></li>
                                 <li><a href="#">Careers</a></li> 
                             </ul>
+                            </>
+                            )}
                         </div>
                     </div>
                     </div>

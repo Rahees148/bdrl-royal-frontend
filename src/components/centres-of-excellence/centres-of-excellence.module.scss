@@ -1,4 +1,5 @@
 @import '../../scss/colors';
+@import '../../scss/breakpoints';
 
 .CentresOfExcellence{ 
     position: relative;
@@ -25,6 +26,9 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        @media #{$breakpoint-mobile} {
+            position: relative;
+        }
         .swiperButton{
             text-indent: -9999px;
             background-color: rgb(57, 57, 57);
@@ -52,11 +56,19 @@
     max-width: 415px;
     margin: 0 auto;
     position: relative;
+    @media #{$breakpoint-mobile} {
+        padding-top: 35px;
+        max-width: 251px;
+        padding-top: 25px;
+    }
 }
 .COEcard{
     width: 100%;
     max-width: 415px;
     transition: all 0.5s ease;
+    @media #{$breakpoint-mobile} { 
+        max-width: 251px; 
+    }
     .COEcardImage{
         img{
             filter: grayscale(100%);
@@ -64,9 +76,18 @@
     }
     .COEcardtop{ 
         h4 {
-            font-size: 30px;
-            line-height: 36px;
+            font-size: $font-h4;
+            line-height: 120%;
             margin-top: 15px ;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h3-mob;
+                margin-top: 6px;
+            }
+        }
+        .COEcardSubTitle {
+            @media #{$breakpoint-mobile} {
+                font-size: 10px; 
+            }
         }
     } 
     .COEcardContent {
@@ -84,6 +105,17 @@
         position: absolute;
         right: 25px;
         bottom: 25px;
+        padding: 8px;
+        @media #{$breakpoint-mobile} {
+            width: 40px;
+            height: 40px;
+            right: 12px;
+            bottom: 12px;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
 :global(.COESwiper .swiper-slide) {
