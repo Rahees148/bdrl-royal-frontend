@@ -4,7 +4,7 @@
 .innerBannerWrapper{
     width: 100%;
     position: relative;
-    > img{
+    .img{
         width: 100%;
     }
     .bannerText{
@@ -24,9 +24,12 @@
                     font-size: $font-h1-mob;
                  }
             }
-            p{
+            .subhead{
                 font-size: $font-base;
                 color: $color-primary;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-medium;
+                }
 
             }
             >img{

@@ -18,15 +18,26 @@ const strapiConfig = {
           }
         }
       }
-    }
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
   } },
   { singularName: "testimonial", queryParams:{
     populate:{
+      localizations: "*",
       author_photo:"*",
       image:"*",
       treated_by:"*",
       seo: "*",
-    }
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
   } },
   { singularName: "news-and-event", queryParams:{
     populate:{
@@ -34,60 +45,121 @@ const strapiConfig = {
       image:"*",
       treated_by:"*",
       seo: "*",
-    }
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
   } },
 ],
-singleTypes:[{ singularName: "home", queryParams:{
-  populate:{
-    banner:{
+singleTypes:[
+  { 
+    singularName: "home", 
+    queryParams:{
       populate:{
-        desktop_media:"*",
-        mobile_media:"*"
-      }
-    },
-    centres_excellence:{
-      populate:{
-        card:{
+        banner:{
+          populate:{
+            desktop_media:"*",
+            mobile_media:"*"
+          }
+        },
+        centres_excellence:{
+          populate:{
+            card:{
+              populate:{
+                icon:"*",
+                image:"*"
+              }
+            }
+          }
+        },
+        exceptional_care:{
+          populate:{
+            card:{
+              populate:{
+                icon:"*",
+                image:"*"
+              }
+            }
+          }
+        },
+        sliding_card:{
           populate:{
             icon:"*",
             image:"*"
           }
-        }
-      }
-    },
-    exceptional_care:{
-      populate:{
-        card:{
+        },
+        image_text:{
           populate:{
             icon:"*",
             image:"*"
           }
+        },
+        testimonials_title:{
+          populate:"*"
+        },
+        news_event_title:{
+          populate:"*"
+        },
+        seo:{
+          populate:"*"
         }
-      }
-    },
-    sliding_card:{
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    } 
+  },
+  { 
+    singularName: "about-an-overview", 
+    queryParams:{
       populate:{
-        icon:"*",
-        image:"*"
-      }
-    },
-    image_text:{
-      populate:{
-        icon:"*",
-        image:"*"
-      }
-    },
-    testimonials_title:{
-      populate:"*"
-    },
-    news_event_title:{
-      populate:"*"
-    },
-    seo:{
-      populate:"*"
-    }
+        banner:{
+          populate:{
+            desktop_media:"*",
+            mobile_media:"*"
+          }
+        },
+        title_description:{
+          populate:"*"
+        },
+        media:{
+          populate:{
+            desktop_media:"*",
+            mobile_media:"*"
+          }
+        },
+        highlights:{
+          populate:"*"
+        },
+        highlight_card:{
+          populate:{
+            icon:"*",
+          }
+        },
+        why_us_title_description:{
+          populate:"*"
+        },
+        why_us_cards:{
+          populate:{
+            image:"*",
+          }
+        },
+        // seo:{
+        //   populate:"*"
+        // }
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    } 
   }
-} },]
+]
 };
 
 

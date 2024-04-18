@@ -116,6 +116,7 @@ export const Content = () => {
             meta_keyword
             meta_title
           }
+          locale
         }
       }
     }

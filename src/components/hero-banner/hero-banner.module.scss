@@ -1,4 +1,5 @@
-@import '../.../../../scss/breakpoints';
+@import '../../scss/breakpoints';
+@import '../../scss/colors';
 .bannerWrapper{
     position: relative;
     max-height: 650px;
@@ -36,6 +37,13 @@
         justify-content: center;
         flex-direction: column;
         z-index: 4;
+
+        h2{
+            font-size: $font-h1;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h1-mob;
+            }
+        }
         @media #{$breakpoint-mobile} {
             justify-content: flex-end;
             bottom: 80px; top: unset;
