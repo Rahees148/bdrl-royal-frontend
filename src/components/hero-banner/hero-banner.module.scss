@@ -24,6 +24,9 @@
         width: 100%;
         z-index: 2;
         background: url(../../images/banner-overlay.svg) no-repeat 70% center rgba(0, 0, 0, .4);
+        @media #{$breakpoint-mobile} {
+            background: rgba(0, 0, 0, .4);
+        }
 
     }
     .bannerOverlayText{
