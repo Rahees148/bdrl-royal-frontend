@@ -31,6 +31,8 @@
                 padding: 14px 28px;
                 margin-left: 8px;
                 border: 1px solid transparent;
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s; 
                 &:hover{
                     background: transparent;
                     color: #E4FF85;

@@ -5,6 +5,7 @@
     display: flex;
     position: relative;
     background-color: $color-primary;
+    cursor: none;
     @media #{$breakpoint-mobile} {
         min-height: unset;
      }
@@ -86,7 +87,6 @@
 
                     li{
                         position: relative;
-                        cursor: pointer;
                         h4{
                             background: url(../../images/icons/right-arrow-circle.svg) no-repeat right center;
                             @media #{$breakpoint-mobile} {
