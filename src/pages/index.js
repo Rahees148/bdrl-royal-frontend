@@ -20,12 +20,19 @@ const IndexPage = () => {
                 <HeroBanner sliderItems={pageData?.banner} />
             </Fade>
             <BookAnAppointment />
-            <CentresOfExcellence data={pageData.centres_excellence} />
-            <SlidingCard data={pageData.sliding_card} />
+            <Fade triggerOnce >
+                <CentresOfExcellence data={pageData.centres_excellence} />
+            </Fade>
+            <Fade triggerOnce  >
+                <SlidingCard data={pageData.sliding_card} />
+            </Fade>
+            <Fade triggerOnce >
             <ExceptionalCare data={pageData.exceptional_care} />
-            <TextImage data={pageData.image_text} />
+            </Fade>
+            <Fade triggerOnce >
+                <TextImage data={pageData.image_text} />
+            </Fade>
             {/* Centres Of Excellence component */}
-            
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
             <NewsEvents/>
         </Layout>

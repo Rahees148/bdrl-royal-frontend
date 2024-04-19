@@ -23,7 +23,7 @@ const AnOverviewPage = () => {
                         mobileMedia: pageData.banner?.mobile_media?.url,
                     }
                 } />
-            </Fade>
+            
             <section className='pageWrapper'>
                 <div className='pt-[120px] pb-[60px]'>
                     <TitleDescription data={{
@@ -56,7 +56,6 @@ const AnOverviewPage = () => {
                     </div>
                 </div>
             </section>
-
             <section className='bg-primary pt-[80px] pb-[245px]'>
                 <div className='pageWrapper'>
                     <TitleDescription
@@ -84,7 +83,7 @@ const AnOverviewPage = () => {
                     </div>
                 </div>
             </section>
-            
+            </Fade>
             
         </Layout>
     );

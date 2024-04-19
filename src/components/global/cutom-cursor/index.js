@@ -15,7 +15,7 @@ function CustomCursor({ targetedClass }) {
             className={classNames(style.cursor, 'customCursor')}
             style={{
                 left: cursorX - 275 + 'px',
-                top: cursorY - 275 + 'px',
+                top: cursorY - 405 + 'px',
             }}
         ></div>
     );
