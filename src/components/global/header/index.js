@@ -7,6 +7,7 @@ import { Content } from '../../../graphql/main-menu';
 
 import logo from '../../../images/logo.svg';
 import menuIcon from '../../../images/icons/menu-icon.svg';
+import DropDownMenu from './drop-down-menu';
 function Header({ data }) {
     const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
     return (
@@ -29,34 +30,12 @@ function Header({ data }) {
             </div>
             <header className={classNames(s.header)}>
                 <div className="pageWrapper">
-                    <img src={logo} alt="Bdrl" className={s.logo} />
+                    <Link to='/'><img src={logo} alt="Bdrl" className={s.logo} /></Link>
                     <ul className={classNames(s.mainMenuSec, 'flex gap-6 ml-auto')}>
                         {mainMenu.map((menu) => (
                             <li className={s.menuItem} key={menu.id}>
                                 {menu.dropdown ? (
-                                    <>
-                                        <a href="#"  className={classNames(s.hasChild,'text-bodyCopy text-sm ')}>{menu.title}</a>
-                                        <ul className={s.dropdown}>
-                                            {menu.dropdown.map((drop, index) => (
-                                                <li key={index}>
-                                                    <i>
-                                                        {drop?.icon && (
-                                                            <img
-                                                                src={drop?.icon?.url}
-                                                                alt={drop.title}
-                                                            />
-                                                        )}
-                                                    </i>
-                                                    <Link
-                                                        to={`/${drop.url}`}
-                                                        className="text-bodyCopy text-sm"
-                                                    >
-                                                        {drop.title}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </>
+                                    <DropDownMenu title={menu.title} items={menu.dropdown} />
                                 ) : (
                                     <Link to={`/${menu.url}`} className="text-bodyCopy text-sm">
                                         {menu.title}

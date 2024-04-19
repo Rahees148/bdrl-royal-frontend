@@ -29,7 +29,7 @@ function TitleDescription({ data }) {
                         'flex items-end justify-between',
                     )}
                 >
-                    <div>
+                    <div className={data.button_label && style.hasButton}>
                         <h2>{data.title}</h2>
                         <div className={classNames(style.SectionTagline, 'font-normal')}>
                             {data.description}

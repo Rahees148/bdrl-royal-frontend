@@ -2,12 +2,8 @@
 import * as React from 'react';
 import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
-import { Row, Column} from '@react-tiny-grid/core';
 import InnerBanner from '../../components/inner-banner';
 import TitleDescription from '../../components/global/title-description';
-import HSPTLImage from '../../images/about-imag.jpeg'
-import icon1 from '../../images/icons/about-1.png'
-import cardImage from '../../images/about-imag-card.png'
 import IconCard from '../../components/global/icon-card';
 import ImageCard from '../../components/global/image-card';
 
@@ -16,7 +12,6 @@ import { Content } from '../../graphql/about/an-overview';
 
 const AnOverviewPage = () => {
     const pageData = Content().allStrapiAboutAnOverview.nodes[0];
-    console.log(pageData);
     return (
         <Layout pageTitle="Home Page" variant={'home'}>
             <Fade>
@@ -51,16 +46,14 @@ const AnOverviewPage = () => {
                         }}
                     />
                     <div className='h-[30px] md:h-[60px]' />
-                    <Row breakpoints={[768]} spacing={[16, 10]}>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {pageData.highlight_card && pageData.highlight_card.map((card, index) => (
-                            <Column widths={[6]} key={index} >
-                                <IconCard data={{
+                                <IconCard key={index} data={{
                                     title: card.title,
                                     icon:card.icon.url
                                 }} />
-                            </Column>
                         ))}
-                    </Row>
+                    </div>
                 </div>
             </section>
 
@@ -78,18 +71,17 @@ const AnOverviewPage = () => {
             </section>
             <section className='mt-[-155px]'>
                 <div className='pageWrapper'>
-                    <Row breakpoints={[768, 990]} spacing={[16, 10]}>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                         {pageData.why_us_cards && pageData.why_us_cards.map((imageCard, indexs)=>(
-                            <Column widths={[6, 4]} key={indexs} >
-                                <ImageCard data={{
-                                    title: imageCard.title,
-                                    image:imageCard.image.url,
-                                    description:imageCard.description
-                                }} />
-                            </Column>
+                            <ImageCard key={indexs} data={{
+                                title: imageCard.title,
+                                image:imageCard.image.url,
+                                description:imageCard.description
+                            }} />
+                          
                         ))}
                         
-                    </Row>
+                    </div>
                 </div>
             </section>
             
