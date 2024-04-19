@@ -11,18 +11,27 @@ $color-brook-green: #B2DDCE;
 
 
 // Font Size
-$font-base: 16px;
+$font-xsmall: 10px;
 $font-small: 12px;
 $font-medium: 14px;
-$font-xsmall: 10px;
-$font-h1: 62px;
-$font-h2: 52px;
-$font-h3: 40px;
-$font-h4: 30px;
+$font-base: 16px;
+$font-large: 18px;
+$font-h5-large: 28px;
 $font-h5: 24px;
-// mobile font size
-$font-h1-mob: 40px;
-$font-h2-mob: 34px;
-$font-h3-mob: 18px;
-$font-h4-mob: 16px;
-$font-h5-mob: 14px;
+$font-h5-small: 20px;
+$font-h4-large: 38px;
+$font-h4: 34px;
+$font-h4-small: 30px;
+$font-h3-large: 48px;
+$font-h3: 44px;
+$font-h3-small: 40px;
+$font-h2: 52px;
+$font-h1: 62px;
+
+
+// font weight
+$font-bold: 750;
+$font-semiBold: 550;
+$font-medium: 500;
+$font-regular: 400;
+$font-light: 300;

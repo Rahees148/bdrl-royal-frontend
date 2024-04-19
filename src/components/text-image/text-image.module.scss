@@ -26,9 +26,8 @@
                 padding: 30px 15px 10px;
             }
             .TextImageTagline{
-                font-size: 26px;
+                font-size: $font-h5-large - 2;
                 line-height: 120%;
-                font-weight: normal;
                 margin-bottom: 30px;
                 @media #{$breakpoint-mobile} {
                     font-size: $font-base;
@@ -48,31 +47,29 @@
                 color: $color-primary;
                 margin-bottom: 50px;
                 @media #{$breakpoint-mobile} {
-                    font-size: $font-h2-mob;
+                    font-size: $font-h4;
                     margin-bottom: 30px;
                 }
             }
             aside{
-                font-size: 24px;
+                font-size: $font-h5;
                 line-height: 120%;
-                font-weight: normal;
                 margin-bottom: 30px;
                 @media #{$breakpoint-mobile} {
                     margin-bottom: 15px;
                 }
                 p{
-                    font-weight: normal;
+                    font-weight: $font-regular;
                     @media #{$breakpoint-mobile} {
-                        font-size: 14px;
+                        font-size: $font-medium;
                     }
                 }
             }
             .TextImagebtn{
             display: inline-block; 
-            font-size: 18px;
-            font-weight: 400;
+            font-size:$font-large;
             @media #{$breakpoint-mobile} {
-                font-size: $font-h4-mob;
+                font-size: $font-base;
             }
             }
         }

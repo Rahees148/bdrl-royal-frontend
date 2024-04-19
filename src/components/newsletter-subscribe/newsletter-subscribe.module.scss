@@ -12,10 +12,10 @@
               }
         .NewsletterSubscribeLeft {
             color: $color-white;
-            font-size: 24px;
+            font-size: $font-h5;
             @media #{$breakpoint-mobile} {
                 text-align: center;
-                font-size: 16px;
+                font-size: $font-base;
             }
         }
         .NewsletterSubscribeRight{
@@ -40,7 +40,7 @@
                 }
                 @media #{$breakpoint-mobile} {
                     padding: 7px 28px;
-                    font-size: 14px;
+                    font-size: $font-medium;
                 }
             }
             .NewsletterSubscribeInputSec{
@@ -61,14 +61,14 @@
                     border-radius: 42px;
                     border: 1px solid rgba(255, 255, 255, 0.32);
                     background: transparent;
-                    font-size: 16px;
+                    font-size: $font-base;
                     padding: 14px 24px 14px 55px ;
                     min-height: 52px;
                     @media #{$breakpoint-mobile} {
                         width: 100%;
                         padding: 7px 24px 7px 45px ;
                         min-height: auto;
-                        font-size: 14px;
+                        font-size: $font-medium;
                     }
                 }
             }

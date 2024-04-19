@@ -4,11 +4,11 @@
 .CentresOfExcellence{ 
     position: relative;
     .SectionTitle{
-        font-size: 52px;
+        font-size: $font-h2;
     }
     .SectionTagline{
         display: block; 
-        font-size: 30px;
+        font-size: $font-h4-small;
     }
     .sliderNavigation{
         max-width: 1180px;
@@ -78,17 +78,17 @@
     }
     .COEcardtop{ 
         h4 {
-            font-size: $font-h4;
+            font-size: $font-h4-small;
             line-height: 120%;
             margin-top: 15px ;
             @media #{$breakpoint-mobile} {
-                font-size: $font-h3-mob;
+                font-size: $font-large;
                 margin-top: 6px;
             }
         }
         .COEcardSubTitle {
             @media #{$breakpoint-mobile} {
-                font-size: 10px; 
+                font-size: $font-xsmall;
             }
         }
     } 

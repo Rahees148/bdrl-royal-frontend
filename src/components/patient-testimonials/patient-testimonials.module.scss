@@ -29,7 +29,7 @@
                 }
 
                 h4{
-                    font-size: 24px;
+                    font-size: $font-h5;
                     line-height: 120%;
                     @media #{$breakpoint-mobile} {
                         font-size: $font-base;
@@ -37,12 +37,11 @@
                 }
 
                 aside{
-                    font-size: 16px;
+                    font-size:$font-base;
                     color: $color-bodyCopy;
-                    font-weight: normal;
                     margin: 10px 0 25px 0;
                     @media #{$breakpoint-mobile} {
-                        font-size: $font-h4-mob;
+                        font-size: $font-base;
                     }
                 }
                 .TestimonialsCardIcon{
@@ -63,23 +62,23 @@
                 .PatientTestimonialsCustomerSec{
 
                     .PatientTestimonialsCustomer {
-                        font-size: 20px;
+                        font-size: $font-h5-small;
                         margin-top: 20px;
                         @media #{$breakpoint-mobile} {
-                            font-size: $font-h4-mob;
+                            font-size: $font-base;
                         }
                     }
                     .PatientTestimonialsCustomerDec{
                         color: $color-bodyCopy;
                         margin: 10px 0;
                         @media #{$breakpoint-mobile} {
-                            font-size:10px;
+                            font-size:$font-xsmall;
                             margin: 3px 0;
                         }
                     }
                     .PatientTestimonialsCustomerDecNme {
                         @media #{$breakpoint-mobile} {
-                            font-size:10px;
+                            font-size:$font-xsmall;
                         }
                     }
                 }

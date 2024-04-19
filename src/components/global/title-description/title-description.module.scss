@@ -12,19 +12,19 @@
         font-size: $font-h2;
         line-height: 120%;
         color: $color-primary;
+        font-weight: $font-semiBold;
         @media #{$breakpoint-mobile} {
-            font-size: $font-h2-mob;
+            font-size: $font-h4;
         }
     }
 
     .SectionTagline {
         display: block;
-        font-size: $font-h4;
+        font-size: $font-h4-small;
         line-height: 120%;
         margin-top: 15px;
-        font-weight: 300;
         @media #{$breakpoint-mobile} {
-            font-size: $font-h4-mob;
+            font-size: $font-base;
             margin-top: 8px;
         }
     }
@@ -76,7 +76,7 @@
         color: $color-primary;
         @media #{$breakpoint-mobile} {
             grid-column: span 12;
-            font-size: $font-h2-mob;
+            font-size: $font-h4;
         }
     }
 
@@ -93,7 +93,6 @@
         line-height: 170%;
         color: $color-primary;
         letter-spacing: 3%;
-        font-size: $font-base;
         p{
             margin-bottom: 20px;
         }

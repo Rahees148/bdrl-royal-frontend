@@ -37,7 +37,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-weight: bold;
                 color: $color-primary;
                 svg {
                     --progress: 0;
@@ -150,7 +149,6 @@
                             height: 30px;
                             align-items: center;
                             justify-content: center;
-                            font-weight: bold;
                             color: $color-primary;
                             @media #{$breakpoint-mobile} {
                                display: none;

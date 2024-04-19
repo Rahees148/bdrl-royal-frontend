@@ -18,25 +18,28 @@
                 padding: 60px 30px 30px 30px;
                 border-radius: 10px;
             }
-    
+            .SlidingTitle{
+                h2{
+                    font-size: $font-h3-large - 2;
+                    font-weight: $font-semiBold;
+                }
+            }
            .SlidingCardbtn{
             display: inline-block;
             margin-top: 50px;
-            font-size: 18px;
-            font-weight: 400;
+            font-size: $font-large;
             @media #{$breakpoint-mobile} {
                 margin-top: 20px;
-                font-size: 12px;
+                font-size:$font-small;
             }
            }
            .SlidingCardDec {
-            font-size: 18px;
-            font-weight: 400;
+            font-size:$font-small;
             margin-top: 25px;
             color: $color-bodyCopy;
             @media #{$breakpoint-mobile} {
                 margin-top: 15px;
-                font-size: 12px;
+                font-size:$font-small;
             }
            } 
     }
