@@ -6,6 +6,9 @@ import FbIcon from '.././../../images/icons/facebook-icon.svg';
 import XIcon from '.././../../images/icons/x-icon.svg';
 import InstaIcon from '.././../../images/icons/insta-icon.svg';
 import YoutubeIcon from '.././../../images/icons/youtube-icon.svg';
+import floatingIcon1 from '.././../../images/icons/FloatingIcon1.svg';
+import floatingIcon2 from '.././../../images/icons/FloatingIcon2.svg';
+import floatingIcon3 from '.././../../images/icons/FloatingIcon3.svg';
 import NewsletterSubscribe from '../../newsletter-subscribe';
 import Accordion from '../accordion';
 import useWindowSize from '../../../libs/hooks/useWindowSize';
@@ -13,8 +16,12 @@ function Footer({variant}) {
     const {isMobile} = useWindowSize()
     
     return (
-        <>
-            
+        <> 
+                <ul className={classNames(s.floatingIcons,'fixed')}>
+                    <li className='rounded-full bg-white'><img src={floatingIcon1} alt='Calendar' /></li>
+                    <li className='rounded-full bg-white'><img src={floatingIcon2} alt='Calendar' /></li>
+                    <li className='rounded-full bg-white'><img src={floatingIcon3} alt='Calendar' /></li>
+                </ul> 
             <footer className={classNames(s.FooterSec, 'bg-primary')}>
                 <NewsletterSubscribe/>
                 <div className="pageWrapper ">
