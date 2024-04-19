@@ -39,6 +39,8 @@
             background-size: cover;
             &.prev{
                 rotate: -180deg;
+                position: relative;
+                top: 2px;
             }
             &[disabled]{
                 opacity: .5;
