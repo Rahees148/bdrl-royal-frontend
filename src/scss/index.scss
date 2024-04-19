@@ -8,9 +8,6 @@
 @import './_button.scss';
 @import './breakpoints';
 
-html{
-    overflow-x: hidden;
-}
 img {
     border: none;
 }
@@ -40,6 +37,11 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     background: #f9f9f9;
+}
+main{
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
     overflow-x: hidden;
 }
 

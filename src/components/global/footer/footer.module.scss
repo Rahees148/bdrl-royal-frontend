@@ -1,8 +1,12 @@
 @import '../../../scss/colors';
 @import '../../../scss/breakpoints';
 .FooterSec{
+    position: sticky;
+    bottom: 0;
     @media #{$breakpoint-mobile} {
         padding-top: 35px;
+        position: static;
+        bottom: 0;
     }
     .FooterTopSec {
         border-top: 1px solid rgba(255, 255, 255, 0.32);

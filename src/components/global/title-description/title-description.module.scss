@@ -2,7 +2,11 @@
 @import '../../../scss/breakpoints';
 .SectionTitle {
     > div{
-        max-width: 70%;
+        @media #{$breakpoint-mobile} {
+           &.hasButton{
+            max-width: 70%;
+           }
+        }
     }
     h2 {
         font-size: $font-h2;
@@ -89,13 +93,13 @@
         line-height: 170%;
         color: $color-primary;
         letter-spacing: 3%;
-        font-size: $font-h4;
+        font-size: $font-base;
         p{
             margin-bottom: 20px;
         }
         @media #{$breakpoint-mobile} {
             grid-column: span 12;
-            font-size: $font-h4-mob;
+            font-size: $font-medium;
         }
     }
     &.green {
