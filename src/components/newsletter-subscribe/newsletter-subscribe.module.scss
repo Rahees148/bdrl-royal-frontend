@@ -13,6 +13,7 @@
         .NewsletterSubscribeLeft {
             color: $color-white;
             font-size: $font-h5;
+            line-height:$font-h5 + 5 ;
             @media #{$breakpoint-mobile} {
                 text-align: center;
                 font-size: $font-base;
@@ -28,7 +29,7 @@
                 color: $color-black;
                 border-radius: 42px;
                 min-width: 128px;
-                padding: 14px 28px;
+                padding: 12px 28px;
                 margin-left: 8px;
                 border: 1px solid transparent;
                 -webkit-transition: all 0.5s;
@@ -62,8 +63,8 @@
                     border: 1px solid rgba(255, 255, 255, 0.32);
                     background: transparent;
                     font-size: $font-base;
-                    padding: 14px 24px 14px 55px ;
-                    min-height: 52px;
+                    padding: 12px 24px 12px 55px ;
+                    min-height: 50px;
                     @media #{$breakpoint-mobile} {
                         width: 100%;
                         padding: 7px 24px 7px 45px ;

@@ -10,21 +10,23 @@
     }
     h2 {
         font-size: $font-h2;
-        line-height: 120%;
+        line-height: $font-h2 + 10;
         color: $color-primary;
         font-weight: $font-semiBold;
         @media #{$breakpoint-mobile} {
             font-size: $font-h4;
+            line-height: $font-h4 ;
         }
     }
 
     .SectionTagline {
         display: block;
         font-size: $font-h4-small;
-        line-height: 120%;
-        margin-top: 15px;
+        line-height: $font-h4-small + 6;
+        margin-top: 10px;
         @media #{$breakpoint-mobile} {
             font-size: $font-base;
+            line-height: $font-base + 6;
             margin-top: 8px;
         }
     }

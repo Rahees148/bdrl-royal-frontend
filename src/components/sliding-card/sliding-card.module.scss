@@ -21,21 +21,33 @@
             .SlidingTitle{
                 h2{
                     font-size: $font-h3-large - 2;
+                    line-height:$font-h3-large + 7;
                     font-weight: $font-semiBold;
+                    padding-bottom: 10px;
+                    @media #{$breakpoint-mobile} {
+                        font-size: $font-h5;
+                        line-height:$font-h5 + 4;
+                    }
+                }
+                div{
+                    font-size: $font-large;
+                    line-height:$font-large + 4;
                 }
             }
            .SlidingCardbtn{
             display: inline-block;
             margin-top: 50px;
-            font-size: $font-large;
+            font-size: $font-large - 1;
+            padding: 12px 28px;
             @media #{$breakpoint-mobile} {
                 margin-top: 20px;
                 font-size:$font-small;
             }
            }
            .SlidingCardDec {
-            font-size:$font-small;
-            margin-top: 25px;
+            font-size:$font-large;
+            // line-height:$font-large + 4 ;
+            margin-top: 22px;
             color: $color-bodyCopy;
             @media #{$breakpoint-mobile} {
                 margin-top: 15px;

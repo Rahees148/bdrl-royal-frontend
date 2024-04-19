@@ -72,6 +72,7 @@
         max-width: 251px; 
     }
     .COEcardImage{
+        margin-top: 20px;
         img{
             filter: grayscale(100%);
         }
@@ -79,25 +80,30 @@
     .COEcardtop{ 
         h4 {
             font-size: $font-h4-small;
-            line-height: 120%;
-            margin-top: 15px ;
+            line-height: $font-h4-small + 6;
+            margin-top: 10px ;
+            font-weight: $font-semiBold;
             @media #{$breakpoint-mobile} {
-                font-size: $font-large;
-                margin-top: 6px;
+                font-size: $font-h5;
+                line-height:$font-h5 + 5 ;
+                margin-top: 10px;
             }
         }
         .COEcardSubTitle {
-            @media #{$breakpoint-mobile} {
-                font-size: $font-xsmall;
+            @media #{$breakpoint-mobile} { 
+                line-height: $font-base + 3;
             }
         }
     } 
     .COEcardContent {
-        padding-top: 50px;
+        padding-top: 35px;
         opacity: 0;
         transition: all .5 ease-in;
         a {
-            margin-top: 40px;
+            margin-top: 35px;
+        }
+        p{
+            line-height: $font-base + 12;
         }
     }
     .COEcardIcon{

@@ -27,8 +27,9 @@
             width: 100%;  
                 h4{
                     font-size: $font-h5;
-                    line-height: 120%;
-                    margin-bottom: 20px;
+                    line-height: $font-h5 + 5;
+                    font-weight: $font-semiBold;
+                    margin-bottom: 24px;
                 }
                 aside{
                     color: $color-bodyCopy;
@@ -45,14 +46,15 @@
                     }
                 }
                 .NewsEventsCardTag{
-                    padding: 5px 15px;
-                    min-width: 85px;
+                    padding: 4px 10px;
+                    min-width: 82px;
                     text-transform: uppercase;
                     display: inline-block;
                     border-radius: 50px;
                     text-align: center;
-                    margin-bottom: 10px;
+                    margin-bottom: 13px;
                     font-size: $font-small;
+                    letter-spacing: 0.12em;
                     &.NewsTag{
                         color: $color-white;
                         background: $color-primary;

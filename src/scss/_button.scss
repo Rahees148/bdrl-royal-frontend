@@ -15,8 +15,8 @@
 .moreBtn {
     border: 1px solid #023321;
     border-radius: 50px;
-    font-size: $font-base;
-    padding: 10px 22px;
+    font-size: $font-base + 1;
+    padding: 11px 24px;
     display: inline-block;
     -webkit-transition: all 0.5s;
     transition: all 0.5s; 
