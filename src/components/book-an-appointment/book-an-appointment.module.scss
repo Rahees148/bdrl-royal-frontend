@@ -24,7 +24,7 @@
         @media #{$breakpoint-mobile} {
             padding: 10px 25px 10px 15px;
             font-size: $font-medium;
-            font-weight: $font-semiBold;
+            font-weight: $font-weight-semiBold;
         }
           &:before {
             content: '';
@@ -68,7 +68,7 @@
         @media #{$breakpoint-mobile} {
             padding: 12px;
             font-size:  $font-medium;
-            font-weight: $font-semiBold;
+            font-weight: $font-weight-semiBold;
             justify-content: center;
         }
     }

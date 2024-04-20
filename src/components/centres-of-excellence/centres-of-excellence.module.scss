@@ -82,7 +82,7 @@
             font-size: $font-h4-small;
             line-height: $font-h4-small + 6;
             margin-top: 10px ;
-            font-weight: $font-semiBold;
+            font-weight: $font-weight-semiBold;
             @media #{$breakpoint-mobile} {
                 font-size: $font-h5;
                 line-height:$font-h5 + 5 ;

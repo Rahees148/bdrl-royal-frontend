@@ -17,9 +17,12 @@
     .title{
         flex: 1;
         font-size: $font-base;
+        line-height: $font-base + 3;
         color: $color-primary;
         @media #{$breakpoint-mobile} {
             font-size: $font-medium;
+            line-height:  $font-medium + 3;
+            
         }
     }
 }

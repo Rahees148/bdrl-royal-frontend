@@ -45,7 +45,7 @@
                 font-size: $font-h2;
                 line-height: $font-h2 + 10;
                 color: $color-primary;
-                font-weight: $font-semiBold;
+                font-weight: $font-weight-semiBold;
                 margin-bottom: 23px;
                 @media #{$breakpoint-mobile} {
                     font-size: $font-h4;
@@ -61,7 +61,7 @@
                     margin-bottom: 20px;
                 }
                 p{
-                    font-weight: $font-regular;
+                    font-weight: $font-weight-regular;
                     @media #{$breakpoint-mobile} {
                         font-size: $font-medium;
                     }
