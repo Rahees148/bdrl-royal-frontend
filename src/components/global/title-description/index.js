@@ -27,6 +27,7 @@ function TitleDescription({ data }) {
                         style.SectionTitle,
                         data.theme ? style[data.theme] : style['green'],
                         'flex items-end justify-between',
+                        data.className && data.className
                     )}
                 >
                     <div className={data.button_label && style.hasButton}>

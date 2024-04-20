@@ -24,6 +24,9 @@
         width: 100%;
         z-index: 2;
         background: url(../../images/banner-overlay.svg) no-repeat 70% center rgba(0, 0, 0, .4);
+        @media #{$breakpoint-mobile} {
+            background: rgba(0, 0, 0, .4);
+        }
 
     }
     .bannerOverlayText{
@@ -41,7 +44,7 @@
         h2{
             font-size: $font-h1;
             @media #{$breakpoint-mobile} {
-                font-size: $font-h1-mob;
+                font-size: $font-h3-small;
             }
         }
         @media #{$breakpoint-mobile} {
@@ -79,7 +82,7 @@
             &.prev{
                 rotate: -180deg;
                 position: relative;
-                top: 2px;
+                top: 1px;
             }
             &[disabled]{
                 opacity: .5;

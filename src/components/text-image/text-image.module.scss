@@ -26,12 +26,11 @@
                 padding: 30px 15px 10px;
             }
             .TextImageTagline{
-                font-size: 26px;
-                line-height: 120%;
-                font-weight: normal;
+                font-size: $font-h5-large - 2; 
                 margin-bottom: 30px;
                 @media #{$breakpoint-mobile} {
                     font-size: $font-base;
+                    margin-bottom: 15px;
                 }
                 img{
                     margin-right: 15px;
@@ -44,35 +43,36 @@
             }
             h2{
                 font-size: $font-h2;
-                line-height: 120%;
+                line-height: $font-h2 + 10;
                 color: $color-primary;
-                margin-bottom: 50px;
+                font-weight: $font-semiBold;
+                margin-bottom: 23px;
                 @media #{$breakpoint-mobile} {
-                    font-size: $font-h2-mob;
+                    font-size: $font-h4;
+                    line-height: $font-h4 + 7;
                     margin-bottom: 30px;
                 }
             }
             aside{
-                font-size: 24px;
-                line-height: 120%;
-                font-weight: normal;
+                font-size: $font-h5;
+                line-height: $font-h5 + 9;
                 margin-bottom: 30px;
                 @media #{$breakpoint-mobile} {
-                    margin-bottom: 15px;
+                    margin-bottom: 20px;
                 }
                 p{
-                    font-weight: normal;
+                    font-weight: $font-regular;
                     @media #{$breakpoint-mobile} {
-                        font-size: 14px;
+                        font-size: $font-medium;
                     }
                 }
             }
             .TextImagebtn{
             display: inline-block; 
-            font-size: 18px;
-            font-weight: 400;
+            font-size:$font-large - 1;
+            padding: 12px 21px;
             @media #{$breakpoint-mobile} {
-                font-size: $font-h4-mob;
+                font-size: $font-base;
             }
             }
         }

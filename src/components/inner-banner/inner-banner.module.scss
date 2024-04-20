@@ -19,9 +19,9 @@
             h1{
                 font-size: $font-h1;
                 color: $color-primary;
-                font-weight: 300;
+                font-weight: $font-light;
                 @media #{$breakpoint-mobile} {
-                    font-size: $font-h1-mob;
+                    font-size: $font-h4-small;
                  }
             }
             .subhead{

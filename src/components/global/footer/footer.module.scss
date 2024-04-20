@@ -17,7 +17,6 @@
         }
         .FooterLeft{
             color: rgba(255, 255, 255, 0.8);
-            font-weight: normal; 
             @media #{$breakpoint-mobile} { 
                 text-align: center;
             }
@@ -29,7 +28,7 @@
             }
             .FooterAdrs{
                 padding: 30px 0;
-                font-size: 14px;
+                font-size:  $font-medium;
             }
         }
         .FooterRight{
@@ -44,14 +43,14 @@
                     margin-left: 0;
                 }
                 h4{
-                    font-weight: bold;
+                    font-weight: $font-bold;
                     margin-bottom: 20px;
-                    font-size: 14px;
+                    font-size: $font-medium;
                 }
                 ul{
                     li{
                         margin-bottom: 5px;
-                        font-size: 13px;
+                        font-size: $font-medium - 1;
                     }
                 }
             }
@@ -66,9 +65,8 @@
             padding: 35px 0;
         }
         .FooterBtmLeft{
-            font-size: 13px;
+            font-size: $font-medium - 1;
             color: $color-white;
-            font-weight: normal;
         }
         .FooterBtmRight {
             @media #{$breakpoint-mobile} {
@@ -78,6 +76,29 @@
             img{
                 margin-left: 15px;
             }
+        }
+    }
+}
+.floatingIcons {
+    right: 40px;
+    bottom: 40px;
+    z-index: 10;
+    @media #{$breakpoint-mobile} {  
+        display: flex;
+        left: 0;
+        right: 0;
+        justify-content: center;
+    }
+    li{
+        width: 60px;
+        height: 60px;
+        margin-bottom: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(0px 11.7408px 46.9632px rgba(0, 0, 0, 0.2));
+        @media #{$breakpoint-mobile} { 
+            margin: 0 6px;
         }
     }
 }

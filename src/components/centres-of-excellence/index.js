@@ -37,7 +37,7 @@ function CentresOfExcellence({data}) {
         {data.card && data.card.map((card, index) =>(
           <SwiperSlide key={index} virtualIndex={index}>
           <div className={classNames(style.COEcard, 'COEcard')}>
-              <div className={classNames(style.COEcardtop,'bg-bdrlGray p-6 sm:p-11 pb-0 relative')}>
+              <div className={classNames(style.COEcardtop,'bg-bdrlGray p-6 sm:p-11 pb-0  sm:pb-0 relative')}>
               <div className={classNames(style.COEcardSubTitle,'text-bodyCopy font-normal')}>{card.sub_title}</div>
               <h4 className='text-secondary'>{card.Title}</h4>
               <div className={classNames(style.COEcardImage)}>

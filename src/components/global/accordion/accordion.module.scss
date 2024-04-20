@@ -1,3 +1,4 @@
+@import '../../../scss/colors';
 .container {
     width: 100%;
     position: absolute;
@@ -17,18 +18,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-weight: 500;
-      font-size: 20px;
+      font-weight: $font-bold;
       background: transparent;
       border: none;
       cursor: pointer;
       h6{
-        font-size: 13px;
+        font-size: $font-medium;
       }
       
     }
     .arrow {
-      font-size: 2rem;
       transition: .5s ease-in-out;
       &.active {
         rotate: 180deg;

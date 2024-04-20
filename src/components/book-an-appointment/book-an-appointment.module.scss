@@ -1,4 +1,5 @@
 @import '../../scss/breakpoints';
+@import '../../scss/colors';
 
 .BookAnAppointment{
     width: 100%;
@@ -22,8 +23,8 @@
         max-width: 366px;
         @media #{$breakpoint-mobile} {
             padding: 10px 25px 10px 15px;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: $font-medium;
+            font-weight: $font-semiBold;
         }
           &:before {
             content: '';
@@ -66,8 +67,8 @@
         }
         @media #{$breakpoint-mobile} {
             padding: 12px;
-            font-size: 14px;
-            font-weight: 600;
+            font-size:  $font-medium;
+            font-weight: $font-semiBold;
             justify-content: center;
         }
     }

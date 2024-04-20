@@ -36,6 +36,7 @@ function SlidingCard({data}) {
                   <div className={classNames(style.SlidingCardWrapSec,'grid grid-cols-12 gap-8')}>
                     <div className={classNames( style.SlidingCardDescription,'rounded-3xl')}>
                             <TitleDescription data={{
+                              className: style.SlidingTitle,
                               theme:"black",
                               title:slider.Title,
                               description: slider.sub_title
