@@ -91,7 +91,7 @@ function ExceptionalCare({data}) {
                              <li onClick={()=>{
                                 swiper.slideTo(index);
                              }} key={index} className={activeSlide === index ? style.active :''}>
-                                <span className='text-[9px] md:text-sm uppercase'>{item.sub_title}</span>
+                                <span className='text-[10px] md:text-sm uppercase'>{item.sub_title}</span>
                                 <h4 className='text-[16px] md:text-[20px] font-semibold'>{item.Title}</h4>
                                 <div className={style.autoplayProgress}>
                                     <svg viewBox="0 0 48 48" className='circle' style={{

@@ -1,7 +1,16 @@
 @import '../../../scss/breakpoints';
+@import '../../../scss/colors';
 .topHeader {
     @media #{$breakpoint-mobile} {
         display: none;
+    }
+    p{
+        font-size: $font-small;
+        font-weight:$font-weight-medium;
+    }
+    li{
+        font-size: $font-small;
+        font-weight:$font-weight-medium;
     }
 }
 .header {
@@ -23,6 +32,7 @@
             }
             .menuItem{
                 position: relative;
+                font-weight: $font-weight-medium;
                 .hasChild{ 
                         background: url(../../../images/icons/menu-arw.svg) no-repeat right center;
                         padding-right: 18px;
@@ -63,6 +73,11 @@
                     }
                 }
             }
+        }
+        .headerBtn{
+            font-size: $font-small;
+            font-weight:$font-weight-medium;
+            padding: 12px 13px;
         }
         
     }

@@ -25,9 +25,9 @@
         line-height: $font-h4-small + 6;
         margin-top: 10px;
         @media #{$breakpoint-mobile} {
-            font-size: $font-base;
-            line-height: $font-base + 6;
-            margin-top: 8px;
+            font-size: $font-medium;
+            line-height: $font-medium + 2;
+            margin-top: 12px;
         }
     }
     &.green {

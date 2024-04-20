@@ -16,14 +16,17 @@
     border: 1px solid #023321;
     border-radius: 50px;
     font-size: $font-base + 1;
+    font-weight: $font-weight-medium;
     padding: 11px 24px;
     display: inline-block;
     -webkit-transition: all 0.5s;
     transition: all 0.5s; 
     @media #{$breakpoint-mobile} {
         font-size: $font-medium;
+        line-height: $font-medium - 1;
         text-align: center;
-        padding: 5px 15px;
+        padding: 8px 16px;
+        max-width: 82px;
     }
     &:hover{
         background: $color-primary;

@@ -30,8 +30,8 @@ function Footer({variant}) {
                         <div className={classNames(s.Footerlogo)}><img src={Footerlogo} alt="Bdrl"  /></div>
                         <div className={classNames(s.FooterAdrs)}>Building No. 336, Plot No. 141, South Al Ghubra, Muscat, Sultanate of Oman </div>
                         <div className={classNames(s.FooterContact)}>
-                        Email: info@brhoman.com<br></br>
-                        Tel: +96822387777
+                            Email: info@brhoman.com<br></br>
+                            Tel: +96822387777
                         </div>
                     </div>
                     <div className={classNames(s.FooterRight,'col-span-8 flex justify-between')}>

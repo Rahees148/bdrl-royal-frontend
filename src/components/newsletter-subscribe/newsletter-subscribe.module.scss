@@ -2,8 +2,9 @@
 @import '../../scss/breakpoints';
 .NewsletterSubscribeSec{
     @media #{$breakpoint-mobile} {
-        padding-top: 45px;
-        margin-top: 40px;
+        padding-top: 50px;
+        margin-top: 45px;
+        padding-bottom: 30px;
     }
     .NewsletterSubscribeWrap{
         @media #{$breakpoint-mobile} {
@@ -16,7 +17,8 @@
             line-height:$font-h5 + 5 ;
             @media #{$breakpoint-mobile} {
                 text-align: center;
-                font-size: $font-base;
+                max-width: 218px;
+                 
             }
         }
         .NewsletterSubscribeRight{
@@ -40,8 +42,9 @@
                     border-color: #E4FF85;
                 }
                 @media #{$breakpoint-mobile} {
-                    padding: 7px 28px;
+                    padding: 7px 10px;
                     font-size: $font-medium;
+                    min-width: 98px;
                 }
             }
             .NewsletterSubscribeInputSec{
@@ -55,7 +58,7 @@
                     top: 15px;
                     @media #{$breakpoint-mobile} {
                         left: 18px;
-                        top: 7px;
+                        top: 10px;
                     }
                 }
                 .NewsletterSubscribeInput{
@@ -67,7 +70,7 @@
                     min-height: 50px;
                     @media #{$breakpoint-mobile} {
                         width: 100%;
-                        padding: 7px 24px 7px 45px ;
+                        padding: 10px 24px 10px 45px ;
                         min-height: auto;
                         font-size: $font-medium;
                     }

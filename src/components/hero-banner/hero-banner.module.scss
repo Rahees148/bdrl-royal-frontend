@@ -44,7 +44,8 @@
         h2{
             font-size: $font-h1;
             @media #{$breakpoint-mobile} {
-                font-size: $font-h3-small;
+                font-size: $font-h3-large - 2;
+                line-height: $font-h3-large ;
             }
         }
         @media #{$breakpoint-mobile} {

@@ -4,14 +4,17 @@
 .BookAnAppointment{
     width: 100%;
     max-width: 736px;
+    padding: 17px 20px 17px 35px;
     margin: -45px auto 0;  
     position: relative;
     z-index: 2; 
+    filter: drop-shadow(0px 11.7408px 46.9632px rgba(0, 0, 0, 0.1));
     @media #{$breakpoint-mobile} {
         max-width: calc(100% - 30px);
-        padding: 8px 10px;
+        padding: 11px 10px;
         gap: 8px;
         margin-top: -25px;
+        border-radius: 20px;
         > img{
             max-width: 17.5px;
         }
@@ -21,8 +24,11 @@
         padding-right: 55px;
         width: 100%;
         max-width: 366px;
+        font-weight: $font-weight-semiBold;
         @media #{$breakpoint-mobile} {
-            padding: 10px 25px 10px 15px;
+            padding: 13px 25px 13px 15px;
+            border-radius: 10px;
+            width: 50%;
             font-size: $font-medium;
             font-weight: $font-weight-semiBold;
         }
@@ -36,10 +42,11 @@
             background: url(../../images/icons/dropdown_arw.svg) no-repeat right center;
             @media #{$breakpoint-mobile} {
                 background-size: 100%;
-                top: 12px;
+                top: 50%;
+                margin-top: -7px;
                 right: 12px;
-                width: 11px;
-                height: 11px;
+                width: 14px;
+                height: 14px;
             }
           }
           .SpecialitySelectList{
@@ -60,13 +67,16 @@
     .BookAnAppointmentBtn {
         width: 100%;
         max-width: 250px;
+        font-weight: $font-weight-semiBold;
         background: linear-gradient(81.39deg, #FFDAA1 -11.85%, #023321 105.73%);
         transition: all 100ms ease-in-out;
         &:hover {
             background: linear-gradient(150deg, #FFDAA1 -11.85%, #023321 105.73%);
         }
         @media #{$breakpoint-mobile} {
-            padding: 12px;
+            width: 50%;
+            padding: 13px 12px;
+            border-radius: 10px;
             font-size:  $font-medium;
             font-weight: $font-weight-semiBold;
             justify-content: center;
