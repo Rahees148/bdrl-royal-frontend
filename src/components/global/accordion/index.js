@@ -8,7 +8,7 @@ const AccordionItem = ({ title, item, isOpen, onClick }) => {
        <div className={style.wrapper} >
        <button className={ classNames(style.titleContainer, isOpen && style.active)} onClick={onClick} >
         <h6>{title}</h6>
-        <span className={`arrow ${isOpen ? 'active' : ''}`} /> 
+        <span className={`arrow ${isOpen ? style.active : ''}`} /> 
        </button>
    
         <div ref={contentHeight} className={style.itemContainer} style={
