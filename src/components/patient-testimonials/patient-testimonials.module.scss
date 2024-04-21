@@ -10,7 +10,7 @@
         position: relative;
         padding-top: 80px;
         @media #{$breakpoint-mobile} {
-            padding-top: 44px;
+            padding-top: 90px;
         }
         .TestimonialsCard{
             width: 100%;
@@ -24,7 +24,7 @@
                 position: relative;
                 @media #{$breakpoint-mobile} {
                     grid-column: 1 / 7; 
-                    padding:150px 20px 20px 20px;
+                    padding:135px 25px 35px 25px;
                     border-radius: 10px;
                 }
 
@@ -33,7 +33,8 @@
                     line-height: $font-h5 + 5;
                     font-weight: $font-weight-semiBold;
                     @media #{$breakpoint-mobile} {
-                        font-size: $font-base;
+                        font-size: $font-h5 - 1;
+                        line-height: $font-h5 + 4;
                     }
                 }
 
@@ -42,8 +43,24 @@
                     line-height:$font-base + 11 ;
                     color: $color-bodyCopy;
                     margin: 22px 0 25px 0;
+                    font-weight: $font-weight-medium;
                     @media #{$breakpoint-mobile} {
                         font-size: $font-base;
+                    }
+                    p{
+                        font-size: $font-base;
+                        line-height:$font-base + 11 ;
+                        font-weight: $font-weight-medium;
+                        @media #{$breakpoint-mobile} {
+                            font-size: $font-medium;
+                            line-height:$font-medium + 5 ;
+                        }
+                    }
+                }
+                .PatientTestimonialsBtn {
+                    @media #{$breakpoint-mobile} {
+                        max-width: none;
+                        padding: 12px 16px;
                     }
                 }
                 .TestimonialsCardIcon{
@@ -74,14 +91,16 @@
                     .PatientTestimonialsCustomerDec{
                         color: $color-bodyCopy;
                         margin: 14px 0 18px 0;
+                        font-weight: $font-weight-medium;
                         @media #{$breakpoint-mobile} {
-                            font-size:$font-xsmall;
-                            margin: 3px 0;
+                            font-size:$font-medium;
+                            line-height: $font-medium + 3;
+                            margin: 15px 0;
                         }
                     }
                     .PatientTestimonialsCustomerDecNme {
                         @media #{$breakpoint-mobile} {
-                            font-size:$font-xsmall;
+                            font-size:$font-medium;
                         }
                     }
                 }

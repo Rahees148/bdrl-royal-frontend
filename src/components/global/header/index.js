@@ -46,7 +46,7 @@ function Header({ data }) {
                         </ul>
                         <ul className="flex items-center">
                         <li>
-                            <a className="button ml-6 mr-4 bg-black" href="#">
+                            <a className={classNames(s.headerBtn, 'button ml-6 mr-4 bg-black')} href="#">
                                 Book appointment
                             </a>
                         </li>

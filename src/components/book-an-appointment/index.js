@@ -22,7 +22,7 @@ function BookAnAppointment() {
   }
 
   return (
-    <div className={classNames(style.BookAnAppointment, 'py-4 px-8 rounded-10 bg-white flex items-center gap-4')}>
+    <div className={classNames(style.BookAnAppointment, 'rounded-10 bg-white flex items-center gap-4')}>
       {!isMobile && <img src={CalendarIcon} alt='Book An Appointment' /> }
       <div ref={selectRef} className={classNames( style.SpecialitySelectBox, 'bg-gray-100 p-6 rounded-5')} onClick={handleDropDownClick}>Select Speciality
       {isOpen &&
