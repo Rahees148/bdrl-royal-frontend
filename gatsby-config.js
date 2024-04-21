@@ -8,6 +8,20 @@ const strapiConfig = {
   collectionTypes: ["post", "category", "author", 
   { singularName: "main-menu",queryParams:{
     populate:{
+      localizations:{
+        populate: {
+          mainmenu:{
+            populate:{
+              title:"*",
+              dropdown:{
+                populate:{
+                  icon: "*"
+                }
+              }
+            }
+          }
+        }
+      },
       mainmenu:{
         populate:{
           title:"*",
@@ -27,7 +41,14 @@ const strapiConfig = {
   } },
   { singularName: "testimonial", queryParams:{
     populate:{
-      localizations: "*",
+      localizations:{
+        populate:{
+          author_photo:"*",
+          image:"*",
+          treated_by:"*",
+          seo: "*",
+        }
+      },
       author_photo:"*",
       image:"*",
       treated_by:"*",
@@ -41,6 +62,14 @@ const strapiConfig = {
   } },
   { singularName: "news-and-event", queryParams:{
     populate:{
+      localizations: {
+        populate:{
+          author_photo:"*",
+          image:"*",
+          treated_by:"*",
+          seo: "*",
+        }
+      },
       author_photo:"*",
       image:"*",
       treated_by:"*",
@@ -58,6 +87,57 @@ singleTypes:[
     singularName: "home", 
     queryParams:{
       populate:{
+        localizations:{
+          populate:{
+            banner:{
+              populate:{
+                desktop_media:"*",
+                mobile_media:"*"
+              }
+            },
+            centres_excellence:{
+              populate:{
+                card:{
+                  populate:{
+                    icon:"*",
+                    image:"*"
+                  }
+                }
+              }
+            },
+            exceptional_care:{
+              populate:{
+                card:{
+                  populate:{
+                    icon:"*",
+                    image:"*"
+                  }
+                }
+              }
+            },
+            sliding_card:{
+              populate:{
+                icon:"*",
+                image:"*"
+              }
+            },
+            image_text:{
+              populate:{
+                icon:"*",
+                image:"*"
+              }
+            },
+            testimonials_title:{
+              populate:"*"
+            },
+            news_event_title:{
+              populate:"*"
+            },
+            seo:{
+              populate:"*"
+            }
+          },
+        },
         banner:{
           populate:{
             desktop_media:"*",
@@ -117,6 +197,44 @@ singleTypes:[
     singularName: "about-an-overview", 
     queryParams:{
       populate:{
+        localizations: {
+          populate:{
+            banner:{
+              populate:{
+                desktop_media:"*",
+                mobile_media:"*"
+              }
+            },
+            title_description:{
+              populate:"*"
+            },
+            media:{
+              populate:{
+                desktop_media:"*",
+                mobile_media:"*"
+              }
+            },
+            highlights:{
+              populate:"*"
+            },
+            highlight_card:{
+              populate:{
+                icon:"*",
+              }
+            },
+            why_us_title_description:{
+              populate:"*"
+            },
+            why_us_cards:{
+              populate:{
+                image:"*",
+              }
+            },
+            // seo:{
+            //   populate:"*"
+            // }
+          },
+        },
         banner:{
           populate:{
             desktop_media:"*",
