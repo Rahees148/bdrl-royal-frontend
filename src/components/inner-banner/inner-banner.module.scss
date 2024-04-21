@@ -19,7 +19,7 @@
             h1{
                 font-size: $font-h1;
                 color: $color-primary;
-                font-weight: $font-light;
+                font-weight: $font-weight-light;
                 @media #{$breakpoint-mobile} {
                     font-size: $font-h4-small;
                  }

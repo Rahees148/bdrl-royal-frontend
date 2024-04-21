@@ -15,14 +15,14 @@
             background: url(../../images/bg-pattern1.png) #fff;
             padding: 50px 138px 50px 45px;
             @media #{$breakpoint-mobile} {
-                padding: 60px 30px 30px 30px;
+                padding: 60px 35px 35px 35px;
                 border-radius: 10px;
             }
             .SlidingTitle{
                 h2{
                     font-size: $font-h3-large - 2;
                     line-height:$font-h3-large + 7;
-                    font-weight: $font-semiBold;
+                    font-weight: $font-weight-semiBold;
                     padding-bottom: 10px;
                     @media #{$breakpoint-mobile} {
                         font-size: $font-h5;
@@ -32,6 +32,11 @@
                 div{
                     font-size: $font-large;
                     line-height:$font-large + 4;
+                    @media #{$breakpoint-mobile} {
+                        font-size: $font-medium;
+                        line-height:$font-medium + 3;
+
+                    }
                 }
             }
            .SlidingCardbtn{
@@ -41,7 +46,8 @@
             padding: 12px 28px;
             @media #{$breakpoint-mobile} {
                 margin-top: 20px;
-                font-size:$font-small;
+                font-size:$font-medium; 
+                padding: 9px 17px;
             }
            }
            .SlidingCardDec {
@@ -50,8 +56,9 @@
             margin-top: 22px;
             color: $color-bodyCopy;
             @media #{$breakpoint-mobile} {
-                margin-top: 15px;
-                font-size:$font-small;
+                margin-top: 20px;
+                font-size:$font-medium;
+                line-height: $font-medium + 3;
             }
            } 
     }
@@ -64,7 +71,7 @@
         margin: 25px 0;
         @media #{$breakpoint-mobile} {
             margin: 0 auto -40px auto;
-            max-width: 80%;
+            width: calc(100% - 70px);
         }
         img{
             width: 100%;

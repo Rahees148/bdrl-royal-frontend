@@ -4,7 +4,7 @@
 .NewsEvents{
     margin-top: -255px;
     @media #{$breakpoint-mobile} {
-        margin-top: 20px;
+        margin-top: 60px;
       }
     .NewsEventsTop{
         width: calc(100% - 60px);
@@ -25,16 +25,7 @@
           }
         .NewsEventsCard{
             width: 100%;  
-                h4{
-                    font-size: $font-h5;
-                    line-height: $font-h5 + 5;
-                    font-weight: $font-semiBold;
-                    margin-bottom: 24px;
-                }
-                aside{
-                    color: $color-bodyCopy;
-                    margin-bottom: 25px;
-                }
+                
                 .NewsEventsCardImage{
                     margin-bottom: 20px;
                     border-radius: 15px;
@@ -43,27 +34,64 @@
                     background-color: $color-bdrlLightGray;
                     @media #{$breakpoint-mobile} { 
                         border-radius: 10px;
+                        margin-bottom: 16px;
                     }
                 }
-                .NewsEventsCardTag{
-                    padding: 4px 10px;
-                    min-width: 82px;
-                    text-transform: uppercase;
-                    display: inline-block;
-                    border-radius: 50px;
-                    text-align: center;
-                    margin-bottom: 13px;
-                    font-size: $font-small;
-                    letter-spacing: 0.12em;
-                    &.NewsTag{
-                        color: $color-white;
-                        background: $color-primary;
+                .NewsEventsCardDec{
+                    @media #{$breakpoint-mobile} { 
+                        background-color: $color-white; 
+                        // box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+                        // border-radius: 17px;
                     }
-                    &.EventsTag{
-                        color: $color-white;
-                        background: $color-brook-green;
+                    h4{
+                        font-size: $font-h5;
+                        line-height: $font-h5 + 5;
+                        font-weight: $font-weight-semiBold;
+                        margin-bottom: 24px;
                     }
+                    aside{
+                        color: $color-bodyCopy;
+                        margin-bottom: 25px;
+                        font-weight: $font-weight-medium;
+                        font-size: $font-base;
+                        line-height: $font-base + 11;
+                        @media #{$breakpoint-mobile} { 
+                            font-size: $font-medium;
+                            line-height: $font-medium + 5;
+                        }
+                    }
+                    .NewsEventsMorebtn{
+                        font-size: $font-base;
+                        font-weight: $font-weight-medium;
+                        padding: 10px 17px;
+                        @media #{$breakpoint-mobile} { 
+                            max-width: none;
+                            padding: 12px 16px;
+                            font-size: $font-medium; 
+                        }
+                    }
+                    .NewsEventsCardTag{
+                        padding: 4px 10px;
+                        min-width: 82px;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        border-radius: 50px;
+                        text-align: center;
+                        margin-bottom: 13px;
+                        font-size: $font-small;
+                        letter-spacing: 0.12em;
+                        &.NewsTag{
+                            color: $color-white;
+                            background: $color-primary;
+                        }
+                        &.EventsTag{
+                            color: $color-white;
+                            background: $color-brook-green;
+                        }
+                    }
+
                 }
+                
         }
         .pagination{
             display: flex;

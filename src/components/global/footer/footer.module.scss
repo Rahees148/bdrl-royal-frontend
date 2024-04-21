@@ -4,16 +4,17 @@
     position: sticky;
     bottom: 0;
     @media #{$breakpoint-mobile} {
-        padding-top: 35px;
+        padding-top: 0px;
         position: static;
         bottom: 0;
+        padding-bottom: 60px;
     }
     .FooterTopSec {
         border-top: 1px solid rgba(255, 255, 255, 0.32);
         @media #{$breakpoint-mobile} {
             display: flex;
             flex-direction: column-reverse;
-            padding: 35px 0;
+            padding:0px 0 35px 0;
         }
         .FooterLeft{
             color: rgba(255, 255, 255, 0.8);
@@ -28,7 +29,15 @@
             }
             .FooterAdrs{
                 padding: 30px 0;
+                font-size:  $font-medium; 
+                line-height: $font-medium + 5;
+                color: rgba(255, 255, 255, 0.8);
+            }
+            .FooterContact{
                 font-size:  $font-medium;
+                font-weight: $font-weight-semiBold; 
+                line-height: $font-medium + 10;
+                color: rgba(255, 255, 255, 0.8);
             }
         }
         .FooterRight{
@@ -43,14 +52,17 @@
                     margin-left: 0;
                 }
                 h4{
-                    font-weight: $font-bold;
+                    font-weight: $font-weight-bold;
                     margin-bottom: 20px;
                     font-size: $font-medium;
                 }
                 ul{
                     li{
-                        margin-bottom: 5px;
-                        font-size: $font-medium - 1;
+                        margin-bottom: 10px;
+                        font-size: $font-medium - 1; 
+                        @media #{$breakpoint-mobile} {
+                            margin-bottom: 12px;
+                        }
                     }
                 }
             }
@@ -66,7 +78,7 @@
         }
         .FooterBtmLeft{
             font-size: $font-medium - 1;
-            color: $color-white;
+            color: rgba(255, 255, 255, 0.8);
         }
         .FooterBtmRight {
             @media #{$breakpoint-mobile} {
@@ -87,6 +99,7 @@
         display: flex;
         left: 0;
         right: 0;
+        bottom: 10px;
         justify-content: center;
     }
     li{

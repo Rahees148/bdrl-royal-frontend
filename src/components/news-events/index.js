@@ -57,10 +57,12 @@ function NewsEvents() {
                                 <div className={classNames(style.NewsEventsCardImage)}>
                                     <img src={item.image?.url} alt={item.title}/>
                                 </div>
-                                <div className={classNames(style.NewsEventsCardTag, item.category === 'News' ? style.NewsTag : style.EventsTag)}>{item.category}</div>
-                                <h4>{item.title}</h4>
-                                <aside>{item.summary}</aside>
-                                <a className='moreBtn' href={'/news-and-events/'+item.slug} >{item.button_label}</a>
+                                <div className={classNames(style.NewsEventsCardDec)}>
+                                    <div className={classNames(style.NewsEventsCardTag, item.category === 'News' ? style.NewsTag : style.EventsTag)}>{item.category}</div>
+                                    <h4>{item.title}</h4>
+                                    <aside>{item.summary}</aside>
+                                    <a className={classNames(style.NewsEventsMorebtn,'moreBtn')} href={'/news-and-events/'+item.slug} >{item.button_label}</a>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}

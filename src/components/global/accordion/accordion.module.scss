@@ -18,21 +18,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-weight: $font-bold;
+      font-weight: $font-weight-bold;
       background: transparent;
       border: none;
       cursor: pointer;
       h6{
         font-size: $font-medium;
       }
+      span{
+        transition: .5s ease-in-out;
+        width: 15px;
+        height: 15px;
+        background: url(../../../images/icons/Footer-arw-icon.svg) no-repeat right center;
+        &.active {
+          rotate: 180deg;
+        }
+      }
       
     }
-    .arrow {
-      transition: .5s ease-in-out;
-      &.active {
-        rotate: 180deg;
-      }
-    }
+    
     .itemContainer {
       transition: height .7s ease-in-out;
     }
