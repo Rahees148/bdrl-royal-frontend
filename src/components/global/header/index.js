@@ -3,13 +3,13 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 import * as s from './header.module.scss';
 
-import { Content } from '../../../graphql/main-menu';
+// import { Content } from '../../../graphql/main-menu';
 
 import logo from '../../../images/logo.svg';
 import menuIcon from '../../../images/icons/menu-icon.svg';
 import DropDownMenu from './drop-down-menu';
 function Header({ data }) {
-    const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
+   // const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
     return (
         <>
             <div className={classNames(s.topHeader, 'bg-primary')}>
@@ -32,7 +32,7 @@ function Header({ data }) {
                 <div className="pageWrapper">
                     <Link to='/'><img src={logo} alt="Bdrl" className={s.logo} /></Link>
                     <ul className={classNames(s.mainMenuSec, 'flex gap-6 ml-auto')}>
-                        {mainMenu.map((menu) => (
+                        {/* {mainMenu.map((menu) => (
                             <li className={s.menuItem} key={menu.id}>
                                 {menu.dropdown ? (
                                     <DropDownMenu title={menu.title} items={menu.dropdown} />
@@ -42,7 +42,7 @@ function Header({ data }) {
                                     </Link>
                                 )}
                             </li>
-                        ))}
+                        ))} */}
                         </ul>
                         <ul className="flex items-center">
                         <li>
