@@ -24,7 +24,7 @@ function NewsEvents() {
             </div>
         </div>
         <div className={classNames(style.NewsEventsBtm)}>
-            <div className="pageWrapper">
+            <div className={classNames(style.halfBg, 'pageWrapper')}>
                 <div className={classNames(style.NewsEventsCardwrap)}>
                 <Swiper
                     speed={1000}
