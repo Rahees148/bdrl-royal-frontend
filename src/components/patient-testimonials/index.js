@@ -17,7 +17,7 @@ function PatientTestimonials({titleDescription}) {
       <TitleDescription 
         data={{
           title:titleDescription.title,
-          description:titleDescription.description,
+          description:titleDescription.tagline,
           button_label:titleDescription.button_label,
           button_link:titleDescription.button_link
         }} 

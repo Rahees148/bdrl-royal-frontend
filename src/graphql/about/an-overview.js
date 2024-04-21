@@ -30,12 +30,16 @@ export const Content = () => {
                 locale
                 title
                 title_description {
-                title
-                description
+                    title
+                    description {
+                        data {
+                            description
+                        }
+                    }
                 }
                 highlights {
                     title
-                    description
+                    tagline
                     }
                 why_us_cards {
                 description
@@ -45,8 +49,12 @@ export const Content = () => {
                 }
                 }
                 why_us_title_description {
-                title
-                description
+                    title
+                    description {
+                        data {
+                            description
+                        }
+                    }
                 }
                 media {
                 desktop_media {

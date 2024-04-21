@@ -18,7 +18,7 @@ const AnOverviewPage = () => {
                 <InnerBanner data={
                     {
                         title:pageData.banner?.Title,
-                        description:pageData.banner?.Description?.data?.childMarkdownRemark?.html,
+                        description:'pageData.banner?.Description?.data?.childMarkdownRemark?.html',
                         desktopMedia: pageData.banner?.desktop_media?.url,
                         mobileMedia: pageData.banner?.mobile_media?.url,
                     }
@@ -29,7 +29,7 @@ const AnOverviewPage = () => {
                     <TitleDescription data={{
                         variant: 'details',
                         title: pageData.title_description?.title,
-                        description: pageData.title_description.description,
+                        description: pageData.title_description.description.data.description,
                     }} />
                 </div>
             </section>
@@ -42,7 +42,7 @@ const AnOverviewPage = () => {
                         data={{
                             theme: 'green',
                             title: pageData.highlights?.title,
-                            description:pageData.highlights?.description
+                            description:pageData.highlights?.tagline
                         }}
                     />
                     <div className='h-[30px] md:h-[60px]' />
@@ -63,7 +63,7 @@ const AnOverviewPage = () => {
                             variant: 'details',
                             theme: 'white',
                             title:pageData.why_us_title_description?.title,
-                            description:pageData.why_us_title_description?.description
+                            description:pageData.why_us_title_description?.description.data.description,
                         }}
                     />
                 </div>

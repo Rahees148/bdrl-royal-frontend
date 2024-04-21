@@ -65,14 +65,14 @@ export const Content = () => {
           testimonials_title {
             button_label
             button_link
-            description
             title
+            tagline
           }
           news_event_title {
             button_label
             button_link
             title
-            description
+            tagline
           }
           image_text {
             Title
