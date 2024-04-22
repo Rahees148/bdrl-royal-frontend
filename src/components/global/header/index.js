@@ -8,7 +8,7 @@ import logo from '../../../images/logo.svg';
 import menuIcon from '../../../images/icons/menu-icon.svg';
 import DropDownMenu from './drop-down-menu';
 import Breadcrumbs from './breadcrumbs';
-function Header({location, pageTitle, breadcrumb, template  }) {
+function Header({ pageTitle, breadcrumb, template  }) {
     const progressBar = useRef(null);
     const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
     useEffect(()=>{

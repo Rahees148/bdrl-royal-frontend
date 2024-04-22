@@ -11,7 +11,7 @@ import LeaderShip from '../../../components/leadership';
 const AnOverviewPage = ({location}) => {
     const pageData = Leaders().allStrapiLeadership.nodes[0];
     return (
-        <Layout location={location} pageTitle={pageData.title}  template="inner" breadcrumb={{
+        <Layout pageTitle={pageData.title}  template="inner" breadcrumb={{
             links: [
                 {
                     title:'About',

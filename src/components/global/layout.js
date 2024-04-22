@@ -4,11 +4,11 @@ import './layout.css'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({location, pageTitle, children, breadcrumb, template }) => {
+const Layout = ({pageTitle, children, breadcrumb, template }) => {
 
   return (
     <>
-      <Header pageTitle={pageTitle} location={location} template={template} breadcrumb={breadcrumb} />
+      <Header pageTitle={pageTitle} template={template} breadcrumb={breadcrumb} />
       <main>
         {children}
       </main>

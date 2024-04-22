@@ -10,10 +10,10 @@ import ImageCard from '../../components/global/image-card';
 import { Content } from '../../graphql/about/an-overview';
 
 
-const AnOverviewPage = ({location}) => {
+const AnOverviewPage = () => {
     const pageData = Content().allStrapiAboutAnOverview.nodes[0];
     return (
-        <Layout location={location} pageTitle="An Overview" template="inner" breadcrumb={{
+        <Layout  pageTitle="An Overview" template="inner" breadcrumb={{
             links: [
                 {
                     title:'About',
