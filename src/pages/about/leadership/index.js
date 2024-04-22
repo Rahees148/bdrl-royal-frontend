@@ -10,10 +10,18 @@ import ImageCard from '../../../components/global/image-card';
 import { Content } from '../../../graphql/about/an-overview';
 
 
-const AnOverviewPage = () => {
+const AnOverviewPage = ({location}) => {
     const pageData = Content().allStrapiAboutAnOverview.nodes[0];
     return (
-        <Layout pageTitle="Home Page" variant={'home'}>
+        <Layout location={location} pageTitle="Leadership"  template="inner" breadcrumb={{
+            links: [
+                {
+                    title:'About',
+                    url:'',
+                }
+            ],
+            title: 'Leadership'
+        }}>
             <Fade>
 
             <section className='bg-primary py-[80px]'>

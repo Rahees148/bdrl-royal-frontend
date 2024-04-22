@@ -12,7 +12,7 @@ import floatingIcon3 from '.././../../images/icons/FloatingIcon3.svg';
 import NewsletterSubscribe from '../../newsletter-subscribe';
 import Accordion from '../accordion';
 import useWindowSize from '../../../libs/hooks/useWindowSize';
-function Footer({variant}) {
+function Footer() {
     const {isMobile} = useWindowSize()
     
     return (

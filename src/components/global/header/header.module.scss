@@ -14,13 +14,14 @@
     }
 }
 .header {
-    background-color: #fff;
-    padding: 23px 0;
+    background-color: #fff; 
     position: sticky;
     top: 0;
     z-index: 100;
-    > div {
+    
+    > div.mainHeaderWrapper {
         display: flex;
+        padding: 23px 0;
         justify-content: space-between;
         align-items: center;
         .logo {
@@ -80,5 +81,17 @@
             padding: 12px 13px;
         }
         
+    }
+    .progressContainer{
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        .progressBar {
+            height: 4px;
+            background: linear-gradient(79.82deg, #2E388D 21%, #3A3686 29.06%, #5A3375 44.45%, #8E2E59 64.23%, #D52734 88.42%, #E9262A 94.28%);
+            width: 0%; 
+          }
     }
 }

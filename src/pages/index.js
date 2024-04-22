@@ -11,11 +11,11 @@ import PatientTestimonials from '../components/patient-testimonials';
 import ExceptionalCare from '../components/exceptional-care';
 import NewsEvents from '../components/news-events';
 import TextImage from '../components/text-image'
-const IndexPage = () => {
+const IndexPage = ({location}) => {
     const pageData = Content().allStrapiHome.nodes[0];
     console.log(pageData);
     return (
-        <Layout pageTitle="Home Page" variant={'home'}>
+        <Layout location={location} pageTitle="Home Page">
             <Fade>
                 <HeroBanner sliderItems={pageData?.banner} />
             </Fade>
