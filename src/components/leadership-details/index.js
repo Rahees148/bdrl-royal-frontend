@@ -10,7 +10,7 @@ function LeaderShipDetails({pageData}) {
 
       <div className='grid grid-cols-12 gap-8 items-end'>
         <div className='col-span-12 md:col-span-3  bg-[#EDEDED] rounded-5'>
-          <img src={photo} alt={pageData.title} />
+          <img src={pageData?.photo?.url} alt={pageData.title} />
         </div>
         <div className='col-span-12 md:col-span-9'>
           <TitleDescription data={{

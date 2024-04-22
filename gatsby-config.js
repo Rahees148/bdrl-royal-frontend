@@ -88,6 +88,7 @@ const strapiConfig = {
           title:"*",
           designation: "*",
           description: "*",
+          photo: "*",
           awards_title:{
             populate:{
               description:"*",
@@ -118,6 +119,7 @@ const strapiConfig = {
       title:"*",
       designation: "*",
       description: "*",
+      photo: "*",
       awards_title:{
         populate:{
           description:"*",

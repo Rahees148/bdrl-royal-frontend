@@ -37,6 +37,9 @@ query ($id: String) {
       }
     }
     designation
+    photo {
+      url
+    }
     keyposition_icons {
       icon {
         url
