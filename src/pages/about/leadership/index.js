@@ -8,6 +8,7 @@ import IconCard from '../../../components/global/icon-card';
 import ImageCard from '../../../components/global/image-card';
 
 import { Content } from '../../../graphql/about/an-overview';
+import LeaderShip from '../../../components/leadership';
 
 
 const AnOverviewPage = ({location}) => {
@@ -36,9 +37,9 @@ const AnOverviewPage = ({location}) => {
                     />
                 </div>
             </section>
-            <section className='circle-pattern-bg py-[90px]'>
+            <section className='circle-pattern-bg'>
                 <div className='pageWrapper'>
-                    people
+                    <LeaderShip/>
                 </div>
             </section>
             </Fade>

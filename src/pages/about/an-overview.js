@@ -76,7 +76,7 @@ const AnOverviewPage = ({location}) => {
                     />
                 </div>
             </section>
-            <section className='mt-[-155px]'>
+            <section className='mt-[-155px] pb-[100px]'>
                 <div className='pageWrapper'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                         {pageData.why_us_cards && pageData.why_us_cards.map((imageCard, indexs)=>(
