@@ -1,51 +1,23 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as style from './leadership.module.scss'; 
-import LeaderShipCardImage from '../../images/leadership-pic1.png'
+import { Link } from 'gatsby';
 
 function LeaderShip({ data }) {
     return (
         <div className={classNames(style.LeaderShipSec, 'flex gap-10')}> 
-                <div className={classNames(style.LeaderShipCard)}>
-                    <div className={classNames(style.LeaderShipCardImage)}>
-                    <img src={LeaderShipCardImage} alt='Abdul Latheef Uppala' />
-                    </div>
-                    <div className={classNames(style.LeaderShipCardDetails)}>
-                        <h4>Abdul Latheef Uppala</h4>
-                        <aside>MANAGING DIRECTOR</aside>
-                        <a className={classNames(style.LeaderShipCardBtn,'moreBtn white')} href='#'>Read More +</a>
-                    </div>
-                </div> 
-                <div className={classNames(style.LeaderShipCard)}>
-                    <div className={classNames(style.LeaderShipCardImage)}>
-                    <img src={LeaderShipCardImage} alt='Abdul Latheef Uppala' />
-                    </div>
-                    <div className={classNames(style.LeaderShipCardDetails)}>
-                        <h4>Abdul Latheef Uppala</h4>
-                        <aside>MANAGING DIRECTOR</aside>
-                        <a className={classNames(style.LeaderShipCardBtn,'moreBtn white')} href='#'>Read More +</a>
-                    </div>
-                </div> 
-                <div className={classNames(style.LeaderShipCard)}>
-                    <div className={classNames(style.LeaderShipCardImage)}>
-                    <img src={LeaderShipCardImage} alt='Abdul Latheef Uppala' />
-                    </div>
-                    <div className={classNames(style.LeaderShipCardDetails)}>
-                        <h4>Abdul Latheef Uppala</h4>
-                        <aside>MANAGING DIRECTOR</aside>
-                        <a className={classNames(style.LeaderShipCardBtn,'moreBtn white')} href='#'>Read More +</a>
-                    </div>
-                </div> 
-                <div className={classNames(style.LeaderShipCard)}>
-                    <div className={classNames(style.LeaderShipCardImage)}>
-                    <img src={LeaderShipCardImage} alt='Abdul Latheef Uppala' />
-                    </div>
-                    <div className={classNames(style.LeaderShipCardDetails)}>
-                        <h4>Abdul Latheef Uppala</h4>
-                        <aside>MANAGING DIRECTOR</aside>
-                        <a className={classNames(style.LeaderShipCardBtn,'moreBtn white')} href='#'>Read More +</a>
-                    </div>
-                </div> 
+                {data && data.map(leader => (
+                    <div className={classNames(style.LeaderShipCard)} key={leader.id}>
+                        <div className={classNames(style.LeaderShipCardImage)}>
+                        <img src={leader?.image?.url} alt={leader.title} />
+                        </div>
+                        <div className={classNames(style.LeaderShipCardDetails)}>
+                            <h4>{leader.title}</h4>
+                            <aside>{leader.description}</aside>
+                            <Link className={classNames(style.LeaderShipCardBtn,'moreBtn white')} to={leader.link_to?.slug.toLowerCase()}>{leader.button_label}</Link>
+                        </div>
+                    </div> 
+                ))} 
         </div>
     
   )

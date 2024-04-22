@@ -8,8 +8,20 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    &.stack{
+        flex-direction: column;
+        background-color: #EDEDED;
+        .title{
+            font-size: $font-small;
+            text-align: center;
+            font-weight: $font-medium;
+        }
+    }
     .icon{
         width: 70px;
+        &.fullWidth{
+            width: 100%;
+        }
         img{
             width: 100%;
         }

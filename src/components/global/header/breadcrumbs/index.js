@@ -1,6 +1,7 @@
 import React from 'react'
 import * as style from './breadcrumbs.module.scss';
 import classNames from 'classnames';
+import { Link } from 'gatsby';
 
 function Breadcrumbs({data}) {
     console.log('Breadcrumbs',data);
@@ -11,7 +12,7 @@ function Breadcrumbs({data}) {
                 {data.links && data.links.map((link, index)=>(
                     <li key={index}>
                         {link.url !== '' ?(
-                            <a href={link.url}>{link.title}</a>
+                            <Link to={link.url}>{link.title}</Link>
                         ):(
                             <>{link.title}</>
                         )}

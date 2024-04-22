@@ -81,6 +81,75 @@ const strapiConfig = {
       },
     },
   } },
+  { singularName: "leadership-list", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          title:"*",
+          designation: "*",
+          description: "*",
+          awards_title:{
+            populate:{
+              description:"*",
+            }
+          },
+          awards_icon:{
+            populate:{
+              icon:"*",
+            }
+          },
+          key_position_title_description:{
+            populate:{
+              description:"*",
+            }
+          },
+          keyposition_icons:{
+            populate:{
+              icon:"*",
+            }
+          },
+          form_title_description:{
+            populate:{
+              description:"*",
+            }
+          }
+        }
+      },
+      title:"*",
+      designation: "*",
+      description: "*",
+      awards_title:{
+        populate:{
+          description:"*",
+        }
+      },
+      award_icons:{
+        populate:{
+          icon:"*",
+        }
+      },
+      key_position_title_description:{
+        populate:{
+          description:"*",
+        }
+      },
+      keyposition_icons:{
+        populate:{
+          icon:"*",
+        }
+      },
+      form_title_description:{
+        populate:{
+          description:"*",
+        }
+      }
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
 ],
 singleTypes:[
   { 
@@ -264,6 +333,46 @@ singleTypes:[
         why_us_cards:{
           populate:{
             image:"*",
+          }
+        },
+        // seo:{
+        //   populate:"*"
+        // }
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    } 
+  },
+  { 
+    singularName: "leadership", 
+    queryParams:{
+      populate:{
+        localizations: {
+          populate:{
+            title_description:{
+              populate:"*"
+            },
+            leaders:{
+              populate:{
+                image:"*",
+                link_to: "*",
+              }
+            },
+            // seo:{
+            //   populate:"*"
+            // }
+          },
+        },
+        title_description:{
+          populate:"*"
+        },
+        leaders:{
+          populate:{
+            image:"*",
+            link_to: "*",
           }
         },
         // seo:{

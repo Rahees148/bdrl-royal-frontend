@@ -1,8 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as style from './text-image.module.scss';
-import doctorImage from '../../images/image-1.png';
-import opinionIcon from '../../images/icons/second-opinion-icon.svg'
 
 function TextImage({ data }) {
     return (
