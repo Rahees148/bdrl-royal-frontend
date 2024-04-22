@@ -7,7 +7,7 @@ const Leader = ({ data }) => {
     console.log(data);
     const pageData = data.strapiLeadershipList;
     return (
-            <Layout pageTitle={pageData.title} location={location} template="inner" breadcrumb={{
+            <Layout pageTitle={pageData.title} template="inner" breadcrumb={{
               links: [
                   {
                       title:'About',
