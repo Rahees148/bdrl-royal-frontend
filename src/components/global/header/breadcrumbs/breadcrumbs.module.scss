@@ -1,0 +1,44 @@
+@import '../../../../scss/colors';
+
+.breadcrumbs{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid #ededed;
+    ul{
+        display: flex;
+        gap: 32px;
+        text-transform: uppercase;
+        li{
+            font-size: $font-small;
+            font-weight: $font-weight-semiBold;
+            color: $color-bdrlGray-1;
+            position: relative;
+            a{
+                font-size: $font-small;
+                font-weight: $font-weight-semiBold;
+                color: $color-bdrlGray-1;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                right: -16px;
+                width: 5px;
+                height: 5px;
+                background-color: $color-bdrlDarkGray;
+                top: 0;
+                bottom: 0;
+                border-radius: 10px;
+                margin: auto;
+
+            }
+
+            &.active{
+                color: $color-primary;
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}

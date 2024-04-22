@@ -1,0 +1,83 @@
+@import '../../../../scss/colors';
+@import '../../../../scss/breakpoints';
+.SectionStack {
+    h2 {
+        font-size: $font-h2;
+        line-height: $font-h2 + 10;
+        color: $color-primary;
+        letter-spacing: -1px;
+        font-weight: $font-weight-semiBold;
+        @media #{$breakpoint-mobile} {
+            font-size: $font-h5;
+            line-height:$font-h5 + 5 ;
+        }
+    }
+    &.SectionStackSmall{
+        h2 {
+            font-size: $font-h4-small;
+            line-height: $font-h4-small + 10;
+            color: $color-primary;
+            letter-spacing: -1px;
+            font-weight: $font-weight-semiBold;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h4;
+                line-height: $font-h4 ;
+            }
+        }
+        .SectionDescription{
+            margin-top: 25px;
+        }
+    }
+
+    .SectionTagline {
+        display: block;
+        font-size: $font-h5;
+        line-height: $font-h4-small + 6;
+        letter-spacing: -1px;
+        margin-top: 12px;
+        @media #{$breakpoint-mobile} {
+            font-size: $font-large;
+            line-height: $font-large + 2;
+        }
+    }
+    .SectionDescription {
+        display: block;
+        font-size: $font-base;
+        line-height: $font-base + 11;
+        margin-top: 35px;
+        @media #{$breakpoint-mobile} {
+            margin-top: 25px;
+        }
+    }
+    &.green {
+        h2 {
+            color: $color-primary;
+        }
+        .SectionTagline {
+            color: $color-primary;
+        }
+    }
+    &.black {
+        h2 {
+            color: $color-black;
+        }
+        .SectionTagline {
+            color: $color-bodyCopy;
+        }
+    }
+    &.white {
+        h2 {
+            color: $color-white;
+        }
+        .SectionTagline {
+            color: $color-white;
+        }
+        .SectionDescription {
+            color: $color-white;
+        }
+        .moreBtn{
+            color: $color-white;
+            border-color: $color-white;
+        }
+    }
+}

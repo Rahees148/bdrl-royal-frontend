@@ -1,6 +1,5 @@
 import React from 'react'
 import * as style from './inner-banner.module.scss'
-import bannerIMG from '../../images/about-banner.jpeg';
 import overlayImage from '../../images/banner-overlay.svg';
 import classNames from 'classnames';
 import ResponsiveImage from '../global/responsive-image';

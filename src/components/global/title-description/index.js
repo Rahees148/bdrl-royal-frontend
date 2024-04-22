@@ -2,27 +2,21 @@ import React from 'react';
 import classNames from 'classnames';
 import * as style from './title-description.module.scss';
 import useWindowSize from '../../../libs/hooks/useWindowSize'
+import Stack from './stack';
+import Detail from './detail';
 
 function TitleDescription({ data }) {
     const {isMobile} = useWindowSize();
     return (
         <>
             {data.variant === 'details' ? (
-                <div
-                    className={classNames(
-                        style.SectionTitleDetails,
-                        data.theme ? style[data.theme] : style['green'],
-                    )}
-                >
-                    <h3 dangerouslySetInnerHTML={{ __html: data.title }} />
-                    {!isMobile && <div className={style.spacer}></div>}
-                    <div
-                        className={classNames(style.description)}
-                        dangerouslySetInnerHTML={{ __html: data.description }}
-                    />
-                </div>
+               <Detail data={data} />
             ) : (
-                <div
+                <>
+                {data.variant === 'stack' ? (
+                    <Stack data={data} />
+                ):(
+                    <div
                     className={classNames(
                         style.SectionTitle,
                         data.theme ? style[data.theme] : style['green'],
@@ -41,7 +35,9 @@ function TitleDescription({ data }) {
                             {data.button_label}
                         </a>
                     )}
-                </div>
+                    </div>
+                )}
+                </>
             )}
         </>
     );

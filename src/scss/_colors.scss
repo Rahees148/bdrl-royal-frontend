@@ -1,13 +1,20 @@
 @import './breakpoints';
+
+$primary-font: 'Urbanist', sans-serif;
+$secondary-font: "Gothic A1", sans-serif;
+
+
 $color-primary: #023321;
 $color-secondary: #2a5d4a;
 $color-bdrlGray: #f5f5f7;
 $color-bdrlDarkGray: #d9d9d9;
+$color-bdrlGray-1: #9E9E9E;
 $color-bdrlLightGray: #cecece;
 $color-bodyCopy: #474747;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-brook-green: #B2DDCE;
+$color-gold:#EEC78F;
 
 
 // Font Size
@@ -16,15 +23,15 @@ $font-small: 12px;
 $font-medium: 14px;
 $font-base: 16px;
 $font-large: 18px;
-$font-h5-large: 28px;
-$font-h5: 24px;
 $font-h5-small: 20px;
-$font-h4-large: 38px;
-$font-h4: 34px;
+$font-h5: 24px;
+$font-h5-large: 28px;
 $font-h4-small: 30px;
-$font-h3-large: 48px;
-$font-h3: 44px;
+$font-h4: 34px;
+$font-h4-large: 38px;
 $font-h3-small: 40px;
+$font-h3: 44px;
+$font-h3-large: 48px;
 $font-h2: 52px;
 $font-h1: 62px;
 
@@ -32,6 +39,6 @@ $font-h1: 62px;
 // font weight
 $font-weight-bold: 750;
 $font-weight-semiBold: 550;
-$font-weight-medium: 500;
-$font-weight-regular: 400;
-$font-weight-light: 300;
+$font-weight-medium: 400;
+$font-weight-regular: 300;
+$font-weight-light: 200;

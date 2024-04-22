@@ -8,6 +8,20 @@ const strapiConfig = {
   collectionTypes: ["post", "category", "author", 
   { singularName: "main-menu",queryParams:{
     populate:{
+      localizations:{
+        populate: {
+          mainmenu:{
+            populate:{
+              title:"*",
+              dropdown:{
+                populate:{
+                  icon: "*"
+                }
+              }
+            }
+          }
+        }
+      },
       mainmenu:{
         populate:{
           title:"*",
@@ -27,7 +41,14 @@ const strapiConfig = {
   } },
   { singularName: "testimonial", queryParams:{
     populate:{
-      localizations: "*",
+      localizations:{
+        populate:{
+          author_photo:"*",
+          image:"*",
+          treated_by:"*",
+          seo: "*",
+        }
+      },
       author_photo:"*",
       image:"*",
       treated_by:"*",
@@ -41,10 +62,87 @@ const strapiConfig = {
   } },
   { singularName: "news-and-event", queryParams:{
     populate:{
+      localizations: {
+        populate:{
+          author_photo:"*",
+          image:"*",
+          treated_by:"*",
+          seo: "*",
+        }
+      },
       author_photo:"*",
       image:"*",
       treated_by:"*",
       seo: "*",
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
+  { singularName: "leadership-list", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          title:"*",
+          designation: "*",
+          description: "*",
+          awards_title:{
+            populate:{
+              description:"*",
+            }
+          },
+          awards_icon:{
+            populate:{
+              icon:"*",
+            }
+          },
+          key_position_title_description:{
+            populate:{
+              description:"*",
+            }
+          },
+          keyposition_icons:{
+            populate:{
+              icon:"*",
+            }
+          },
+          form_title_description:{
+            populate:{
+              description:"*",
+            }
+          }
+        }
+      },
+      title:"*",
+      designation: "*",
+      description: "*",
+      awards_title:{
+        populate:{
+          description:"*",
+        }
+      },
+      award_icons:{
+        populate:{
+          icon:"*",
+        }
+      },
+      key_position_title_description:{
+        populate:{
+          description:"*",
+        }
+      },
+      keyposition_icons:{
+        populate:{
+          icon:"*",
+        }
+      },
+      form_title_description:{
+        populate:{
+          description:"*",
+        }
+      }
     },
     pluginOptions: {
       i18n: {
@@ -58,6 +156,57 @@ singleTypes:[
     singularName: "home", 
     queryParams:{
       populate:{
+        localizations:{
+          populate:{
+            banner:{
+              populate:{
+                desktop_media:"*",
+                mobile_media:"*"
+              }
+            },
+            centres_excellence:{
+              populate:{
+                card:{
+                  populate:{
+                    icon:"*",
+                    image:"*"
+                  }
+                }
+              }
+            },
+            exceptional_care:{
+              populate:{
+                card:{
+                  populate:{
+                    icon:"*",
+                    image:"*"
+                  }
+                }
+              }
+            },
+            sliding_card:{
+              populate:{
+                icon:"*",
+                image:"*"
+              }
+            },
+            image_text:{
+              populate:{
+                icon:"*",
+                image:"*"
+              }
+            },
+            testimonials_title:{
+              populate:"*"
+            },
+            news_event_title:{
+              populate:"*"
+            },
+            seo:{
+              populate:"*"
+            }
+          },
+        },
         banner:{
           populate:{
             desktop_media:"*",
@@ -117,6 +266,44 @@ singleTypes:[
     singularName: "about-an-overview", 
     queryParams:{
       populate:{
+        localizations: {
+          populate:{
+            banner:{
+              populate:{
+                desktop_media:"*",
+                mobile_media:"*"
+              }
+            },
+            title_description:{
+              populate:"*"
+            },
+            media:{
+              populate:{
+                desktop_media:"*",
+                mobile_media:"*"
+              }
+            },
+            highlights:{
+              populate:"*"
+            },
+            highlight_card:{
+              populate:{
+                icon:"*",
+              }
+            },
+            why_us_title_description:{
+              populate:"*"
+            },
+            why_us_cards:{
+              populate:{
+                image:"*",
+              }
+            },
+            // seo:{
+            //   populate:"*"
+            // }
+          },
+        },
         banner:{
           populate:{
             desktop_media:"*",
@@ -146,6 +333,46 @@ singleTypes:[
         why_us_cards:{
           populate:{
             image:"*",
+          }
+        },
+        // seo:{
+        //   populate:"*"
+        // }
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    } 
+  },
+  { 
+    singularName: "leadership", 
+    queryParams:{
+      populate:{
+        localizations: {
+          populate:{
+            title_description:{
+              populate:"*"
+            },
+            leaders:{
+              populate:{
+                image:"*",
+                link_to: "*",
+              }
+            },
+            // seo:{
+            //   populate:"*"
+            // }
+          },
+        },
+        title_description:{
+          populate:"*"
+        },
+        leaders:{
+          populate:{
+            image:"*",
+            link_to: "*",
           }
         },
         // seo:{

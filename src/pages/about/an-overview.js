@@ -10,10 +10,18 @@ import ImageCard from '../../components/global/image-card';
 import { Content } from '../../graphql/about/an-overview';
 
 
-const AnOverviewPage = () => {
+const AnOverviewPage = ({location}) => {
     const pageData = Content().allStrapiAboutAnOverview.nodes[0];
     return (
-        <Layout pageTitle="Home Page" variant={'home'}>
+        <Layout location={location} pageTitle="An Overview" template="inner" breadcrumb={{
+            links: [
+                {
+                    title:'About',
+                    url:'',
+                }
+            ],
+            title: 'An Overview'
+        }}>
             <Fade>
                 <InnerBanner data={
                     {
@@ -68,7 +76,7 @@ const AnOverviewPage = () => {
                     />
                 </div>
             </section>
-            <section className='mt-[-155px]'>
+            <section className='mt-[-155px] pb-[100px]'>
                 <div className='pageWrapper'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                         {pageData.why_us_cards && pageData.why_us_cards.map((imageCard, indexs)=>(

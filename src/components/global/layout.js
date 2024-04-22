@@ -4,26 +4,15 @@ import './layout.css'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({ pageTitle, variant, children }) => {
-  const data = useStaticQuery(graphql`
-        query {
-            allStrapiCategory {
-                nodes {
-                        name
-                        slug
-                        id
-                    }
-          }
-        }
-    `)
+const Layout = ({location, pageTitle, children, breadcrumb, template }) => {
 
   return (
     <>
-      <Header data={data} />
+      <Header pageTitle={pageTitle} location={location} template={template} breadcrumb={breadcrumb} />
       <main>
         {children}
       </main>
-      <Footer variant={variant} />
+      <Footer />
     </>
   )
 }
