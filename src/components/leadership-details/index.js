@@ -70,19 +70,9 @@ function LeaderShipDetails({pageData}) {
             <img src={TextMessageIcon} alt='Form Icon'/>
           </div>
           <div className={classNames( style.LeaderShipFormTitle)}>
-            <h4>Write to Mr. Abdul Latheef Uppala</h4>
-            <aside>You can directly write to our directors if you have any suggestion or complaints.</aside>
+            <h4>{pageData.form_title_description?.title}</h4>
+            <aside>{pageData?.form_title_description?.description?.data?.description}</aside>
           </div>
-          
-          {/* <TitleDescription data={
-              {
-                variant: 'stack',
-                size:'small',
-                theme: 'white',
-                title: pageData.form_title_description?.title,
-                description: pageData?.form_title_description?.description?.data?.description
-              }
-            } /> */}
             <LeadershipForm />
         </div>
       </div>
