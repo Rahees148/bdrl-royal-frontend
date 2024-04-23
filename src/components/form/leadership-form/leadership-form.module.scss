@@ -1,0 +1,28 @@
+@import '../../../scss/colors';
+@import '../../../scss/breakpoints';
+
+.LeaderShipForm {
+   
+    .FormInput {
+        border-radius: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: transparent;
+        font-size: 16px;
+        padding: 12px 24px;
+        min-height: 50px;
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    .FormTextarea {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: transparent;
+        font-size: 16px;
+        padding: 12px 24px; 
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    .FormBtn{
+        padding:12px 27px; ;
+    }
+}
