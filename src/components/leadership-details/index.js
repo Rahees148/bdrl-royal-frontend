@@ -2,12 +2,12 @@ import React from 'react'
 import photo from '../../images/leadership-pic1.png'
 import TitleDescription from '../global/title-description'
 import IconCard from '../global/icon-card'
+import LeadershipForm from '../form/leadership-form'
 
 function LeaderShipDetails({pageData}) {
   return (
     <div className='bg-gradient-to-b from-[#E4FF8520] via-[#FFFFFF] to-[#FFFFFF] pt-[90px] pb-[50px]'>
     <div className='pageWrapper'>
-
       <div className='grid grid-cols-12 gap-8 items-end'>
         <div className='col-span-12 md:col-span-3  bg-[#EDEDED] rounded-5'>
           <img src={pageData?.photo?.url} alt={pageData.title} />
@@ -72,6 +72,7 @@ function LeaderShipDetails({pageData}) {
                 description: pageData?.form_title_description?.description?.data?.description
               }
             } />
+            <LeadershipForm />
         </div>
       </div>
     </div>
