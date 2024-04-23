@@ -55,6 +55,9 @@ main{
     height: 100vh;
     background-attachment: fixed;
     background-size: cover;
+    @media #{$breakpoint-lg-tablet} {
+        height: auto;
+    }
 }
 .circle-pattern-bg{
     background: url(../images/bg-pattern3.png) repeat left center;

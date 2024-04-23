@@ -17,6 +17,7 @@
         line-height: $font-h2 + 8;
         letter-spacing: -1px;
         color: $color-primary;
+        font-weight: $font-weight-semiBold;
         @media #{$breakpoint-mobile} {
             grid-column: span 12;
             font-size: $font-h4;
