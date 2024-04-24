@@ -8,10 +8,12 @@ import IconCard from '../../components/global/icon-card';
 import ImageCard from '../../components/global/image-card';
 
 import { Content } from '../../graphql/about/an-overview';
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 
 const AnOverviewPage = () => {
     const pageData = Content().allStrapiAboutAnOverview.nodes[0];
+    const {isMobile} = useWindowSize()
     return (
         <Layout  pageTitle="An Overview" template="inner" breadcrumb={{
             links: [
@@ -26,7 +28,7 @@ const AnOverviewPage = () => {
                 <InnerBanner data={
                     {
                         title:pageData.banner?.Title,
-                        description:'pageData.banner?.Description?.data?.childMarkdownRemark?.html',
+                        description:pageData.banner?.Description?.data?.childMarkdownRemark?.html,
                         desktopMedia: pageData.banner?.desktop_media?.url,
                         mobileMedia: pageData.banner?.mobile_media?.url,
                     }
@@ -41,9 +43,17 @@ const AnOverviewPage = () => {
                     }} />
                 </div>
             </section>
-            <section className='full-width-image' style={{
-                backgroundImage:`url('${pageData.media?.desktop_media?.url}')`
-            }} />
+            {!isMobile &&
+                <section className='full-width-image' style={{
+                    backgroundImage:`url('${pageData.media?.desktop_media?.url}')`
+                }} />
+            }
+            {isMobile &&
+                <section className='full-width-image'>
+                    <img src={pageData.media?.desktop_media?.url} alt={pageData.title_description?.title} />
+                </section>
+            }
+            
             <section className='circle-pattern-bg py-[90px]'>
                 <div className='pageWrapper'>
                     <TitleDescription

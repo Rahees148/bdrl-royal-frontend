@@ -45,6 +45,10 @@
         font-size: $font-base;
         line-height: $font-base + 11;
         margin-top: 35px;
+        ul{
+            padding-left: 20px;
+            margin: 30px 0 0 0;
+        }
         @media #{$breakpoint-mobile} {
             margin-top: 25px;
         }
@@ -56,12 +60,18 @@
         .SectionTagline {
             color: $color-primary;
         }
+        .SectionDescription {
+            color: $color-primary;
+        }
     }
     &.black {
         h2 {
             color: $color-black;
         }
         .SectionTagline {
+            color: $color-bodyCopy;
+        }
+        .SectionDescription {
             color: $color-bodyCopy;
         }
     }

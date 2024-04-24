@@ -27,19 +27,19 @@
                 width: 100%;
             }
             .NewsletterSubscribeBtn{
-                background: #E4FF85;
-                color: $color-black;
-                border-radius: 42px;
+                // background: $color-light-green;
+                // color: $color-black;
+                // border-radius: 42px;
                 min-width: 128px;
                 padding: 12px 28px;
                 margin-left: 8px;
-                border: 1px solid transparent;
-                -webkit-transition: all 0.5s;
-                transition: all 0.5s; 
+                // border: 1px solid transparent;
+                // -webkit-transition: all 0.5s;
+                // transition: all 0.5s; 
                 &:hover{
-                    background: transparent;
-                    color: #E4FF85;
-                    border-color: #E4FF85;
+                    // background: transparent;
+                    // color: $color-light-green;
+                    // border-color: $color-light-green;
                 }
                 @media #{$breakpoint-mobile} {
                     padding: 7px 10px;

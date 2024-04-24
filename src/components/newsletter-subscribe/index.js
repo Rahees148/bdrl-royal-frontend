@@ -14,7 +14,7 @@ function NewsletterSubscribe({ data }) {
                             <img src={NlUserIcon} alt='Newsletter' />
                             <input className={classNames(style.NewsletterSubscribeInput,'')} placeholder='Enter your email'/>  
                         </div>
-                        <button className={classNames(style.NewsletterSubscribeBtn,'')}>Subscribe</button>
+                        <button className={classNames(style.NewsletterSubscribeBtn,'button light-green')}>Subscribe</button>
                     </div>
                 </div>
             </div>

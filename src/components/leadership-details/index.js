@@ -1,18 +1,21 @@
 import React from 'react'
+import classNames from 'classnames'
+import * as style from './leadership-details.module.scss'
 import photo from '../../images/leadership-pic1.png'
 import TitleDescription from '../global/title-description'
 import IconCard from '../global/icon-card'
+import LeadershipForm from '../form/leadership-form'
+import TextMessageIcon from '../../images/icons/text-message-icon.svg';
 
 function LeaderShipDetails({pageData}) {
   return (
     <div className='bg-gradient-to-b from-[#E4FF8520] via-[#FFFFFF] to-[#FFFFFF] pt-[90px] pb-[50px]'>
     <div className='pageWrapper'>
-
       <div className='grid grid-cols-12 gap-8 items-end'>
-        <div className='col-span-12 md:col-span-3  bg-[#EDEDED] rounded-5'>
+        <div className='col-span-12 md:col-span-4  bg-[#EDEDED] rounded-5'>
           <img src={pageData?.photo?.url} alt={pageData.title} />
         </div>
-        <div className='col-span-12 md:col-span-9'>
+        <div className='col-span-12 md:col-span-8'>
           <TitleDescription data={{
             variant: 'stack',
             title: pageData.title,
@@ -62,16 +65,15 @@ function LeaderShipDetails({pageData}) {
             </div>
           )}
         </div>
-        <div className='col-span-12 md:col-span-6 p-6 bg-primary rounded-[24px]'>
-          <TitleDescription data={
-              {
-                variant: 'stack',
-                size:'small',
-                theme: 'white',
-                title: pageData.form_title_description?.title,
-                description: pageData?.form_title_description?.description?.data?.description
-              }
-            } />
+        <div className='col-span-12 md:col-span-6 p-6 bg-primary rounded-[24px]'> 
+          <div className={classNames( style.LeaderShipFormIcon, 'rounded-full bg-white')}>
+            <img src={TextMessageIcon} alt='Form Icon'/>
+          </div>
+          <div className={classNames( style.LeaderShipFormTitle)}>
+            <h4>{pageData.form_title_description?.title}</h4>
+            <aside>{pageData?.form_title_description?.description?.data?.description}</aside>
+          </div>
+            <LeadershipForm />
         </div>
       </div>
     </div>
