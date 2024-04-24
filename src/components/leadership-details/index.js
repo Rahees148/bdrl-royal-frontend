@@ -14,11 +14,11 @@ function LeaderShipDetails({pageData}) {
   return (
     <div className={classNames(style.leadershipPage, 'bg-gradient-to-b from-[#E4FF8520] via-[#FFFFFF] to-[#FFFFFF] pt-[20px] md:pt-[93px] pb-[50px]')}>
     <div className='pageWrapper'>
-      <div className='grid grid-cols-12 gap-8 '>
+      <div className='grid grid-cols-12 gap-8 items-end'>
         <div className='col-span-12 md:col-span-4  bg-[#EDEDED] rounded-5'>
           <img src={pageData?.photo?.url} alt={pageData.title} />
         </div>
-        <div className='col-span-12 md:col-span-8  md:pt-[57px]'>
+        <div className='col-span-12 md:col-span-8'>
           <TitleDescription data={{
             variant: 'stack',
             title: pageData.title,
