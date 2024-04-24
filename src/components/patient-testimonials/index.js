@@ -16,7 +16,7 @@ function PatientTestimonials({titleDescription}) {
     <div className="pageWrapper ">
       <TitleDescription 
         data={{
-          title:titleDescription.title,
+          title:titleDescription.title?.data.title,
           description:titleDescription.tagline,
           button_label:titleDescription.button_label,
           button_link:titleDescription.button_link

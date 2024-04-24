@@ -47,7 +47,11 @@ query ($id: String) {
       title
     }
     key_position_title_description {
-      title
+      title {
+        data {
+          title
+        }
+      }
       description {
         data {
           description
@@ -55,15 +59,19 @@ query ($id: String) {
       }
     }
     form_title_description {
-      title
-      description {
+      title {
         data {
-          description
+          title
         }
       }
+      tagline
     }
     awards_title {
-      title
+      title {
+        data {
+          title
+        }
+      }
       description {
         data {
           description

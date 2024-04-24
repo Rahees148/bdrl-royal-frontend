@@ -22,7 +22,7 @@ export const Content = () => {
                 }
                 }
                 highlight_card {
-                title
+                    title
                     icon {
                         url
                     }
@@ -30,7 +30,11 @@ export const Content = () => {
                 locale
                 title
                 title_description {
-                    title
+                    title {
+                        data {
+                          title
+                        }
+                      }
                     description {
                         data {
                             description
@@ -38,7 +42,11 @@ export const Content = () => {
                     }
                 }
                 highlights {
-                    title
+                    title {
+                        data {
+                          title
+                        }
+                      }
                     tagline
                     }
                 why_us_cards {
@@ -49,7 +57,11 @@ export const Content = () => {
                 }
                 }
                 why_us_title_description {
-                    title
+                    title {
+                        data {
+                          title
+                        }
+                      }
                     description {
                         data {
                             description

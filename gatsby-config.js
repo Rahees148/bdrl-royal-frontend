@@ -122,6 +122,7 @@ const strapiConfig = {
       photo: "*",
       awards_title:{
         populate:{
+          title:"*",
           description:"*",
         }
       },
@@ -132,6 +133,7 @@ const strapiConfig = {
       },
       key_position_title_description:{
         populate:{
+          title:"*",
           description:"*",
         }
       },
@@ -142,6 +144,7 @@ const strapiConfig = {
       },
       form_title_description:{
         populate:{
+          title:"*",
           description:"*",
         }
       }
@@ -199,10 +202,14 @@ singleTypes:[
               }
             },
             testimonials_title:{
-              populate:"*"
+              populate:{
+                title:"*"
+              }
             },
             news_event_title:{
-              populate:"*"
+              populate:{
+                title:"*"
+              }
             },
             seo:{
               populate:"*"
@@ -248,10 +255,14 @@ singleTypes:[
           }
         },
         testimonials_title:{
-          populate:"*"
+          populate:{
+            title:"*"
+          }
         },
         news_event_title:{
-          populate:"*"
+          populate:{
+            title:"*"
+          }
         },
         seo:{
           populate:"*"
@@ -277,7 +288,9 @@ singleTypes:[
               }
             },
             title_description:{
-              populate:"*"
+              populate:{
+                title:"*"
+              }
             },
             media:{
               populate:{
@@ -286,7 +299,9 @@ singleTypes:[
               }
             },
             highlights:{
-              populate:"*"
+              populate:{
+                title:"*"
+              }
             },
             highlight_card:{
               populate:{
@@ -294,7 +309,9 @@ singleTypes:[
               }
             },
             why_us_title_description:{
-              populate:"*"
+              populate:{
+                title:"*"
+              }
             },
             why_us_cards:{
               populate:{
@@ -313,7 +330,9 @@ singleTypes:[
           }
         },
         title_description:{
-          populate:"*"
+          populate:{
+            title:"*"
+          }
         },
         media:{
           populate:{
@@ -322,7 +341,9 @@ singleTypes:[
           }
         },
         highlights:{
-          populate:"*"
+          populate:{
+            title:"*"
+          }
         },
         highlight_card:{
           populate:{
@@ -330,7 +351,9 @@ singleTypes:[
           }
         },
         why_us_title_description:{
-          populate:"*"
+          populate:{
+            title:"*"
+          }
         },
         why_us_cards:{
           populate:{
@@ -369,7 +392,9 @@ singleTypes:[
           },
         },
         title_description:{
-          populate:"*"
+          populate:{
+            title:"*"
+          }
         },
         leaders:{
           populate:{

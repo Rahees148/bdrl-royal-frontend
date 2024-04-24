@@ -65,13 +65,21 @@ export const Content = () => {
           testimonials_title {
             button_label
             button_link
-            title
+            title{
+              data{
+                title
+              }
+            }
             tagline
           }
           news_event_title {
             button_label
             button_link
-            title
+            title {
+              data {
+                title
+              }
+            }
             tagline
           }
           image_text {

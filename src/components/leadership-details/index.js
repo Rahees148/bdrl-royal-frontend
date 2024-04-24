@@ -34,7 +34,7 @@ function LeaderShipDetails({pageData}) {
             {
               variant: 'stack',
               size:'small',
-              title: pageData.awards_title?.title,
+              title: pageData.awards_title?.title?.data?.title,
               description: pageData?.awards_title?.description?.data?.description
             }
           } />
@@ -54,7 +54,7 @@ function LeaderShipDetails({pageData}) {
             {
               variant: 'stack',
               size:'small',
-              title: pageData.key_position_title_description?.title,
+              title: pageData.key_position_title_description?.title?.data?.title,
               description: pageData?.key_position_title_description?.description?.data?.description
             }
           } />
@@ -109,8 +109,8 @@ function LeaderShipDetails({pageData}) {
               <img src={TextMessageIcon} alt='Form Icon'/>
             </div>
             <div className={classNames( style.LeaderShipFormTitle)}>
-              <h4>{pageData.form_title_description?.title}</h4>
-              <aside>{pageData?.form_title_description?.description?.data?.description}</aside>
+              <h4  dangerouslySetInnerHTML={{__html: pageData.form_title_description?.title?.data.title}} />
+              <aside>{pageData?.form_title_description?.tagline}</aside>
             </div>
             <LeadershipForm />
           </div> 

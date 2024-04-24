@@ -28,7 +28,7 @@ const AnOverviewPage = ({location}) => {
                         data={{
                             variant: 'details',
                             theme: 'white',
-                            title:pageData?.title_description?.title,
+                            title:pageData?.title_description?.title?.data.title,
                             description:pageData?.title_description?.description?.data?.description,
                         }}
                     />
