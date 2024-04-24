@@ -65,15 +65,17 @@ function LeaderShipDetails({pageData}) {
             </div>
           )}
         </div>
-        <div className='col-span-12 md:col-span-6 p-6 bg-primary rounded-[24px]'> 
-          <div className={classNames( style.LeaderShipFormIcon, 'rounded-full bg-white')}>
-            <img src={TextMessageIcon} alt='Form Icon'/>
-          </div>
-          <div className={classNames( style.LeaderShipFormTitle)}>
-            <h4>{pageData.form_title_description?.title}</h4>
-            <aside>{pageData?.form_title_description?.description?.data?.description}</aside>
-          </div>
+        <div className='col-span-12 md:col-span-6'>
+          <div className='p-6 bg-primary rounded-[24px]'>
+            <div className={classNames( style.LeaderShipFormIcon, 'rounded-full bg-white')}>
+              <img src={TextMessageIcon} alt='Form Icon'/>
+            </div>
+            <div className={classNames( style.LeaderShipFormTitle)}>
+              <h4>{pageData.form_title_description?.title}</h4>
+              <aside>{pageData?.form_title_description?.description?.data?.description}</aside>
+            </div>
             <LeadershipForm />
+          </div> 
         </div>
       </div>
     </div>

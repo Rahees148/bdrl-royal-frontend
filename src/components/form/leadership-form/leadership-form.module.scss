@@ -3,6 +3,9 @@
 
 .LeaderShipForm {
    
+    .formError{
+        border: 1px solid red !important;
+    }
     .FormInput {
         border-radius: 42px;
         border: 1px solid rgba(255, 255, 255, 0.32);
@@ -12,6 +15,8 @@
         min-height: 50px;
         width: 100%;
         margin-bottom: 18px;
+        outline: none;
+        color: $color-white;
     }
     .FormTextarea {
         border-radius: 16px;
@@ -21,6 +26,7 @@
         padding: 12px 24px; 
         width: 100%;
         margin-bottom: 18px;
+        color: $color-white;
     }
     .FormBtn{
         padding:12px 27px; ;
