@@ -9,13 +9,13 @@ import TextMessageIcon from '../../images/icons/text-message-icon.svg';
 
 function LeaderShipDetails({pageData}) {
   return (
-    <div className='bg-gradient-to-b from-[#E4FF8520] via-[#FFFFFF] to-[#FFFFFF] pt-[90px] pb-[50px]'>
+    <div className='bg-gradient-to-b from-[#E4FF8520] via-[#FFFFFF] to-[#FFFFFF] pt-[93px] pb-[50px]'>
     <div className='pageWrapper'>
-      <div className='grid grid-cols-12 gap-8 items-end'>
+      <div className='grid grid-cols-12 gap-8 '>
         <div className='col-span-12 md:col-span-4  bg-[#EDEDED] rounded-5'>
           <img src={pageData?.photo?.url} alt={pageData.title} />
         </div>
-        <div className='col-span-12 md:col-span-8'>
+        <div className='col-span-12 md:col-span-8 pt-[57px]'>
           <TitleDescription data={{
             variant: 'stack',
             title: pageData.title,
@@ -25,7 +25,7 @@ function LeaderShipDetails({pageData}) {
         </div>
       </div>
       
-      <div className='pt-[80px] grid grid-cols-12 gap-8'>
+      <div className='pt-[87px] grid grid-cols-12 gap-8 items-start'>
         <div className='col-span-12 md:col-span-6'>
           <TitleDescription data={
             {
