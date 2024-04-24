@@ -11,10 +11,16 @@
     &.stack{
         flex-direction: column;
         border: 1px solid #EDEDED;
+        @media #{$breakpoint-mobile} {
+            flex-direction: row;
+        }
         .title{
             font-size: $font-small;
             text-align: center;
             font-weight: $font-weight-medium;
+            @media #{$breakpoint-mobile} {
+                text-align: left;
+            }
         }
     }
     .icon{

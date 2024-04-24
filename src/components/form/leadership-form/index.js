@@ -32,14 +32,14 @@ function LeadershipForm() {
                 <input type="text" {...register("name", { required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your name' />
         </label>
         <label className="block"> 
-                <input type="text" {...register("number", { required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your number' />
+                <input type="text" {...register("number", { required: true })} className={classNames(style.FormInput,errors.number && style.formError)} placeholder='Enter your number' />
         </label>
         <label className="block"> 
-                <input type="text" {...register("email", {required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your email' /> 
+                <input type="text" {...register("email", {required: true })} className={classNames(style.FormInput,errors.email && style.formError)} placeholder='Enter your email' /> 
                 {/* {errors.email && <p role="alert">{errors.email.message}</p>} */}
         </label>
         <label className="block">  
-                <textarea {...register("message")} rows="10" placeholder='Enter your email' className={classNames(style.FormTextarea,errors.name && style.formError, 'mt-1 block w-full')}></textarea>
+                <textarea {...register("message", {required: true })} rows="10" placeholder='Enter your email' className={classNames(style.FormTextarea,errors.message && style.formError, 'mt-1 block w-full')}></textarea>
         </label>
         <button className={classNames(style.FormBtn,'button light-green')}>Submit</button>
       </div>
