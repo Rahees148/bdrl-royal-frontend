@@ -1,0 +1,76 @@
+@import '../../../../scss/breakpoints';
+@import '../../../../scss/colors';
+.MenuOverlay{
+    position: fixed;
+    background-color: rgba(0,0,0,0.95);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+   &.fadeIn{
+    display: block;
+    animation: fade-animation 1s;
+   }
+   &.fadeOut{
+    animation: fadeOut-animation 1s;
+   }
+   .greenBg{
+    width: calc(50% - 218px);
+    background-color: $color-primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+   }
+   .leftCol{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+   }
+   .rightCol{
+    position: relative;
+    .close{
+        position: absolute;
+        right: 0;
+        top: 80px;
+    }
+    .menuItem{
+        text-align: right;
+        color: $color-bdrlGray-2;
+        li{
+            font-size: $font-h1;
+            font-weight: $font-weight-lighter;
+            line-height: 100%;
+            cursor: pointer;
+            a{
+                font-size: $font-h1;
+                font-weight: $font-weight-lighter;
+                line-height: 100%;
+            }
+            &:hover{
+                color: $color-white;
+            }
+        }
+    }
+   }
+}
+  
+  @keyframes fade-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+  @keyframes fadeOut-animation {
+    from {
+      opacity: 100;
+    }
+    to {
+      opacity: 0;
+      display: none;
+    }
+  }

@@ -73,7 +73,12 @@
                         display: block;
                     }
                 }
+
             }
+        }
+
+        .menuIcon{
+            cursor: pointer;
         }
         .headerBtn{
             font-size: $font-small;
