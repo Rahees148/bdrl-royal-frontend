@@ -12,7 +12,11 @@ export const Leaders = () => {
                     description
                   }
                 }
-                title
+                title {
+                  data {
+                    title
+                  }
+                }
               }
               leaders {
                 title

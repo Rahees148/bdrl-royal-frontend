@@ -28,14 +28,19 @@ function LeadershipForm() {
     <div className={classNames(style.LeaderShipForm)}>
       <form onSubmit={handleSubmit(onSubmit)}>
       <div> 
+        <input type="text" {...register("name", { required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your name' />
         <label className="block"> 
                 <input type="text" {...register("name", { required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your name' />
         </label>
         <label className="block"> 
-                <input type="text" {...register("number", { required: true })} className={classNames(style.FormInput,errors.number && style.formError)} placeholder='Enter your number' />
+                <input type="text" {...register("number", { required: true,  pattern:{
+       value: /^([0-9]\d*)(\.\d+)?$/
+    } })} className={classNames(style.FormInput,errors.number && style.formError)} placeholder='Enter your number' />
         </label>
         <label className="block"> 
-                <input type="text" {...register("email", {required: true })} className={classNames(style.FormInput,errors.email && style.formError)} placeholder='Enter your email' /> 
+                <input type="text" {...register("email", {required: true, pattern:{
+                  value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+                } })} className={classNames(style.FormInput,errors.email && style.formError)} placeholder='Enter your email' /> 
                 {/* {errors.email && <p role="alert">{errors.email.message}</p>} */}
         </label>
         <label className="block">  

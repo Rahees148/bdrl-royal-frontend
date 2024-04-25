@@ -38,7 +38,7 @@ const AnOverviewPage = () => {
                 <div className='pt-[120px] pb-[60px]'>
                     <TitleDescription data={{
                         variant: 'details',
-                        title: pageData.title_description?.title,
+                        title: pageData.title_description?.title?.data?.title,
                         description: pageData.title_description.description.data.description,
                     }} />
                 </div>
@@ -59,7 +59,7 @@ const AnOverviewPage = () => {
                     <TitleDescription
                         data={{
                             theme: 'green',
-                            title: pageData.highlights?.title,
+                            title: pageData.highlights?.title?.data?.title,
                             description:pageData.highlights?.tagline
                         }}
                     />
@@ -80,7 +80,7 @@ const AnOverviewPage = () => {
                         data={{
                             variant: 'details',
                             theme: 'white',
-                            title:pageData.why_us_title_description?.title,
+                            title:pageData.why_us_title_description?.title?.data?.title,
                             description:pageData.why_us_title_description?.description.data.description,
                         }}
                     />
