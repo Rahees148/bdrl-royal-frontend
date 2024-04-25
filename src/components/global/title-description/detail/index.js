@@ -10,10 +10,11 @@ function Detail({ data }) {
             className={classNames(
                 style.SectionTitleDetails,
                 data.theme ? style[data.theme] : style['green'],
+                data.size ? style[data.size] :'',
             )}
         >
             <h3 dangerouslySetInnerHTML={{ __html: data.title }} />
-            {!isMobile && <div className={style.spacer}></div>}
+            
             <div
                 className={classNames(style.description)}
                 dangerouslySetInnerHTML={{ __html: data.description }}
