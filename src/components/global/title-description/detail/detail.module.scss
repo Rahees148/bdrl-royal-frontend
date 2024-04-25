@@ -8,7 +8,7 @@
     @media #{$breakpoint-mobile} {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        gap: 24px;
+        gap: 26px;
         
     }
 
@@ -20,6 +20,10 @@
                 line-height: $font-h2 + 5;
                 font-weight: $font-weight-lighter;
                 letter-spacing: 0px;
+                @media #{$breakpoint-mobile} {
+                    font-size: $font-h3 + 2;
+                    line-height: $font-h3 + 4;
+                }
             }
             @media #{$breakpoint-mobile} {
                 grid-column: span 12;
@@ -45,7 +49,7 @@
             grid-column: span 12;
             p{
                 font-size: $font-h4;
-                line-height: $font-h4;
+                line-height: $font-h4 + 6;
             }
         }
     }
@@ -54,17 +58,23 @@
 
     .description {
         grid-column: span 7;
-        font-size: $font-base;
-        line-height: $font-base + 11;
-        color: $color-primary;
-        letter-spacing: 3%;
-        p{
+        
+        *{
             margin-bottom: 20px;
+            font-size: $font-base;
+            line-height: $font-base + 11;
+            color: $color-primary;
+            letter-spacing: 3%;
+            font-weight: $font-weight-medium;
+            
         }
         @media #{$breakpoint-mobile} {
             grid-column: span 12;
-            font-size: $font-medium;
-            line-height: $font-medium + 5;
+            *{
+                font-size: $font-medium;
+                line-height: $font-medium + 7;
+            }
+            
         }
     }
     &.green {

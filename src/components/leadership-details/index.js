@@ -39,7 +39,7 @@ function LeaderShipDetails({pageData}) {
             }
           } />
           {pageData.award_icons && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-[30px] pb-[45px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-[34px] pb-[60px]">
               {pageData.award_icons.map((icon, index) => (
                 <IconCard key={index} data={{
                   variant:'stack',
@@ -59,7 +59,7 @@ function LeaderShipDetails({pageData}) {
             }
           } />
           {pageData.keyposition_icons && (
-            <div className="pt-[30px] pb-[45px] w-[90%] mr-[auto] ml-[auto]">
+            <div className="pt-[45px] pb-[45px] w-[90%] mr-[auto] ml-[auto]">
               <Swiper
               speed={1000}
               effect='fade'

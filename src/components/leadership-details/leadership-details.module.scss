@@ -7,7 +7,7 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
     .LeaderShipFormTitle {
         h4{
@@ -15,13 +15,13 @@
             font-size: $font-h5;
             color: $color-white;
             line-height: $font-h5 + 5;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         aside {
             color: $color-white;
             font-size: $font-base;
             line-height: $font-base + 11;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
     }
     :global(.leadershipSliderSwiper){

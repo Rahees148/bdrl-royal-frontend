@@ -22,7 +22,7 @@ const AnOverviewPage = ({location}) => {
         }}>
             <Fade>
 
-            <section className='bg-primary py-[80px]'>
+            <section className='bg-primary pb-[55px] pt-[80px] sm:py-[80px]'>
                 <div className='pageWrapper'>
                     <TitleDescription
                         data={{
