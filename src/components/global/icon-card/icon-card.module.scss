@@ -3,28 +3,43 @@
 .cardWrapper{
     padding: 20px 25px;
     box-shadow: 0px 11.7408px 46.9632px rgba(8, 23, 33, 0.07);
-    border-radius: 23px;
+    border-radius: 15px;
     background-color: #fff;
     display: flex;
     align-items: center;
     gap: 20px;
+    @media #{$breakpoint-mobile} {
+        padding: 16px 15px;
+        gap: 16px;
+    }
     &.stack{
+        padding: 21px 15px;
         flex-direction: column;
         border: 1px solid #EDEDED;
+        border-radius: 23px;
+        box-shadow: unset;
+        gap: 14px;
         @media #{$breakpoint-mobile} {
             flex-direction: row;
         }
         .title{
             font-size: $font-small;
+            line-height:$font-small + 4 ;
             text-align: center;
             font-weight: $font-weight-medium;
             @media #{$breakpoint-mobile} {
                 text-align: left;
             }
         }
+        .icon{
+            width: 74px;
+        }
     }
     .icon{
         width: 70px;
+        @media #{$breakpoint-mobile} {
+            width: 56px;
+        }
         &.fullWidth{
             width: 100%;
         }
@@ -39,7 +54,7 @@
         color: $color-primary;
         @media #{$breakpoint-mobile} {
             font-size: $font-medium;
-            line-height:  $font-medium + 3;
+            line-height:  $font-medium + 6;
             
         }
     }
