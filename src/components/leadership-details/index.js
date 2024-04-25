@@ -112,7 +112,7 @@ function LeaderShipDetails({pageData}) {
               <h4  dangerouslySetInnerHTML={{__html: pageData.form_title_description?.title?.data.title}} />
               <aside>{pageData?.form_title_description?.tagline}</aside>
             </div>
-            <LeadershipForm />
+            <LeadershipForm toEmail={pageData.title} title={pageData.title} />
           </div> 
         </div>
       </div>
