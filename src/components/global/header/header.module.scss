@@ -73,7 +73,12 @@
                         display: block;
                     }
                 }
+
             }
+        }
+
+        .menuIcon{
+            cursor: pointer;
         }
         .headerBtn{
             font-size: $font-small;
@@ -88,10 +93,16 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        @media #{$breakpoint-mobile} {
+            height: 2px;
+        }
         .progressBar {
             height: 4px;
             background: linear-gradient(79.82deg, #2E388D 21%, #3A3686 29.06%, #5A3375 44.45%, #8E2E59 64.23%, #D52734 88.42%, #E9262A 94.28%);
             width: 0%; 
+            @media #{$breakpoint-mobile} {
+                height: 2px;
+            }
           }
     }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
 import * as s from './header.module.scss';
@@ -8,8 +8,10 @@ import logo from '../../../images/logo.svg';
 import menuIcon from '../../../images/icons/menu-icon.svg';
 import DropDownMenu from './drop-down-menu';
 import Breadcrumbs from './breadcrumbs';
+import MenuOverlay from './menu-overlay';
 function Header({ pageTitle, breadcrumb, template  }) {
     const progressBar = useRef(null);
+    const [isOpen, setIsOpen] = useState(false)
     const mainMenu = Content().allStrapiMainMenu.nodes[0].mainmenu;
     useEffect(()=>{
         window.onscroll = function() {
@@ -23,6 +25,13 @@ function Header({ pageTitle, breadcrumb, template  }) {
 
         
     },[progressBar.current])
+    useEffect(()=>{
+        if(isOpen){
+            document.documentElement.style.overflowY = 'hidden';
+        }else{
+            document.documentElement.style.overflowY = 'auto';
+        }
+    },[isOpen])
     return (
         <>
             <div className={classNames(s.topHeader, 'bg-primary')}>
@@ -64,11 +73,12 @@ function Header({ pageTitle, breadcrumb, template  }) {
                             </a>
                         </li>
                         <li>
-                            <a  href="#">
-                                <img src={menuIcon} alt="Menu" className={s.menuIcon} />
-                            </a>
+                            <img onClick={()=>{setIsOpen(true)}} src={menuIcon} alt="Menu" className={s.menuIcon} />
                         </li>
                     </ul>
+                    <MenuOverlay mainMenu={mainMenu}isOpen={isOpen} setIsOpen={(val)=>{
+                        setIsOpen(val);
+                    }}/>
                 </div>
                 {template === 'inner'&& (
                     <>

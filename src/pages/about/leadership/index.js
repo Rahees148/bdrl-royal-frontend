@@ -8,7 +8,7 @@ import { Leaders } from '../../../graphql/about/leaders';
 import LeaderShip from '../../../components/leadership';
 
 
-const AnOverviewPage = ({location}) => {
+const LeadersPage = ({location}) => {
     const pageData = Leaders().allStrapiLeadership.nodes[0];
     return (
         <Layout pageTitle={pageData.title}  template="inner" breadcrumb={{
@@ -22,7 +22,7 @@ const AnOverviewPage = ({location}) => {
         }}>
             <Fade>
 
-            <section className='bg-primary py-[80px]'>
+            <section className='bg-primary pb-[55px] pt-[80px] sm:py-[80px]'>
                 <div className='pageWrapper'>
                     <TitleDescription
                         data={{
@@ -45,5 +45,4 @@ const AnOverviewPage = ({location}) => {
         </Layout>
     );
 };
-
-export default AnOverviewPage;
+export default LeadersPage;

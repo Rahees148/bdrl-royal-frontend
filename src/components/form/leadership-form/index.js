@@ -4,7 +4,7 @@ import * as style from './leadership-form.module.scss';
 import { useForm } from "react-hook-form"
 import { postCMSRequest } from '../../../libs/api/services';
 
-function LeadershipForm() {
+function LeadershipForm({toEmail, title}) {
   const [formSuccess,setFormSuccess] = useState(false)
   const {
     register,
@@ -28,7 +28,7 @@ function LeadershipForm() {
     <div className={classNames(style.LeaderShipForm)}>
       <form onSubmit={handleSubmit(onSubmit)}>
       <div> 
-        <input type="text" {...register("name", { required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your name' />
+        <input type="hidden" {...register("toEmail", { value: title })} />
         <label className="block"> 
                 <input type="text" {...register("name", { required: true })} className={classNames(style.FormInput,errors.name && style.formError)} placeholder='Enter your name' />
         </label>
