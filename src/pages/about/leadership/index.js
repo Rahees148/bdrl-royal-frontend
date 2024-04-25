@@ -28,6 +28,7 @@ const AnOverviewPage = ({location}) => {
                         data={{
                             variant: 'details',
                             theme: 'white',
+                            size: 'light',
                             title:pageData?.title_description?.title?.data.title,
                             description:pageData?.title_description?.description?.data?.description,
                         }}
