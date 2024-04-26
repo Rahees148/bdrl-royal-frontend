@@ -33,6 +33,9 @@
         }
         .icon{
             width: 74px;
+            @media #{$breakpoint-mobile} {
+                width: 54px;
+            }
         }
     }
     .icon{

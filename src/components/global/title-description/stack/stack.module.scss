@@ -8,8 +8,8 @@
         letter-spacing: -1px;
         font-weight: $font-weight-semiBold;
         @media #{$breakpoint-mobile} {
-            font-size: $font-h5;
-            line-height:$font-h5 + 5 ;
+            font-size: $font-h4;
+            line-height:$font-h4  ;
         }
     }
     &.SectionStackSmall{
@@ -20,12 +20,17 @@
             letter-spacing: -1px;
             font-weight: $font-weight-semiBold;
             @media #{$breakpoint-mobile} {
-                font-size: $font-h4;
-                line-height: $font-h4 ;
+                font-size: $font-h5;
+                line-height: $font-h5 + 5 ;
             }
         }
         .SectionDescription{
             margin-top: 25px;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-medium;
+                line-height: $font-medium + 10; 
+                margin-top: 22px;
+            }
         }
     }
 
@@ -37,8 +42,9 @@
         margin-top: 12px;
         font-weight: $font-weight-semiBold;
         @media #{$breakpoint-mobile} {
-            font-size: $font-large;
-            line-height: $font-large + 2;
+            font-size: $font-base;
+            line-height: $font-base + 3;
+            margin-top: 9px;
         }
     }
     .SectionDescription {
@@ -47,6 +53,11 @@
         line-height: $font-base + 11;
         margin-top: 40px;
         font-weight: $font-weight-medium;
+        @media #{$breakpoint-mobile} {
+            margin-top: 25px;
+            font-size: $font-medium;
+            line-height: $font-medium + 10; 
+        }
         *{
             font-weight: $font-weight-medium; 
             
@@ -57,16 +68,21 @@
             font-weight: $font-weight-medium;
             li{
                 margin-bottom: 5px;
-                span{
+                @media #{$breakpoint-mobile} {
+                    margin-bottom: 12px;
+                }
+                *{
                     font-weight: $font-weight-medium;
+                    @media #{$breakpoint-mobile} {
+                        font-size: $font-medium;
+                        line-height: $font-medium + 8;
+                    }
                 }
                
             }
 
         }
-        @media #{$breakpoint-mobile} {
-            margin-top: 25px;
-        }
+       
     }
     &.green {
         h2 {

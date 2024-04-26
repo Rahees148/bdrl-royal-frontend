@@ -8,6 +8,7 @@
     top: 0;
     left: 0;
     display: none;
+    z-index: 5;
    &.fadeIn{
     display: block;
     animation: fade-animation 1s;
@@ -25,34 +26,86 @@
    }
    .leftCol{
     height: 100vh;
-    display: flex;
-    align-items: center;
+    display: flex; 
+    flex-direction: column;
     color: #fff;
+    padding-top: 190px;
+    max-width: 255px;
+    ul{
+      li{
+        
+        padding-right: 20px;
+        font-size: $font-h5;
+        line-height: $font-h5 + 5;
+        margin-bottom: 10px;
+        background: url(../../../../images/icons/menu-white-arw-right.svg) no-repeat right;
+      }
+    }
+    .leftColBtm{
+      margin-top: 190px;
+      border-top: 1px solid rgba(255, 255, 255, 0.32);
+      .leftColBtmlogo {
+        margin-top: 37px;
+        margin-bottom: 26px;
+      }
+      .leftColBtmAdrs {
+        font-size: $font-medium;
+        line-height: $font-medium + 3;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 41px;
+      }
+    }
    }
    .rightCol{
     position: relative;
+    padding-top: 190px;
+    width: 100%;
     .close{
         position: absolute;
         right: 0;
         top: 80px;
     }
     .menuItem{
+      width: 100%;
         text-align: right;
         color: $color-bdrlGray-2;
-        li{
-            font-size: $font-h1;
-            font-weight: $font-weight-lighter;
-            line-height: 100%;
-            cursor: pointer;
-            a{
-                font-size: $font-h1;
-                font-weight: $font-weight-lighter;
-                line-height: 100%;
+        ol{
+          counter-reset: li;
+          list-style: none;
+          *list-style: decimal; 
+            li{
+              font-size: $font-h1;
+              font-weight: $font-weight-lighter;
+              line-height: 100%;
+              cursor: pointer;
+              position: relative;
+              &:before{ 
+                content: counter(li)"/";
+                counter-increment: li;
+                position: absolute;	 
+                font-size: $font-medium;
+                font-weight: $font-weight-semiBold;
+                top: -50%;
+                margin-top: 10px; 
+                left: 0px;
+                -webkit-transition: all .3s ease-out;
+                -moz-transition: all .3s ease-out;
+                -ms-transition: all .3s ease-out;
+                -o-transition: all .3s ease-out;
+                transition: all .3s ease-out; 
             }
-            &:hover{
-                color: $color-white;
-            }
+              a{
+                  font-size: $font-h1;
+                  font-weight: $font-weight-lighter;
+                  line-height: 100%;
+                  
+              }
+              &:hover{
+                  color: $color-white;
+              }
+          }
         }
+        
     }
    }
 }

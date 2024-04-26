@@ -17,6 +17,9 @@
         margin-bottom: 18px;
         outline: none;
         color: $color-white;
+        @media #{$breakpoint-mobile}{
+            margin-bottom: 12px;
+        }
     }
     .FormTextarea {
         border-radius: 16px;
@@ -27,6 +30,9 @@
         width: 100%;
         margin-bottom: 18px;
         color: $color-white;
+        @media #{$breakpoint-mobile}{
+            margin-bottom: 12px;
+        }
     }
     .FormBtn{
         padding:12px 27px; ;

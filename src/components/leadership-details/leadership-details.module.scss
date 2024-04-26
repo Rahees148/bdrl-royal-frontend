@@ -22,6 +22,10 @@
             font-size: $font-base;
             line-height: $font-base + 11;
             margin-bottom: 25px;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-medium;
+                line-height: $font-medium + 10;
+            } 
         }
     }
     :global(.leadershipSliderSwiper){
