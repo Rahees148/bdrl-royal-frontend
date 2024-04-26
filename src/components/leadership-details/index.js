@@ -39,7 +39,7 @@ function LeaderShipDetails({pageData}) {
             }
           } />
           {pageData.award_icons && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-[34px] pb-[60px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[11px] sm:gap-8 pt-[26px] sm:pt-[34px] pb-[55px] sm:pb-[60px]">
               {pageData.award_icons.map((icon, index) => (
                 <IconCard key={index} data={{
                   variant:'stack',
