@@ -24,6 +24,15 @@
     top: 0;
     height: 100%;
    }
+   .blackOverlay {
+    position: absolute;
+    width: calc(50% + 218px);
+    height: 25%;
+    right:0;
+    bottom:0 ;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,213,157,0) 100%);
+    z-index: 1;
+  }
    .leftCol{
     height: 100vh;
     display: flex; 
@@ -64,6 +73,7 @@
         position: absolute;
         right: 0;
         top: 80px;
+        cursor: pointer;
     }
     .menuItem{
       width: 100%;
@@ -73,40 +83,112 @@
           counter-reset: li;
           list-style: none;
           *list-style: decimal; 
-            li{
+            > li{
               font-size: $font-h1;
               font-weight: $font-weight-lighter;
               line-height: 100%;
               cursor: pointer;
               position: relative;
+              -webkit-transition: all .3s ease-out;
+                -moz-transition: all .3s ease-out;
+                -ms-transition: all .3s ease-out;
+                -o-transition: all .3s ease-out;
+                transition: all .3s ease-out; 
               &:before{ 
-                content: counter(li)"/";
+                content: "0"counter(li)"/";
                 counter-increment: li;
                 position: absolute;	 
                 font-size: $font-medium;
                 font-weight: $font-weight-semiBold;
-                top: -50%;
-                margin-top: 10px; 
                 left: 0px;
                 -webkit-transition: all .3s ease-out;
                 -moz-transition: all .3s ease-out;
                 -ms-transition: all .3s ease-out;
                 -o-transition: all .3s ease-out;
                 transition: all .3s ease-out; 
-            }
-              a{
-                  font-size: $font-h1;
-                  font-weight: $font-weight-lighter;
-                  line-height: 100%;
-                  
-              }
+              } 
               &:hover{
+                &:before{ color: $color-white;}
+                button{ 
                   color: $color-white;
+                  svg{
+                    path{
+                      fill: $color-white;;
+                    }
+                  }
+                }
               }
+            > button{
+                transition: all .3s ease-out; 
+              svg{
+                transition: all .3s ease-out; 
+                display: inline-block;
+                margin-left: 25px;
+                transform: rotate(180deg);
+                path{
+                  fill: $color-bdrlGray-2;
+                  transition: all .3s ease-out; 
+                }
+              }
+              &.open{
+                svg{
+                  transform: rotate(0deg);
+                  path{
+                    fill: $color-white;
+                  }
+                }
+              }
+            }
+            > a {
+              font-size: $font-h1;
+              font-weight: $font-weight-lighter;
+              line-height: 100%;
+              -webkit-transition: all .3s ease-out;
+              -moz-transition: all .3s ease-out;
+              -ms-transition: all .3s ease-out;
+              -o-transition: all .3s ease-out;
+              transition: all .3s ease-out; 
+              &:hover{
+                color: $color-white;
+              }
+            }
+            
+            ul{
+              display: flex;
+              flex-direction: column;
+              height: 0px;
+              overflow: hidden;
+              padding: 0;
+              transition: all .3s linear; 
+              overflow: hidden;
+              &.open {
+                  padding: 30px 0;
+                  height: auto;
+                  opacity: 1;
+              }
+              li{
+                  font-size: $font-h5;
+                  font-weight: $font-weight-regular;
+                  line-height: $font-h5 + 13;
+                > a {
+                    font-size: $font-h5;
+                    font-weight: $font-weight-regular;
+                    line-height: $font-h5 + 13;
+                    
+                    &:hover{
+                      color: $color-white;
+                    }
+                }
+                &:hover{
+                  color: $color-white;
+                }
+              }
+            }
           }
         }
         
     }
+    
    }
 }
   
