@@ -37,7 +37,7 @@ const LeadersPage = ({location}) => {
             </section>
             <section className='circle-pattern-bg'>
                 <div className='pageWrapper'>
-                    <LeaderShip data={pageData.leaders}/>
+                    <LeaderShip />
                 </div>
             </section>
             </Fade>
