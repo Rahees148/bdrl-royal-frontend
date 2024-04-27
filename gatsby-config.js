@@ -86,6 +86,7 @@ const strapiConfig = {
       localizations: {
         populate:{
           title:"*",
+          button_label:"*",
           designation: "*",
           description: "*",
           photo: "*",
@@ -117,6 +118,7 @@ const strapiConfig = {
         }
       },
       title:"*",
+      button_label:"*",
       designation: "*",
       description: "*",
       photo: "*",

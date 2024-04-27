@@ -18,18 +18,7 @@ export const Leaders = () => {
                   }
                 }
               }
-              leaders {
-                title
-                description
-                button_label
-                image {
-                  url
-                }
-                link_to {
-                  slug
-                }
-                id
-              }
+              
               id
             }
           }
