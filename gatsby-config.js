@@ -45,13 +45,11 @@ const strapiConfig = {
         populate:{
           author_photo:"*",
           image:"*",
-          treated_by:"*",
           seo: "*",
         }
       },
       author_photo:"*",
       image:"*",
-      treated_by:"*",
       seo: "*",
     },
     pluginOptions: {
@@ -66,13 +64,11 @@ const strapiConfig = {
         populate:{
           author_photo:"*",
           image:"*",
-          treated_by:"*",
           seo: "*",
         }
       },
       author_photo:"*",
       image:"*",
-      treated_by:"*",
       seo: "*",
     },
     pluginOptions: {
