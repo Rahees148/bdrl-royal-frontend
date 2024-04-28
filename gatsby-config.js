@@ -153,6 +153,137 @@ const strapiConfig = {
       },
     },
   } },
+  { singularName: "doctor", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          Name:"*",
+          Image:"*",
+          designation: "*",
+          degrees: "*",
+          experience: "*",
+          description: "*",
+          area_of_expertise:{
+            populate:{
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          qualification:{
+            populate:{
+              title:"*",
+              description:"*",
+            }
+          },
+          awards:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  image:"*",
+                  title:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          work_experience:{
+            populate:{
+              title:"*",
+              description:"*",
+            }
+          },
+          opd_timings:{
+            populate:{
+              title:"*",
+              description:"*",
+            }
+          },
+          form_title:{
+            populate:{
+              description:"*",
+            }
+          },
+          slug:"*",
+          speciality:"*",
+          centers_of_excellence:"*",
+          top_procedure:"*",
+          blogs_and_vlogs:"*",
+          testimonials:"*",
+          doctor_email:"*"
+        }
+      },
+      Name:"*",
+      Image:"*",
+      designation: "*",
+      degrees: "*",
+      experience: "*",
+      description: "*",
+      area_of_expertise:{
+        populate:{
+          list:{
+            populate:{
+              title:"*",
+              image:"*",
+              description:"*",
+            }
+          }
+        }
+      },
+      qualification:{
+        populate:{
+          title:"*",
+          description:"*",
+        }
+      },
+      awards:{
+        populate:{
+          title:"*",
+          list:{
+            populate:{
+              image:"*",
+              title:"*",
+              description:"*",
+            }
+          }
+        }
+      },
+      work_experience:{
+        populate:{
+          title:"*",
+          description:"*",
+        }
+      },
+      opd_timings:{
+        populate:{
+          title:"*",
+          description:"*",
+        }
+      },
+      form_title:{
+        populate:{
+          description:"*",
+        }
+      },
+      slug:"*",
+      speciality:"*",
+      centers_of_excellence:"*",
+      top_procedure:"*",
+      blogs_and_vlogs:"*",
+      testimonials:"*",
+      doctor_email:"*"
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
 ],
 singleTypes:[
   { 

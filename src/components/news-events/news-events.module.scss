@@ -3,8 +3,14 @@
 
 .NewsEvents{
     margin-top: -255px;
+    &.inner{
+        margin-top: 0;
+    }
     @media #{$breakpoint-mobile} {
         margin-top: 60px;
+        &.inner{
+            margin-top: 0;
+        }
         :global(.NewsSwiper){
             overflow: visible;
           }

@@ -10,7 +10,6 @@ function IconCard({data}) {
             <img src={data.icon} alt={data.title} />
         </div>
         {data.title && <div className={style.title}>{data.title}</div>}
-        
     </div>
   )
 }
