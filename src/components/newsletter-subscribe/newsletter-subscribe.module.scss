@@ -14,6 +14,7 @@
             color: $color-white;
             font-size: $font-h5;
             line-height:$font-h5 + 5 ;
+            font-weight: $font-weight-semiBold;
             @media #{$breakpoint-mobile} {
                 text-align: center;
                 max-width: 218px;
