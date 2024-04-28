@@ -9,8 +9,10 @@
     left: 0;
     display: none;
     z-index: 5;
-    @media #{$breakpoint-mobile} { 
-      overflow-y: auto;
+    overflow-y: auto;
+    :global(.pageWrapper){
+      height: 100%;
+      position: relative;
     }
    &.fadeIn{
     display: block;
@@ -22,40 +24,67 @@
    .greenBg{
     width: calc(50% - 218px);
     background-color: $color-primary;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
+    @media #{$breakpoint-sm-desktop}{
+      display: none;
+    }
    }
    .blackOverlay {
-    position: absolute;
+    position: fixed;
     width: calc(50% + 218px);
     height: 25%;
     right:0;
     bottom:0 ;
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,213,157,0) 100%);
     z-index: 1;
-    @media #{$breakpoint-mobile}{
+    @media #{$breakpoint-sm-desktop}{
       display: none;
     }
   }
-  .MenuOverlayWrap{
-    padding-top: 190px;
+  .close{
+    position: absolute;
+    right: 15px;
+    top: 85px;  
+    cursor: pointer;
+    z-index: 9;
     @media #{$breakpoint-mobile} { 
+      top: 33px;
+    }
+    svg{
+      @media #{$breakpoint-mobile} { 
+        max-width: 18px;
+      }
+    }
+    
+}
+  .MenuOverlayWrap{
+    padding-top: 20.1vh;
+    padding-bottom: 20vh;
+    @media #{$breakpoint-sm-desktop} { 
       flex-direction: column-reverse;
       display: flex;
-      padding-top: 100px;
+      padding-top: 155px;
+      padding-bottom: 0;
+      height: 100%;
+      justify-content: flex-end;
+    } 
+    @media #{$breakpoint-mobile} { 
+      padding-top: 95px;
     }
+    
     .leftCol{
-      height: 100vh;
       display: flex; 
       flex-direction: column;
       color: #fff; 
       max-width: 255px;
-      @media #{$breakpoint-mobile} {
+      @media #{$breakpoint-sm-desktop} {
         max-width: unset;
         width: calc(100% + 30px);
         padding: 0 15px;
+        margin-top: auto;
         margin-left: -15px;
         margin-right: -15px;
         height: auto;
@@ -67,9 +96,9 @@
           padding-right: 20px;
           font-size: $font-h5;
           line-height: $font-h5 + 5;
-          margin-bottom: 10px;
+          margin-bottom: 9px;
           background: url(../../../../images/icons/menu-white-arw-right.svg) no-repeat right;
-          @media #{$breakpoint-mobile}{
+          @media #{$breakpoint-sm-desktop}{
             font-size: $font-base;
             line-height: $font-base + 5;
             border-bottom: 1px solid rgba(255, 255, 255, 0.32);
@@ -79,9 +108,9 @@
         }
       }
       .leftColBtm{
-        margin-top: 190px;
+        margin-top: 150px;
         border-top: 1px solid rgba(255, 255, 255, 0.32);
-        @media #{$breakpoint-mobile}{
+        @media #{$breakpoint-sm-desktop}{
           display: none;
         }
         .leftColBtmlogo {
@@ -92,7 +121,7 @@
           font-size: $font-medium;
           line-height: $font-medium + 3;
           color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 41px;
+          margin-bottom: 35px;
         }
       }
      }
@@ -100,21 +129,7 @@
       position: relative;
       
       width: 100%;
-      .close{
-          position: absolute;
-          right: 0;
-          top: -90px;
-          cursor: pointer;
-          @media #{$breakpoint-mobile} { 
-            top: -45px;
-          }
-          svg{
-            @media #{$breakpoint-mobile} { 
-              max-width: 14px;
-            }
-          }
-          
-      }
+     
       .menuItem{
         width: 100%;
           text-align: right;
@@ -126,7 +141,7 @@
               > li{
                 font-size: $font-h1;
                 font-weight: $font-weight-lighter;
-                line-height: 100%;
+                line-height: $font-h1 + 8;
                 cursor: pointer;
                 position: relative;
                 -webkit-transition: all .3s ease-out;
@@ -134,7 +149,7 @@
                   -ms-transition: all .3s ease-out;
                   -o-transition: all .3s ease-out;
                   transition: all .3s ease-out; 
-                  @media #{$breakpoint-mobile} {
+                  @media #{$breakpoint-sm-desktop} {
                     font-size: $font-h5-large; 
                     line-height: $font-h5-large + 13;
                   }
@@ -150,7 +165,7 @@
                   -ms-transition: all .3s ease-out;
                   -o-transition: all .3s ease-out;
                   transition: all .3s ease-out; 
-                  @media #{$breakpoint-mobile} {
+                  @media #{$breakpoint-sm-desktop} {
                     font-size: $font-xsmall;
                   }
                 } 
@@ -172,7 +187,7 @@
                   display: inline-block;
                   margin-left: 25px;
                   transform: rotate(180deg);
-                  @media #{$breakpoint-mobile} {
+                  @media #{$breakpoint-sm-desktop} {
                     max-width:23px ;
                     margin-left: 12px;
                   }
@@ -182,6 +197,7 @@
                   }
                 }
                 &.open{
+                  color: $color-white;
                   svg{
                     transform: rotate(0deg);
                     path{
@@ -193,13 +209,13 @@
               > a {
                 font-size: $font-h1;
                 font-weight: $font-weight-lighter;
-                line-height: 100%;
+                line-height: $font-h1 + 8;
                 -webkit-transition: all .3s ease-out;
                 -moz-transition: all .3s ease-out;
                 -ms-transition: all .3s ease-out;
                 -o-transition: all .3s ease-out;
                 transition: all .3s ease-out; 
-                @media #{$breakpoint-mobile} {
+                @media #{$breakpoint-sm-desktop} {
                   font-size: $font-h5-large; 
                   line-height: $font-h5-large + 13;
                 }
@@ -220,7 +236,7 @@
                     padding: 30px 0;
                     height: auto;
                     opacity: 1;
-                    @media #{$breakpoint-mobile} {
+                    @media #{$breakpoint-sm-desktop} {
                       padding: 20px 0;
                     }
                 }
@@ -228,7 +244,7 @@
                     font-size: $font-h5;
                     font-weight: $font-weight-regular;
                     line-height: $font-h5 + 13;
-                    @media #{$breakpoint-mobile} {
+                    @media #{$breakpoint-sm-desktop} {
                       font-size: $font-base; 
                       line-height: $font-base + 13;
                     }
@@ -236,7 +252,7 @@
                       font-size: $font-h5;
                       font-weight: $font-weight-regular;
                       line-height: $font-h5 + 13;
-                      @media #{$breakpoint-mobile} {
+                      @media #{$breakpoint-sm-desktop} {
                         font-size: $font-base; 
                         line-height: $font-base + 13;
                       }

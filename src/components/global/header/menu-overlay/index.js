@@ -30,7 +30,13 @@ function MenuOverlay({mainMenu, isOpen, setIsOpen}) {
     <div className={classNames(style.MenuOverlay, isOpen ? style.fadeIn : style.fadeOut)}>
         <div className={style.greenBg}></div>
         <div className='pageWrapper'>
-            <div className={classNames(style.MenuOverlayWrap,'relative grid grid-cols-12 gap-8')}>
+            <span className={style.close} onClick={()=>{setIsOpen(false)}}>
+                <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.9196 1.53938L1.16235 20.6505M1.16227 1.53931L19.9195 20.6505" stroke="white" stroke-width="1.75427" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <div className={classNames(style.MenuOverlayWrap,' flex-1 relative grid grid-cols-12 gap-8 justify-center')}>
+                
                 <div className={classNames(style.leftCol,'col-span-4 bg-primary')}>
                         <ul>
                             <li>Specialities</li>
@@ -53,11 +59,6 @@ function MenuOverlay({mainMenu, isOpen, setIsOpen}) {
                         </div>
                 </div>
                 <div className={classNames(style.rightCol,'flex col-span-8 ')}>
-                    <span className={style.close} onClick={()=>{setIsOpen(false)}}>
-                        <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.9196 1.53938L1.16235 20.6505M1.16227 1.53931L19.9195 20.6505" stroke="white" stroke-width="1.75427" stroke-linecap="round"/>
-                        </svg>
-                    </span>
                     <div className={style.menuItem}>
                         <ol  ref={ref} >
                             <li><Link to={`/`} > Home </Link></li>
@@ -96,7 +97,10 @@ function MenuOverlay({mainMenu, isOpen, setIsOpen}) {
             </div>
             
         </div>
-        <div className={style.blackOverlay}></div>
+        {showDropMenu !== '' &&
+            <div className={style.blackOverlay}></div>
+        }
+        
     </div>
   )
 }
