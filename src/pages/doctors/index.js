@@ -20,7 +20,7 @@ const doctors = () => {
             links: [
                 {
                     title:'Home',
-                    url:'',
+                    url:'/',
                 }
             ],
             title: 'Doctors'

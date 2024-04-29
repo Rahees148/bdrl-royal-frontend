@@ -1,6 +1,32 @@
 @import '../../../scss/colors';
 @import '../../../scss/breakpoints';
-
+.LeaderShipFormIcon{
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.LeaderShipFormTitle {
+    h4{
+        font-weight:$font-weight-semiBold;
+        font-size: $font-h5;
+        color: $color-white;
+        line-height: $font-h5 + 5;
+        margin-bottom: 12px;
+    }
+    aside {
+        color: $color-white;
+        font-size: $font-base;
+        line-height: $font-base + 11;
+        margin-bottom: 25px;
+        @media #{$breakpoint-mobile} {
+            font-size: $font-medium;
+            line-height: $font-medium + 10;
+        } 
+    }
+}
 .LeaderShipForm {
    
     .formError{
