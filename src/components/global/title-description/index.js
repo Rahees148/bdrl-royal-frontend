@@ -19,13 +19,14 @@ function TitleDescription({ data }) {
                     <div
                     className={classNames(
                         style.SectionTitle,
+                        data.size && data.size ==='small' && style.small,
                         data.theme ? style[data.theme] : style['green'],
                         'flex items-end justify-between',
                         data.className && data.className
                     )}
                 >
                     <div className={data.button_label && style.hasButton}>
-                        <h2>{data.title}</h2>
+                        <h2 dangerouslySetInnerHTML={{ __html: data.title }} />
                         <div className={classNames(style.SectionTagline, 'font-normal')}>
                             {data.description}
                         </div>

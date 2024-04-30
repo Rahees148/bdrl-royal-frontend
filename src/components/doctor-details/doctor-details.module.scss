@@ -1,0 +1,102 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.doctorDetails{
+    color: $color-primary;
+    padding-bottom: 100px;
+    .doctorBanner{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        h2{
+            font-size: $font-h2;
+            font-weight: $font-weight-semiBold;
+        }
+        .designation{
+            font-size: $font-h5;
+        }
+        .tags{
+            width: auto;
+            a{
+                font-size: $font-h5;
+                font-weight: $font-weight-semiBold;
+            }
+            
+        }
+        .degrees{
+            font-weight: $font-weight-semiBold;
+        }
+        .experience{
+            font-size: $font-h5;
+            font-weight: $font-weight-semiBold;
+        }
+    }
+    .DoctorCardImage{
+        width: 367px;
+        position: relative;
+        display: grid;
+        align-items: end;
+        border-radius: 0 0 100vw 100vw;
+        overflow: hidden;
+        padding-top: 5px;
+        .Circle {
+            width: 367px;
+            height: 367px;
+            background: linear-gradient(264.85deg, #FFD59D 23.35%, #876E2E 89.39%);
+            border-radius: 100%;
+            position: absolute;
+        }
+        img {
+            position: relative;
+            z-index: 2;
+            margin: 0 auto;
+            transition: all 0.25s ease;
+            width: 80%;
+        }
+    }
+
+    .areaOfExpCard{
+        display: flex;
+        margin-top: 30px;
+        gap: 12px;
+        align-items: flex-start;
+        max-width: 90%;
+        .icon{
+            padding: 7px;
+            background-color: $color-bdrlGray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            width: 41px;
+        }
+        .description{
+            flex: 1;
+            h5{
+                font-size: $font-h5-small;
+                font-weight: $font-weight-semiBold;
+            }
+            p{
+                font-weight: $font-weight-medium;
+                line-height: $font-base + 11px;
+            }
+        }
+    }
+    .procedureCard{
+        background: #FFFFFF;
+        box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+        border-radius: 20px;
+        font-size: $font-h5;
+        font-weight: $font-weight-semiBold;
+        padding: 32px;
+        a{
+            display: block;
+            color: #989898;
+            font-weight: $font-weight-medium;
+            font-size: $font-base;
+            svg{
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+    }
+}

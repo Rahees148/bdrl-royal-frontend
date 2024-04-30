@@ -270,10 +270,15 @@ const strapiConfig = {
           description:"*",
         }
       },
+      blogs_vlogs_title:{
+        populate:{
+          description:"*",
+        }
+      },
       slug:"*",
       speciality:"*",
       centers_of_excellence:"*",
-      top_procedure:"*",
+      top_procedures:"*",
       blogs_and_vlogs:"*",
       testimonials:"*",
       doctor_email:"*"

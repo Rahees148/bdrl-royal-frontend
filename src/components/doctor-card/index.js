@@ -4,6 +4,7 @@ import * as style from './doctor-card.module.scss';
 import {AllDoctors} from '../../graphql/doctors/doctors'
 import DoctorImg from '../../images/Venkateshwaran 1.png';  
 import { Link } from 'gatsby';
+import BookAnAppointmentBtn from '../global/button';
 
 function DoctorCard({toEmail, title}) { 
     const doctors = AllDoctors().allStrapiDoctor.nodes;
@@ -30,9 +31,7 @@ function DoctorCard({toEmail, title}) {
                     </ul>
                 </div>
                 <div className={classNames(style.DoctorCardFooter)}>
-                    <button className={classNames(style.BookAnAppointmentBtn)}>
-                        Book Appointment
-                    </button>
+                    <BookAnAppointmentBtn />
                     <div className={classNames(style.DoctorCardFooterLink)}>
                         <Link to={doctor.slug}>View Profile</Link>
                     </div>

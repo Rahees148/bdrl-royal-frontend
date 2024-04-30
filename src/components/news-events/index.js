@@ -7,7 +7,7 @@ import TitleDescription from '../global/title-description';
 import { Content } from "../../graphql/news-and-events"
 import useWindowSize from '../../libs/hooks/useWindowSize';
 
-function NewsEvents({template, titleDescription}) {   
+function NewsEvents({template = false, titleDescription}) {   
     const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
 
   return (
@@ -17,9 +17,10 @@ function NewsEvents({template, titleDescription}) {
             <TitleDescription data={{
                 theme:titleDescription.theme,
                 title:titleDescription.title,
+                size: template && template === 'inner' && 'small',
                 description: titleDescription.description &&  titleDescription.description,
                 button_label: titleDescription.button_label,
-                button_link:"#"
+                button_link: titleDescription.button_link
             }} />
             </div>
         </div>
@@ -60,8 +61,21 @@ function NewsEvents({template, titleDescription}) {
                                 <div className={classNames(style.NewsEventsCardDec)}>
                                     <div className={classNames(style.NewsEventsCardTag, item.category === 'News' ? style.NewsTag : style.EventsTag)}>{item.category}</div>
                                     <h4>{item.title}</h4>
-                                    <aside>{item.summary}</aside>
-                                    <a className={classNames(style.NewsEventsMorebtn,'moreBtn')} href={'/news-and-events/'+item.slug} >{item.button_label}</a>
+                                    {!template &&
+                                        <>
+                                            <aside>{item.summary}</aside>
+                                            <a className={classNames(style.NewsEventsMorebtn,'moreBtn')} href={'/news-and-events/'+item.slug} >{item.button_label}</a>
+                                        </>
+                                    }
+                                    {
+                                        template && (
+                                            <div className={style.cardFooter}>
+                                                <span>Apr 24,2024</span>
+                                                <span>|</span>
+                                                <span>Dr. Venkateshwaran</span>
+                                            </div>
+                                        )
+                                    }
                                 </div>
                             </div>
                         </SwiperSlide>
