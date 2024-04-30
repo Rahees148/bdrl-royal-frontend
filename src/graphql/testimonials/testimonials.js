@@ -22,9 +22,6 @@ export const Content = () => {
                 image {
                   url
                 }
-                treated_by {
-                  Name
-                }
                 locale
               }
         }

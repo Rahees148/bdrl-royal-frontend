@@ -3,12 +3,25 @@
 
 .NewsEvents{
     margin-top: -255px;
+    &.inner{
+        margin-top: 0;
+    }
     @media #{$breakpoint-mobile} {
         margin-top: 60px;
+        &.inner{
+            margin-top: 0;
+        }
         :global(.NewsSwiper){
             overflow: visible;
           }
       }
+
+    &.inner{
+        .NewsEventsTop{
+            width: 100%;
+            border-radius: 0px;
+        }
+    }
     .NewsEventsTop{
         width: calc(100% - 60px);
         margin: 0 auto;

@@ -34,7 +34,13 @@ const IndexPage = () => {
             </Fade>
             {/* Centres Of Excellence component */}
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
-            <NewsEvents/>
+            <NewsEvents titleDescription={{
+                theme:"white",
+                title:"News & events",
+                description: "Get the latest updates from us.",
+                button_label: "View All",
+                button_link:"#"
+            }}/>
         </Layout>
     );
 };

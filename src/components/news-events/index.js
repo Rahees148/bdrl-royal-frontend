@@ -7,18 +7,18 @@ import TitleDescription from '../global/title-description';
 import { Content } from "../../graphql/news-and-events"
 import useWindowSize from '../../libs/hooks/useWindowSize';
 
-function NewsEvents() {   
+function NewsEvents({template, titleDescription}) {   
     const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
 
   return (
-    <section className={classNames(style.NewsEvents, '')}>
+    <section className={classNames(style.NewsEvents, template && style[template])}>
         <div className={classNames(style.NewsEventsTop,'bg-primary')}>
             <div className="pageWrapper">
             <TitleDescription data={{
-                theme:"white",
-                title:"News & events",
-                description: "Get the latest updates from us.",
-                button_label: "View All",
+                theme:titleDescription.theme,
+                title:titleDescription.title,
+                description: titleDescription.description &&  titleDescription.description,
+                button_label: titleDescription.button_label,
                 button_link:"#"
             }} />
             </div>

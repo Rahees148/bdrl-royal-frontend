@@ -24,11 +24,14 @@
         padding: 23px 15px;
         justify-content: space-between;
         align-items: center;
+        @media #{$breakpoint-mobile} {
+            padding: 23px 15px 13px 15px;
+        }
         .logo {
             max-width: 160px;
         }
         .mainMenuSec{
-            @media #{$breakpoint-mobile} {
+            @media #{$breakpoint-sm-desktop} {
                 display: none;
             }
             .menuItem{
@@ -84,6 +87,9 @@
             font-size: $font-small;
             font-weight:$font-weight-medium;
             padding: 12px 13px;
+            @media #{$breakpoint-mobile} {
+                padding: 8px 13px;
+            }
         }
         
     }

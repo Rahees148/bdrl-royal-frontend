@@ -14,16 +14,19 @@ function Stack({ data }) {
             )}
         >
         <div>
-            <h2>{data.title}</h2>
+            <h2 dangerouslySetInnerHTML={{ __html: data.title }} />
             {data.tagLine &&
                 <div className={classNames(style.SectionTagline, 'font-normal')}>
                     {data.tagLine}
                 </div>
             }
-             <div
-                className={classNames(style.SectionDescription)}
-                dangerouslySetInnerHTML={{ __html: data.description }}
+            {data.description &&
+                <div
+                    className={classNames(style.SectionDescription)}
+                    dangerouslySetInnerHTML={{ __html: data.description }}
                 />
+            }
+             
         </div>
     </div>
     );

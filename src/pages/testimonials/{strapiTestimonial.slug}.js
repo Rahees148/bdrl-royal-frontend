@@ -19,10 +19,6 @@ query ($id: String) {
         title
         testimonial_type
         slug
-        treated_by {
-          Name
-          id
-        }
         image {
           url
         }

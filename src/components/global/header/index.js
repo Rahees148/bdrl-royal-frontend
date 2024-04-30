@@ -59,7 +59,7 @@ function Header({ pageTitle, breadcrumb, template  }) {
                                 {menu.dropdown ? (
                                     <DropDownMenu title={menu.title} items={menu.dropdown} />
                                 ) : (
-                                    <Link to={`/${menu.url}`} className="text-bodyCopy text-sm">
+                                    <Link to={`${menu.url}`} className="text-bodyCopy text-sm">
                                         {menu.title}
                                     </Link>
                                 )}
