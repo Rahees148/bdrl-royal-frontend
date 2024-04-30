@@ -24,9 +24,9 @@ const Leader = ({ data }) => {
             <DoctorDetails data={pageData} />
             <NewsEvents template={'inner'} titleDescription={{
                 theme:"white",
-                title:"Blogs & Vlogs By",
-                button_label: "View All",
-                button_link:"#"
+                title:pageData.blogs_vlogs_title.title.data.title,
+                button_label:pageData.blogs_vlogs_title.button_label,
+                button_link:pageData.blogs_vlogs_title.button_link
             }} />
           </Layout>
     )
@@ -94,6 +94,15 @@ query ($id: String) {
         }
       }
     }
+    blogs_vlogs_title {
+      title {
+        data {
+          title
+        }
+      }
+      button_label
+      button_link
+    }
     area_of_expertise {
       title
       list {
@@ -116,17 +125,23 @@ query ($id: String) {
         }
       }
     }
-    centers_of_excellence {
+    speciality {
       title
       slug
     }
-    speciality {
+    top_procedure_title
+    top_procedures {
       title
       slug
     }
   }
 }
 `
+
+// centers_of_excellence {
+//   title
+//   slug
+// }
 
 export const Head = ({ data }) => <title>{data.strapiDoctor.Name}</title>
 

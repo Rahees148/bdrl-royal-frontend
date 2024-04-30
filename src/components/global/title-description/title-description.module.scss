@@ -1,6 +1,12 @@
 @import '../../../scss/colors';
 @import '../../../scss/breakpoints';
 .SectionTitle {
+    &.small{
+        h2{
+            font-size: $font-h4-small;
+            line-height: $font-h4-small + 8;
+        }
+    }
     > div{
         @media #{$breakpoint-mobile} {
            &.hasButton{
