@@ -51,11 +51,11 @@ function DoctorDetails({ data }) {
                         data={{
                             variant: 'stack',
                             size: 'small',
-                            title: data.area_of_expertise.title,
+                            title: data.area_of_expertise?.title,
                         }}
                     />
-                    {data.area_of_expertise.list &&
-                        data.area_of_expertise.list.map((list, index) => (
+                    {data.area_of_expertise?.list &&
+                        data.area_of_expertise?.list.map((list, index) => (
                             <div key={index}>
                                 <i>
                                     <img src={list.image.url} alt={list.title} />
@@ -71,8 +71,8 @@ function DoctorDetails({ data }) {
                             data={{
                                 variant: 'stack',
                                 size: 'small',
-                                title: data.qualification.title.data.title,
-                                description: data.qualification.description.data.description,
+                                title: data.qualification?.title?.data?.title,
+                                description: data.qualification?.description?.data?.description,
                             }}
                         />
                     </div>
@@ -80,14 +80,14 @@ function DoctorDetails({ data }) {
             </div>
 
             <div className="pt-[55px]">
-                <h2>{data.awards.title}</h2>
+                <h2>{data.awards?.title}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[15px] sm:gap-8">
-                    {data.awards.list &&
-                        data.awards.list.map((list, index) => (
+                    {data.awards?.list &&
+                        data.awards?.list.map((list, index) => (
                             <IconCard
                                 key={index}
                                 data={{
-                                    icon: list.image.url,
+                                    icon: list.image?.url,
                                     title: list.title,
                                 }}
                             />
@@ -99,8 +99,8 @@ function DoctorDetails({ data }) {
                     data={{
                         variant: 'stack',
                         size: 'small',
-                        title: data.work_experience.title.data.title,
-                        description: data.work_experience.description.data.description,
+                        title: data.work_experience?.title?.data?.title,
+                        description: data.work_experience?.description?.data?.description,
                     }}
                 />
             </div>
@@ -110,8 +110,8 @@ function DoctorDetails({ data }) {
                     data={{
                         variant: 'stack',
                         size: 'small',
-                        title: data.opd_timings.title.data.title,
-                        description: data.opd_timings.description.data.description,
+                        title: data.opd_timings?.title?.data?.title,
+                        description: data.opd_timings?.description?.data?.description,
                     }}
                 />
             </div>
