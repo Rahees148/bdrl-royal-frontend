@@ -56,10 +56,6 @@ query ($id: String) {
         }
       }
     }
-    top_procedure {
-      title
-      slug
-    }
     slug
     qualification {
       description {
