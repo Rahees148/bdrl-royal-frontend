@@ -16,6 +16,7 @@ module.exports = {
         primary: '#023321',
         secondary:'#2A5D4A',
         bdrlGray:'#F5F5F7',
+        bdrlGrayLight:'#F7F7F7',
         bodyCopy: '#474747'
         
       },

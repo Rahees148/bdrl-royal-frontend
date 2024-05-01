@@ -4,13 +4,12 @@ import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import InnerBanner from '../../components/inner-banner';
 import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
-import { Content } from '../../graphql/about/an-overview';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import DoctorCard from '../../components/doctor-card';
-
+import {AllDoctors} from '../../graphql/doctors/doctors';
 
 const doctors = () => {
-    const pageData = Content().allStrapiAboutAnOverview.nodes[0];
+    const doctors = AllDoctors().allStrapiDoctor.nodes;
     const {isMobile} = useWindowSize()
     return (
         <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
@@ -35,7 +34,11 @@ const doctors = () => {
           
             <section className='pt-[37px] sm:pb-[100px]'>
                 <div className='pageWrapper'>
-                    <DoctorCard/>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[12px] sm:gap-x-8 gap-y-[86px] pt-[98px]'>
+                        {doctors && doctors.map((doctor, index) =>(
+                            <DoctorCard doctor={doctor} key={index}/>
+                        ))}
+                    </div>
                 </div>
             </section>
             </Fade>

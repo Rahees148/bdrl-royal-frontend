@@ -11,6 +11,10 @@ const Leader = ({ data }) => {
             <Layout pageTitle={pageData.title} template="inner" breadcrumb={{
               links: [
                   {
+                    title:'Home',
+                    url:'/',
+                  },
+                  {
                       title:'About',
                       url:'',
                   },
