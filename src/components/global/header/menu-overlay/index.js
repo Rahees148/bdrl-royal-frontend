@@ -84,7 +84,7 @@ function MenuOverlay({mainMenu, isOpen, setIsOpen}) {
                                         </ul>
                                         </>
                                     ) : (
-                                        <Link to={`/${menu.url}`} >
+                                        <Link to={`${menu.url}`} >
                                             {menu.title}
                                         </Link>
                                     )}
