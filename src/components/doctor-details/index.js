@@ -8,19 +8,22 @@ import LeadershipForm from '../form/leadership-form';
 import * as style from './doctor-details.module.scss';
 import IconCard from '../global/icon-card';
 import BookAnAppointmentBtn from '../global/button';
+import OPDSchedule from '../opd-schedule';
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 function DoctorDetails({ data }) {
+    const {isMobile} = useWindowSize();
     return (
         <div className={classNames('pageWrapper',style.doctorDetails)}>
-            <div className="rounded-5 bg-bdrlGray grid-cols-12 py-6 mt-8 grid items-start gap-8">
-                <div className="col-span-5 flex justify-center">
+            <div className="rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6 mt-8 grid items-start gap-4 lg:gap-8">
+                <div className="col-span-12 lg:col-span-5 flex justify-center">
                     <div className={classNames(style.DoctorCardImage)}>
                         <div className={classNames(style.Circle)}></div>
                         <img src={data?.Image?.url} alt={data.Name}/>
                     </div>
                 </div>
                 
-                <div className={classNames( "col-span-7 flex items-end gap-[40px] mt-[100px] pr-[20px] flex-col")}>
+                <div className={classNames( "col-span-12 lg:col-span-7 flex lg:items-end gap-[20px] lg:gap-[40px] mt-[35px] lg:mt-[100px] lg:pr-[20px] flex-col")}>
                     <div className={classNames(style.doctorBanner, 'w-[100%]')}>
                         <h2>{data.Name}</h2>
                         <span className={style.designation}>{data.designation}</span>
@@ -40,11 +43,11 @@ function DoctorDetails({ data }) {
                         <span className={style.degrees}>{data.degrees}</span>
                         <h4 className={style.experience}>{data.experience}</h4>
                     </div>
-                    <BookAnAppointmentBtn icon />
+                    <BookAnAppointmentBtn icon  className='justify-center'/>
                 </div>
             </div>
             <div className=" grid-cols-12 pt-[55px] grid gap-8">
-                <div className="col-span-6">
+                <div className="col-span-12 lg:col-span-6">
                     <TitleDescription
                         data={{
                             variant: 'stack',
@@ -54,18 +57,20 @@ function DoctorDetails({ data }) {
                         }}
                     />
                 </div>
-                <div className="col-span-6">
-                    <LeadershipForm
-                        toEmail={data.Name}
-                        title={data.Name}
-                        formTitle={data.form_title?.title?.data.title}
-                        tagLine={data?.form_title?.description.data.description}
-                    />
-                </div>
+                {!isMobile &&               
+                    <div className="col-span-6">
+                        <LeadershipForm
+                            toEmail={data.Name}
+                            title={data.Name}
+                            formTitle={data.form_title?.title?.data.title}
+                            tagLine={data?.form_title?.description.data.description}
+                        />
+                    </div>
+                }
             </div>
 
             <div className=" grid-cols-12 pt-[55px] grid gap-8">
-                <div className="col-span-6">
+                <div className="col-span-12 lg:col-span-6">
                     <TitleDescription
                         data={{
                             variant: 'stack',
@@ -86,7 +91,7 @@ function DoctorDetails({ data }) {
                             </div>
                         ))}
                 </div>
-                <div className="col-span-6">
+                <div className="col-span-12 lg:col-span-6">
                     <div className="p-6 bg-bdrlGray rounded-[24px]">
                         <TitleDescription
                             data={{
@@ -141,6 +146,7 @@ function DoctorDetails({ data }) {
                         title: data.opd_timings?.title?.data?.title,
                     }}
                 />
+                <OPDSchedule />
             </div>
 
             <div className="pt-[55px]">
@@ -168,6 +174,16 @@ function DoctorDetails({ data }) {
                         ))}
                 </div>
             </div>
+            {isMobile &&               
+                <div className="mt-[55px]">
+                    <LeadershipForm
+                        toEmail={data.Name}
+                        title={data.Name}
+                        formTitle={data.form_title?.title?.data.title}
+                        tagLine={data?.form_title?.description.data.description}
+                    />
+                </div>
+            }
         </div>
     );
 }

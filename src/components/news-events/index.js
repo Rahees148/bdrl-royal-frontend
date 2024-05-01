@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import classNames from 'classnames';
 import * as style from './news-events.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import TitleDescription from '../global/title-description';
 import { Content } from '../../graphql/news-and-events';
-import useWindowSize from '../../libs/hooks/useWindowSize';
 import { Link } from 'gatsby';
 
 function NewsEvents({ template = false, data, titleDescription, linkTo }) {
+
+    const navigationNextRef = useRef(null);
+    const navigationPrevRef = useRef(null);
     const newsAndEvents = data ? data : Content().allStrapiNewsAndEvent.nodes;
     return (
         <section className={classNames(style.NewsEvents, template && style[template])}>
@@ -49,7 +51,15 @@ function NewsEvents({ template = false, data, titleDescription, linkTo }) {
                                 clickable: true,
                                 el: '.newsSlider-pagination',
                             }}
-                            modules={[Pagination]}
+                            navigation={{
+                                nextEl: '.newsandevents-swiper-button-next',
+                                prevEl: '.newsandevents-swiper-button-prev',
+                              }}
+                              onBeforeInit={(swiper) => {
+                                swiper.navigation.nextEl = navigationNextRef.current;
+                                swiper.navigation.prevEl = navigationPrevRef.current;
+                              }}
+                            modules={[Pagination, Navigation]}
                             className="NewsSwiper"
                         >
                             {newsAndEvents &&
@@ -68,9 +78,7 @@ function NewsEvents({ template = false, data, titleDescription, linkTo }) {
                                                 <div
                                                     className={classNames(
                                                         style.NewsEventsCardTag,
-                                                        item.category === 'News'
-                                                            ? style.NewsTag
-                                                            : style.EventsTag,
+                                                        style[item.category]
                                                     )}
                                                 >
                                                     {item.category}
@@ -114,7 +122,13 @@ function NewsEvents({ template = false, data, titleDescription, linkTo }) {
                                 ))}
                         </Swiper>
                     </div>
-                    <div className={classNames(style.pagination, 'newsSlider-pagination')}></div>
+                    <div className={style.sliderNavigation}>
+                        <div className={style.sliderBtn}> 
+                            <button className={classNames(style.swiperButton, style.prev, 'newsandevents-swiper-button-prev')}>Prev</button>
+                            <button className={classNames(style.swiperButton, 'newsandevents-swiper-button-next')}>Next</button>
+                        </div>
+                        <div className={classNames(style.pagination, 'newsSlider-pagination')}></div>
+                    </div>
                 </div>
             </div>
         </section>

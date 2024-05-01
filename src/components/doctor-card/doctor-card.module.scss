@@ -86,9 +86,28 @@
             margin-right: -18px;
             padding-left: 18px;
             padding-right: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span{
+                transition: .5s ease-in-out;
+                display: none;
+                width: 20px;
+                height: 12px;
+                background: url(../../images/icons/dropdown_arw.svg) no-repeat right center;
+                &.active {
+                  rotate: 180deg;
+                }
+                @media #{$breakpoint-mobile} {
+                    display: inline-block;
+                }
+              }
+           
         } 
-        ul{
-             
+        ul.accordion{
+            overflow: hidden;
+            transition: height .7s ease-in-out;
         }
         li{
             font-size: $font-medium;

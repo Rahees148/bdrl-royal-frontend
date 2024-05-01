@@ -10,9 +10,15 @@
         h2{
             font-size: $font-h2;
             font-weight: $font-weight-semiBold;
+            @media #{$breakpoint-mobile} {
+                font-size:$font-h5;
+            }
         }
         .designation{
             font-size: $font-h5;
+            @media #{$breakpoint-mobile} {
+                font-size:$font-base;
+            }
         }
         .tags{
             width: auto;
@@ -21,15 +27,25 @@
                 font-weight: $font-weight-semiBold;
                 display: flex;
                 gap: 5px;
+                align-items: center;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-base;
+                }
             }
             
         }
         .degrees{
             font-weight: $font-weight-semiBold;
+            @media #{$breakpoint-mobile} {
+                font-size:$font-small;
+            }
         }
         .experience{
             font-size: $font-h5;
             font-weight: $font-weight-semiBold;
+            @media #{$breakpoint-mobile} {
+                font-size:$font-base;
+            }
         }
     }
     .DoctorCardImage{
@@ -40,12 +56,19 @@
         border-radius: 0 0 100vw 100vw;
         overflow: hidden;
         padding-top: 5px;
+        @media #{$breakpoint-mobile} {
+            width: 260px;
+        }
         .Circle {
             width: 367px;
             height: 367px;
             background: linear-gradient(264.85deg, #FFD59D 23.35%, #876E2E 89.39%);
             border-radius: 100%;
             position: absolute;
+            @media #{$breakpoint-mobile} {
+                width:260px;
+                height: 260px;
+            }
         }
         img {
             position: relative;
