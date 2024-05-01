@@ -210,10 +210,28 @@ const strapiConfig = {
             }
           },
           slug:"*",
-          speciality:"*",
-          centers_of_excellence:"*",
-          top_procedure:"*",
-          blogs_and_vlogs:"*",
+          speciality:{
+            populate:{
+              title:"*",
+              icon:"*",
+              slug:"*"
+            }
+          },
+          centers_of_excellence:{
+            populate:{
+              title:"*",
+              icon:"*",
+              slug:"*"
+            }
+          },
+          top_procedures:"*",
+          blogs_and_vlogs:{
+            populate:{
+              description:"*",
+              media:"*",
+              doctor:"*",
+            }
+          },
           testimonials:"*",
           doctor_email:"*"
         }
@@ -276,10 +294,28 @@ const strapiConfig = {
         }
       },
       slug:"*",
-      speciality:"*",
-      centers_of_excellence:"*",
+      speciality:{
+        populate:{
+          title:"*",
+          icon:"*",
+          slug:"*"
+        }
+      },
+      centers_of_excellence:{
+        populate:{
+          title:"*",
+          icon:"*",
+          slug:"*"
+        }
+      },
       top_procedures:"*",
-      blogs_and_vlogs:"*",
+      blogs_and_vlogs:{
+        populate:{
+          description:"*",
+          media:"*",
+          doctor:"*",
+        }
+      },
       testimonials:"*",
       doctor_email:"*"
     },

@@ -3,10 +3,7 @@ import * as React from 'react';
 import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import InnerBanner from '../../components/inner-banner';
-import TitleDescription from '../../components/global/title-description';
-import IconCard from '../../components/global/icon-card';
-import ImageCard from '../../components/global/image-card';
-
+import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
 import { Content } from '../../graphql/about/an-overview';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import DoctorCard from '../../components/doctor-card';
@@ -30,8 +27,8 @@ const doctors = () => {
                     {
                         title:'Doctors',
                         description:'Our Medical Experts',
-                        desktopMedia: pageData.banner?.desktop_media?.url,
-                        mobileMedia: pageData.banner?.mobile_media?.url,
+                        desktopMedia: DoctorBanner,
+                        mobileMedia: DoctorBanner,
                     }
                 } />
             
