@@ -18,6 +18,10 @@ const AnOverviewPage = () => {
         <Layout  pageTitle="An Overview" template="inner" breadcrumb={{
             links: [
                 {
+                    title:'Home',
+                    url:'/',
+                },
+                {
                     title:'About',
                     url:'',
                 }
