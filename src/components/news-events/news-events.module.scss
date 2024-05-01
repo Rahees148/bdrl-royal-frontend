@@ -11,9 +11,10 @@
         &.inner{
             margin-top: 0;
         }
-        :global(.NewsSwiper){
-            overflow: visible;
-          }
+        
+      }
+      :global(.NewsSwiper){
+        overflow: visible;
       }
 
     &.inner{
@@ -74,6 +75,9 @@
                         border-radius: 10px;
                         margin-bottom: 16px;
                     }
+                    img{
+                        width: 100%;
+                    }
                 }
                 .NewsEventsCardDec{
                     @media #{$breakpoint-mobile} { 
@@ -125,6 +129,20 @@
                         &.EventsTag{
                             color: $color-white;
                             background: $color-brook-green;
+                        }
+                    }
+
+                    .cardFooter{
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 12px;
+                        color: #929292;
+                        > span:first-child{
+                            font-weight: $font-weight-bold;
+                            color: $color-primary;
+                        }
+                        > span:last-child a{
+                            font-weight: $font-weight-semiBold;
                         }
                     }
 

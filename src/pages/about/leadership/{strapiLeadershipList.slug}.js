@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../../../components/global/layout'
 
 import LeaderShipDetails from '../../../components/leadership-details'
+import { Fade } from 'react-awesome-reveal'
 const Leader = ({ data }) => {
     console.log(data);
     const pageData = data.strapiLeadershipList;
@@ -20,7 +21,9 @@ const Leader = ({ data }) => {
               ],
               title: pageData.title
           }}>
-           <LeaderShipDetails pageData={pageData} />
+            <Fade>
+              <LeaderShipDetails pageData={pageData} />
+           </Fade>
           </Layout>
     )
 }

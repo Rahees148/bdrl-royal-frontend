@@ -27,7 +27,7 @@ function DoctorDetails({ data }) {
                         <span className={classNames(style.tags,'bg-white my-[22px] px-[15px] py-[6px] rounded-[60px] ')}>
                         {data.speciality &&
                             <Link to={data.speciality?.slug}>
-                                {/* <img src={data.speciality?.title} alt={data.speciality?.title}/> */}
+                                <img src={data.speciality?.icon?.url} alt={data.speciality?.title}/>
                                 {data.speciality?.title}
                             </Link>
                         }
