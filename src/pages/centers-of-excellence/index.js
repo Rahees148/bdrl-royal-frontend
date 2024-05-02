@@ -18,6 +18,7 @@ const CentersOfExcellence = () => {
             <Fade>
                 <div className='pageWrapper'>
                     <Tabs />
+                    <div className='h-12'></div>
                 </div>
             </Fade>
             
