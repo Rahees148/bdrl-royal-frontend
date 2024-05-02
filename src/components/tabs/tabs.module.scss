@@ -1,0 +1,32 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.tabsContainer{
+    .tabsHeader{
+        display: flex;
+        overflow-x: scroll;
+        padding: 10px 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        >div{
+            width:256px;
+            flex: none;
+            background:$color-white;
+            /* new shadow */
+            box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+            border-radius: 10px;
+            margin-right: 32px;
+            padding: 0 15px;
+            height: 67px;
+            display: flex;
+            align-items: center;
+
+            &.active{
+                background-color: $color-primary;
+            }
+
+        }
+    }
+}
