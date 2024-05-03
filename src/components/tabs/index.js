@@ -4,58 +4,58 @@ import { Link } from 'gatsby';
 import { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 
-const tabsContent = [
-    {
-        tabTitle: 'Bariatric Nutrition and Weight Management',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/420/314',
-        id:1
-    },
-    {
-        tabTitle: 'Maternal and Paediatric Nutrition',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/430/324',
-        id:2
-    },
-    {
-        tabTitle: 'Critical Care Nutrition',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/440/334',
-        id:3
-    },
-    {
-        tabTitle: 'Geriatric Nutrition',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/450/344',
-        id:4
-    },
-    {
-        tabTitle: 'Bariatric Nutrition and Weight Management',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/420/314',
-        id:5
-    },
-    {
-        tabTitle: 'Maternal and Paediatric Nutrition',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/420/314',
-        id:6
-    },
-    {
-        tabTitle: 'Critical Care Nutrition',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/420/314',
-        id:7
-    },
-    {
-        tabTitle: 'Geriatric Nutrition',
-        tabContent: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
-        image: 'https://picsum.photos/420/314',
-        id:8
-    },
-]
+// const tabsContent = [
+//     {
+//         title: 'Bariatric Nutrition and Weight Management',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/420/314',
+//         id:1
+//     },
+//     {
+//         title: 'Maternal and Paediatric Nutrition',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/430/324',
+//         id:2
+//     },
+//     {
+//         title: 'Critical Care Nutrition',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/440/334',
+//         id:3
+//     },
+//     {
+//         title: 'Geriatric Nutrition',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/450/344',
+//         id:4
+//     },
+//     {
+//         title: 'Bariatric Nutrition and Weight Management',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/420/314',
+//         id:5
+//     },
+//     {
+//         title: 'Maternal and Paediatric Nutrition',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/420/314',
+//         id:6
+//     },
+//     {
+//         title: 'Critical Care Nutrition',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/420/314',
+//         id:7
+//     },
+//     {
+//         title: 'Geriatric Nutrition',
+//         description: 'Transform your life with our Bariatric Nutrition and Weight Management program. Our comprehensive approach combines personalized nutrition plans, lifestyle modifications, and expert guidance to help you achieve sustainable weight loss and improved health.',
+//         image: 'https://picsum.photos/420/314',
+//         id:8
+//     },
+// ]
 
-function Tabs() {
+function Tabs({tabsContent}) {
     const divRef = useRef(null)
     const [activeTab, setActiveTab] = useState(tabsContent[0]);
     const [enablePrev, setEnablePrev] = useState(false)
@@ -110,7 +110,7 @@ function Tabs() {
         <div className={style.tabsHeader}  ref={divRef}>
             {tabsContent.map((item, index) => (
                 <div key={index} onClick={()=>{setActiveTab(item)}} className={activeTab.id === item.id && style.active}>
-                   <Link>{item.tabTitle}</Link>
+                   <Link>{item.title}</Link>
                    <span></span>
                 </div>
             ))}
@@ -166,10 +166,10 @@ function Tabs() {
         <div className={style.tabsBody}>
             {activeTab && 
                 <div className={style.tabContent}>
-                    <div><img src={activeTab.image} /></div>
+                    <div><img src={activeTab.image.url} /></div>
                     <div>
-                        <h2>{activeTab.tabTitle}</h2>
-                        <p>{activeTab.tabContent}</p>
+                        <h2>{activeTab.title}</h2>
+                        <p>{activeTab.description}</p>
                     </div>
                 </div>
             }

@@ -36,7 +36,7 @@ function DoctorCard({doctor}) {
             <div className={classNames(style.DoctorCardFooter)}>
                 <BookAnAppointmentBtn />
                 <div className={classNames(style.DoctorCardFooterLink)}>
-                    <Link to={doctor.slug}>View Profile</Link>
+                    <Link to={'/doctors/'+doctor.slug}>View Profile</Link>
                 </div>
             </div>
         </div>   
