@@ -6,6 +6,7 @@ import ServiceBanner from '../../components/service-banner';
 import TitleDescription from '../../components/global/title-description';
 import Tabs from '../../components/tabs';
 import DoctorCard from '../../components/doctor-card';
+import NewsEvents from '../../components/news-events';
 
 const SpecialtiesSingle = ({ data }) => {
     const pageData = data.strapiSpeciality;
@@ -81,17 +82,19 @@ const SpecialtiesSingle = ({ data }) => {
                         </div>
                     </div>
                 </div>
-                {/* <NewsEvents
+                <NewsEvents
                     template={'inner'}
-                    data={pageData.blogs_and_vlogs}
+                    theme={'gold'}
                     linkTo = {'blogs-and-vlogs'}
+                    data={pageData.blogs_and_vlogs}
                     titleDescription={{
                         theme: 'white',
-                        title: pageData.blogs_vlogs_title.title.data.title,
-                        button_label: pageData.blogs_vlogs_title.button_label,
-                        button_link: pageData.blogs_vlogs_title.button_link,
+                        variant: 'details',
+                        size:'small',
+                        title: pageData.technology_utilisation_title.title.data.title,
+                        description: pageData.technology_utilisation_title.description.data.description
                     }}
-                /> */}
+                />
             </Fade>
         </Layout>
     );
@@ -198,13 +201,40 @@ export const query = graphql`
             slug
             patient_testimonials {
                 title {
-                data {
-                    title
-                }
+                    data {
+                        title
+                    }
                 }
                 button_link
                 button_label
             }
+
+            blogs_vlogs {
+                title {
+                  data {
+                    title
+                  }
+                }
+                button_link
+                button_label
+            }
+            blogs_and_vlogs {
+                title
+                slug
+                id
+                media {
+                    url
+                }
+                doctor {
+                    Name
+                }
+                category
+                description {
+                    data
+                }
+                publish_date(formatString: "DD MMM, YYYY")
+            }
+
             }
     }
 `;

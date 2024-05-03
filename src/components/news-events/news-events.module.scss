@@ -27,6 +27,11 @@
             margin-top: -175px;
         }
     }
+    &.gold{
+        .NewsEventsTop{
+            background: linear-gradient(265.11deg, #886F2F 30.93%, #F3CC98 61.64%, #876E2E 95.6%);
+        }
+    }
     .NewsEventsTop{
         width: calc(100% - 60px);
         margin: 0 auto;

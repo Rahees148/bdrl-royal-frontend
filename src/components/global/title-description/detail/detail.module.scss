@@ -36,6 +36,14 @@
             }
         }
     }
+    &.small{
+        h3{
+            font-size: $font-h4-small;
+            *{
+                font-size: $font-h4-small;
+            }
+        }
+    }
     h3 {
         grid-column: span 5;
         p{

@@ -39,6 +39,7 @@ const Leader = ({ data }) => {
                     linkTo = {'blogs-and-vlogs'}
                     titleDescription={{
                         theme: 'white',
+                        size: 'small',
                         title: pageData.blogs_vlogs_title.title.data.title,
                         button_label: pageData.blogs_vlogs_title.button_label,
                         button_link: pageData.blogs_vlogs_title.button_link,
