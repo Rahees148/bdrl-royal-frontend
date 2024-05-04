@@ -22,7 +22,12 @@ function DoctorCard({doctor}) {
             <div className={classNames(style.DoctorCardTitle)}>
                 <h4>{doctor.Name}</h4>
                 <aside>{doctor.designation}</aside>
-                <div className={classNames(style.DoctorCardTag)}><Link to={'/doctors/'+doctor.speciality?.slug}> {doctor.speciality?.title}</Link></div>
+                {doctor.speciality?.title &&
+                    <div className={classNames(style.DoctorCardTag)}><Link to={'/specialties/'+doctor.speciality?.slug}> {doctor.speciality?.title}</Link></div>
+                }
+                {doctor.centers_of_excellence?.title &&
+                    <div className={classNames(style.DoctorCardTag)}><Link to={'/centers-of-excellence/'+doctor.centers_of_excellence?.slug}> {doctor.centers_of_excellence?.title}</Link></div>
+                }
                 <div className={classNames(style.DoctorCardTagbtm)}>{doctor.degree}</div>
             </div>
             <div className={classNames(style.DoctorCardAreas)}>
