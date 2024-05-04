@@ -8,9 +8,10 @@ import Tabs from '../../components/tabs';
 import DoctorCard from '../../components/doctor-card';
 import NewsEvents from '../../components/news-events';
 import PatientTestimonials from '../../components/patient-testimonials';
+import KeyHighlights from '../../components/key-highlights';
 
 const SpecialtiesSingle = ({ data }) => {
-    const pageData = data.strapiSpeciality;
+    const pageData = data.strapiCentersOfExcellence;
     // pageData.blogs_and_vlogs = pageData.blogs_and_vlogs.map(blog => {
     //   return{
     //     ...blog,
@@ -28,8 +29,8 @@ const SpecialtiesSingle = ({ data }) => {
                         url: '/',
                     },
                     {
-                        title: 'Specialties',
-                        url: '/specialties',
+                        title: 'Centers of Excellence',
+                        url: '/centers-of-excellence',
                     },
                 ],
                 title: pageData.title,
@@ -53,6 +54,12 @@ const SpecialtiesSingle = ({ data }) => {
                             title: pageData.introduction?.title?.data?.title,
                             description: pageData.introduction?.description.data.description,
                         }} />
+                    </div>
+                </div>
+                <div className='bg-bdrlGray py-[60px]'>
+                    <div className='pageWrapper'>
+                        <TitleDescription data={{title:pageData.key_highlights?.title, size:'small'}} />
+                        <KeyHighlights data={pageData.key_highlights.list}/>
                     </div>
                 </div>
                 <div className='bg-bdrlGray py-[32px]'>
@@ -117,143 +124,168 @@ const SpecialtiesSingle = ({ data }) => {
 
 export const query = graphql`
     query ($id: String) {
-        strapiSpeciality(id: { eq: $id }) {
+        strapiCentersOfExcellence(id: { eq: $id }) {
             banner {
-                Button_label
-                Description {
-                    data {
-                        Description
-                    }
+              Button_label
+              Description {
+                data {
+                  id
+                  Description
                 }
-                Title
-                button_link
-                desktop_media {
+              }
+              desktop_media {
                 url
-                }
+              }
+              button_link
+              Title
             }
-            icon {
+            blogs_and_vlogs {
+              category
+              title
+              slug
+              media {
                 url
-            }
-            introduction {
-                title {
-                data {
-                    title
-                }
-                }
-                description {
-                data {
-                    description
-                }
-                }
-                id
-                tagline
-            }
-            our_treatments {
-                title
-                list {
-                title
-                id
-                image {
-                    url
-                }
-                description
-                }
-            }
-            our_experts {
-                title {
-                data {
-                    title
-                }
-                }
-                button_link
-                button_label
-            }
-            doctors {
+              }
+              doctor {
                 Name
                 slug
-                Image {
+              }
+              description {
+                data
+              }
+              publish_date(formatString: "DD MMM, YYYY")
+            }
+            blogs_vlogs_title {
+              button_label
+              button_link
+              title {
+                data {
+                  title
+                }
+              }
+              tagline
+              description {
+                data {
+                  description
+                }
+              }
+            }
+            diseases_ailments {
+              title
+              id
+              list {
+                id
+                description
+                title
+                image {
                   url
                 }
-                designation
-                centers_of_excellence {
+              }
+            }
+            doctors {
+              slug
+              area_of_expertise {
+                title
+                id
+                list {
                   title
-                  slug
-                }
-                speciality {
-                  slug
-                  title
-                }
-                area_of_expertise {
-                  title
-                  list {
-                    title
-                    image {
-                      url
-                    }
+                  id
+                  image {
+                    url
                   }
                 }
               }
-            technology_utilisation_title {
-                button_link
-                button_label
-                title {
+              Name
+              Image {
+                url
+              }
+              designation
+              degrees
+              experience
+              description {
                 data {
-                    title
+                  description
                 }
+              }
+              list_button_label
+            }
+            our_treatments {
+              title
+              list {
+                title
+                id
+                image {
+                  url
                 }
-                description {
+                description
+              }
+            }
+            key_highlights {
+              title
+              list {
+                title
+              }
+            }
+            our_experts_title {
+              title {
                 data {
-                    description
+                  title
                 }
+              }
+              button_label
+              button_link
+            }
+            introduction {
+              title {
+                data {
+                  title
                 }
+              }
+              description {
+                data {
+                  description
+                }
+              }
+            }
+            technology_utilisation {
+              title {
+                data {
+                  title
+                }
+              }
+              description {
+                data {
+                  description
+                }
+              }
             }
             testimonials {
-                title
-                button_label
-                button_link
+              title
+              description {
+                data {
+                  description
+                }
+              }
+              button_link
+              button_label
+              slug
+              author_name
+              author_description
             }
             title
-            slug
-            patient_testimonials {
-                title {
-                    data {
-                        title
-                    }
+            patient_testimonials_title {
+              title {
+                data {
+                  title
                 }
-                button_link
-                button_label
+              }
+              button_label
+              button_link
             }
-
-            blogs_vlogs {
-                title {
-                  data {
-                    title
-                  }
-                }
-                button_link
-                button_label
-            }
-            blogs_and_vlogs {
-                title
-                slug
-                id
-                media {
-                    url
-                }
-                doctor {
-                    Name
-                }
-                category
-                description {
-                    data
-                }
-                publish_date(formatString: "DD MMM, YYYY")
-            }
-
-            }
+          }
     }
 `;
 
-export const Head = ({ data }) => <title>{data.strapiSpeciality.title}</title>;
+export const Head = ({ data }) => <title>{data.strapiCentersOfExcellence.title}</title>;
 
 export default SpecialtiesSingle;

@@ -96,7 +96,7 @@ const SpecialtiesSingle = ({ data }) => {
                         description: pageData.technology_utilisation_title?.description.data.description
                     }}
                 />
-                <PatientTestimonials titleDescription={pageData.patient_testimonials} />
+                <PatientTestimonials overlap={false} titleDescription={pageData.patient_testimonials} />
                 <NewsEvents
                     template={'inner'}
                     linkTo = {'/blogs-and-vlogs'}
@@ -151,12 +151,12 @@ export const query = graphql`
             our_treatments {
                 title
                 list {
-                title
-                id
-                image {
-                    url
-                }
-                description
+                    title
+                    id
+                    image {
+                        url
+                    }
+                    description
                 }
             }
             our_experts {
