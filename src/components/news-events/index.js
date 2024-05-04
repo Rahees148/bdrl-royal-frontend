@@ -7,7 +7,7 @@ import TitleDescription from '../global/title-description';
 import { Content } from '../../graphql/news-and-events';
 import { Link } from 'gatsby';
 
-function NewsEvents({ template = false, data, titleDescription, linkTo }) {
+function NewsEvents({ template = false,theme='primary', data, titleDescription, linkTo }) {
 
     const navigationNextRef = useRef(null);
     const navigationPrevRef = useRef(null);
@@ -15,19 +15,11 @@ function NewsEvents({ template = false, data, titleDescription, linkTo }) {
     return (
         <>
             {newsAndEvents && newsAndEvents.length > 0 && 
-                <section className={classNames(style.NewsEvents, template && style[template])}>
+                <section className={classNames(style.NewsEvents,theme && style[theme], template && style[template])}>
                     <div className={classNames(style.NewsEventsTop, 'bg-primary')}>
                         <div className="pageWrapper">
                             <TitleDescription
-                                data={{
-                                    theme: titleDescription.theme,
-                                    title: titleDescription.title,
-                                    size: template && template === 'inner' && 'small',
-                                    description:
-                                        titleDescription.description && titleDescription.description,
-                                    button_label: titleDescription.button_label,
-                                    button_link: titleDescription.button_link,
-                                }}
+                                data={{...titleDescription }}
                             />
                         </div>
                     </div>

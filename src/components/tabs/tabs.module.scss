@@ -1,0 +1,168 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.tabsContainer{
+    position: relative;
+    .tabsHeader{
+        display: flex;
+        overflow-x: scroll;
+        padding: 10px 0 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        >div{
+            width:256px;
+            flex: none;
+            position: relative;
+            margin-right: 32px;
+            a{
+                background:$color-white;
+                box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+                border-radius: 10px;
+                padding: 0 15px;
+                height: 67px;
+                display: flex;
+                align-items: center;
+                font-weight: $font-weight-semiBold;
+                color: $color-primary;
+                justify-content:flex-start;
+                cursor: pointer;
+            }
+
+            &.active{
+                a{
+                    background-color: $color-primary;
+                    color: $color-white;
+                    border-radius: 10px 10px 0 0;
+                    box-shadow:none;
+                    &.gray{
+                        &::after, &::before{
+                            background:$color-bdrlGray;
+                        }
+                    }
+                    &.white{
+                        &::after, &::before{
+                            background:$color-white;
+                        }
+                    }
+                    &::after, &::before{
+                        content: "";
+                        width: 32px;
+                        height: 50px;
+                        background:#f9f9f9;
+                        z-index: 2;
+                        position: absolute;
+                        bottom: 8px;
+                    }
+                    &::before{
+                        left: -32px;
+                        border-radius: 20px 20px 20px 0;
+                    }
+                    &::after{
+                        right: -32px;
+
+                        border-radius: 20px 20px 0 20px;
+                    }
+                }
+                span{
+                    height: 27px;
+                    width: 100%;
+                    background-color: $color-primary;
+                    display: block;
+                    position: relative;
+                    z-index: 6;
+                }
+                &::before{
+                    content: "";
+                    background-color: #063321;
+                    width: 30px;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    left: -20px;
+                }
+                &::after{
+                    content: "";
+                    background-color: #063321;
+                    width: 30px;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    right: -20px;
+                }
+            }
+
+        }
+    }
+    .tabsNavigation{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        top: 25px;
+        pointer-events: none;
+
+        .prev{
+            position: relative;
+            left: -35px;
+            pointer-events: all;
+            cursor: pointer;
+        }
+
+        .next{
+            position: relative;
+            right: -35px;
+            pointer-events: all;
+            cursor: pointer
+        }
+    }
+    .tabsBody{
+        background-color: $color-primary;
+        padding: 24px;
+        border-radius:10px;
+        margin-top: -8px;
+
+        *{
+            color: $color-white;
+        }
+        .tabContent{
+            display: flex;
+            >div{
+                flex: 1;
+                h2{
+                    font-size: $font-h4;
+                    font-weight: $font-weight-semiBold;
+                }
+            }
+        }
+    }
+
+    &.dark{
+        .tabsHeader{
+            >div{
+                a{
+                    background:$color-white;
+                }
+    
+                &.active{
+                    a{
+                        background-color: #2D3C36;
+                    }
+                    span{
+                        background-color: #2D3C36;
+                    }
+                    &::before{
+                        background-color: #2D3C36;
+                    }
+                    &::after{
+                        background-color: #2D3C36;
+                    }
+                }
+            }
+        }
+        .tabsBody{
+            background-color: #2D3C36;
+        }
+    }
+}

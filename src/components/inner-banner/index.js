@@ -12,7 +12,7 @@ function InnerBanner({data}) {
         </div>
         <div className={classNames('pageWrapper', style.bannerText)}>
             <div className={style.bannerTextWrapper}>
-                <h1>{data.title}</h1>
+                <h1 dangerouslySetInnerHTML={{__html: data.title}} />
                 <div className={style.subhead} dangerouslySetInnerHTML={{__html: data.description}}></div>
                 <img src={overlayImage} alt='Badr Al Samaa Royal Hospital' />
             </div>

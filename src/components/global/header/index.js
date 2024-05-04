@@ -41,7 +41,7 @@ function Header({ pageTitle, breadcrumb, template  }) {
                             Helpline +968 2684 6767 | +968 2684 8786
                         </p>
                         <ul className="flex text-white text-sm gap-8">
-                            <li>Specialities</li>
+                            <li><Link to='/specialties'>Specialities</Link></li>
                             <li>OPD Schedule</li>
                             <li>Feedback</li>
                             <li>Insurance</li>

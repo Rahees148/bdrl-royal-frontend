@@ -325,6 +325,375 @@ const strapiConfig = {
       },
     },
   } },
+  { singularName: "centers-of-excellence", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          title:"*",
+          slug:"*",
+          icon: "*",
+          doctors: "*",
+          banner: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
+          },
+          introduction: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          key_highlights:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          our_experts_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          our_treatments:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          diseases_ailments:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          technology_utilisation: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          patient_testimonials_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          testimonials:"*",
+          blogs_vlogs_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          blogs_and_vlogs:"*",
+          
+        }
+      },
+      title:"*",
+          slug:"*",
+          icon: "*",
+          doctors: "*",
+          banner: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
+          },
+          introduction: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          key_highlights:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          our_experts_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          our_treatments:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          diseases_ailments:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          technology_utilisation: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          patient_testimonials_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          testimonials:"*",
+          blogs_vlogs_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          blogs_and_vlogs:"*",
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
+  { singularName: "speciality", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          title:"*",
+          slug:"*",
+          icon: "*",
+          doctors: "*",
+          banner: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
+          },
+          introduction: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          our_experts: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          our_treatments:{
+            populate:{
+              title:"*",
+              list:{
+                populate:{
+                  title:"*",
+                  image:"*",
+                  description:"*",
+                }
+              }
+            }
+          },
+          technology_utilisation_title: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          patient_testimonials: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          testimonials:"*",
+          blogs_vlogs: {
+            populate:{
+              title:"*",
+              button_label:"*",
+              button_link:"*",
+              tagline:"*",
+              description:"*"
+            }
+          },
+          blogs_and_vlogs:"*",
+          
+        }
+      },
+      title:"*",
+      slug:"*",
+      icon: "*",
+      doctors: "*",
+      banner: {
+        populate:{
+          Title: "*",
+          Description: "*",
+          Button_label: "*",
+          button_link: "*",
+          desktop_media: "*",
+          mobile_media: "*"
+        }
+      },
+      introduction: {
+        populate:{
+          title:"*",
+          button_label:"*",
+          button_link:"*",
+          tagline:"*",
+          description:"*"
+        }
+      },
+      our_experts: {
+        populate:{
+          title:"*",
+          button_label:"*",
+          button_link:"*",
+          tagline:"*",
+          description:"*"
+        }
+      },
+      our_treatments:{
+        populate:{
+          title:"*",
+          list:{
+            populate:{
+              title:"*",
+              image:"*",
+              description:"*",
+            }
+          }
+        }
+      },
+      technology_utilisation_title: {
+        populate:{
+          title:"*",
+          button_label:"*",
+          button_link:"*",
+          tagline:"*",
+          description:"*"
+        }
+      },
+      patient_testimonials: {
+        populate:{
+          title:"*",
+          button_label:"*",
+          button_link:"*",
+          tagline:"*",
+          description:"*"
+        }
+      },
+      testimonials:"*",
+      blogs_vlogs: {
+        populate:{
+          title:"*",
+          button_label:"*",
+          button_link:"*",
+          tagline:"*",
+          description:"*"
+        }
+      },
+      blogs_and_vlogs:"*",
+      
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
 ],
 singleTypes:[
   { 

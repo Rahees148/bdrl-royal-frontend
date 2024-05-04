@@ -1,0 +1,50 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+
+.serviceBannerWrapper{
+    width: 100%;
+    position: relative;
+    height: 450px;
+    background-color: $color-bdrlGray;
+    > div{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 32px;
+        height: 100%;
+        .bannerTextWrapper{
+            grid-column: span 5;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            h1{
+                font-size: $font-h1;
+                color: $color-primary;
+                font-weight: $font-weight-light;
+                @media #{$breakpoint-mobile} {
+                    font-size: $font-h4-small;
+                    }
+            }
+            .subhead{
+                font-size: $font-base;
+                color: $color-primary;
+                font-weight: $font-weight-semiBold;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-medium;
+                }
+    
+            }
+        }
+        .bannerImg{
+            grid-column: span 6 / 13;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            img{
+                max-width: 350px;
+            }
+        }
+    }
+    
+    
+}

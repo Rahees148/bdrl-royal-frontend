@@ -4,6 +4,7 @@ import * as style from './doctor-card.module.scss';
 import { Link } from 'gatsby';
 import BookAnAppointmentBtn from '../global/button';
 import useWindowSize from '../../libs/hooks/useWindowSize';
+import ShareIcon from '../../images/icons/share-icon.svg'
 
 function DoctorCard({doctor}) { 
     const {isMobile} = useWindowSize();
@@ -11,6 +12,9 @@ function DoctorCard({doctor}) {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className={classNames(style.DoctorCard)}>
+            <div className={classNames(style.DoctorCardShare,'rounded-full')}>
+                <img src={ShareIcon} alt='Share'/>
+            </div>
             <div className={classNames(style.DoctorCardImage)}>
                 <div className={classNames(style.Circle)}></div>
                 <img src={doctor?.Image?.url} alt={doctor.Name}/>
@@ -36,7 +40,7 @@ function DoctorCard({doctor}) {
             <div className={classNames(style.DoctorCardFooter)}>
                 <BookAnAppointmentBtn />
                 <div className={classNames(style.DoctorCardFooterLink)}>
-                    <Link to={doctor.slug}>View Profile</Link>
+                    <Link to={'/doctors/'+doctor.slug}>View Profile</Link>
                 </div>
             </div>
         </div>   

@@ -5,6 +5,10 @@
         h2{
             font-size: $font-h4-small;
             line-height: $font-h4-small + 8;
+            *{
+                font-size: $font-h4-small;
+                line-height: $font-h4-small + 8;
+            }
         }
     }
     > div{
@@ -24,6 +28,17 @@
             font-size: $font-h4;
             line-height: $font-h4 ;
         }
+        *{
+            font-size: $font-h2;
+            line-height: $font-h2 + 10;
+            color: $color-primary;
+            letter-spacing: -1px;
+            font-weight: $font-weight-semiBold;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h4;
+                line-height: $font-h4 ;
+            }
+        }
     }
 
     .SectionTagline {
@@ -38,15 +53,16 @@
         }
     }
     &.green {
-        h2 {
+        h2, h2 * {
             color: $color-primary;
+
         }
         .SectionTagline {
             color: $color-primary;
         }
     }
     &.black {
-        h2 {
+        h2,  h2 * {
             color: $color-black;
         }
         .SectionTagline {
@@ -54,7 +70,7 @@
         }
     }
     &.white {
-        h2 {
+        h2, h2 * {
             color: $color-white;
         }
         .SectionTagline {
