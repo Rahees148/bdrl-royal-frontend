@@ -16,22 +16,31 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+            align-items: flex-start;
             h1{
-                font-size: $font-h1;
-                color: $color-primary;
-                font-weight: $font-weight-light;
+                font-size: $font-h2;
+                line-height: $font-h2 + 2;
+                color: $color-secondary;
+                font-weight: $font-weight-semiBold;
                 @media #{$breakpoint-mobile} {
                     font-size: $font-h4-small;
                     }
             }
             .subhead{
-                font-size: $font-base;
-                color: $color-primary;
-                font-weight: $font-weight-semiBold;
+                font-size: $font-h5;
+                line-height: $font-h5 + 5;
+                color: $color-bodyCopy; 
+                margin-top: 29px;
                 @media #{$breakpoint-mobile} {
                     font-size:$font-medium;
                 }
     
+            }
+            .serviceBannerBtn {
+                padding: 13px 25px;
+                min-width: 160px;
+                text-align: center;
+                margin-top: 29px;
             }
         }
         .bannerImg{
@@ -40,8 +49,31 @@
             justify-content: flex-end;
             align-items: center;
             flex-direction: column;
+            position: relative;
+            &::after{
+                content: "";
+                width: 545px;
+                height: 272.5px;
+                position: absolute;
+                background-color: $color-primary;
+                border-radius: 50rem 50rem 0 0;
+            }
             img{
                 max-width: 350px;
+                z-index: 1;
+            }
+            .serviceBannerIcon{
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                background-color: $color-white;
+                position: absolute;
+                z-index: 3;
+                bottom: 35px;
+                right: 95px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }

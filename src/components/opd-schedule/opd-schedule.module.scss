@@ -1,8 +1,18 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
 .OPDScheduleContainer{
     width: 100%;
-    max-width: 705px;
-    background: #FFFFFF;
+    max-width: 736px;
+    background: $color-white;
     box-shadow: 0px 11.7408px 46.9632px rgba(8, 39, 28, 0.1);
     border-radius: 20px;
     
+}
+.OPDScheduleDec {
+    color: $color-primary;
+    font-weight:$font-weight-medium;
+    @media #{$breakpoint-mobile} {
+        font-size: $font-medium;
+        line-height: $font-medium + 10;
+    }
 }

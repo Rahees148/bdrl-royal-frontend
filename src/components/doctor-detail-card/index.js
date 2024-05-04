@@ -3,11 +3,15 @@ import BookAnAppointmentBtn from '../global/button';
 import * as style from './doctor-detail-card.module.scss';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
+import ShareIcon from '../../images/icons/share-icon.svg'
 
 function DoctorDetailCard({data, variant="doctorDetail"}) {
   return (
     <div className={classNames(style[variant], "rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6 mt-8 grid items-start gap-4 lg:gap-8")}>
         <div className="col-span-12 lg:col-span-5 flex justify-center">
+        <div className={classNames(style.DoctorCardShare,'rounded-full')}>
+                <img src={ShareIcon} alt='Share'/>
+            </div>
             <div className={classNames(style.DoctorCardImage)}>
                 <div className={classNames(style.Circle)}></div>
                 <img src={data?.Image?.url} alt={data.Name}/>
@@ -23,7 +27,7 @@ function DoctorDetailCard({data, variant="doctorDetail"}) {
                     <p>description</p>
                 }
                 {variant !== 'slider' &&
-                    <span className={classNames(style.tags,'bg-white my-[22px] px-[15px] py-[6px] rounded-[60px] ')}>
+                    <span className={classNames(style.tags,'bg-white my-[20px] sm:my-[24px] px-[16px] py-[6px] sm:py-[9px] rounded-[60px] ')}>
                         {data.speciality &&
                             <Link to={data.speciality?.slug}>
                                 <img src={data.speciality?.icon?.url} alt={data.speciality?.title}/>

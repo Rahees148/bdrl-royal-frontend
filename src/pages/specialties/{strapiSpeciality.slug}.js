@@ -47,15 +47,16 @@ const SpecialtiesSingle = ({ data }) => {
                     }
                 />
                 <div className='pageWrapper'>
-                    <div className='py-[32px]'>
+                    <div className='py-[45px]'>
                         <TitleDescription data={{
                             variant: 'details',
+                            size:'small',
                             title: pageData.introduction?.title?.data?.title,
                             description: pageData.introduction?.description.data.description,
                         }} />
                     </div>
                 </div>
-                <div className='bg-bdrlGray py-[32px]'>
+                <div className='bg-bdrlGray pt-[45px] pb-[83px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -76,7 +77,7 @@ const SpecialtiesSingle = ({ data }) => {
                             button_link:pageData.our_experts?.button_link
 
                         }} />
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-[115px]'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-[95px]'>
                             {pageData.doctors && pageData.doctors.map((doctor, index)=>(
                                 <DoctorCard doctor={doctor} key={index} />
                             ))}

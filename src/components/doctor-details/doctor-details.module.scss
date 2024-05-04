@@ -3,7 +3,9 @@
 .doctorDetails{
     color: $color-primary;
     padding-bottom: 100px;
-   
+    @media #{$breakpoint-mobile}{
+        padding-bottom: 30px;
+    }
 
     .areaOfExpCard{
         display: flex;
@@ -25,6 +27,11 @@
             h5{
                 font-size: $font-h5-small;
                 font-weight: $font-weight-semiBold;
+                @media #{$breakpoint-mobile}{
+                    font-size: $font-base;
+                    line-height: $font-base + 3;
+                    margin:10px 0 15px 0;
+                }
             }
             p{
                 font-weight: $font-weight-medium;
@@ -39,11 +46,20 @@
         font-size: $font-h5;
         font-weight: $font-weight-semiBold;
         padding: 32px;
+        @media #{$breakpoint-mobile}{
+            padding: 15px;
+            font-size: $font-h5-small;
+            line-height:$font-h5-small + 4;
+            
+        }
         a{
             display: block;
             color: #989898;
             font-weight: $font-weight-medium;
             font-size: $font-base;
+            @media #{$breakpoint-mobile}{
+                margin-top: 11px;
+            }
             svg{
                 display: inline-block;
                 margin-left: 8px;
