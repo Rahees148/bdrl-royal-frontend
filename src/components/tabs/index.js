@@ -110,7 +110,7 @@ function Tabs({tabsContent, bg}) {
         <div className={style.tabsHeader}  ref={divRef}>
             {tabsContent.map((item, index) => (
                 <div key={index} onClick={()=>{setActiveTab(item)}} className={activeTab.id === item.id && style.active}>
-                   <Link className={style[bg]}>{item.title}</Link>
+                   <Link className={style[bg]}><i>o</i>{item.title}</Link>
                    <span></span>
                 </div>
             ))}
