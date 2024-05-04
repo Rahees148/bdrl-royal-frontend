@@ -8,7 +8,7 @@ function SpecialtyCard({data}) {
   return (
     <div className={classNames(style.cardWrapper)}>
         <div className={classNames(style.icon, !data.title && style.fullWidth)}>
-            <img src={data.icon.url} alt={data.title} />
+            <img src={data.icon?.url} alt={data.title} />
         </div>
         {data.title && <div className={classNames(style.title)}>{data.title}</div>}
         <Link to={'/specialties/'+data.slug}>

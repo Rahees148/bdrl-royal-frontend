@@ -55,7 +55,7 @@ import { Fade } from 'react-awesome-reveal';
 //     },
 // ]
 
-function Tabs({tabsContent}) {
+function Tabs({tabsContent, bg}) {
     const divRef = useRef(null)
     const [activeTab, setActiveTab] = useState(tabsContent[0]);
     const [enablePrev, setEnablePrev] = useState(false)
@@ -110,7 +110,7 @@ function Tabs({tabsContent}) {
         <div className={style.tabsHeader}  ref={divRef}>
             {tabsContent.map((item, index) => (
                 <div key={index} onClick={()=>{setActiveTab(item)}} className={activeTab.id === item.id && style.active}>
-                   <Link>{item.title}</Link>
+                   <Link className={style[bg]}>{item.title}</Link>
                    <span></span>
                 </div>
             ))}

@@ -33,6 +33,12 @@
                     background-color: $color-primary;
                     color: $color-white;
                     border-radius: 10px 10px 0 0;
+                    box-shadow:none;
+                    &.gray{
+                        &::after, &::before{
+                            background:$color-bdrlGray;
+                        }
+                    }
                     &::after, &::before{
                         content: "";
                         width: 32px;
