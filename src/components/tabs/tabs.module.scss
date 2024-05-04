@@ -41,6 +41,11 @@
                             background:$color-bdrlGray;
                         }
                     }
+                    &.white{
+                        &::after, &::before{
+                            background:$color-white;
+                        }
+                    }
                     &::after, &::before{
                         content: "";
                         width: 32px;
@@ -130,6 +135,34 @@
                     font-weight: $font-weight-semiBold;
                 }
             }
+        }
+    }
+
+    &.dark{
+        .tabsHeader{
+            >div{
+                a{
+                    background:$color-white;
+                }
+    
+                &.active{
+                    a{
+                        background-color: #2D3C36;
+                    }
+                    span{
+                        background-color: #2D3C36;
+                    }
+                    &::before{
+                        background-color: #2D3C36;
+                    }
+                    &::after{
+                        background-color: #2D3C36;
+                    }
+                }
+            }
+        }
+        .tabsBody{
+            background-color: #2D3C36;
         }
     }
 }

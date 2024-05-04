@@ -9,9 +9,11 @@ import DoctorCard from '../../components/doctor-card';
 import NewsEvents from '../../components/news-events';
 import PatientTestimonials from '../../components/patient-testimonials';
 import KeyHighlights from '../../components/key-highlights';
+import DoctorDetailCard from '../../components/doctor-detail-card';
 
 const SpecialtiesSingle = ({ data }) => {
     const pageData = data.strapiCentersOfExcellence;
+    console.log('pageData', pageData)
     // pageData.blogs_and_vlogs = pageData.blogs_and_vlogs.map(blog => {
     //   return{
     //     ...blog,
@@ -59,7 +61,23 @@ const SpecialtiesSingle = ({ data }) => {
                 <div className='bg-bdrlGray py-[60px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{title:pageData.key_highlights?.title, size:'small'}} />
-                        <KeyHighlights data={pageData.key_highlights.list}/>
+                        <KeyHighlights data={pageData.key_highlights?.list}/>
+                    </div>
+                </div>
+                <div className='bg-white py-[32px]'>
+                    <div className='pageWrapper'>
+                        <TitleDescription data={{
+                            size:'small',
+                            title: pageData.our_experts_title?.title?.data.title,
+                            button_label:pageData.our_experts_title?.button_label,
+                            button_link:pageData.our_experts_title?.button_link
+
+                        }} />
+                        <div className='py-[15px]'>
+                            {pageData.doctors && pageData.doctors.map((doctor, index)=>(
+                                <DoctorDetailCard variant='slider' data={doctor} key={index} />
+                            ))}
+                        </div>
                     </div>
                 </div>
                 <div className='bg-bdrlGray py-[32px]'>
@@ -74,20 +92,16 @@ const SpecialtiesSingle = ({ data }) => {
                         }
                     </div>
                 </div>
-                <div className='bg-white py-[32px]'>
+                <div className='py-[32px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
-                            title: pageData.our_experts?.title?.data.title,
-                            button_label:pageData.our_experts?.button_label,
-                            button_link:pageData.our_experts?.button_link
-
+                            title: pageData.diseases_ailments?.title,
+                            className: 'pb-[18px]',
                         }} />
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-[115px]'>
-                            {pageData.doctors && pageData.doctors.map((doctor, index)=>(
-                                <DoctorCard doctor={doctor} key={index} />
-                            ))}
-                        </div>
+                        {pageData.diseases_ailments && 
+                            <Tabs bg="white" theme="dark" tabsContent={pageData.diseases_ailments?.list} />
+                        }
                     </div>
                 </div>
                 <NewsEvents
@@ -99,11 +113,11 @@ const SpecialtiesSingle = ({ data }) => {
                         theme: 'white',
                         variant: 'details',
                         size:'small',
-                        title: pageData.technology_utilisation_title?.title.data.title,
-                        description: pageData.technology_utilisation_title?.description.data.description
+                        title: pageData.technology_utilisation?.title.data.title,
+                        description: pageData.technology_utilisation?.description.data.description
                     }}
                 />
-                <PatientTestimonials titleDescription={pageData.patient_testimonials} />
+                <PatientTestimonials titleDescription={pageData.patient_testimonials_title} overlap={false} />
                 <NewsEvents
                     template={'inner'}
                     linkTo = {'/blogs-and-vlogs'}
@@ -112,9 +126,9 @@ const SpecialtiesSingle = ({ data }) => {
                         theme: 'white',
                         variant: 'details',
                         size:'small',
-                        title: pageData.blogs_vlogs?.title.data.title,
-                        button_label: pageData.blogs_vlogs?.button_label,
-                        button_link: pageData.blogs_vlogs?.button_link,
+                        title: pageData.blogs_vlogs_title?.title.data.title,
+                        button_label: pageData.blogs_vlogs_title?.button_label,
+                        button_link: pageData.blogs_vlogs_title?.button_link,
                     }}
                 />
             </Fade>

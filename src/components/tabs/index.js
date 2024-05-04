@@ -3,6 +3,7 @@ import * as style from './tabs.module.scss';
 import { Link } from 'gatsby';
 import { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
+import classNames from 'classnames';
 
 // const tabsContent = [
 //     {
@@ -55,7 +56,7 @@ import { Fade } from 'react-awesome-reveal';
 //     },
 // ]
 
-function Tabs({tabsContent, bg}) {
+function Tabs({tabsContent, bg, theme="light"}) {
     const divRef = useRef(null)
     const [activeTab, setActiveTab] = useState(tabsContent[0]);
     const [enablePrev, setEnablePrev] = useState(false)
@@ -106,7 +107,7 @@ function Tabs({tabsContent, bg}) {
          
     }
   return (
-    <div className={style.tabsContainer}>
+    <div className={classNames(style.tabsContainer, style[theme])}>
         <div className={style.tabsHeader}  ref={divRef}>
             {tabsContent.map((item, index) => (
                 <div key={index} onClick={()=>{setActiveTab(item)}} className={activeTab.id === item.id && style.active}>
