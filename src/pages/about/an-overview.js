@@ -72,7 +72,7 @@ const AnOverviewPage = () => {
                         {pageData.highlight_card && pageData.highlight_card.map((card, index) => (
                                 <IconCard key={index} data={{
                                     title: card.title,
-                                    icon:card.icon.url
+                                    icon:card.icon?.url
                                 }} />
                         ))}
                     </div>
