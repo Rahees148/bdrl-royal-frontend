@@ -425,7 +425,13 @@ const strapiConfig = {
               description:"*"
             }
           },
-          blogs_and_vlogs:"*",
+          blogs_and_vlogs:{
+            populate:{
+              media:"*",
+              doctor:"*",
+              description:"*"
+            }
+          },
           
         }
       },
@@ -525,7 +531,13 @@ const strapiConfig = {
               description:"*"
             }
           },
-          blogs_and_vlogs:"*",
+          blogs_and_vlogs:{
+            populate:{
+              media:"*",
+              doctor:"*",
+              description:"*"
+            }
+          },
     },
     pluginOptions: {
       i18n: {
@@ -609,7 +621,13 @@ const strapiConfig = {
               description:"*"
             }
           },
-          blogs_and_vlogs:"*",
+          blogs_and_vlogs:{
+            populate:{
+              media:"*",
+              doctor:"*",
+              description:"*"
+            }
+          },
           
         }
       },
@@ -685,7 +703,13 @@ const strapiConfig = {
           description:"*"
         }
       },
-      blogs_and_vlogs:"*",
+      blogs_and_vlogs:{
+        populate:{
+          media:"*",
+          doctor:"*",
+          description:"*"
+        }
+      },
       
     },
     pluginOptions: {
