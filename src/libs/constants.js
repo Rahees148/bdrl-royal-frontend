@@ -1,3 +1,4 @@
+export const CMS_URL = process.env.STRAPI_API_URL;
 export const CTA_TYPES = ['primary', 'secondary', 'ctalink'];
 export const BREAKPOINTS = {
     desktopLg: 1336,

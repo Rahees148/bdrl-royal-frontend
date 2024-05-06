@@ -48,10 +48,10 @@ function HeroBanner({sliderItems}) {
               muted
               autoPlay
               playsInline>
-                  <source src={mediaUrl} type="video/mp4" /> 
+                  <source src={`${mediaUrl}`} type="video/mp4" /> 
               </video>
             ):(
-              <img data-swiper-parallax="-23%" src={mediaUrl} alt="banner" />
+              <img data-swiper-parallax="-23%" src={`${mediaUrl}`} alt="banner" />
             )}
             
             <div className={s.bannerOverlay} ></div>
