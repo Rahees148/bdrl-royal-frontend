@@ -66,7 +66,12 @@ function NewsEvents({ template = false,theme='primary', data, titleDescription, 
                                                     )}
                                                 >
                                                     <div className={classNames(style.NewsEventsCardImage)}>
-                                                        <img src={item.image?.url} alt={item.title} />
+                                                        {item.image && 
+                                                            <img src={item.image?.url} alt={item.title} />
+                                                        }
+                                                        {item.media &&
+                                                            <img src={item.media?.url} alt={item.title} />
+                                                        }
                                                     </div>
                                                     <div className={classNames(style.NewsEventsCardDec)}>
                                                         <div

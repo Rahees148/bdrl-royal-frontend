@@ -15,11 +15,11 @@ import DoctorDetailCard from '../doctor-detail-card';
 function DoctorDetails({ data }) {
     const {isMobile} = useWindowSize();
     return (
-        <div className={classNames('pageWrapper',style.doctorDetails)}>
+        <div className={classNames('pageWrapper',style.doctorDetails)}> 
            
            <DoctorDetailCard data={data}  />
 
-            <div className=" grid-cols-12 pt-[55px] grid gap-8">
+            <div className=" grid-cols-12 pt-[40px] sm:pt-[55px] grid gap-8">
                 <div className="col-span-12 lg:col-span-6">
                     <TitleDescription
                         data={{
@@ -42,8 +42,8 @@ function DoctorDetails({ data }) {
                 }
             </div>
 
-            <div className=" grid-cols-12 pt-[55px] grid gap-8">
-                <div className="col-span-12 lg:col-span-6">
+            <div className=" grid-cols-12 pt-[45px] sm:pt-[55px] grid gap-8">
+                <div className="col-span-12 lg:col-span-6 py-[0px] sm:py-[25px]">
                     <TitleDescription
                         data={{
                             variant: 'stack',
@@ -65,7 +65,7 @@ function DoctorDetails({ data }) {
                         ))}
                 </div>
                 <div className="col-span-12 lg:col-span-6">
-                    <div className="p-6 bg-bdrlGray rounded-[24px]">
+                    <div className="px-[0px] sm:px-[35px] pt-[25px] pb-[10px] sm:pb-[50px] bg-none sm:bg-bdrlGray rounded-[24px]">
                         <TitleDescription
                             data={{
                                 variant: 'stack',
@@ -78,7 +78,7 @@ function DoctorDetails({ data }) {
                 </div>
             </div>
 
-            <div className="pt-[55px]">
+            <div className="pt-[25px] sm:pt-[55px]">
                 <TitleDescription
                     data={{
                         variant: 'stack',
@@ -86,7 +86,7 @@ function DoctorDetails({ data }) {
                         title: data.awards?.title,
                     }}
                 />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-[15px] mt-[30px] sm:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[15px] mt-[20px] sm:mt-[30px] sm:gap-8">
                     {data.awards?.list &&
                         data.awards?.list.map((list, index) => (
                             <IconCard
@@ -111,7 +111,7 @@ function DoctorDetails({ data }) {
                 />
             </div>
 
-            <div className="pt-[55px]">
+            <div className="pt-[45px] sm:pt-[55px]">
                 <TitleDescription
                     data={{
                         variant: 'stack',
@@ -122,7 +122,7 @@ function DoctorDetails({ data }) {
                 <OPDSchedule />
             </div>
 
-            <div className="pt-[55px]">
+            <div className="pt-[45px] sm:pt-[55px]">
                 <TitleDescription
                     data={{
                         variant: 'stack',
@@ -130,7 +130,7 @@ function DoctorDetails({ data }) {
                         title: data.top_procedure_title,
                     }}
                 />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[30px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] sm:gap-8 mt-[20px] sm:mt-[30px]">
                     {data.top_procedures &&
                         data.top_procedures.map((procedure, index) => (
                             <div key={index} className={style.procedureCard}>
@@ -148,7 +148,7 @@ function DoctorDetails({ data }) {
                 </div>
             </div>
             {isMobile &&               
-                <div className="mt-[55px]">
+                <div className="mt-[45px] sm:mt-[55px]">
                     <LeadershipForm
                         toEmail={data.Name}
                         title={data.Name}

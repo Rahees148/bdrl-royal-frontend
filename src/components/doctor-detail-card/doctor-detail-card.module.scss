@@ -1,52 +1,87 @@
 @import '../../scss/colors';
 @import '../../scss/breakpoints';
 .doctorDetail{
+    position: relative;
     .doctorBanner{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         h2{
             font-size: $font-h2;
+            line-height: $font-h2 + 10;
             font-weight: $font-weight-semiBold;
+            margin-bottom: 3px;
             @media #{$breakpoint-mobile} {
                 font-size:$font-h5;
+                line-height: $font-h5 + 5;
             }
         }
         .designation{
             font-size: $font-h5;
+            line-height: $font-h5 + 5;
             @media #{$breakpoint-mobile} {
                 font-size:$font-base;
+                line-height: $font-base + 3;
             }
         }
         .tags{
             width: auto;
             a{
                 font-size: $font-h5;
+                line-height: $font-h5 + 5;
                 font-weight: $font-weight-semiBold;
                 display: flex;
                 gap: 5px;
                 align-items: center;
                 @media #{$breakpoint-mobile} {
                     font-size:$font-base;
+                    line-height: $font-base + 3;
+                    gap: 11px;
+                }
+                img{
+                    @media #{$breakpoint-mobile} {
+                        max-width: 22px;
+                    }
                 }
             }
             
         }
         .degrees{
             font-weight: $font-weight-semiBold;
+            font-size: $font-base;
+            line-height: $font-base + 3;
             @media #{$breakpoint-mobile} {
                 font-size:$font-small;
+                line-height: $font-small + 2;
             }
         }
         .experience{
             font-size: $font-h5;
+            line-height: $font-h5 + 5;
             font-weight: $font-weight-semiBold;
+            margin-top: 7px;
             @media #{$breakpoint-mobile} {
                 font-size:$font-base;
+                line-height: $font-base + 3;
             }
         }
     }
-    
+    .DoctorCardShare {
+        width: 60px;
+        height: 60px;
+        filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, 0.1));
+        background: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 17px;
+        top: 20px;
+        img{
+            width: 28px;
+            height: 28px;
+        }
+    }
     .DoctorCardImage{
         width: 367px;
         position: relative;

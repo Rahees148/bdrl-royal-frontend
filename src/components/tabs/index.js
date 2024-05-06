@@ -111,7 +111,7 @@ function Tabs({tabsContent, bg, theme="light"}) {
         <div className={style.tabsHeader}  ref={divRef}>
             {tabsContent.map((item, index) => (
                 <div key={index} onClick={()=>{setActiveTab(item)}} className={activeTab.id === item.id && style.active}>
-                   <Link className={style[bg]}><i>o</i>{item.title}</Link>
+                   <Link className={style[bg]}><i></i>{item.title}</Link>
                    <span></span>
                 </div>
             ))}
@@ -167,8 +167,8 @@ function Tabs({tabsContent, bg, theme="light"}) {
         <div className={style.tabsBody}>
             {activeTab && 
                 <div className={style.tabContent}>
-                    <div><img src={activeTab.image.url} /></div>
-                    <div>
+                    <div className={classNames(style.tabContentImg)}><img src={activeTab.image.url} /></div>
+                    <div className={classNames(style.tabContentDec)}>
                         <h2>{activeTab.title}</h2>
                         <p>{activeTab.description}</p>
                     </div>

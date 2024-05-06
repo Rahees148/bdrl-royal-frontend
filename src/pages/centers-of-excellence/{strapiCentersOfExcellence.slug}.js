@@ -1,19 +1,24 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import * as style from './index.module.scss'
+import Layout from '../../components/global/layout';
 import ServiceBanner from '../../components/service-banner';
 import TitleDescription from '../../components/global/title-description';
 import Tabs from '../../components/tabs';
-import DoctorCard from '../../components/doctor-card';
 import NewsEvents from '../../components/news-events';
 import PatientTestimonials from '../../components/patient-testimonials';
 import KeyHighlights from '../../components/key-highlights';
 import DoctorDetailCard from '../../components/doctor-detail-card';
+import classNames from 'classnames';
 
 const SpecialtiesSingle = ({ data }) => {
     const pageData = data.strapiCentersOfExcellence;
-    console.log('pageData', pageData)
+    
+    const navigationNextRef = React.useRef(null);
+    const navigationPrevRef = React.useRef(null);
     // pageData.blogs_and_vlogs = pageData.blogs_and_vlogs.map(blog => {
     //   return{
     //     ...blog,
@@ -74,9 +79,37 @@ const SpecialtiesSingle = ({ data }) => {
 
                         }} />
                         <div className='py-[15px]'>
+                        <Swiper
+                          pagination={{
+                            clickable: true ,
+                            el: '.contentSliderSwiper-pagination',
+                          }}
+                          speed={1000}
+                          effect='fade'
+                          navigation={{
+                            nextEl: '.sliding-content-swiper-button-next',
+                            prevEl: '.sliding-content-swiper-button-prev',
+                          }}
+                          onBeforeInit={(swiper) => {
+                            swiper.navigation.nextEl = navigationNextRef.current;
+                            swiper.navigation.prevEl = navigationPrevRef.current;
+                          }}
+                          modules={[Pagination, Navigation]}
+                          className="contentSliderSwiper"
+                        >
                             {pageData.doctors && pageData.doctors.map((doctor, index)=>(
-                                <DoctorDetailCard variant='slider' data={doctor} key={index} />
+                              <SwiperSlide key={index}>
+                                <DoctorDetailCard variant='slider' data={doctor} />
+                              </SwiperSlide>
                             ))}
+                            </Swiper>
+                            <div className={style.sliderNavigation}>
+                              <div>
+                                <button className={classNames(style.swiperButton, style.prev, 'sliding-content-swiper-button-prev')}>Prev</button>
+                                <button className={classNames(style.swiperButton, 'sliding-content-swiper-button-next')}>Next</button>
+                              </div>
+                              <div className={classNames(style.pagination, 'contentSliderSwiper-pagination')}></div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,11 @@ export const AllDoctors = () => {
             slug
             title
           }
+          centers_of_excellence {
+            slug
+            title
+
+          }
           degrees
           area_of_expertise {
             title
