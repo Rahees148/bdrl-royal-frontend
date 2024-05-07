@@ -97,7 +97,7 @@ const SpecialtiesSingle = ({ data }) => {
                         description: pageData.technology_utilisation_title?.description.data.description
                     }}
                 />
-                <PatientTestimonials overlap={false} titleDescription={pageData.patient_testimonials} />
+                <PatientTestimonials overlap={false} titleDescription={pageData.patient_testimonials} titleVariant="small" />
                 <NewsEvents
                     template={'inner'}
                     linkTo = {'/blogs-and-vlogs'}

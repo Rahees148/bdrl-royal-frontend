@@ -6,18 +6,18 @@ const AccordionItem = ({ title, item, isOpen, onClick }) => {
     const contentHeight = useRef()
      return(
        <div className={style.wrapper} >
-       <button className={ classNames(style.titleContainer, isOpen && style.active)} onClick={onClick} >
-        <h6>{title}</h6>
-        <span className={`arrow ${isOpen ? style.active : ''}`} /> 
-       </button>
-   
-        <div ref={contentHeight} className={style.itemContainer} style={
-             isOpen
-             ? { height: contentHeight.current.scrollHeight + 20 }
-             : { height: "0px" }
-            }>
-         <div className={classNames(style.itemContent, isOpen && style.active)} dangerouslySetInnerHTML={{ __html: item }} />
-        </div>
+          <button className={ classNames(style.titleContainer, isOpen && style.active)} onClick={onClick} >
+            <h6>{title}</h6>
+            <span className={`arrow ${isOpen ? style.active : ''}`} /> 
+          </button>
+    
+          <div ref={contentHeight} className={style.itemContainer} style={
+              isOpen
+              ? { height: contentHeight.current.scrollHeight + 20 }
+              : { height: "0px" }
+              }>
+          <div className={classNames(style.itemContent, isOpen && style.active)} dangerouslySetInnerHTML={{ __html: item }} />
+          </div>
       </div>
      )
    }

@@ -13,8 +13,10 @@ import PatientTestimonials from '../../components/patient-testimonials';
 import KeyHighlights from '../../components/key-highlights';
 import DoctorDetailCard from '../../components/doctor-detail-card';
 import classNames from 'classnames';
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 const SpecialtiesSingle = ({ data }) => {
+    const {isMobile} = useWindowSize()
     const pageData = data.strapiCentersOfExcellence;
     
     const navigationNextRef = React.useRef(null);
@@ -53,6 +55,7 @@ const SpecialtiesSingle = ({ data }) => {
                             mobileMedia: pageData.banner?.desktop_media.url,
                         }
                     }
+                    theme={'gold'}
                 />
                 <div className='pageWrapper'>
                     <div className='py-[32px]'>
@@ -121,7 +124,9 @@ const SpecialtiesSingle = ({ data }) => {
                             className: 'pb-[18px]',
                         }} />
                         {pageData.our_treatments && 
-                            <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />
+                            <>
+                              {isMobile ? <div>Accordion</div> : <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />}
+                            </>
                         }
                     </div>
                 </div>
