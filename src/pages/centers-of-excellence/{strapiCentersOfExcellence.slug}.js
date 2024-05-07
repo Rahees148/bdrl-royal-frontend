@@ -58,21 +58,22 @@ const SpecialtiesSingle = ({ data }) => {
                     theme={'gold'}
                 />
                 <div className='pageWrapper'>
-                    <div className='py-[32px]'>
+                    <div className='py-[45px]'>
                         <TitleDescription data={{
                             variant: 'details',
+                            size:'small',
                             title: pageData.introduction?.title?.data?.title,
                             description: pageData.introduction?.description.data.description,
                         }} />
                     </div>
                 </div>
-                <div className='bg-bdrlGray py-[60px]'>
+                <div className='bg-bdrlGray pt-[45px] pb-[90px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{title:pageData.key_highlights?.title, size:'small'}} />
                         <KeyHighlights data={pageData.key_highlights?.list}/>
                     </div>
                 </div>
-                <div className='bg-white py-[32px]'>
+                <div className='bg-white py-[45px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -116,7 +117,7 @@ const SpecialtiesSingle = ({ data }) => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-bdrlGray py-[32px]'>
+                <div className='bg-bdrlGray pt-[32px] pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -130,7 +131,7 @@ const SpecialtiesSingle = ({ data }) => {
                         }
                     </div>
                 </div>
-                <div className='py-[32px]'>
+                <div className='pt-[32px] pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -155,7 +156,8 @@ const SpecialtiesSingle = ({ data }) => {
                         description: pageData.technology_utilisation?.description.data.description
                     }}
                 />
-                <PatientTestimonials titleDescription={pageData.patient_testimonials_title} overlap={false} />
+                <PatientTestimonials titleDescription={pageData.patient_testimonials_title} overlap={false} titleVariant="small" />
+                
                 <NewsEvents
                     template={'inner'}
                     linkTo = {'/blogs-and-vlogs'}

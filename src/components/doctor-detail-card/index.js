@@ -9,22 +9,29 @@ function DoctorDetailCard({data, variant="doctorDetail"}) {
   return (
     <div className={classNames(style[variant], "rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6 mt-8 grid items-start gap-4 lg:gap-8")}>
         <div className="col-span-12 lg:col-span-5 flex justify-center">
-        <div className={classNames(style.DoctorCardShare,'rounded-full')}>
-                <img src={ShareIcon} alt='Share'/>
-            </div>
+            {variant === 'slider' &&
+                <div className={classNames(style.DoctorCardShare,'rounded-full hidden')}>
+                    <img src={ShareIcon} alt='Share'/>
+                </div>
+            }
+            {variant !== 'slider' &&
+                <div className={classNames(style.DoctorCardShare,'rounded-full')}>
+                    <img src={ShareIcon} alt='Share'/>
+                </div>
+            }
             <div className={classNames(style.DoctorCardImage)}>
                 <div className={classNames(style.Circle)}></div>
                 <img src={data?.Image?.url} alt={data.Name}/>
             </div>
         </div>
         
-        <div className={classNames( "col-span-12 lg:col-span-7 flex lg:items-end gap-[20px] lg:gap-[40px] mt-[35px] lg:mt-[100px] lg:pr-[20px] flex-col")}>
+        <div className={classNames(style.DoctorCardDetails, 'col-span-12 lg:col-span-7 flex lg:items-end gap-[20px] lg:gap-[40px]  flex-col')}>
             <div className={classNames(style.doctorBanner, 'w-[100%]')}>
                 <h2>{data.Name}</h2>
                 <span className={style.designation}>{data.designation}</span>
                 
                 {variant === 'slider' &&
-                    <p>description</p>
+                    <p className={classNames(style.doctorSliderDec)}>Dr. A. Venkateshwaran is a distinguished orthopedic and trauma surgeon renowned for his unwavering commitment to excellence in patient care and surgical expertise</p>
                 }
                 {variant !== 'slider' &&
                     <span className={classNames(style.tags,'bg-white my-[20px] sm:my-[24px] px-[16px] py-[6px] sm:py-[9px] rounded-[60px] ')}>
@@ -41,15 +48,27 @@ function DoctorDetailCard({data, variant="doctorDetail"}) {
                         }
                     </span>
                 }
+                {variant === 'slider' &&
+                    <div className={classNames(style.doctorSliderDecBtm, 'flex')}>
+                        <span className={style.degrees}>{data.degrees}</span>
+                        <h4 className={style.experience}>{data.experience}</h4>
+                    </div>
 
-                <span className={style.degrees}>{data.degrees}</span>
-                <h4 className={style.experience}>{data.experience}</h4>
+                }
+                {variant !== 'slider' &&
+                <>
+                    <span className={style.degrees}>{data.degrees}</span>
+                    <h4 className={style.experience}>{data.experience}</h4>
+                </>
+                    
+                }
+                
 
                 {variant === 'slider' &&
-                    <>
+                    <div className={classNames(style.doctorSliderDecftr, 'flex items-center')}>
                         <BookAnAppointmentBtn icon  className='justify-center'/>
                         <span>View profile</span>
-                    </>
+                    </div>
                 }
                 
             </div>

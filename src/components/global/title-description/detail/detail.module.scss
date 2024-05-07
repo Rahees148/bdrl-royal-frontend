@@ -74,6 +74,9 @@
             color: $color-primary;
             letter-spacing: 3%;
             font-weight: $font-weight-medium;
+            &:last-child{
+                margin-bottom: 0px;
+            }
             
         }
         @media #{$breakpoint-mobile} {

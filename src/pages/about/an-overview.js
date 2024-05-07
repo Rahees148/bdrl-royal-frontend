@@ -39,7 +39,7 @@ const AnOverviewPage = () => {
                 } />
             
             <section className='pageWrapper'>
-                <div className='pt-[32px] sm:pt-[120px] pb-[30px] sm:pb-[60px]'>
+                <div className='pt-[52px] sm:pt-[120px] pb-[30px] sm:pb-[80px]'>
                     <TitleDescription data={{
                         variant: 'details',
                         title: pageData.title_description?.title?.data?.title,
