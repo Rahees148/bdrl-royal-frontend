@@ -47,7 +47,7 @@ const SpecialtiesSingle = ({ data }) => {
                     }
                 />
                 <div className='pageWrapper'>
-                    <div className='py-[45px]'>
+                    <div className='py-[40px] sm:py-[45px]'>
                         <TitleDescription data={{
                             variant: 'details',
                             size:'small',
@@ -56,7 +56,7 @@ const SpecialtiesSingle = ({ data }) => {
                         }} />
                     </div>
                 </div>
-                <div className='bg-bdrlGray pt-[45px] pb-[83px]'>
+                <div className='bg-bdrlGray pt-[40px] sm:pt-[38px] pb-[40px] sm:pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -68,7 +68,7 @@ const SpecialtiesSingle = ({ data }) => {
                         }
                     </div>
                 </div>
-                <div className='bg-white py-[32px]'>
+                <div className='bg-white py-[45px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',

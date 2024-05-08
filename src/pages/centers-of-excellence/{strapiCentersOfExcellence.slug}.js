@@ -14,6 +14,7 @@ import KeyHighlights from '../../components/key-highlights';
 import DoctorDetailCard from '../../components/doctor-detail-card';
 import classNames from 'classnames';
 import useWindowSize from '../../libs/hooks/useWindowSize';
+import TabAccordion from '../../components/global/tab-accordion';
 
 const SpecialtiesSingle = ({ data }) => {
     const {isMobile} = useWindowSize()
@@ -58,7 +59,7 @@ const SpecialtiesSingle = ({ data }) => {
                     theme={'gold'}
                 />
                 <div className='pageWrapper'>
-                    <div className='py-[45px]'>
+                    <div className='py-[40px] sm:py-[45px]'>
                         <TitleDescription data={{
                             variant: 'details',
                             size:'small',
@@ -67,7 +68,7 @@ const SpecialtiesSingle = ({ data }) => {
                         }} />
                     </div>
                 </div>
-                <div className='bg-bdrlGray pt-[45px] pb-[90px]'>
+                <div className='bg-bdrlGray pt-[45px] sm:pb-[90px] pb-[65px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{title:pageData.key_highlights?.title, size:'small'}} />
                         <KeyHighlights data={pageData.key_highlights?.list}/>
@@ -117,7 +118,7 @@ const SpecialtiesSingle = ({ data }) => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-bdrlGray pt-[32px] pb-[84px]'>
+                <div className='bg-bdrlGray pt-[40px] sm:pt-[38px] pb-[40px] sm:pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -126,7 +127,9 @@ const SpecialtiesSingle = ({ data }) => {
                         }} />
                         {pageData.our_treatments && 
                             <>
-                              {isMobile ? <div>Accordion</div> : <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />}
+                              {isMobile ? 
+                              <TabAccordion/>
+                              : <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />}
                             </>
                         }
                     </div>

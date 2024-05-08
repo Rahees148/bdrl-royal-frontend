@@ -5,9 +5,17 @@
         h2{
             font-size: $font-h4-small;
             line-height: $font-h4-small + 8;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h5; 
+                line-height:$font-h5 + 5 ;
+            }
             *{
                 font-size: $font-h4-small;
                 line-height: $font-h4-small + 8;
+                @media #{$breakpoint-mobile} {
+                    font-size: $font-h5; 
+                    line-height:$font-h5 + 5 ;
+                }
             }
         }
     }
