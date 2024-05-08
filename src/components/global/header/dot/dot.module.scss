@@ -14,8 +14,8 @@ $size: 20px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: $size / 5;
-  height: $size / 5;
+  width: calc($size / 5);
+  height: calc($size / 5);
   background: white;
   border-radius: 50%;
   transition: all 0.35s ease;
@@ -46,8 +46,8 @@ $size: 20px;
     position: absolute;
     bottom: 0;
     background: white;
-    width: $size / 5;
-    height: $size / 5;
+    width: calc($size / 5);
+    height: calc($size / 5);
     border-radius: 50%;
     transition: all 0.35s ease;
     
@@ -58,22 +58,22 @@ $size: 20px;
   }
   
   &::before {
-    left: -(($size / 5) * 2);
+    left: -(calc($size / 5) * 2);
     
     .container.hover & {
       transform: rotate(45deg);
       transform-origin: right bottom;
-      border-radius: $size / 5;
+      border-radius: calc($size / 5);
     }
   }
   
   &::after {
-    right: -(($size / 5) * 2);
+    right: -(calc($size / 5) * 2);
     
     .container.hover & {
       transform: rotate(-45deg);
       transform-origin: left bottom;
-      border-radius: $size / 5;
+      border-radius: calc($size / 5);
     }
   }
 }
