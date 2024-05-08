@@ -1,0 +1,79 @@
+$size: 20px;
+
+
+.container {
+  position: absolute;
+  width: $size;
+  height: $size;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.dot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: $size / 5;
+  height: $size / 5;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.35s ease;
+  backface-visibility: hidden;
+  
+  &.l2{
+    bottom:7px;
+    .container.hover & {
+      opacity: 0;
+    }
+    
+  }
+   &.l3{
+    bottom:-7px;
+      .container.hover & {
+        opacity: 0;
+      }
+  }
+  
+  .container.hover & {
+    background: transparent;
+    
+  }
+  
+  &::before, &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: white;
+    width: $size / 5;
+    height: $size / 5;
+    border-radius: 50%;
+    transition: all 0.35s ease;
+    
+    .container.hover & {
+      height: $size;
+      border-radius: 0;
+    }
+  }
+  
+  &::before {
+    left: -(($size / 5) * 2);
+    
+    .container.hover & {
+      transform: rotate(45deg);
+      transform-origin: right bottom;
+      border-radius: $size / 5;
+    }
+  }
+  
+  &::after {
+    right: -(($size / 5) * 2);
+    
+    .container.hover & {
+      transform: rotate(-45deg);
+      transform-origin: left bottom;
+      border-radius: $size / 5;
+    }
+  }
+}

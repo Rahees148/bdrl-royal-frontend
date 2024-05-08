@@ -9,6 +9,7 @@ import InstaIcon from '../../../../images/icons/insta-icon.svg';
 import YoutubeIcon from '../../../../images/icons/youtube-icon.svg';
 import { useState } from 'react';
 import useClickOutside from '../../../../libs/hooks/useClickOutside';
+import Dot from '../dot';
 function MenuOverlay({mainMenu, isOpen, setIsOpen}) {
     const [showDropMenu, setShowDropMenu] = useState('');
     const tempRefs = [];
@@ -29,6 +30,8 @@ function MenuOverlay({mainMenu, isOpen, setIsOpen}) {
     <div className={classNames(style.MenuOverlay, isOpen ? style.fadeIn : style.fadeOut)}>
         <div className={style.greenBg}></div>
         <div className='pageWrapper'>
+
+            <Dot />
             <span className={style.close} onClick={()=>{setIsOpen(false)}}>
                 <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19.9196 1.53938L1.16235 20.6505M1.16227 1.53931L19.9195 20.6505" stroke="white" strokeWidth="1.75427" strokeLinecap="round"/>
