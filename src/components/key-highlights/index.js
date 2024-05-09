@@ -6,7 +6,7 @@ function KeyHighlights({data}) {
     <div className='mt-[40px] py-[45px] px-[95px] bg-white rounded-[10px]'>
         <ul className={style.keyHighlights}>
             {data && data.map((item, index)=>(
-                <li>{item.title}</li>
+                <li>{item.title?.data.title}</li>
             ))}
         </ul>
     </div>

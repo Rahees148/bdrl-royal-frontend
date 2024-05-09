@@ -56,7 +56,7 @@ function HeroBanner({sliderItems}) {
             
             <div className={s.bannerOverlay} ></div>
               <div className={classNames(s.bannerOverlayText, 'pageWrapper text-white text-left')}>
-                    <h2 data-swiper-parallax="-800" className='w-[17rem] font-light leading-[53px] md:leading-[67px] mb-4'>{slider.Title}</h2>
+                    <h2 data-swiper-parallax="-800" className='w-[17rem] font-light leading-[53px] md:leading-[67px] mb-4'>{slider.Title?.data.Title}</h2>
                     <div data-swiper-parallax="-500" className='text-m md:text-base' dangerouslySetInnerHTML={{__html: slider.Description.data.childMarkdownRemark.html}}></div>
                     <button data-swiper-parallax="-300" className='border rounded-10 py-2 px-5 bg-transparent mt-6 md:mt-14 text-m md:text-base'>{slider.Button_label}</button>
               </div>

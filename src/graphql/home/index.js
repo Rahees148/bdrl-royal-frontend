@@ -8,7 +8,11 @@ export const Content = () => {
           title
           banner {
             Button_label
-            Title
+            Title { 
+              data {
+                Title
+              }
+            }
             button_link
             media_type
             mobile_media {

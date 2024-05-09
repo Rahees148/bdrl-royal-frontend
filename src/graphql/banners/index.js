@@ -12,7 +12,11 @@ export const Banners = () => {
                   Description
                 }
               }
-              Title
+              Title{
+                data{
+                  Title
+                }
+              }
               button_link
               desktop_media {
                 url

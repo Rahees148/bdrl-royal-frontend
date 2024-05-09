@@ -718,6 +718,258 @@ const strapiConfig = {
       },
     },
   } },
+ { singularName: "top-procedur", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          title:"*",
+          slug:"*",
+          banner: {
+            Title: "*",
+            Description: "*",
+            Button_label: "*",
+            button_link: "*",
+            desktop_media: "*",
+            mobile_media: "*",
+            media_type: "*"
+          },
+          about_procedure: {
+            populate:{
+              button_label: "*",
+              button_link: "*",
+              tagline: "*",
+              description: "*",
+              title: "*",
+            }
+          },
+          procedure: {
+            populate:{
+              title: "*",
+              description: "*",
+             list:{
+              populate:{
+                title: "*",
+                subtitle: "*",
+                button_label: "*",
+                image: "*",
+                description: "*"
+              }
+             }
+            }
+          },
+          benifits_risk: {
+            populate:{
+              title:"*",
+              description:"*",
+              list:{
+                populate:{
+                  title: "*",
+                  subtitle: "*",
+                  button_label: "*",
+                  image: "*",
+                  description: "*"
+                }
+              }
+            }
+          },
+          doctors: "*",
+          specialities: "*",
+          centers_of_excellences: "*",
+          form_title:{
+            populate:{
+              title:"*",
+              description:"*",
+            }
+          },
+        }
+      },
+      title:"*",
+          slug:"*",
+          banner: {
+            Title: "*",
+            Description: "*",
+            Button_label: "*",
+            button_link: "*",
+            desktop_media: "*",
+            mobile_media: "*",
+            media_type: "*"
+          },
+          about_procedure: {
+            populate:{
+              button_label: "*",
+              button_link: "*",
+              tagline: "*",
+              description: "*",
+              title: "*",
+            }
+          },
+          procedure: {
+            populate:{
+              title: "*",
+              description: "*",
+             list:{
+              populate:{
+                title: "*",
+                subtitle: "*",
+                button_label: "*",
+                image: "*",
+                description: "*"
+              }
+             }
+            }
+          },
+          benifits_risk: {
+            populate:{
+              title:"*",
+              description:"*",
+              list:{
+                populate:{
+                  title: "*",
+                  subtitle: "*",
+                  button_label: "*",
+                  image: "*",
+                  description: "*"
+                }
+              }
+            }
+          },
+          doctors: "*",
+          specialities: "*",
+          centers_of_excellences: "*",
+          form_title:{
+            populate:{
+              title:"*",
+              description:"*",
+            }
+          },
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
+  { singularName: "technology", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          title:"*",
+          slug:"*",
+          banner: {
+            Title: "*",
+            Description: "*",
+            Button_label: "*",
+            button_link: "*",
+            desktop_media: "*",
+            mobile_media: "*",
+            media_type: "*"
+          },
+          about_technology: {
+            populate:{
+              button_label: "*",
+              button_link: "*",
+              tagline: "*",
+              description: "*",
+              title: "*",
+            }
+          },
+          how_does_help: {
+            populate:{
+              title: "*",
+              description: "*",
+             list:{
+              populate:{
+                title: "*",
+                subtitle: "*",
+                button_label: "*",
+                image: "*",
+                description: "*"
+              }
+             }
+            }
+          },
+          how_is_done: {
+            populate:{
+              title:"*",
+              description:"*",
+              list:{
+                populate:{
+                  title: "*",
+                  subtitle: "*",
+                  button_label: "*",
+                  image: "*",
+                  description: "*"
+                }
+              }
+            }
+          },
+          doctors: "*",
+          specialities: "*",
+          centers_of_excellences: "*",
+          top_procedures: "*",
+        }
+      },
+      title:"*",
+      slug:"*",
+      banner: {
+        Title: "*",
+        Description: "*",
+        Button_label: "*",
+        button_link: "*",
+        desktop_media: "*",
+        mobile_media: "*",
+        media_type: "*"
+      },
+      about_technology: {
+        populate:{
+          button_label: "*",
+          button_link: "*",
+          tagline: "*",
+          description: "*",
+          title: "*",
+        }
+      },
+      how_does_help: {
+        populate:{
+          title: "*",
+          description: "*",
+         list:{
+          populate:{
+            title: "*",
+            subtitle: "*",
+            button_label: "*",
+            image: "*",
+            description: "*"
+          }
+         }
+        }
+      },
+      how_is_done: {
+        populate:{
+          title:"*",
+          description:"*",
+          list:{
+            populate:{
+              title: "*",
+              subtitle: "*",
+              button_label: "*",
+              image: "*",
+              description: "*"
+            }
+          }
+        }
+      },
+      doctors: "*",
+      specialities: "*",
+      centers_of_excellences: "*",
+      top_procedures: "*",
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
 ],
 singleTypes:[
   { 

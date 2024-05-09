@@ -6,12 +6,16 @@ export const Content = () => {
         allStrapiAboutAnOverview {
             nodes {
                 banner {
-                Title
+                Title {
+                    data{
+                      Title
+                    }
+                  }
                 Description {
                     data {
-                    childMarkdownRemark {
-                        html
-                    }
+                        childMarkdownRemark {
+                            html
+                        }
                     }
                 }
                 mobile_media {
@@ -50,11 +54,19 @@ export const Content = () => {
                     tagline
                     }
                 why_us_cards {
-                description
-                title
-                image {
-                    url
-                }
+                    description { 
+                        data {
+                            description
+                        }
+                    }
+                    title {
+                        data {
+                            title
+                        }
+                    }
+                    image {
+                        url
+                    }
                 }
                 why_us_title_description {
                     title {

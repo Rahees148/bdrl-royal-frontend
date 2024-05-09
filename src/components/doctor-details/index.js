@@ -58,8 +58,8 @@ function DoctorDetails({ data }) {
                                     <img src={list.image.url} alt={list.title} />
                                 </i>
                                 <div className={style.description}>
-                                    <h5>{list.title}</h5>
-                                    <p>{list.description}</p>
+                                    <h5>{list.title?.data.title}</h5>
+                                    <p>{list.description?.data.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -93,7 +93,7 @@ function DoctorDetails({ data }) {
                                 key={index}
                                 data={{
                                     icon: list.image?.url,
-                                    title: list.title,
+                                    title: list.title?.data.title,
                                 }}
                                 bold
                             />

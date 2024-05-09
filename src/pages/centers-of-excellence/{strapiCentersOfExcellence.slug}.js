@@ -49,7 +49,7 @@ const SpecialtiesSingle = ({ data }) => {
                <ServiceBanner 
                     data={
                         {
-                            title:pageData.banner?.Title,
+                            title:pageData.banner?.Title?.data.Title,
                             description:pageData.banner?.Description.data.Description,
                             desktopMedia: pageData.banner?.desktop_media.url,
                             mobileMedia: pageData.banner?.desktop_media.url,
@@ -191,7 +191,11 @@ export const query = graphql`
                 url
               }
               button_link
-              Title
+              Title {
+                data {
+                  Title
+                }
+              }
             }
             blogs_and_vlogs {
               category
@@ -229,8 +233,16 @@ export const query = graphql`
               id
               list {
                 id
-                description
-                title
+                description { 
+                  data {
+                     description
+                  }
+                }
+                title { 
+                  data { 
+                    title
+                  }
+                }
                 image {
                   url
                 }
@@ -242,7 +254,11 @@ export const query = graphql`
                 title
                 id
                 list {
-                  title
+                  title {
+                    data {
+                      title
+                    }
+                  }
                   id
                   image {
                     url
@@ -266,18 +282,30 @@ export const query = graphql`
             our_treatments {
               title
               list {
-                title
+                title { 
+                  data {
+                    title
+                  }
+                }
                 id
                 image {
                   url
                 }
-                description
+                description { 
+                  data {
+                    description
+                  }
+                }
               }
             }
             key_highlights {
               title
               list {
-                title
+                title {
+                  data {
+                    title
+                  }
+                }
               }
             }
             our_experts_title {

@@ -39,7 +39,7 @@ const SpecialtiesSingle = ({ data }) => {
                <ServiceBanner 
                     data={
                         {
-                            title:pageData.banner?.Title,
+                            title:pageData.banner?.Title?.data.Title,
                             description:pageData.banner?.Description.data.Description,
                             desktopMedia: pageData.banner?.desktop_media.url,
                             mobileMedia: pageData.banner?.desktop_media.url,
@@ -126,7 +126,11 @@ export const query = graphql`
                         Description
                     }
                 }
-                Title
+                Title{
+                    data{
+                      Title
+                    }
+                  }
                 button_link
                 desktop_media {
                 url
@@ -152,12 +156,20 @@ export const query = graphql`
             our_treatments {
                 title
                 list {
-                    title
+                    title{
+                        data{
+                          title
+                        }
+                      }
                     id
                     image {
                         url
                     }
-                    description
+                    description{
+                        data{
+                            description
+                        }
+                    }
                 }
             }
             our_experts {
@@ -187,7 +199,11 @@ export const query = graphql`
                 area_of_expertise {
                   title
                   list {
-                    title
+                    title{
+                        data{
+                          title
+                        }
+                      }
                     image {
                       url
                     }
