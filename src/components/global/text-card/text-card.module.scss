@@ -5,11 +5,20 @@
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 32px;
+    .knowmoreBtn {
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        svg {
+            margin-left: 8px;
+        }
+    }
 
     h5{
         color: $color-primary;
         font-size: $font-h5;
         font-weight: $font-weight-semiBold;
+        margin-bottom: 17px;
     }
 
     .description{

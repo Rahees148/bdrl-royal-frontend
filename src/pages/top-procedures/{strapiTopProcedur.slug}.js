@@ -54,9 +54,13 @@ const SpecialtiesSingle = ({ data }) => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-bdrlGray py-[45px]'>
+                <div className='bg-bdrlGray dotted-pattern-bg pt-[45px] pb-[75px]'>
                     <div className='pageWrapper'>
-                        <h3>{pageData.procedure.title}</h3>
+                    <TitleDescription data={{
+                            size:'small',
+                            title: pageData.procedure?.title,
+                            className: 'pb-[35px]',
+                        }} /> 
                         {pageData.procedure.list && pageData.procedure.list.map((list, index) =>(
                            <AlternativeBox index={index+1} key={index} alter={index%2 ===0} data={
                             {
@@ -69,10 +73,11 @@ const SpecialtiesSingle = ({ data }) => {
                         ))}
                     </div>
                 </div>
-                <div className=' py-[45px]'>
+                <div className=' pt-[45px] pb-[85px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             variant: 'details',
+                            size:'small',
                             title:pageData.benifits_risk.title,
                             description:pageData.benifits_risk.description?.data.description
                         }} />

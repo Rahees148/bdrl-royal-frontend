@@ -34,7 +34,7 @@ const Specialties = () => {
                     }
                 } />
                 <div className='pageWrapper'>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-[115px]'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-[45px] sm:py-[115px]'>
                         {excellenceList && excellenceList.map(list => (
                             <CentersOfExcellenceCard data={list} key={list.id} />
                         ))}

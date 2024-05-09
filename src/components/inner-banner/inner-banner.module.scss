@@ -21,18 +21,22 @@
         align-items: center;
         .bannerTextWrapper{
             h1{
-                font-size: $font-h1;
-                line-height: $font-h1 + 2;
+                *{
+                    font-size: $font-h1;
+                line-height: $font-h1 + 5;
                 color: $color-primary;
                 font-weight: $font-weight-light;
                 @media #{$breakpoint-mobile} {
                     font-size: $font-h4-small;
+                    line-height: $font-h4-small + 5;
                  }
+                }
             }
             .subhead{
                 font-size: $font-base;
                 color: $color-primary;
                 font-weight: $font-weight-semiBold;
+                margin-top: 7px;
                 @media #{$breakpoint-mobile} {
                     font-size:$font-medium;
                 }

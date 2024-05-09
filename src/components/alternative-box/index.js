@@ -9,9 +9,9 @@ function AlternativeBox({data, alter, index}) {
                 <span>{index}</span>
                 <h4>{data.title}</h4>
             </div>
-            <div>
+            <div className={classNames(style.contentBoxSec)}>
                 <h5>{data.subtitle}</h5>
-                <div dangerouslySetInnerHTML={{ __html: data.description }} />
+                <div className={classNames(style.contentBoxDec)} dangerouslySetInnerHTML={{ __html: data.description }} />
             </div>
         </div>
         <div className='col-span-7 rounded-[10px]'>

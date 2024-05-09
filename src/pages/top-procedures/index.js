@@ -6,6 +6,7 @@ import InnerBanner from '../../components/inner-banner';
 import { Banners } from '../../graphql/banners';
 import { AllProcedures } from '../../graphql/top-procedure';
 import TextCard from '../../components/global/text-card';
+import SearchForProcedures from '../../components/global/search-for-procedures';
 
 const Specialties = () => {
     const allProcedures = AllProcedures().allStrapiTopProcedur.nodes;
@@ -18,7 +19,7 @@ const Specialties = () => {
                     url:'/',
                 }
             ],
-            title: 'Specialties'
+            title: 'Top Procedures'
         }}>
             <Fade>
                 <InnerBanner
@@ -32,10 +33,9 @@ const Specialties = () => {
                     }
                 } />
                 <div className='pageWrapper'>
-                    <div>
-                        search
-                    </div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 py-[55px] sm:py-[115px]'>
+                        <SearchForProcedures/>
+                    
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-[55px] sm:pt-[45px] pb-[55px] sm:pb-[75px]'>
                         {allProcedures && allProcedures.map(list => (
                             <TextCard data={{
                                 title: list.title,
