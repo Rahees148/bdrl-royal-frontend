@@ -784,64 +784,64 @@ const strapiConfig = {
         }
       },
       title:"*",
-          slug:"*",
-          banner: {
-            Title: "*",
-            Description: "*",
-            Button_label: "*",
-            button_link: "*",
-            desktop_media: "*",
-            mobile_media: "*",
-            media_type: "*"
-          },
-          about_procedure: {
+      slug:"*",
+      banner: {
+        Title: "*",
+        Description: "*",
+        Button_label: "*",
+        button_link: "*",
+        desktop_media: "*",
+        mobile_media: "*",
+        media_type: "*"
+      },
+      about_procedure: {
+        populate:{
+          button_label: "*",
+          button_link: "*",
+          tagline: "*",
+          description: "*",
+          title: "*",
+        }
+      },
+      procedure: {
+        populate:{
+          title: "*",
+          description: "*",
+          list:{
+          populate:{
+            title: "*",
+            subtitle: "*",
+            button_label: "*",
+            image: "*",
+            description: "*"
+          }
+          }
+        }
+      },
+      benifits_risk: {
+        populate:{
+          title:"*",
+          description:"*",
+          list:{
             populate:{
+              title: "*",
+              subtitle: "*",
               button_label: "*",
-              button_link: "*",
-              tagline: "*",
-              description: "*",
-              title: "*",
+              image: "*",
+              description: "*"
             }
-          },
-          procedure: {
-            populate:{
-              title: "*",
-              description: "*",
-             list:{
-              populate:{
-                title: "*",
-                subtitle: "*",
-                button_label: "*",
-                image: "*",
-                description: "*"
-              }
-             }
-            }
-          },
-          benifits_risk: {
-            populate:{
-              title:"*",
-              description:"*",
-              list:{
-                populate:{
-                  title: "*",
-                  subtitle: "*",
-                  button_label: "*",
-                  image: "*",
-                  description: "*"
-                }
-              }
-            }
-          },
-          doctors: "*",
-          specialities: "*",
-          centers_of_excellences: "*",
-          form_title:{
-            populate:{
-              title:"*",
-              description:"*",
-            }
-          },
+          }
+        }
+      },
+      doctors: "*",
+      specialities: "*",
+      centers_of_excellences: "*",
+      form_title:{
+        populate:{
+          title:"*",
+          description:"*",
+        }
+      },
     },
     pluginOptions: {
       i18n: {
@@ -970,6 +970,43 @@ const strapiConfig = {
       },
     },
   } },
+  { singularName: "banner-for-listing-page", queryParams:{
+    populate:{
+      localizations:{
+        populate:{
+          page_title:"*",
+          banner:{
+            populate:{
+              Title:"*",
+              Description:"*",
+              Button_label:"*",
+              button_link:"*",
+              media_type:"*",
+              desktop_media:"*",
+              mobile_media:"*"
+            }
+          }
+        },
+      },
+      page_title:"*",
+      banner:{
+        populate:{
+          Title:"*",
+          Description:"*",
+          Button_label:"*",
+          button_link:"*",
+          media_type:"*",
+          desktop_media:"*",
+          mobile_media:"*"
+        }
+      }
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
 ],
 singleTypes:[
   { 
@@ -1081,44 +1118,6 @@ singleTypes:[
         },
         seo:{
           populate:"*"
-        }
-      },
-      pluginOptions: {
-        i18n: {
-          locale: "all", // Fetch all localizations
-        },
-      },
-    } 
-  },
-  { 
-    singularName: "banners-for-listing-page", 
-    queryParams:{
-      populate:{
-        localizations:{
-          populate:{
-            banner:{
-              populate:{
-                Title:"*",
-                Description:"*",
-                Button_label:"*",
-                button_link:"*",
-                media_type:"*",
-                desktop_media:"*",
-                mobile_media:"*"
-              }
-            }
-          },
-        },
-        banner:{
-          populate:{
-            Title:"*",
-            Description:"*",
-            Button_label:"*",
-            button_link:"*",
-            media_type:"*",
-            desktop_media:"*",
-            mobile_media:"*"
-          }
         }
       },
       pluginOptions: {

@@ -13,7 +13,7 @@ import CentersOfExcellenceCard from '../../components/CentersOfExcellenceCard';
 
 const Specialties = () => {
     const excellenceList = AllCentersOfExcellence().allStrapiCentersOfExcellence.nodes;
-   // const pageBanners = Banners().strapiBannersForListingPage.banner.filter(b => b.Title === 'Centre Of Excellence')[0];
+    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Centre Of Excellence')[0];
     return (
         <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
             links: [
@@ -27,10 +27,10 @@ const Specialties = () => {
             <Fade>
                 <InnerBanner data={
                     {
-                        title:'Centre Of Excellence',
-                        description:'Description',
-                        desktopMedia: DoctorBanner,
-                        mobileMedia: DoctorBanner,
+                        title:pageBanners.banner.Title.data.Title,
+                        description:pageBanners.banner.Description.data.Description,
+                        desktopMedia: pageBanners.banner.desktop_media?.url,
+                        mobileMedia: pageBanners.banner?.mobile_media?.url,
                     }
                 } />
                 <div className='pageWrapper'>

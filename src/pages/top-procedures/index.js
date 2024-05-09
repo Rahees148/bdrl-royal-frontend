@@ -2,18 +2,14 @@
 import * as React from 'react';
 import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
-import Tabs from '../../components/tabs';
-import {AllSpecialty} from '../../graphql/specialties';
-import SpecialtyCard from '../../components/SpecialtyCard';
 import InnerBanner from '../../components/inner-banner';
-
-
-import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
 import { Banners } from '../../graphql/banners';
+import { AllProcedures } from '../../graphql/top-procedure';
+import TextCard from '../../components/global/text-card';
 
 const Specialties = () => {
-    const specialtyList = AllSpecialty().allStrapiSpeciality.nodes;
-    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Specialities')[0];
+    const allProcedures = AllProcedures().allStrapiTopProcedur.nodes;
+    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Top Procedures')[0];
     return (
         <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
             links: [
@@ -25,7 +21,9 @@ const Specialties = () => {
             title: 'Specialties'
         }}>
             <Fade>
-                <InnerBanner data={
+                <InnerBanner
+                waterMark={false}
+                data={
                     {
                         title:pageBanners.banner.Title.data.Title,
                         description:pageBanners.banner.Description.data.Description,
@@ -34,9 +32,17 @@ const Specialties = () => {
                     }
                 } />
                 <div className='pageWrapper'>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-[55px] sm:py-[115px]'>
-                        {specialtyList && specialtyList.map(list => (
-                            <SpecialtyCard data={list} key={list.id} />
+                    <div>
+                        search
+                    </div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 py-[55px] sm:py-[115px]'>
+                        {allProcedures && allProcedures.map(list => (
+                            <TextCard data={{
+                                title: list.title,
+                                description: list.about_procedure?.description?.data.description,
+                                button_label: 'know more',
+                                link: '/top-procedures/'+list?.slug
+                            }} />
                         ))}
                     </div>
                 </div>
@@ -45,5 +51,5 @@ const Specialties = () => {
         </Layout>
     );
 };
-export const Head = () => <title>Specialties</title>;
+export const Head = () => <title>Top Procedures</title>;
 export default Specialties;

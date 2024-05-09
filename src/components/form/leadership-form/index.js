@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { postCMSRequest } from '../../../libs/api/services';
 import TextMessageIcon from '../../../images/icons/text-message-icon.svg';
 
-function LeadershipForm({ toEmail, title, formTitle, tagLine }) {
+function LeadershipForm({ overlap=false, toEmail, title, formTitle, tagLine }) {
     const [formSuccess, setFormSuccess] = useState(false);
     const {
         register,
@@ -26,7 +26,7 @@ function LeadershipForm({ toEmail, title, formTitle, tagLine }) {
         }
     };
     return (
-        <div className="p-6 bg-primary rounded-[24px]">
+        <div className={classNames("p-6 bg-primary rounded-[24px]", overlap && 'mt-[-220px]')}>
             <div className={classNames(style.LeaderShipFormIcon, 'rounded-full bg-white')}>
                 <img src={TextMessageIcon} alt="Form Icon" />
             </div>
@@ -36,7 +36,7 @@ function LeadershipForm({ toEmail, title, formTitle, tagLine }) {
                         __html: formTitle,
                     }}
                 />
-                <aside>{tagLine}</aside>
+                <aside  dangerouslySetInnerHTML={{ __html: tagLine }} />
             </div>
             <div className={classNames(style.LeaderShipForm)}>
                 <form onSubmit={handleSubmit(onSubmit)}>

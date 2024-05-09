@@ -22,6 +22,7 @@
         .bannerTextWrapper{
             h1{
                 font-size: $font-h1;
+                line-height: $font-h1 + 2;
                 color: $color-primary;
                 font-weight: $font-weight-light;
                 @media #{$breakpoint-mobile} {

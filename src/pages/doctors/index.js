@@ -7,10 +7,11 @@ import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import DoctorCard from '../../components/doctor-card';
 import {AllDoctors} from '../../graphql/doctors/doctors';
+import { Banners } from '../../graphql/banners';
 
 const doctors = () => {
     const doctors = AllDoctors().allStrapiDoctor.nodes;
-    const {isMobile} = useWindowSize()
+    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Doctors')[0];
     return (
         <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
             links: [
@@ -24,10 +25,10 @@ const doctors = () => {
             <Fade>
                 <InnerBanner data={
                     {
-                        title:'Doctors',
-                        description:'Our Medical Experts',
-                        desktopMedia: DoctorBanner,
-                        mobileMedia: DoctorBanner,
+                        title:pageBanners.banner.Title.data.Title,
+                        description:pageBanners.banner.Description.data.Description,
+                        desktopMedia: pageBanners.banner.desktop_media?.url,
+                        mobileMedia: pageBanners.banner?.mobile_media?.url,
                     }
                 } />
             
