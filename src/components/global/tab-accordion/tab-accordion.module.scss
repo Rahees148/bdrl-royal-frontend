@@ -23,6 +23,17 @@
                     filter: invert(1);
                 }
             }
+            .TabAccordionSecDec{
+                padding-top: 45px;
+                height: auto;
+                transition: all 300ms ease-in;
+                h2{
+                    font-size:$font-h5 ;
+                    font-weight: $font-weight-semiBold;
+                    padding: 24px 0;
+                    line-height: $font-h5 + 5;
+                }
+            }
         }
         .TabAccordionSecHead {
             font-weight: $font-weight-medium;
@@ -49,7 +60,8 @@
             }
         }
         .TabAccordionSecDec {
-            padding-top: 45px;
+            height: 0px;
+            overflow: hidden;
         }
     }
 }

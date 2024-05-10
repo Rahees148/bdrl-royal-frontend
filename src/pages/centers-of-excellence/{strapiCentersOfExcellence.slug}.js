@@ -126,11 +126,7 @@ const SpecialtiesSingle = ({ data }) => {
                             className: 'pb-[18px]',
                         }} />
                         {pageData.our_treatments && 
-                            <>
-                              {isMobile ? 
-                              <TabAccordion/>
-                              : <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />}
-                            </>
+                              <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />
                         }
                     </div>
                 </div>

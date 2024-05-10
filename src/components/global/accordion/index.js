@@ -26,9 +26,6 @@ const AccordionItem = ({ title, item, isOpen, onClick }) => {
 const Accordion = ({title, item}) => {
   const [activeIndex, setActiveIndex] = useState(false);
 
-  // const handleItemClick = (index) => {
-  //  setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  // };
  return (
   <div>
     <AccordionItem
