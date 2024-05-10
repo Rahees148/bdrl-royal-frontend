@@ -4,11 +4,8 @@ import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import Tabs from '../../components/tabs';
 import {AllSpecialty} from '../../graphql/specialties';
-import SpecialtyCard from '../../components/SpecialtyCard';
+import SpecialtyCard from '../../components/specialty-card';
 import InnerBanner from '../../components/inner-banner';
-
-
-import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
 import { Banners } from '../../graphql/banners';
 
 const Specialties = () => {

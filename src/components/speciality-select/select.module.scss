@@ -1,0 +1,65 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.SpecialitySelectBox { 
+    position: relative;
+    padding-right: 55px;
+    width: 100%;
+    max-width: 366px;
+    font-weight: $font-weight-semiBold;
+
+    @media #{$breakpoint-mobile} {
+        padding: 13px 25px 13px 15px;
+        border-radius: 10px;
+        width: 50%;
+        font-size: $font-medium;
+        font-weight: $font-weight-semiBold;
+    }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 23px;
+        height: 23px;
+        background: url(../../images/icons/dropdown_arw.svg) no-repeat right center;
+        transition: all 300ms linear;
+        @media #{$breakpoint-mobile} {
+            background-size: 100%;
+            top: 50%;
+            margin-top: -7px;
+            right: 12px;
+            width: 14px;
+            height: 14px;
+        }
+      }
+
+      &.standalone{
+        
+        @media #{$breakpoint-mobile} {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+
+      &.isOpen{
+        &:before {
+            transform: rotate(180deg);
+        }
+      }
+      .SpecialitySelectList{
+        border-bottom: 1px solid #b7b7b7;
+        padding: 10px 0;
+        cursor: pointer;
+        img {
+            margin-right: 10px;
+            max-width: 30px;
+        }
+      }
+    .SpecialitySelectBoxOpen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: 8px;
+        z-index: 2;
+    }   
+}

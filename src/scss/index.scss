@@ -32,6 +32,9 @@ img {
     max-width: 1150px;
     padding: 0 15px;
     @media #{$breakpoint-lg-tablet} {
+        max-width: 95%;
+    }
+    @media #{$breakpoint-mobile} {
         max-width: 100%;
     }
   
@@ -42,7 +45,6 @@ html{
 
 body {
     font-size: $font-base;
-    background: #f9f9f9;
 }
 main{
     position: relative;

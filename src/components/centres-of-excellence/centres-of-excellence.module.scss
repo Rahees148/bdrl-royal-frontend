@@ -14,8 +14,9 @@
         font-size: $font-h4-small;
     }
     .sliderNavigation{
-        max-width: 1180px;
+        max-width: 1150px;
         margin: 0 auto;
+        padding: 0 15px;
         position: absolute;
         width: 100%;
         left: 0;
@@ -29,7 +30,11 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        @media #{$breakpoint-lg-tablet} {
+            max-width: 95%;
+        }
         @media #{$breakpoint-mobile} {
+            max-width: 100%;
             position: relative;
         }
         .swiperButton{

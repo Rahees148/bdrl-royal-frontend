@@ -133,7 +133,7 @@ export const query = graphql`
                   }
                 button_link
                 desktop_media {
-                url
+                    url
                 }
             }
             icon {

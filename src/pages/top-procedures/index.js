@@ -7,10 +7,22 @@ import { Banners } from '../../graphql/banners';
 import { AllProcedures } from '../../graphql/top-procedure';
 import TextCard from '../../components/global/text-card';
 import SearchForProcedures from '../../components/global/search-for-procedures';
+import { useState } from 'react';
 
 const Specialties = () => {
+    
     const allProcedures = AllProcedures().allStrapiTopProcedur.nodes;
     const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Top Procedures')[0];
+    const [filteredProcedure, setFilteredProcedure] = useState(allProcedures)
+    const setSearchKey = (val) =>{
+        console.log(val);
+        if(val !== ''){
+            const tempFilter = allProcedures.filter(prop => prop.title.toLowerCase().includes(val.toLowerCase()) ||  prop.about_procedure?.description?.data.description.toLowerCase().includes(val))
+            setFilteredProcedure([...tempFilter])
+        }else{
+            setFilteredProcedure(allProcedures)
+        }
+    }
     return (
         <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
             links: [
@@ -33,10 +45,10 @@ const Specialties = () => {
                     }
                 } />
                 <div className='pageWrapper'>
-                        <SearchForProcedures/>
+                        <SearchForProcedures setSearchKey={setSearchKey}/>
                     
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-[55px] sm:pt-[45px] pb-[55px] sm:pb-[75px]'>
-                        {allProcedures && allProcedures.map(list => (
+                        {filteredProcedure && filteredProcedure.map(list => (
                             <TextCard data={{
                                 title: list.title,
                                 description: list.about_procedure?.description?.data.description,
@@ -44,6 +56,9 @@ const Specialties = () => {
                                 link: '/top-procedures/'+list?.slug
                             }} />
                         ))}
+                        {filteredProcedure && filteredProcedure.length <= 0 &&
+                            <div>No result found </div>
+                        }
                     </div>
                 </div>
             </Fade>

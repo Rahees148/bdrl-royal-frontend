@@ -8,9 +8,11 @@ import TitleDescription from '../../components/global/title-description';
 import LeadershipForm from '../../components/form/leadership-form';
 import AlternativeBox from '../../components/alternative-box';
 import Tabs from '../../components/tabs';
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 const SpecialtiesSingle = ({ data }) => {
     const pageData = data.strapiTopProcedur;
+    const {isMobile} = useWindowSize();
     return (
         <Layout
             pageTitle={pageData.title}
@@ -40,7 +42,7 @@ const SpecialtiesSingle = ({ data }) => {
                 } />
                  <div className='pageWrapper'>
                     <div className='grid grid-cols-12 gap-8 py-[50px]'>
-                        <div className=' col-span-6'>
+                        <div className='col-span-12 sm:col-span-6'>
                             <TitleDescription data={{
                                 variant:'stack',
                                 size:'small',
@@ -49,12 +51,14 @@ const SpecialtiesSingle = ({ data }) => {
 
                             }} />
                         </div>
-                        <div className='col-span-5 col-end-13'>
-                            <LeadershipForm overlap={true} title={'TOP-Procedure |' + pageData.about_procedure?.title?.data.title} formTitle={pageData.form_title?.title?.data.title} tagLine={pageData.form_title?.description?.data.description}  />
-                        </div>
+                        {!isMobile &&
+                            <div className='col-span-5 col-end-13'>
+                                <LeadershipForm overlap={true} title={'TOP-Procedure |' + pageData.about_procedure?.title?.data.title} formTitle={pageData.form_title?.title?.data.title} tagLine={pageData.form_title?.description?.data.description}  />
+                            </div>
+                         }
                     </div>
                 </div>
-                <div className='bg-bdrlGray dotted-pattern-bg pt-[45px] pb-[75px]'>
+                <div className='bg-bdrlGray dotted-pattern-bg pt-[45px] pb-[13px] sm:pb-[75px]'>
                     <div className='pageWrapper'>
                     <TitleDescription data={{
                             size:'small',
@@ -73,7 +77,7 @@ const SpecialtiesSingle = ({ data }) => {
                         ))}
                     </div>
                 </div>
-                <div className=' pt-[45px] pb-[85px]'>
+                <div className=' pt-[45px] pb-[45px] sm:pb-[85px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             variant: 'details',
@@ -87,6 +91,13 @@ const SpecialtiesSingle = ({ data }) => {
                         }
                     </div>
                 </div>
+                {isMobile &&
+                 <div className='pb-[85px]'>
+                    <div className='pageWrapper'>
+                        <LeadershipForm overlap={false} title={'TOP-Procedure |' + pageData.about_procedure?.title?.data.title} formTitle={pageData.form_title?.title?.data.title} tagLine={pageData.form_title?.description?.data.description}  />
+                    </div>
+                </div>
+                }
              
             </Fade>
         </Layout>
