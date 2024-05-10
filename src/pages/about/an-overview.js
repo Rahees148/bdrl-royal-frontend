@@ -32,7 +32,7 @@ const AnOverviewPage = () => {
                 <InnerBanner data={
                     {
                         title:pageData.banner?.Title?.data.Title,
-                        description:pageData.banner?.Description?.data?.childMarkdownRemark?.html,
+                        description:pageData.banner?.Description?.data?.Description,
                         desktopMedia: pageData.banner?.desktop_media?.url,
                         mobileMedia: pageData.banner?.mobile_media?.url,
                     }

@@ -2,7 +2,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-console.log(process.env.STRAPI_API_URL);
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   collectionTypes: ["post", "category", "author", 
@@ -903,6 +902,7 @@ const strapiConfig = {
               }
             }
           },
+          listing_image: "*",
           doctors: "*",
           specialities: "*",
           centers_of_excellences: "*",
@@ -963,6 +963,7 @@ const strapiConfig = {
       specialities: "*",
       centers_of_excellences: "*",
       top_procedures: "*",
+      listing_image: "*",
     },
     pluginOptions: {
       i18n: {

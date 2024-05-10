@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/global/layout'
 
 const BlogPost = ({ data }) => {
-    console.log(data)
     return (
             <Layout pageTitle={data.strapiTestimonial.title}>
                 <h1>{data.strapiTestimonial.title}</h1>

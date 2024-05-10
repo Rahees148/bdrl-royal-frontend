@@ -58,7 +58,6 @@ import classNames from 'classnames';
 
 function Tabs({tabsContent, bg, theme="light"}) {
     const divRef = useRef(null)
-    console.log('tabsContent',tabsContent);
     const [activeTab, setActiveTab] = useState(tabsContent[0]);
     const [enablePrev, setEnablePrev] = useState(false)
     const [enableNext, setEnableNext] = useState(true)
@@ -80,6 +79,11 @@ function Tabs({tabsContent, bg, theme="light"}) {
         }
         if(index === tabsContent.length - 1){
             setEnableNext(false)
+        }
+        const tabsWidth = tabsContent.length * 256;
+        if(divRef.current?.clientWidth > tabsWidth){
+            setEnablePrev(false);
+            setEnableNext(false);
         }
     },[activeTab])
 

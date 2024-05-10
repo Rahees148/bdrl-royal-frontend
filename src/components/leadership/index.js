@@ -10,7 +10,6 @@ import { LeadersList } from '../../graphql/about/leaders-list';
 function LeaderShip() {
     const {isMobile} = useWindowSize();
     const data = LeadersList().allStrapiLeadershipList.nodes;
-    console.log(data)
     const navigationNextRef = useRef(null);
     const navigationPrevRef = useRef(null);
     return (

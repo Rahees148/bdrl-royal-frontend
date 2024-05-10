@@ -13,7 +13,6 @@ import NewsEvents from '../components/news-events';
 import TextImage from '../components/text-image'
 const IndexPage = () => {
     const pageData = Content().allStrapiHome.nodes[0];
-    console.log(pageData);
     return (
         <Layout  pageTitle="Home Page">
             <Fade>

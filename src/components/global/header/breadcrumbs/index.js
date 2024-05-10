@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 
 function Breadcrumbs({data}) {
-    console.log('Breadcrumbs',data);
   return (
     <div className={classNames( style.breadcrumbs)}>
         <div className='pageWrapper'>
