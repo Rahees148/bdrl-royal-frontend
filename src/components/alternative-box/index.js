@@ -8,7 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 function AlternativeBox({data, alter, index, length}) {
     const percentage = (index / length) * 100;
   return (
-    <div className={classNames(style.contentBox, 'grid grid-cols-12 gap-8 mb-5')}>
+    <div className={classNames(style.contentBox, 'grid grid-cols-12 gap-8 mb-8')}>
         <div className={classNames(!alter && 'order-last', alter ? 'bg-primary': style.bgGradient , 'col-span-5 rounded-[10px] p-8')}>
             <div className={style.title}>
                 <span>

@@ -48,7 +48,9 @@ main{
     position: relative;
     z-index: 1;
     background-color: #fff;
-    overflow-x: hidden; 
+    @media #{$breakpoint-mobile} {
+        overflow: hidden;
+    }
 }
 
 .swiper {
