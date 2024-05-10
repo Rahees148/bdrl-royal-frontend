@@ -31,15 +31,15 @@ const AnOverviewPage = () => {
             <Fade>
                 <InnerBanner data={
                     {
-                        title:pageData.banner?.Title,
-                        description:pageData.banner?.Description?.data?.childMarkdownRemark?.html,
+                        title:pageData.banner?.Title?.data.Title,
+                        description:pageData.banner?.Description?.data?.Description,
                         desktopMedia: pageData.banner?.desktop_media?.url,
                         mobileMedia: pageData.banner?.mobile_media?.url,
                     }
                 } />
             
             <section className='pageWrapper'>
-                <div className='pt-[32px] sm:pt-[120px] pb-[30px] sm:pb-[60px]'>
+                <div className='pt-[52px] sm:pt-[120px] pb-[30px] sm:pb-[80px]'>
                     <TitleDescription data={{
                         variant: 'details',
                         title: pageData.title_description?.title?.data?.title,
@@ -95,9 +95,9 @@ const AnOverviewPage = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[12px] sm:gap-8'>
                         {pageData.why_us_cards && pageData.why_us_cards.map((imageCard, indexs)=>(
                             <ImageCard key={indexs} data={{
-                                title: imageCard.title,
+                                title: imageCard.title?.data.title,
                                 image:imageCard.image.url,
-                                description:imageCard.description
+                                description:imageCard.description?.data.description
                             }} />
                           
                         ))}

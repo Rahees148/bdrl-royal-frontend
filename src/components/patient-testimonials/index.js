@@ -7,19 +7,20 @@ import TestimonialsIcon from '../../images/icons/TestimonialsIcon.svg'
 import { Content } from "../../graphql/testimonials/testimonials";
 import TitleDescription from '../global/title-description';
 
-function PatientTestimonials({titleDescription, overlap = true}) {  
+function PatientTestimonials({titleDescription, overlap = true, titleVariant}) {  
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null); 
   const testimonials = Content().allStrapiTestimonial.nodes;
   return (
-    <section className={classNames(style.PatientTestimonials, overlap && style.overlap, 'py-20')}>
+    <section className={classNames(style.PatientTestimonials, overlap && style.overlap)}>
     <div className="pageWrapper ">
       <TitleDescription 
         data={{
           title:titleDescription?.title?.data.title,
           description:titleDescription?.tagline,
           button_label:titleDescription?.button_label,
-          button_link:titleDescription?.button_link
+          button_link:titleDescription?.button_link,
+          size: titleVariant ? titleVariant : ''
         }} 
       />
      

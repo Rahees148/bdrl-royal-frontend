@@ -24,7 +24,11 @@ export const AllDoctors = () => {
           area_of_expertise {
             title
             list {
-              title
+              title {
+                data {
+                  title
+                }
+              }
               image {
                 url
               }

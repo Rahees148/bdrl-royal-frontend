@@ -124,11 +124,19 @@ export const query = graphql`
             area_of_expertise {
                 title
                 list {
-                    title
+                    title {
+                        data {
+                            title
+                        }
+                    }
                     image {
                         url
                     }
-                    description
+                    description {
+                        data {
+                            description
+                        }
+                    }
                 }
             }
             Image {
@@ -137,7 +145,11 @@ export const query = graphql`
             awards {
                 title
                 list {
-                    title
+                    title{
+                        data{
+                          title
+                        }
+                      }
                     image {
                         url
                     }

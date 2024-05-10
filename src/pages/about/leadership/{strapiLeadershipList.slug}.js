@@ -5,7 +5,6 @@ import Layout from '../../../components/global/layout'
 import LeaderShipDetails from '../../../components/leadership-details'
 import { Fade } from 'react-awesome-reveal'
 const Leader = ({ data }) => {
-    console.log(data);
     const pageData = data.strapiLeadershipList;
     return (
             <Layout pageTitle={pageData.title} template="inner" breadcrumb={{

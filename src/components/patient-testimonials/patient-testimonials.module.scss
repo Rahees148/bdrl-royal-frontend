@@ -1,10 +1,11 @@
 @import '../../scss/colors';
 @import '../../scss/breakpoints';
 .PatientTestimonials{
-    background: url(../../images/bg-pattern2.png) center $color-bdrlGray;
-    padding-bottom: 44px;
+    background: url(../../images/bg-pattern2.png) center 13px $color-bdrlGray;
+    padding:50px 0;
     &.overlap{
-        padding-bottom: 320px;
+        padding:80px 0 320px;
+
         @media #{$breakpoint-mobile} {
             padding: 44px 0; 
         }

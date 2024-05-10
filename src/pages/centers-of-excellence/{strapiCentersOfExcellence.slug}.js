@@ -13,8 +13,11 @@ import PatientTestimonials from '../../components/patient-testimonials';
 import KeyHighlights from '../../components/key-highlights';
 import DoctorDetailCard from '../../components/doctor-detail-card';
 import classNames from 'classnames';
+import useWindowSize from '../../libs/hooks/useWindowSize';
+import TabAccordion from '../../components/global/tab-accordion';
 
 const SpecialtiesSingle = ({ data }) => {
+    const {isMobile} = useWindowSize()
     const pageData = data.strapiCentersOfExcellence;
     
     const navigationNextRef = React.useRef(null);
@@ -47,29 +50,31 @@ const SpecialtiesSingle = ({ data }) => {
                <ServiceBanner 
                     data={
                         {
-                            title:pageData.banner?.Title,
+                            title:pageData.banner?.Title?.data.Title,
                             description:pageData.banner?.Description.data.Description,
                             desktopMedia: pageData.banner?.desktop_media.url,
                             mobileMedia: pageData.banner?.desktop_media.url,
                         }
                     }
+                    theme={'gold'}
                 />
                 <div className='pageWrapper'>
-                    <div className='py-[32px]'>
+                    <div className='py-[40px] sm:py-[45px]'>
                         <TitleDescription data={{
                             variant: 'details',
+                            size:'small',
                             title: pageData.introduction?.title?.data?.title,
                             description: pageData.introduction?.description.data.description,
                         }} />
                     </div>
                 </div>
-                <div className='bg-bdrlGray py-[60px]'>
+                <div className='bg-bdrlGray pt-[45px] sm:pb-[90px] pb-[65px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{title:pageData.key_highlights?.title, size:'small'}} />
                         <KeyHighlights data={pageData.key_highlights?.list}/>
                     </div>
                 </div>
-                <div className='bg-white py-[32px]'>
+                <div className='bg-white py-[45px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -113,7 +118,7 @@ const SpecialtiesSingle = ({ data }) => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-bdrlGray py-[32px]'>
+                <div className='bg-bdrlGray pt-[40px] sm:pt-[38px] pb-[40px] sm:pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -121,11 +126,15 @@ const SpecialtiesSingle = ({ data }) => {
                             className: 'pb-[18px]',
                         }} />
                         {pageData.our_treatments && 
-                            <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />
+                            <>
+                              {isMobile ? 
+                              <TabAccordion/>
+                              : <Tabs bg="gray" tabsContent={pageData.our_treatments?.list} />}
+                            </>
                         }
                     </div>
                 </div>
-                <div className='py-[32px]'>
+                <div className='pt-[32px] pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -150,7 +159,8 @@ const SpecialtiesSingle = ({ data }) => {
                         description: pageData.technology_utilisation?.description.data.description
                     }}
                 />
-                <PatientTestimonials titleDescription={pageData.patient_testimonials_title} overlap={false} />
+                <PatientTestimonials titleDescription={pageData.patient_testimonials_title} overlap={false} titleVariant="small" />
+                
                 <NewsEvents
                     template={'inner'}
                     linkTo = {'/blogs-and-vlogs'}
@@ -184,7 +194,11 @@ export const query = graphql`
                 url
               }
               button_link
-              Title
+              Title {
+                data {
+                  Title
+                }
+              }
             }
             blogs_and_vlogs {
               category
@@ -222,8 +236,16 @@ export const query = graphql`
               id
               list {
                 id
-                description
-                title
+                description { 
+                  data {
+                     description
+                  }
+                }
+                title { 
+                  data { 
+                    title
+                  }
+                }
                 image {
                   url
                 }
@@ -235,7 +257,11 @@ export const query = graphql`
                 title
                 id
                 list {
-                  title
+                  title {
+                    data {
+                      title
+                    }
+                  }
                   id
                   image {
                     url
@@ -259,18 +285,30 @@ export const query = graphql`
             our_treatments {
               title
               list {
-                title
+                title { 
+                  data {
+                    title
+                  }
+                }
                 id
                 image {
                   url
                 }
-                description
+                description { 
+                  data {
+                    description
+                  }
+                }
               }
             }
             key_highlights {
               title
               list {
-                title
+                title {
+                  data {
+                    title
+                  }
+                }
               }
             }
             our_experts_title {

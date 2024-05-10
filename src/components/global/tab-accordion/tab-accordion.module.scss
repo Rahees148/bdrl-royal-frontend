@@ -1,0 +1,55 @@
+@import '../../../scss/colors';
+@import '../../../scss/breakpoints';
+
+.TabAccordionWrap{
+    gap: 20px;
+    display: grid;
+    margin-top: 20px;
+    .TabAccordionSec {
+        border-radius: 10px;
+        background-color: $color-white;
+        padding: 20px 15px;
+        &.TabAccordionSecActive {
+            background-color: $color-primary;
+            color: $color-white;
+            .TabAccordionSecHead{
+                font-weight: $font-weight-semiBold;
+                color: $color-white;
+                i{
+                    background-color: $color-light-green;
+                }
+                .TabAccordionSecHeadArw {
+                    rotate: 180deg;
+                    filter: invert(1);
+                }
+            }
+        }
+        .TabAccordionSecHead {
+            font-weight: $font-weight-medium;
+            font-size: $font-base; 
+            color: $color-primary;
+            display: flex;
+            align-items: center; 
+            i{
+                width: 15px;
+                height: 15px;
+                min-width: 15px;
+                min-height: 15px; 
+                border-radius: 100%;
+                display: block;
+                margin-right: 13px;
+                background-color: $color-bdrlDarkGray;
+            }
+            .TabAccordionSecHeadArw {
+                transition: .5s ease-in-out;
+                width: 15px;
+                height: 15px;
+                margin-left: auto;
+                background: url(../../../images/icons/tab-accordion-arw.svg) no-repeat right center;
+            }
+        }
+        .TabAccordionSecDec {
+            padding-top: 45px;
+        }
+    }
+}

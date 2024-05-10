@@ -38,7 +38,7 @@ function DoctorCard({doctor}) {
                 : { height: "0px" } : { height: "auto" }
                 } className={classNames( isMobile ? style.accordion: '', 'grid grid-cols-2 gap-x-8 gap-y-[15px]')}>
                     {doctor.area_of_expertise && doctor.area_of_expertise?.list && doctor.area_of_expertise?.list.length > 0 && doctor.area_of_expertise?.list.map((list,index) => (
-                        <li key={index}>{list.title}</li>
+                        <li key={index}>{list.title?.data.title}</li>
                     ))}
                 </ul>
             </div>

@@ -39,7 +39,7 @@ const SpecialtiesSingle = ({ data }) => {
                <ServiceBanner 
                     data={
                         {
-                            title:pageData.banner?.Title,
+                            title:pageData.banner?.Title?.data.Title,
                             description:pageData.banner?.Description.data.Description,
                             desktopMedia: pageData.banner?.desktop_media.url,
                             mobileMedia: pageData.banner?.desktop_media.url,
@@ -47,7 +47,7 @@ const SpecialtiesSingle = ({ data }) => {
                     }
                 />
                 <div className='pageWrapper'>
-                    <div className='py-[45px]'>
+                    <div className='py-[40px] sm:py-[45px]'>
                         <TitleDescription data={{
                             variant: 'details',
                             size:'small',
@@ -56,7 +56,7 @@ const SpecialtiesSingle = ({ data }) => {
                         }} />
                     </div>
                 </div>
-                <div className='bg-bdrlGray pt-[45px] pb-[83px]'>
+                <div className='bg-bdrlGray pt-[40px] sm:pt-[38px] pb-[40px] sm:pb-[84px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -68,7 +68,7 @@ const SpecialtiesSingle = ({ data }) => {
                         }
                     </div>
                 </div>
-                <div className='bg-white py-[32px]'>
+                <div className='bg-white py-[45px]'>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',
@@ -97,7 +97,7 @@ const SpecialtiesSingle = ({ data }) => {
                         description: pageData.technology_utilisation_title?.description.data.description
                     }}
                 />
-                <PatientTestimonials overlap={false} titleDescription={pageData.patient_testimonials} />
+                <PatientTestimonials overlap={false} titleDescription={pageData.patient_testimonials} titleVariant="small" />
                 <NewsEvents
                     template={'inner'}
                     linkTo = {'/blogs-and-vlogs'}
@@ -126,7 +126,11 @@ export const query = graphql`
                         Description
                     }
                 }
-                Title
+                Title{
+                    data{
+                      Title
+                    }
+                  }
                 button_link
                 desktop_media {
                 url
@@ -152,12 +156,20 @@ export const query = graphql`
             our_treatments {
                 title
                 list {
-                    title
+                    title{
+                        data{
+                          title
+                        }
+                      }
                     id
                     image {
                         url
                     }
-                    description
+                    description{
+                        data{
+                            description
+                        }
+                    }
                 }
             }
             our_experts {
@@ -187,7 +199,11 @@ export const query = graphql`
                 area_of_expertise {
                   title
                   list {
-                    title
+                    title{
+                        data{
+                          title
+                        }
+                      }
                     image {
                       url
                     }

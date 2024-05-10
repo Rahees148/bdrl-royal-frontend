@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import ResponsiveImage from '../global/responsive-image';
 import DiabetesIcon from '../../images/icons/diabetes-icon-1.svg'
 
-function ServiceBanner({data}) {
+function ServiceBanner({data, theme}) {
   return (
-    <section className={style.serviceBannerWrapper}>
-        <div className={classNames('pageWrapper')}>
+    <section className={classNames(style.serviceBannerWrapper)}>
+        <div className={classNames('pageWrapper', style[theme])}>
             <div className={style.bannerTextWrapper}>
                 <h1>{data.title}</h1>
                 <div className={style.subhead} dangerouslySetInnerHTML={{__html: data.description}}></div>

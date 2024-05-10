@@ -2,70 +2,82 @@
 @import '../../scss/breakpoints';
 .doctorDetail{
     position: relative;
-    .doctorBanner{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        h2{
-            font-size: $font-h2;
-            line-height: $font-h2 + 10;
-            font-weight: $font-weight-semiBold;
-            margin-bottom: 3px;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-h5;
-                line-height: $font-h5 + 5;
+    .DoctorCardDetails{
+        margin-top: 100px;
+        padding-right: 20px;
+        @media #{$breakpoint-mobile} {
+            margin-top: 35px;
+            padding-right: 0;
+        } 
+        .doctorBanner{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h2{
+                font-size: $font-h2;
+                color: $color-primary;
+                line-height: $font-h2 + 10;
+                font-weight: $font-weight-semiBold;
+                margin-bottom: 3px;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-h5;
+                    line-height: $font-h5 + 5;
+                }
             }
-        }
-        .designation{
-            font-size: $font-h5;
-            line-height: $font-h5 + 5;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-base;
-                line-height: $font-base + 3;
-            }
-        }
-        .tags{
-            width: auto;
-            a{
+            .designation{
                 font-size: $font-h5;
                 line-height: $font-h5 + 5;
-                font-weight: $font-weight-semiBold;
-                display: flex;
-                gap: 5px;
-                align-items: center;
+                color: $color-primary;
                 @media #{$breakpoint-mobile} {
                     font-size:$font-base;
                     line-height: $font-base + 3;
-                    gap: 11px;
-                }
-                img{
-                    @media #{$breakpoint-mobile} {
-                        max-width: 22px;
-                    }
                 }
             }
             
-        }
-        .degrees{
-            font-weight: $font-weight-semiBold;
-            font-size: $font-base;
-            line-height: $font-base + 3;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-small;
-                line-height: $font-small + 2;
+            .tags{
+                width: auto;
+                a{
+                    font-size: $font-h5;
+                    line-height: $font-h5 + 5;
+                    font-weight: $font-weight-semiBold;
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                    @media #{$breakpoint-mobile} {
+                        font-size:$font-base;
+                        line-height: $font-base + 3;
+                        gap: 11px;
+                    }
+                    img{
+                        @media #{$breakpoint-mobile} {
+                            max-width: 22px;
+                        }
+                    }
+                }
+                
             }
-        }
-        .experience{
-            font-size: $font-h5;
-            line-height: $font-h5 + 5;
-            font-weight: $font-weight-semiBold;
-            margin-top: 7px;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-base;
+            .degrees{
+                font-weight: $font-weight-semiBold;
+                font-size: $font-base;
                 line-height: $font-base + 3;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-small;
+                    line-height: $font-small + 2;
+                }
+            }
+            .experience{
+                font-size: $font-h5;
+                line-height: $font-h5 + 5;
+                font-weight: $font-weight-semiBold;
+                margin-top: 7px;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-base;
+                    line-height: $font-base + 3;
+                }
             }
         }
     }
+    
     .DoctorCardShare {
         width: 60px;
         height: 60px;
@@ -115,54 +127,107 @@
 }
 
 .slider{
-    .doctorBanner{
-        display: flex;
+    flex-direction: row-reverse;
+    display: flex;
+    margin-top: 20px;
+    padding: 50px 97px;
+    align-items: center;
+    @media #{$breakpoint-mobile} {
+        padding: 20px;
         flex-direction: column;
         align-items: flex-start;
-        h2{
-            font-size: $font-h2;
-            font-weight: $font-weight-semiBold;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-h5;
-            }
+        border-radius: 10px;
+    }
+    .DoctorCardDetails{
+        padding-right: 100px;
+        @media #{$breakpoint-mobile} {
+            padding:0px ;
         }
-        .designation{
-            font-size: $font-h5;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-base;
-            }
-        }
-        .tags{
-            width: auto;
-            a{
-                font-size: $font-h5;
+        .doctorBanner{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h2{
+                font-size: $font-h3-large - 2;
+                line-height: $font-h3-large - 3;
                 font-weight: $font-weight-semiBold;
-                display: flex;
-                gap: 5px;
-                align-items: center;
+                color: $color-primary;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-h5;
+                    line-height: $font-h5 + 5;
+                }
+            }
+            .designation{
+                font-size: $font-h5-small;
+                line-height: $font-h5-small + 4;
+                color: $color-primary;
+                margin-top: 12px;
                 @media #{$breakpoint-mobile} {
                     font-size:$font-base;
+                    margin-top: 8px;
+                    font-weight: $font-weight-medium;
+                }
+            }
+            .doctorSliderDec{
+                color: #757575;
+                margin: 30px 0 37px;
+                font-size: $font-medium;
+                font-weight: $font-weight-medium;
+                line-height:$font-medium + 13 ;
+                @media #{$breakpoint-mobile} {
+                    margin: 23px 0 28px;
+                }
+            }
+            .tags{
+                width: auto;
+                a{
+                    font-size: $font-h5;
+                    font-weight: $font-weight-semiBold;
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                    @media #{$breakpoint-mobile} {
+                        font-size:$font-base;
+                    }
+                }
+                
+            }
+            .doctorSliderDecBtm { 
+                margin-bottom: 20px;
+                .degrees{
+                    font-weight: $font-weight-semiBold;
+                    color: $color-primary;
+                    font-size: $font-base;
+                    margin-right: 8px;
+                    @media #{$breakpoint-mobile} {
+                        font-size:$font-base;
+                    }
+                }
+                .experience{
+                    font-size: $font-base;
+                    color: $color-primary;
+                    font-weight: $font-weight-semiBold;
+                    display: list-item;
+                    list-style: disc;
+                    margin-left: 24px;
+                    @media #{$breakpoint-mobile} {
+                        font-size:$font-base;
+                    }
+                }
+            }
+            .doctorSliderDecftr {
+                span{
+                    color: #A2A2A2;
+                    margin-left: 18px;
                 }
             }
             
         }
-        .degrees{
-            font-weight: $font-weight-semiBold;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-small;
-            }
-        }
-        .experience{
-            font-size: $font-h5;
-            font-weight: $font-weight-semiBold;
-            @media #{$breakpoint-mobile} {
-                font-size:$font-base;
-            }
-        }
     }
+ 
     
     .DoctorCardImage{
-        width: 367px;
+        width: 352px;
         position: relative;
         display: grid;
         align-items: end;
@@ -170,17 +235,17 @@
         overflow: hidden;
         padding-top: 5px;
         @media #{$breakpoint-mobile} {
-            width: 260px;
+            width: 174px;
         }
         .Circle {
-            width: 367px;
-            height: 367px;
+            width: 352px;
+            height: 352px;
             background: linear-gradient(264.85deg, #FFD59D 23.35%, #876E2E 89.39%);
             border-radius: 100%;
             position: absolute;
             @media #{$breakpoint-mobile} {
-                width:260px;
-                height: 260px;
+                width:174px;
+                height: 174px;
             }
         }
         img {
@@ -189,6 +254,9 @@
             margin: 0 auto;
             transition: all 0.25s ease;
             width: 80%;
+            @media #{$breakpoint-mobile} {
+                max-width: 174px;
+            }
         }
     }
 }

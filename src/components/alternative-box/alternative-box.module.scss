@@ -1,0 +1,80 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.contentBox{
+    padding: 32px;
+    background-color: $color-white;
+    border-radius: 20px;
+    .bgGradient{
+        background: linear-gradient(81.39deg, #FFDAA1 -11.85%, #023321 105.73%);
+        .contentBoxSec{
+            .contentBoxDec {
+                color: $color-white; 
+            }
+        }
+        
+    }
+    .title{
+        display: flex;
+        gap: 18px;
+        margin-bottom: 44px;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        span{
+            width: 38px; height: 38px;
+            flex-shrink: 0;
+            position: relative;
+            top: 8px;
+            text {
+                font-size: $font-base;
+                font-weight: $font-weight-semiBold;
+                color: $color-white;
+            }
+        }
+
+        h4{
+            font-size: $font-h4-small;
+            line-height: $font-h4-small+5;
+            font-weight: $font-weight-semiBold;
+            color: $color-white;
+        }
+    }
+    .contentBoxSec {
+        position: relative;
+        min-height: calc(100% - 100px);
+        padding-left: 25px;
+        &::before{
+            content:'';
+            width: 1px;
+            position: absolute;
+            top: 20px;
+            bottom: 0px;
+            left: 0;
+            background-color: $color-white;
+        }
+        &::after {
+            content: '';
+            width: 13px;
+            height: 13px;
+            left: -6px;
+            top: 7px;
+            position: absolute;
+            background-color: transparent;
+            border: 2px solid $color-light-green;
+            border-radius: 100%;
+        }
+        h5{
+            font-size: $font-base;
+            font-weight:$font-weight-semiBold;
+            color: $color-white; 
+        }
+        .contentBoxDec {
+            margin-top: 30px;
+            padding-left:26px;
+            font-size: $font-medium;
+            line-height:$font-medium + 9 ;
+            color: #D8D8D8;
+
+        }
+    }
+}

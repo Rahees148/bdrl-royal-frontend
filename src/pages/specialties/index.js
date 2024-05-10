@@ -9,10 +9,11 @@ import InnerBanner from '../../components/inner-banner';
 
 
 import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
+import { Banners } from '../../graphql/banners';
 
 const Specialties = () => {
     const specialtyList = AllSpecialty().allStrapiSpeciality.nodes;
-    console.log(specialtyList)
+    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Specialities')[0];
     return (
         <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
             links: [
@@ -26,10 +27,10 @@ const Specialties = () => {
             <Fade>
                 <InnerBanner data={
                     {
-                        title:'Specialities',
-                        description:'Specialized Medical Excellence',
-                        desktopMedia: DoctorBanner,
-                        mobileMedia: DoctorBanner,
+                        title:pageBanners.banner.Title.data.Title,
+                        description:pageBanners.banner.Description.data.Description,
+                        desktopMedia: pageBanners.banner.desktop_media?.url,
+                        mobileMedia: pageBanners.banner?.mobile_media?.url,
                     }
                 } />
                 <div className='pageWrapper'>
