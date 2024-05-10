@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import { useEffect } from 'react';
 import classNames from 'classnames';
 import useWindowSize from '../../libs/hooks/useWindowSize';
-import Accordion from '../global/accordion';
 import TabAccordion from '../global/tab-accordion';
 
 function Tabs({tabsContent, bg, theme="light"}) {
@@ -69,7 +68,7 @@ function Tabs({tabsContent, bg, theme="light"}) {
   return (
     <>
         {isMobile ? (
-            <TabAccordion tabsContent={tabsContent} />
+            <TabAccordion tabsContent={tabsContent} theme={theme} />
         ):(
             <div className={classNames(style.tabsContainer, style[theme])}>
             <div className={style.tabsHeader}  ref={divRef}>

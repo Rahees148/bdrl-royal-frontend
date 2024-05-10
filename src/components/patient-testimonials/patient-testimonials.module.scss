@@ -9,15 +9,21 @@
         @media #{$breakpoint-mobile} {
             padding: 44px 0; 
         }
+        .TestimonialscardWrap{
+            padding-top: 80px;
+            @media #{$breakpoint-mobile} {
+                padding-top: 90px;
+            }
+        }
     }
     @media #{$breakpoint-mobile} {
         padding: 44px 0; 
     }
     .TestimonialscardWrap{
         position: relative;
-        padding-top: 80px;
+        padding-top: 40px;
         @media #{$breakpoint-mobile} {
-            padding-top: 90px;
+            padding-top: 67px;
         }
         .TestimonialsCard{
             width: 100%;

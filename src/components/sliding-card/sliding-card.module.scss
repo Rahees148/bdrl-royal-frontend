@@ -83,8 +83,9 @@
     }
     .sliderNavigation{
         width: 100%;
-        max-width: 1180px;
+        max-width: 1150px;
         margin: 0 auto;
+        padding: 0 15px;
         text-align: right;
         color: white;
         display: flex;
@@ -94,7 +95,11 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        @media #{$breakpoint-lg-tablet} {
+            max-width: 95%;
+        }
         @media #{$breakpoint-mobile} {
+            max-width: 100%;
             padding-left: 15px;
             padding-right: 15px;
         }

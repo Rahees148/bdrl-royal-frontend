@@ -7,6 +7,10 @@
     padding: 32px;
     background-color: $color-white;
     border-radius: 20px;
+    @media #{$breakpoint-mobile} {
+        position: static;
+        padding: 24px;
+    }
     .bgGradient{
         background: linear-gradient(81.39deg, #FFDAA1 -11.85%, #023321 105.73%);
         .contentBoxSec{
@@ -27,7 +31,6 @@
             width: 38px; height: 38px;
             flex-shrink: 0;
             position: relative;
-            top: 8px;
             text {
                 font-size: $font-base;
                 font-weight: $font-weight-semiBold;
@@ -40,12 +43,16 @@
             line-height: $font-h4-small+5;
             font-weight: $font-weight-semiBold;
             color: $color-white;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h5;
+                line-height: $font-h5 + 5;
+            }
         }
     }
     .contentBoxSec {
         position: relative;
-        min-height: calc(100% - 100px);
         padding-left: 25px;
+        flex: 1;
         &::before{
             content:'';
             width: 1px;
@@ -77,6 +84,10 @@
             font-size: $font-medium;
             line-height:$font-medium + 9 ;
             color: #D8D8D8;
+            @media #{$breakpoint-mobile} {
+                margin-top: 15px;
+                padding-left:0px;
+            }
 
         }
     }

@@ -1,10 +1,10 @@
 import React, {useState, useRef} from 'react';
 import * as style from './tab-accordion.module.scss';
 import classNames from 'classnames';
-function TabAccordion({tabsContent}) {
+function TabAccordion({tabsContent, theme}) {
     const [activeTab, setActiveTab] = useState(tabsContent[0].id)
     return (
-        <div className={classNames(style.TabAccordionWrap)}>
+        <div className={classNames(style.TabAccordionWrap, style[theme])}>
             {tabsContent.map((item, index) => (
             <div className={classNames(style.TabAccordionSec, activeTab === item.id && style.TabAccordionSecActive)}>
                 <div className={classNames(style.TabAccordionSecHead)} onClick={()=>{setActiveTab(item.id)}}>

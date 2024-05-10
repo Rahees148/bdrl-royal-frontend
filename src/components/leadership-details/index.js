@@ -15,7 +15,7 @@ function LeaderShipDetails({ pageData }) {
         <div
             className={classNames(
                 style.leadershipPage,
-                'bg-gradient-to-b from-[#E4FF8520] via-[#FFFFFF] to-[#FFFFFF] pt-[20px] md:pt-[93px] pb-[50px]',
+                'pt-[20px] md:pt-[93px] pb-[50px]',
             )}
         >
             <div className="pageWrapper">

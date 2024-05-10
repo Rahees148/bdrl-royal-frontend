@@ -165,7 +165,10 @@
             top: 0; bottom: 0; left: 0; right: 0; margin: auto;
             width: 80px !important;
             :global(.swiper-pagination-bullet){
-                background-color: $color-bodyCopy;
+                background-color: #E2E2E2;
+            }
+            :global(.swiper-pagination-bullet.swiper-pagination-bullet-active){
+                background-color: #8A8A8A;
             }
         }
     }

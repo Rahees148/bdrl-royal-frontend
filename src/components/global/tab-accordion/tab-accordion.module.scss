@@ -5,10 +5,18 @@
     gap: 20px;
     display: grid;
     margin-top: 20px;
+    &.dark{
+        .TabAccordionSec {
+            &.TabAccordionSecActive {
+                background-color: #2D3C36;
+            }
+        }
+    }
     .TabAccordionSec {
         border-radius: 10px;
         background-color: $color-white;
         padding: 20px 15px;
+        box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
         &.TabAccordionSecActive {
             background-color: $color-primary;
             color: $color-white;

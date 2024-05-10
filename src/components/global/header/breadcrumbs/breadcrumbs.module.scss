@@ -8,6 +8,10 @@
         display: flex;
         gap: 32px;
         text-transform: uppercase;
+        white-space: nowrap;
+        overflow: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
         li{
             font-size: $font-small;
             font-weight: $font-weight-semiBold;
