@@ -1,6 +1,9 @@
 @import '../../scss/colors';
 @import '../../scss/breakpoints';
 .contentBox{
+
+    position: sticky;
+    top: 150px;
     padding: 32px;
     background-color: $color-white;
     border-radius: 20px;
