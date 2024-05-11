@@ -35,7 +35,7 @@ function LeaderShipDetails({ pageData }) {
                     </div>
                 </div>
 
-                <div className="pt-[45px] md:pt-[87px] grid grid-cols-12 gap-8 items-start overflow-hidden">
+                <div className="pt-[45px] md:pt-[87px] grid grid-cols-12 gap-8 items-start">
                     <div className="col-span-12 md:col-span-6">
                         <TitleDescription
                             data={{
@@ -71,7 +71,7 @@ function LeaderShipDetails({ pageData }) {
                             }}
                         />
                         {pageData.keyposition_icons && (
-                            <div className="pt-[45px] pb-[45px] w-[90%] mr-[auto] ml-[auto]">
+                            <div className="py-[45px] w-[100%] relative">
                                 <Swiper
                                     speed={1000}
                                     effect="fade"
@@ -105,7 +105,7 @@ function LeaderShipDetails({ pageData }) {
                                     ))}
                                 </Swiper>
                                 <div className={style.sliderNavigation}>
-                                    <div>
+                                    
                                         <button
                                             className={classNames(
                                                 style.swiperButton,
@@ -123,7 +123,7 @@ function LeaderShipDetails({ pageData }) {
                                         >
                                             Next
                                         </button>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         )}

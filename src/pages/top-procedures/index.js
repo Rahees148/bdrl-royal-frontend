@@ -47,7 +47,7 @@ const Specialties = () => {
                 <div className='pageWrapper'>
                         <SearchForProcedures setSearchKey={setSearchKey}/>
                     
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-[55px] sm:pt-[45px] pb-[55px] sm:pb-[75px]'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-[35px] sm:pt-[45px] pb-[55px] sm:pb-[75px]'>
                         {filteredProcedure && filteredProcedure.map(list => (
                             <TextCard data={{
                                 title: list.title,

@@ -31,10 +31,10 @@ const AnOverviewPage = () => {
             <Fade>
                 <InnerBanner data={
                     {
-                        title:pageData.banner?.Title?.data.Title,
-                        description:pageData.banner?.Description?.data?.Description,
-                        desktopMedia: pageData.banner?.desktop_media?.url,
-                        mobileMedia: pageData.banner?.mobile_media?.url,
+                        title:pageData.banner_details?.Title?.data.Title,
+                        description:pageData.banner_details?.Description?.data?.Description,
+                        desktopMedia: pageData.banner_details?.desktop_media?.url,
+                        mobileMedia: pageData.banner_details?.mobile_media?.url,
                     }
                 } />
             

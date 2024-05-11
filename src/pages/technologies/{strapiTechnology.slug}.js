@@ -34,14 +34,16 @@ const TechnologiesSingle = ({ data }) => {
             <Fade>
                 <InnerBanner
                   waterMark={false}
+                  buttonTheme={'light-green'}
+                  isWhiteText={true}
                   data={
                       {
-                          title:pageData.banner?.Title?.data.Title,
-                          description:pageData.banner?.Description?.data?.childMarkdownRemark?.html,
-                          desktopMedia: bannerImg,
-                          mobileMedia: pageData.banner?.mobile_media?.url,
-                          button_label:pageData.banner?.Button_label,
-                          button_link:pageData.banner?.button_link
+                          title:pageData.banner_details?.Title?.data.Title,
+                          description:pageData.banner_details?.Description?.data?.childMarkdownRemark?.html,
+                          desktopMedia: pageData.banner_details?.desktop_media?.url,
+                          mobileMedia: pageData.banner_details?.mobile_media?.url,
+                          button_label:pageData.banner_details?.Button_label,
+                          button_link:pageData.banner_details?.button_link
                       }
                   } 
                 />
@@ -117,7 +119,7 @@ export const query = graphql`
             slug
             title
             strapi_id
-            banner {
+            banner_details {
                 strapi_id
                 mobile_media {
                   url

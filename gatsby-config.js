@@ -415,6 +415,7 @@ const strapiConfig = {
             }
           },
           testimonials:"*",
+          technologies:"*",
           blogs_vlogs_title: {
             populate:{
               title:"*",
@@ -521,6 +522,7 @@ const strapiConfig = {
             }
           },
           testimonials:"*",
+          technologies:"*",
           blogs_vlogs_title: {
             populate:{
               title:"*",
@@ -611,6 +613,7 @@ const strapiConfig = {
             }
           },
           testimonials:"*",
+          technologies:"*",
           blogs_vlogs: {
             populate:{
               title:"*",
@@ -693,6 +696,7 @@ const strapiConfig = {
         }
       },
       testimonials:"*",
+      technologies:"*",
       blogs_vlogs: {
         populate:{
           title:"*",
@@ -723,14 +727,15 @@ const strapiConfig = {
         populate:{
           title:"*",
           slug:"*",
-          banner: {
-            Title: "*",
-            Description: "*",
-            Button_label: "*",
-            button_link: "*",
-            desktop_media: "*",
-            mobile_media: "*",
-            media_type: "*"
+          banner_details: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
           },
           about_procedure: {
             populate:{
@@ -784,14 +789,15 @@ const strapiConfig = {
       },
       title:"*",
       slug:"*",
-      banner: {
-        Title: "*",
-        Description: "*",
-        Button_label: "*",
-        button_link: "*",
-        desktop_media: "*",
-        mobile_media: "*",
-        media_type: "*"
+      banner_details: {
+        populate:{
+          Title: "*",
+          Description: "*",
+          Button_label: "*",
+          button_link: "*",
+          desktop_media: "*",
+          mobile_media: "*"
+        }
       },
       about_procedure: {
         populate:{
@@ -854,14 +860,15 @@ const strapiConfig = {
         populate:{
           title:"*",
           slug:"*",
-          banner: {
-            Title: "*",
-            Description: "*",
-            Button_label: "*",
-            button_link: "*",
-            desktop_media: "*",
-            mobile_media: "*",
-            media_type: "*"
+          banner_details: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
           },
           about_technology: {
             populate:{
@@ -911,14 +918,15 @@ const strapiConfig = {
       },
       title:"*",
       slug:"*",
-      banner: {
-        Title: "*",
-        Description: "*",
-        Button_label: "*",
-        button_link: "*",
-        desktop_media: "*",
-        mobile_media: "*",
-        media_type: "*"
+      banner_details: {
+        populate:{
+          Title: "*",
+          Description: "*",
+          Button_label: "*",
+          button_link: "*",
+          desktop_media: "*",
+          mobile_media: "*"
+        }
       },
       about_technology: {
         populate:{
@@ -1134,7 +1142,7 @@ singleTypes:[
       populate:{
         localizations: {
           populate:{
-            banner:{
+            banner_details:{
               populate:{
                 desktop_media:"*",
                 mobile_media:"*"
@@ -1176,7 +1184,7 @@ singleTypes:[
             // }
           },
         },
-        banner:{
+        banner_details:{
           populate:{
             desktop_media:"*",
             mobile_media:"*"
