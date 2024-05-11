@@ -11,9 +11,17 @@
     width: 100%;
     max-width: 640px;
     margin-top: -53px;
+    @media #{$breakpoint-mobile} {
+        border-radius: 20px;
+        margin-top: -20px;
+        padding: 10px;
+    }
     img{
         position: absolute;
         left: 35px;
+        @media #{$breakpoint-mobile} {
+            left: 20px;
+        }
     }
     input{
         border-radius: 50px;
@@ -22,5 +30,10 @@
         min-height: 72px;
         width: 100%; 
         outline: none;
+        @media #{$breakpoint-mobile} {
+            border-radius: 10px;
+            min-height: unset;
+            padding: 10px 10px 10px 45px;
+        }
     }
 }
