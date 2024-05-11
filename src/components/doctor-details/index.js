@@ -135,7 +135,7 @@ function DoctorDetails({ data }) {
                         data.top_procedures.map((procedure, index) => (
                             <div key={index} className={style.procedureCard}>
                                 {procedure.title}
-                                <Link to={'/'+procedure.slug}>
+                                <Link to={'/top-procedures/'+procedure.slug}>
                                     Know More
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="9.76636" cy="10.584" r="5.09448" fill="#E4FF85"/>

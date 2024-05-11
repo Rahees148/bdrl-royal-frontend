@@ -736,6 +736,17 @@ const strapiConfig = {
             mobile_media: "*",
             media_type: "*"
           },
+
+          banner_copy: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
+          },
           about_procedure: {
             populate:{
               button_label: "*",
@@ -796,6 +807,17 @@ const strapiConfig = {
         desktop_media: "*",
         mobile_media: "*",
         media_type: "*"
+      },
+
+      banner_copy: {
+        populate:{
+          Title: "*",
+          Description: "*",
+          Button_label: "*",
+          button_link: "*",
+          desktop_media: "*",
+          mobile_media: "*"
+        }
       },
       about_procedure: {
         populate:{

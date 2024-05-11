@@ -88,7 +88,8 @@ const SpecialtiesSingle = ({ data }) => {
                     template={'inner'}
                     theme={'gold'}
                     linkTo = {'blogs-and-vlogs'}
-                    data={pageData.blogs_and_vlogs}
+                    data={pageData.technologies}
+                    variant = "technology"
                     titleDescription={{
                         theme: 'white',
                         variant: 'details',
@@ -224,6 +225,14 @@ export const query = graphql`
                 }
                 }
             }
+            technologies {
+                title
+                slug
+                listing_image {
+                  url
+                }
+                listing_cta_label
+              }
             testimonials {
                 title
                 button_label
