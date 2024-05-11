@@ -20,11 +20,18 @@
         display: flex;
         align-items: center;
         .bannerTextWrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
             h1{
                 font-size: $font-h1;
                 line-height: $font-h1 + 5;
                 color: $color-primary;
                 font-weight: $font-weight-light;
+                &.whiteTheme{
+                    color: $color-white;
+                    font-weight: $font-weight-semiBold;
+                }
                 @media #{$breakpoint-mobile} {
                     font-size: $font-h4-small;
                     line-height: $font-h4-small + 5;
@@ -32,8 +39,6 @@
                 *{
                     font-size: $font-h1;
                     line-height: $font-h1 + 5;
-                    color: $color-primary;
-                    font-weight: $font-weight-light;
                     @media #{$breakpoint-mobile} {
                         font-size: $font-h4-small;
                         line-height: $font-h4-small + 5;

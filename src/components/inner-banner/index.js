@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import ResponsiveImage from '../global/responsive-image';
 import { Link } from 'gatsby';
 
-function InnerBanner({data, waterMark=true}) {
+function InnerBanner({data, isWhiteText=false, buttonTheme='light-green', waterMark=true}) {
   return (
     <section className={style.innerBannerWrapper}>
         <div className={style.bannerWrapper}>
@@ -13,10 +13,14 @@ function InnerBanner({data, waterMark=true}) {
         </div>
         <div className={classNames('pageWrapper', style.bannerText)}>
             <div className={style.bannerTextWrapper}>
-                <h1 dangerouslySetInnerHTML={{__html: data.title}} />
-                <div className={style.subhead} dangerouslySetInnerHTML={{__html: data.description}}></div>
+                <h1 className={classNames(isWhiteText && style.whiteTheme)} dangerouslySetInnerHTML={{__html: data.title}} />
+                {data.description &&
+                  <div className={style.subhead} dangerouslySetInnerHTML={{__html: data.description}}></div>
+                }
                 {data.button_label &&
-                  <Link to={data.button_link} className='moreBtn green'>{data.button_label}</Link>
+                  <div>
+                    <Link to={'#'} className={`button ${buttonTheme}`}>{data.button_label}</Link>
+                  </div>
                 }
                 {waterMark &&
                   <img src={overlayImage} alt='Badr Al Samaa Royal Hospital' />

@@ -5,7 +5,7 @@ export const Content = () => {
     {
         allStrapiAboutAnOverview {
             nodes {
-                banner {
+                banner_details {
                 Title {
                     data{
                       Title

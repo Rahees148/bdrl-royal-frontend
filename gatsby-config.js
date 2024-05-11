@@ -727,17 +727,7 @@ const strapiConfig = {
         populate:{
           title:"*",
           slug:"*",
-          banner: {
-            Title: "*",
-            Description: "*",
-            Button_label: "*",
-            button_link: "*",
-            desktop_media: "*",
-            mobile_media: "*",
-            media_type: "*"
-          },
-
-          banner_copy: {
+          banner_details: {
             populate:{
               Title: "*",
               Description: "*",
@@ -799,17 +789,7 @@ const strapiConfig = {
       },
       title:"*",
       slug:"*",
-      banner: {
-        Title: "*",
-        Description: "*",
-        Button_label: "*",
-        button_link: "*",
-        desktop_media: "*",
-        mobile_media: "*",
-        media_type: "*"
-      },
-
-      banner_copy: {
+      banner_details: {
         populate:{
           Title: "*",
           Description: "*",
@@ -880,14 +860,15 @@ const strapiConfig = {
         populate:{
           title:"*",
           slug:"*",
-          banner: {
-            Title: "*",
-            Description: "*",
-            Button_label: "*",
-            button_link: "*",
-            desktop_media: "*",
-            mobile_media: "*",
-            media_type: "*"
+          banner_details: {
+            populate:{
+              Title: "*",
+              Description: "*",
+              Button_label: "*",
+              button_link: "*",
+              desktop_media: "*",
+              mobile_media: "*"
+            }
           },
           about_technology: {
             populate:{
@@ -937,14 +918,15 @@ const strapiConfig = {
       },
       title:"*",
       slug:"*",
-      banner: {
-        Title: "*",
-        Description: "*",
-        Button_label: "*",
-        button_link: "*",
-        desktop_media: "*",
-        mobile_media: "*",
-        media_type: "*"
+      banner_details: {
+        populate:{
+          Title: "*",
+          Description: "*",
+          Button_label: "*",
+          button_link: "*",
+          desktop_media: "*",
+          mobile_media: "*"
+        }
       },
       about_technology: {
         populate:{
@@ -1160,7 +1142,7 @@ singleTypes:[
       populate:{
         localizations: {
           populate:{
-            banner:{
+            banner_details:{
               populate:{
                 desktop_media:"*",
                 mobile_media:"*"
@@ -1202,7 +1184,7 @@ singleTypes:[
             // }
           },
         },
-        banner:{
+        banner_details:{
           populate:{
             desktop_media:"*",
             mobile_media:"*"
