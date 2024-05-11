@@ -415,6 +415,7 @@ const strapiConfig = {
             }
           },
           testimonials:"*",
+          technologies:"*",
           blogs_vlogs_title: {
             populate:{
               title:"*",
@@ -521,6 +522,7 @@ const strapiConfig = {
             }
           },
           testimonials:"*",
+          technologies:"*",
           blogs_vlogs_title: {
             populate:{
               title:"*",
@@ -611,6 +613,7 @@ const strapiConfig = {
             }
           },
           testimonials:"*",
+          technologies:"*",
           blogs_vlogs: {
             populate:{
               title:"*",
@@ -693,6 +696,7 @@ const strapiConfig = {
         }
       },
       testimonials:"*",
+      technologies:"*",
       blogs_vlogs: {
         populate:{
           title:"*",

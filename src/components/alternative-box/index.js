@@ -9,7 +9,7 @@ function AlternativeBox({data, alter, index, length}) {
     const percentage = (index / length) * 100;
   return (
     <div className={classNames(style.contentBox, 'flex flex-col sm:grid sm:grid-cols-12 gap-8 mb-8')}>
-        <div className={classNames(!alter && 'sm:order-last', alter ? 'bg-primary': style.bgGradient , ' sm:col-span-5 rounded-[10px] p-6 sm:p-8 ')}>
+        <div className={classNames(!alter && 'sm:order-last', alter ? 'bg-primary': style.bgGradient , ' sm:col-span-5 rounded-[10px] p-6 sm:p-8 flex flex-col')}>
             <div className={style.title}>
                 <span>
                     <CircularProgressbar value={percentage} text={index} styles={buildStyles({
