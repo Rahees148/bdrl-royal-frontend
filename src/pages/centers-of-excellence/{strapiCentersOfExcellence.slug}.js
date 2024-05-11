@@ -83,24 +83,24 @@ const SpecialtiesSingle = ({ data }) => {
                             button_link:pageData.our_experts_title?.button_link
 
                         }} />
-                        <div className='py-[15px]'>
+                        <div className='py-[15px] relative'>
                         <Swiper
                           pagination={{
                             clickable: true ,
-                            el: '.contentSliderSwiper-pagination',
+                            el: '.doctorBannerSliderSwiper-pagination',
                           }}
                           speed={1000}
                           effect='fade'
                           navigation={{
-                            nextEl: '.sliding-content-swiper-button-next',
-                            prevEl: '.sliding-content-swiper-button-prev',
+                            nextEl: '.doctor-banner-swiper-button-next',
+                            prevEl: '.doctor-banner-swiper-button-prev',
                           }}
                           onBeforeInit={(swiper) => {
                             swiper.navigation.nextEl = navigationNextRef.current;
                             swiper.navigation.prevEl = navigationPrevRef.current;
                           }}
                           modules={[Pagination, Navigation]}
-                          className="contentSliderSwiper"
+                          className="doctorBannerSliderSwiper"
                         >
                             {pageData.doctors && pageData.doctors.map((doctor, index)=>(
                               <SwiperSlide key={index}>
@@ -110,10 +110,10 @@ const SpecialtiesSingle = ({ data }) => {
                             </Swiper>
                             <div className={style.sliderNavigation}>
                               <div>
-                                <button className={classNames(style.swiperButton, style.prev, 'sliding-content-swiper-button-prev')}>Prev</button>
-                                <button className={classNames(style.swiperButton, 'sliding-content-swiper-button-next')}>Next</button>
+                                <button className={classNames(style.swiperButton, style.prev, 'doctor-banner-swiper-button-prev')}>Prev</button>
+                                <button className={classNames(style.swiperButton, 'doctor-banner-swiper-button-next')}>Next</button>
                               </div>
-                              <div className={classNames(style.pagination, 'contentSliderSwiper-pagination')}></div>
+                              <div className={classNames(style.pagination, 'doctorBannerSliderSwiper-pagination')}></div>
                             </div>
                         </div>
                     </div>

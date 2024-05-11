@@ -30,7 +30,37 @@
             } 
         }
     }
-    :global(.leadershipSliderSwiper){
-        overflow: visible;
+    .sliderNavigation{
+        width: calc(100% + 52px);
+        position: absolute;
+        left: -20px;
+        right: 0;
+        top: 30%;
+        z-index: 5;
+        text-align: right;
+        color: white;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        align-items: center;
+        
+        .swiperButton{
+            text-indent: -9999px;
+            background-image: url(../../images/icons/round-alt-arrow-right.svg);
+            width: 64px;
+            height: 64px;
+            background-size: cover;
+            &.prev{
+                rotate: -180deg;
+                position: relative;
+                top: 2px;
+            }
+            &[disabled]{
+                opacity: .5;
+            }
+        }
+        .pagination{
+            transform: unset;
+        }
     }
 }
