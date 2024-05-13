@@ -1,0 +1,9 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.contactDetails{
+    h2{
+        font-size: $font-h2;
+        font-weight: $font-weight-semiBold;
+        color: $color-primary;
+    }
+}

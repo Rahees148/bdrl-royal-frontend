@@ -1273,6 +1273,42 @@ singleTypes:[
         },
       },
     } 
+  },
+  { 
+    singularName: "contact", 
+    queryParams:{
+      populate:{
+        localizations: {
+          populate:{
+            banner_title:"*",
+            social_media:{
+              populate:{
+                title:"*",
+                icon: "*",
+              }
+            },
+            form_title:{
+              populate:"*"
+            }
+          },
+        },
+        banner_title:"*",
+        social_media:{
+          populate:{
+            title:"*",
+            icon: "*",
+          }
+        },
+        form_title:{
+          populate:"*"
+        }
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    } 
   }
 ]
 };
