@@ -5,14 +5,14 @@ export const Contact = () => {
     {
       strapiContact {
         address {
-          children {
-            text
+          data {
+            address
           }
         }
         address_title
         banner_title {
-          children {
-            text
+          data {
+            banner_title
           }
         }
         email

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { postCMSRequest } from '../../../libs/api/services';
 import TextMessageIcon from '../../../images/icons/text-message-icon.svg';
 
-function LeadershipForm({ overlap=false, toEmail, title, formTitle, tagLine }) {
+function LeadershipForm({ overlap=false, toEmail, title, formTitle, tagLine, messageRow=10 }) {
     const [formSuccess, setFormSuccess] = useState(false);
     const {
         register,
@@ -89,7 +89,7 @@ function LeadershipForm({ overlap=false, toEmail, title, formTitle, tagLine }) {
                         <label className="block">
                             <textarea
                                 {...register('message', { required: true })}
-                                rows="10"
+                                rows={messageRow}
                                 placeholder="Enter your email"
                                 className={classNames(
                                     style.FormTextarea,

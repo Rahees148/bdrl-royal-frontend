@@ -15,6 +15,8 @@ import DoctorDetailCard from '../../components/doctor-detail-card';
 import classNames from 'classnames';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import TabAccordion from '../../components/global/tab-accordion';
+import { Parallax } from 'react-scroll-parallax';
+import ParallaxElement from '../../components/parallax-element';
 
 const SpecialtiesSingle = ({ data }) => {
     const {isMobile} = useWindowSize()
@@ -115,10 +117,15 @@ const SpecialtiesSingle = ({ data }) => {
                               </div>
                               <div className={classNames(style.pagination, 'doctorBannerSliderSwiper-pagination')}></div>
                             </div>
+
+                
                         </div>
                     </div>
                 </div>
-                <div className='bg-bdrlGray pt-[40px] sm:pt-[38px] pb-[40px] sm:pb-[84px]'>
+                <Parallax speed={500} translateY={100}>
+                    <ParallaxElement style={{zIndex:'3', top:'-300px'}} />
+                </Parallax>
+                <div className='bg-bdrlGray pt-[40px] sm:pt-[38px] pb-[40px] sm:pb-[84px] '>
                     <div className='pageWrapper'>
                         <TitleDescription data={{
                             size:'small',

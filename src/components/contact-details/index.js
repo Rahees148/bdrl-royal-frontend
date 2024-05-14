@@ -2,18 +2,28 @@ import React from 'react'
 import * as style from './contact.module.scss'
 import classNames from 'classnames'
 import LeadershipForm from '../form/leadership-form'
+import { Parallax } from 'react-scroll-parallax'
+import ParallaxElement from '../parallax-element'
 
 function ContactDetails({pageData}) {
   return (
-    <>
-    <section className='py-[80px]'>
-        <div className={classNames('pageWrapper', style['contactDetails'])}>
+    <div className={style['contactDetails']}>
+    <section className='py-[80px] relative z-10'>
+        <div className={classNames('pageWrapper')}>
             <span className='button gold'>{pageData.title}</span>
-            <h2 dangerouslySetInnerHTML={{__html: pageData.banner_title[0].children[0].text}} />
+            <h2 dangerouslySetInnerHTML={{__html: pageData.banner_title?.data.banner_title}} /> 
         </div>
       </section>
+      <div className={classNames('pageWrapper')}>
+        <Parallax speed={100} translateY={100} >
+            <ParallaxElement variant='circle' style={{left:'40%'}} />
+        </Parallax>
+        <Parallax speed={100} translateY={-100} >
+            <ParallaxElement variant='circle' style={{left:'60%', top:'-300px'}} />
+        </Parallax>
+       </div>
       <section className='pt-[66px] pb-[81px] bg-bdrlGray '>
-        <div className='pageWrapper grid grid-cols-2 gap-8'>
+        <div className='pageWrapper grid grid-cols-2 gap-8 relative z-10' >
             <div className='p-[45px] bg-white rounded-5'>
                 <ul>
                     <li>{pageData.email}</li>
@@ -32,6 +42,7 @@ function ContactDetails({pageData}) {
             <div>
             <LeadershipForm
                 overlap={true}
+                messageRow={5}
                 title={'Contact Us ' }
                 formTitle={pageData.form_title?.title?.data.title}
                 tagLine={pageData.form_title?.description?.data.description}
@@ -47,13 +58,11 @@ function ContactDetails({pageData}) {
                 <h4>{pageData.location_title}</h4>
 
                 <h5>{pageData.address_title}</h5>
-                <address dangerouslySetInnerHTML={{__html: `<p>PC 133, Plot No. 141</br>
-South Al Ghubra, Muscat, </br>
-Sultanate of Oman</p>`}} />
+                <address dangerouslySetInnerHTML={{__html: pageData.address?.data.address}} />
             </div>
         </div>
       </section>
-      </>
+      </div>
   )
 }
 

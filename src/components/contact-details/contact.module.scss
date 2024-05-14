@@ -1,6 +1,8 @@
 @import '../../scss/colors';
 @import '../../scss/breakpoints';
 .contactDetails{
+    position: relative;
+    z-index: 9;
     h2{
         font-size: $font-h2;
         font-weight: $font-weight-semiBold;
