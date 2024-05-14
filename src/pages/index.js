@@ -11,6 +11,8 @@ import PatientTestimonials from '../components/patient-testimonials';
 import ExceptionalCare from '../components/exceptional-care';
 import NewsEvents from '../components/news-events';
 import TextImage from '../components/text-image'
+import { Parallax } from 'react-scroll-parallax';
+import ParallaxElement from '../components/parallax-element';
 const IndexPage = () => {
     const pageData = Content().allStrapiHome.nodes[0];
     return (
@@ -31,6 +33,9 @@ const IndexPage = () => {
             <Fade triggerOnce >
                 <TextImage data={pageData.image_text} />
             </Fade>
+            <Parallax speed={100} translateY={100}>
+                <ParallaxElement />
+            </Parallax>
             {/* Centres Of Excellence component */}
             <PatientTestimonials titleDescription={pageData.testimonials_title} />
             <NewsEvents linkTo='news-and-events' titleDescription={{

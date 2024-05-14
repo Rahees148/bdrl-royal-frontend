@@ -1179,9 +1179,9 @@ singleTypes:[
                 image:"*",
               }
             },
-            // seo:{
-            //   populate:"*"
-            // }
+            seo:{
+              populate:"*"
+            }
           },
         },
         banner_details:{
@@ -1221,9 +1221,9 @@ singleTypes:[
             image:"*",
           }
         },
-        // seo:{
-        //   populate:"*"
-        // }
+        seo:{
+          populate:"*"
+        }
       },
       pluginOptions: {
         i18n: {
@@ -1281,6 +1281,10 @@ singleTypes:[
         localizations: {
           populate:{
             banner_title:"*",
+            address:"*",
+            seo:{
+              populate:"*"
+            },
             social_media:{
               populate:{
                 title:"*",
@@ -1293,6 +1297,10 @@ singleTypes:[
           },
         },
         banner_title:"*",
+        address:"*",
+        seo:{
+          populate:"*"
+        },
         social_media:{
           populate:{
             title:"*",
