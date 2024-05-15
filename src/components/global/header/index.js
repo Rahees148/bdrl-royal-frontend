@@ -82,7 +82,9 @@ function Header({ pageTitle, breadcrumb, template  }) {
                 </div>
                 {template === 'inner'&& (
                     <>
-                    <Breadcrumbs data={breadcrumb} />
+                    {breadcrumb &&
+                        <Breadcrumbs data={breadcrumb} />
+                    }
                     <div className={s.progressContainer}>
                         <div className={s.progressBar} ref={progressBar} id="myBar"></div>
                     </div>

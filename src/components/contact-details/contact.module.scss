@@ -1,0 +1,118 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.contactDetails{
+    position: relative;
+    z-index: 9;
+    .ContactTag {
+        border-radius: 50px;
+        background: linear-gradient(265.11deg, #886F2F 30.93%, #F3CC98 61.64%, #876E2E 95.6%);
+        color: #ffff;
+        padding: 9px 15px;
+        font-size: $font-medium; 
+        font-weight: $font-weight-semiBold;
+        margin-bottom: 16px;
+        display: inline-block;
+    }
+    h2{
+        *{
+            font-size: $font-h2;
+            line-height: $font-h2 + 2;
+            font-weight: $font-weight-semiBold;
+            color: $color-primary;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h4;
+                line-height: $font-h4 + 2;
+            }
+        }
+        
+    }
+    .CallDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        border-bottom:1px solid #E0E0E0 ;
+        padding-bottom: 35px;
+        li{
+            font-size: $font-h5-small;
+            color: $color-primary;
+            font-weight: $font-weight-semiBold;
+            display: flex;
+            align-items: center;
+            gap: 23px;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-large;
+                gap: 13px;
+            }
+            span{
+                min-width: 41px; 
+                img{
+                    @media #{$breakpoint-mobile} {
+                        max-width: 70%;
+                    }
+                }
+            }
+        }
+    }
+    .ContactFollowUs {
+        margin-top: 16px;
+        color: $color-primary;
+        h3{
+            font-size: $font-h4-small;
+            line-height: $font-h4-small + 30;
+            font-weight: $font-weight-semiBold;
+            color: $color-primary;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h5;
+                line-height: $font-h5 + 30;
+            }
+        }
+        p{
+            font-size: $font-base;
+            line-height: $font-base + 10;
+            margin-bottom: 25px;
+        }
+    }
+    .ContactLocation{
+        position: relative;
+        .ContactLocationSubtitle{
+            color: #939393;
+            font-weight: $font-weight-semiBold;
+            font-size: $font-h5;
+            line-height: $font-h5 + 36;
+            @media #{$breakpoint-mobile} {
+                line-height: $font-h5 + 10;
+            }
+        }
+        h4 {
+            font-size: $font-h3 + 2;
+            line-height: $font-h3 + 1;
+            color: $color-primary;
+            font-weight: $font-weight-semiBold;
+            margin-top: 5px;
+            @media #{$breakpoint-mobile} {
+                font-size: $font-h4;
+                line-height: $font-h4 + 3;
+            }
+        }
+        h5{
+            font-size: $font-h5;
+            line-height: $font-h5 + 36;
+            color: $color-primary;
+            font-weight: $font-weight-semiBold;
+            margin-top: 52px;
+            @media #{$breakpoint-mobile} {
+                margin-top: 25px;
+            }
+        }
+        address {
+            *{
+                font-size: $font-medium;
+                color: $color-primary;
+                font-weight: $font-weight-medium;
+                line-height: $font-medium + 10;
+                font-style: normal;
+            }
+            
+        }
+    }
+}

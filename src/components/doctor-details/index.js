@@ -2,15 +2,15 @@ import { Link } from 'gatsby';
 import React from 'react';
 import TitleDescription from '../global/title-description';
 
-import TextMessageIcon from '../../images/icons/text-message-icon.svg';
+import { Parallax } from 'react-scroll-parallax';
 import classNames from 'classnames';
 import LeadershipForm from '../form/leadership-form';
 import * as style from './doctor-details.module.scss';
 import IconCard from '../global/icon-card';
-import BookAnAppointmentBtn from '../global/button';
 import OPDSchedule from '../opd-schedule';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import DoctorDetailCard from '../doctor-detail-card';
+import ParallaxElement from '../parallax-element';
 
 function DoctorDetails({ data }) {
     const {isMobile} = useWindowSize();
@@ -77,7 +77,9 @@ function DoctorDetails({ data }) {
                     </div>
                 </div>
             </div>
-
+            <Parallax speed={100} translateY={100}>
+                <ParallaxElement />
+            </Parallax>
             <div className="pt-[25px] sm:pt-[55px]">
                 <TitleDescription
                     data={{

@@ -1179,9 +1179,9 @@ singleTypes:[
                 image:"*",
               }
             },
-            // seo:{
-            //   populate:"*"
-            // }
+            seo:{
+              populate:"*"
+            }
           },
         },
         banner_details:{
@@ -1221,9 +1221,9 @@ singleTypes:[
             image:"*",
           }
         },
-        // seo:{
-        //   populate:"*"
-        // }
+        seo:{
+          populate:"*"
+        }
       },
       pluginOptions: {
         i18n: {
@@ -1266,6 +1266,50 @@ singleTypes:[
         // seo:{
         //   populate:"*"
         // }
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    } 
+  },
+  { 
+    singularName: "contact", 
+    queryParams:{
+      populate:{
+        localizations: {
+          populate:{
+            banner_title:"*",
+            address:"*",
+            seo:{
+              populate:"*"
+            },
+            social_media:{
+              populate:{
+                title:"*",
+                icon: "*",
+              }
+            },
+            form_title:{
+              populate:"*"
+            }
+          },
+        },
+        banner_title:"*",
+        address:"*",
+        seo:{
+          populate:"*"
+        },
+        social_media:{
+          populate:{
+            title:"*",
+            icon: "*",
+          }
+        },
+        form_title:{
+          populate:"*"
+        }
       },
       pluginOptions: {
         i18n: {
