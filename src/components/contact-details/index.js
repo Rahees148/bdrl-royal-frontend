@@ -6,8 +6,10 @@ import { Parallax } from 'react-scroll-parallax'
 import ParallaxElement from '../parallax-element'
 import EmailIcon from '../../images/icons/mail-icon.svg';
 import CallIcon from '../../images/icons/call-icon.svg';
+import useWindowSize from '../../libs/hooks/useWindowSize'
 
 function ContactDetails({pageData}) {
+    const {isMobile} = useWindowSize();
   return (
     <div className={style['contactDetails']}>
     <section className='py-[80px] relative z-10'>
@@ -43,7 +45,7 @@ function ContactDetails({pageData}) {
             </div>
             <div>
             <LeadershipForm
-                overlap={true}
+                overlap={!isMobile}
                 messageRow={5}
                 title={'Contact Us ' }
                 formTitle={pageData.form_title?.title?.data.title}
