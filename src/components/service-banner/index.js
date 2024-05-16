@@ -1,22 +1,24 @@
 import React from 'react'
 import * as style from './service-banner.module.scss'
-import overlayImage from '../../images/banner-overlay.svg';
 import classNames from 'classnames';
-import ResponsiveImage from '../global/responsive-image';
-import DiabetesIcon from '../../images/icons/diabetes-icon-1.svg'
 
-function ServiceBanner({data, theme}) {
+function ServiceBanner({data, buttonAsTag=false, theme}) {
   return (
     <section className={classNames(style.serviceBannerWrapper)}>
         <div className={classNames('pageWrapper', style[theme])}>
             <div className={style.bannerTextWrapper}>
-                <h1>{data.title}</h1>
+                {buttonAsTag &&
+                  <a href="#" className={classNames(style.serviceBannerBtn,'button bg-primary inline-block' )}>Enquire Now</a>
+                }
+                <h1 dangerouslySetInnerHTML={{__html: data.title}} />
                 <div className={style.subhead} dangerouslySetInnerHTML={{__html: data.description}}></div>
-                <a href="#" className={classNames(style.serviceBannerBtn,'button bg-primary inline-block' )}>Enquire Now</a>
+                {!buttonAsTag &&
+                  <a href="#" className={classNames(style.serviceBannerBtn,'button bg-primary inline-block' )}>Enquire Now</a>
+                }
             </div>
             <div className={style.bannerImg}>
               <span className={style.serviceBannerIcon}>
-                <img src={DiabetesIcon} alt='diabetes'/> 
+                <img src={data.mobileMedia && data.mobileMedia} alt='diabetes'/> 
               </span>
               <img src={data.desktopMedia} alt={data.title} />
             </div>
