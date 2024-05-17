@@ -20,7 +20,7 @@
             flex-direction: column;
         }
         .bannerTextWrapper{
-            grid-column: span 5;
+            grid-column: span 6;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -33,11 +33,33 @@
                 @media #{$breakpoint-mobile} {
                     font-size: $font-h4-small;
                     line-height:$font-h4-small + 3 ;
+                }
+                *{
+                    font-size: $font-h2;
+                    line-height: $font-h2 + 2;
+                    color: $color-secondary;
+                    font-weight: $font-weight-semiBold;
+                    @media #{$breakpoint-mobile} {
+                        font-size: $font-h4-small;
+                        line-height:$font-h4-small + 3 ;
                     }
+                }
             }
             .subhead{
                 font-size: $font-h5;
                 line-height: $font-h5 + 5;
+                color: $color-bodyCopy; 
+                margin-top: 29px;
+                @media #{$breakpoint-mobile} {
+                    font-size:$font-base;
+                    line-height: $font-base + 3;
+                    margin-top: 20px;
+                }
+    
+            }
+            .description{
+                font-size: $font-h5-small;
+                line-height: $font-h5-small + 5;
                 color: $color-bodyCopy; 
                 margin-top: 29px;
                 @media #{$breakpoint-mobile} {
@@ -56,6 +78,14 @@
                     padding: 13px 25px;
                     font-size:$font-base;
                 }
+            }
+            .serviceBannerBtnTag {
+                padding: 9px 20px;
+                color: $color-white;
+                margin-bottom: 25px;
+                font-size: $font-medium;
+                font-weight: $font-weight-semiBold;
+                background: linear-gradient(265.11deg, #886F2F 30.93%, #F3CC98 61.64%, #876E2E 95.6%);
             }
         }
         .bannerImg{

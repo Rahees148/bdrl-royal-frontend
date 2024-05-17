@@ -6,12 +6,15 @@ import { useForm } from 'react-hook-form';
 import { postCMSRequest } from '../../../libs/api/services';
 import TextMessageIcon from '../../../images/icons/text-message-icon.svg';
 import { useEffect } from 'react';
+import SpecialtySelect from '../../speciality-select';
 
 function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, messageRow=10 }) {
     const [formSuccess, setFormSuccess] = useState(false);
     const fileTypes = ["PDF", "DOC", "JPG","JPEG", "PNG"];
     const [files, setFiles] = useState(null);
-
+    const onSpecialtyChange = (val) => {
+        console.log("onSpecialtyChange");
+    }
     const handleChange = (file) => {
          const newList = files ? Array.from(files).concat(Array.from(file)) : file;
         setFiles(newList);
@@ -111,11 +114,9 @@ function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, 
                                 </label>
                             </div>
                             <div className='flex-1'>
-                                <label className="block">
-                                   <select>
-                                    <option value="">Select Specialty</option>
-                                   </select>
-                                </label>
+                              
+                                <SpecialtySelect variant={'inForm'} onSpChange={(sp)=>{onSpecialtyChange(sp)}}  />
+                                
                                 <label className="block">
                                     <div className='text-white'>Upload Reports ({fileTypes.join(", ")})</div>
                                     <FileUploader

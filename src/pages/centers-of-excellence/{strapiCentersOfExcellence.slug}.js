@@ -53,6 +53,7 @@ const SpecialtiesSingle = ({ data }) => {
                             description:pageData.banner?.Description.data.Description,
                             desktopMedia: pageData.banner?.desktop_media.url,
                             mobileMedia: pageData.banner?.desktop_media.url,
+                            buttonLabel: pageData.banner?.Button_label,
                         }
                     }
                     theme={'gold'}

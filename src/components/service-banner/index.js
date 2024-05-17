@@ -2,18 +2,18 @@ import React from 'react'
 import * as style from './service-banner.module.scss'
 import classNames from 'classnames';
 
-function ServiceBanner({data, buttonAsTag=false, theme}) {
+function ServiceBanner({data,subtitle=true, buttonAsTag=false, theme}) {
   return (
     <section className={classNames(style.serviceBannerWrapper)}>
         <div className={classNames('pageWrapper', style[theme])}>
             <div className={style.bannerTextWrapper}>
                 {buttonAsTag &&
-                  <a href="#" className={classNames(style.serviceBannerBtn,'button bg-primary inline-block' )}>Enquire Now</a>
+                  <a href="#" className={classNames(style.serviceBannerBtnTag,'button inline-block' )} >{data.buttonLabel}</a>
                 }
                 <h1 dangerouslySetInnerHTML={{__html: data.title}} />
-                <div className={style.subhead} dangerouslySetInnerHTML={{__html: data.description}}></div>
+                <div className={classNames(subtitle ? style.subhead : style.description)} dangerouslySetInnerHTML={{__html: data.description}}></div>
                 {!buttonAsTag &&
-                  <a href="#" className={classNames(style.serviceBannerBtn,'button bg-primary inline-block' )}>Enquire Now</a>
+                  <a href="#" className={classNames(style.serviceBannerBtn,'button bg-primary inline-block' )}>{data.buttonLabel}</a>
                 }
             </div>
             <div className={style.bannerImg}>

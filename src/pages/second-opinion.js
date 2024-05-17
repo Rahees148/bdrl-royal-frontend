@@ -20,14 +20,21 @@ const SecondOption = () => {
             title: 'Second Opinion'
         }}>
             <Fade>
-                <ServiceBanner theme="gold" buttonAsTag={true}  data={{
+                <ServiceBanner 
+                    theme="gold" 
+                    buttonAsTag={true}
+                    subtitle={false}  
+                    data={{
                         title:pageBanners.banner.Title.data.Title,
                         description:pageBanners.banner.Description.data.Description,
                         desktopMedia: pageBanners.banner.desktop_media?.url,
                         mobileMedia: pageBanners.banner?.mobile_media?.url,
+                        buttonLabel: pageBanners.banner?.Button_label
                     }}  />
                 <div className='pageWrapper'>
-                    <SecondOpinionForm formTitle={'Get Second Opinion'} tagLine={'Select the speciality, and also attach your medical reports.'} />
+                    <div className='py-[75px]'>
+                        <SecondOpinionForm formTitle={'Get Second Opinion'} tagLine={'Select the speciality, and also attach your medical reports.'} />
+                    </div>
                 </div>
             </Fade>
             
