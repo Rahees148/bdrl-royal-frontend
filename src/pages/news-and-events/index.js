@@ -9,10 +9,12 @@ import { Link } from 'gatsby';
 import ArticleListCard from '../../components/article-list-card';
 import SortFilterForNews from '../../components/global/sort-filter-for-news';
 import { useEffect } from 'react';
+import useWindowSize from '../../libs/hooks/useWindowSize';
 
 const NewsAndEvents = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
     const [sort, setSort] = React.useState('Newest');
+    const { isMobile } = useWindowSize();
     const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'News & Events')[0];
     const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
     const [filteredList, setFilteredList] = React.useState(newsAndEvents);
@@ -53,13 +55,15 @@ const NewsAndEvents = () => {
             </Fade>
             <Fade>
                 <div className='pageWrapper'>
-                    <SortFilterForNews 
-                        setSelectedCategory={setSelectedCategory} 
-                        selectedCategory={selectedCategory} 
-                        updateSort={(sort)=>{
-                            setSort(sort);
-                        }}
-                    />
+                    {!isMobile &&
+                        <SortFilterForNews 
+                            setSelectedCategory={setSelectedCategory} 
+                            selectedCategory={selectedCategory} 
+                            updateSort={(sort)=>{
+                                setSort(sort);
+                            }}
+                        />
+                    }
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
                         {filteredList && filteredList.map((item, index) => (
                             <ArticleListCard key={index} item={item} />
