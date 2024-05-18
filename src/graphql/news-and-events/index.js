@@ -1,11 +1,12 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const Content = () => {
+export const Content = (limit) => {
   return useStaticQuery(graphql`
     {
-        allStrapiNewsAndEvent(limit: 3, sort: {updatedAt: DESC}) {
+        allStrapiNewsAndEvent(sort: {updatedAt: DESC}) {
             nodes {
               button_label
+              article_date(formatString: "MMM DD, YYYY")
               category
               summary
               title

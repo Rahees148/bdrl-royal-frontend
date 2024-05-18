@@ -1,0 +1,88 @@
+@import '../../../scss/colors';
+@import '../../../scss/breakpoints';
+.LeaderShipFormIcon{
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.LeaderShipFormTitle {
+    h4{
+        font-weight:$font-weight-semiBold;
+        font-size: $font-h5;
+        color: $color-white;
+        line-height: $font-h5 + 5;
+        margin-bottom: 12px;
+    }
+    aside {
+        color: $color-white;
+        font-size: $font-base;
+        line-height: $font-base + 11;
+        margin-bottom: 25px;
+        @media #{$breakpoint-mobile} {
+            font-size: $font-medium;
+            line-height: $font-medium + 10;
+        } 
+    }
+}
+.LeaderShipForm {
+   
+    .formError{
+        border: 1px solid red !important;
+    }
+    .FormInput {
+        border-radius: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: $color-white;
+        font-size: 16px;
+        padding: 11px 24px;
+        min-height: 49px;
+        width: 100%;
+        margin-bottom: 18px;
+        outline: none;
+        color: $color-primary;
+        @media #{$breakpoint-mobile}{
+            margin-bottom: 12px;
+        }
+    }
+    .FormTextarea {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: $color-white;
+        font-size: 16px;
+        padding: 12px 24px; 
+        width: 100%;
+        max-height: 160px;
+        margin-bottom: 18px;
+        color: $color-primary;
+        @media #{$breakpoint-mobile}{
+            margin-bottom: 12px;
+        }
+    }
+    .FormBtn{
+        padding:12px 27px; ;
+    }
+}
+.FileUploaderFormatInfo {
+    font-weight: $font-weight-semiBold;
+    color: $color-white;
+    margin-bottom: 18px;
+    span{
+        color:#A3A3A3 ;
+        font-weight: $font-weight-semiBold;
+    }
+}
+.FileUploaderSec {
+    min-height: 226px;
+}
+.FileUploadList {
+    padding: 0 10px;
+    li{
+        border-bottom: 1px dashed #ffffff47;
+        padding: 10px ;
+        display: flex;
+        align-items: center;
+    }
+}

@@ -8,7 +8,7 @@ import {AllCentersOfExcellence} from '../../graphql/centre-of-excellence'
 import { useEffect } from 'react';
 
 
-function SpecialtySelect({onSpChange, variant}) {
+function SpecialtySelect({onSpChange, variant, ...props}) {
     const specialtyList = AllSpecialty().allStrapiSpeciality.nodes;
     const centerOfExcellence = AllCentersOfExcellence().allStrapiCentersOfExcellence.nodes;
     const itemList = [...centerOfExcellence, ...specialtyList]
@@ -31,7 +31,7 @@ function SpecialtySelect({onSpChange, variant}) {
         setIsOpen(!isOpen);
     }
   return (
-    <div ref={selectRef} className={classNames( style.SpecialitySelectBox, variant && style[variant], isOpen && style.isOpen, 'bg-gray-100 p-6 rounded-5')} >
+    <div ref={selectRef} className={classNames( style.SpecialitySelectBox, variant && style[variant], isOpen && style.isOpen, 'bg-gray-100 p-6 rounded-5')} {...props} >
         <div onClick={handleDropDownClick} >{selectedSP}</div> 
       {isOpen &&
         <div className={classNames( style.SpecialitySelectBoxOpen, 'bg-gray-100 p-6 pt-0 rounded-b-5')}>

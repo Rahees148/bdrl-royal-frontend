@@ -13,13 +13,10 @@ import PatientTestimonials from '../../components/patient-testimonials';
 import KeyHighlights from '../../components/key-highlights';
 import DoctorDetailCard from '../../components/doctor-detail-card';
 import classNames from 'classnames';
-import useWindowSize from '../../libs/hooks/useWindowSize';
-import TabAccordion from '../../components/global/tab-accordion';
 import { Parallax } from 'react-scroll-parallax';
 import ParallaxElement from '../../components/parallax-element';
 
 const SpecialtiesSingle = ({ data }) => {
-    const {isMobile} = useWindowSize()
     const pageData = data.strapiCentersOfExcellence;
     
     const navigationNextRef = React.useRef(null);
@@ -56,6 +53,7 @@ const SpecialtiesSingle = ({ data }) => {
                             description:pageData.banner?.Description.data.Description,
                             desktopMedia: pageData.banner?.desktop_media.url,
                             mobileMedia: pageData.banner?.desktop_media.url,
+                            buttonLabel: pageData.banner?.Button_label,
                         }
                     }
                     theme={'gold'}

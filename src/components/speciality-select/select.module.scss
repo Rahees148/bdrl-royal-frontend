@@ -34,10 +34,31 @@
       }
 
       &.standalone{
-        
         @media #{$breakpoint-mobile} {
           max-width: 100%;
           width: 100%;
+        }
+      }
+      &.inForm{
+        width: 100%;
+        max-width: 100%;
+        padding: 13px 24px 12px ;
+        border-radius: 49px;
+        min-height: 49px;
+        margin-bottom: 48px;
+        background: #fff;
+        &::before{
+          top: 14px;
+          @media #{$breakpoint-mobile} {
+            top: 24px;
+            right: 15px;
+          }
+        }
+        &.isOpen{
+          border-radius: 26px 26px 0 0;
+        }
+        .SpecialitySelectBoxOpen {
+          background: #fff;
         }
       }
 
