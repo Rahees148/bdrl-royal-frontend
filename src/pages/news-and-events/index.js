@@ -7,7 +7,7 @@ import { Banners } from '../../graphql/banners';
 import { Content } from '../../graphql/news-and-events';
 import { Link } from 'gatsby';
 import ArticleListCard from '../../components/article-list-card';
-import SearchForProcedures from '../../components/global/search-for-procedures';
+import SortFilterForNews from '../../components/global/sort-filter-for-news';
 
 const NewsAndEvents = () => {
     const [searchKey, setSearchKey] = React.useState('')
@@ -36,8 +36,8 @@ const NewsAndEvents = () => {
             </Fade>
             <Fade>
                 <div className='pageWrapper'>
-                    <SearchForProcedures setSearchKey={setSearchKey}/>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[115px]'>
+                    <SortFilterForNews/>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
                         {newsAndEvents && newsAndEvents.map((item, index) => (
                             <ArticleListCard item={item} />
                         ))}

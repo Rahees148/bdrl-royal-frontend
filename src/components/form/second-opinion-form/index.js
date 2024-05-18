@@ -54,7 +54,7 @@ function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <input type="hidden" {...register('toEmail', { value: title })} />
-                        <div className="flex gap-8 w-[100%]">
+                        <div className="sm:flex gap-8 w-[100%]">
                             <div className='flex-1'>
                                 <label className="block">
                                     <input
@@ -104,7 +104,7 @@ function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, 
                                     <textarea
                                         {...register('message', { required: true })}
                                         rows={messageRow}
-                                        placeholder="Enter your email"
+                                        placeholder="Remarks"
                                         className={classNames(
                                             style.FormTextarea,
                                             errors.message && style.formError,
@@ -118,14 +118,14 @@ function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, 
                                 <SpecialtySelect variant={'inForm'} onSpChange={(sp)=>{onSpecialtyChange(sp)}}  />
                                 
                                 <label className="block">
-                                    <div className='text-white'>Upload Reports ({fileTypes.join(", ")})</div>
+                                    <div className={classNames(style.FileUploaderFormatInfo)}>Upload Reports <span>({fileTypes.join(", ")})</span></div>
                                     <FileUploader
                                         multiple={true}
                                         handleChange={handleChange}
                                         name="file"
                                         types={fileTypes}
                                     >
-                                        <div className='flex flex-col justify-center items-center gap-6 bg-white p-8 rounded-[16px]'>
+                                        <div className={classNames(style.FileUploaderSec, 'flex flex-col justify-center items-center gap-6 bg-white p-8 rounded-[16px]')}>
                                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.26953 12.4997C2.26953 7.78562 2.26953 5.4286 3.734 3.96413C4.97482 2.72331 6.8564 2.53382 10.2695 2.50488M22.2695 12.4997C22.2695 7.78562 22.2695 5.4286 20.8051 3.96413C19.5642 2.72331 17.6827 2.53382 14.2695 2.50488" stroke="#023321" stroke-width="1.25" stroke-linecap="round"/>
                                                 <path d="M10.2695 22.5C7.46927 22.5 6.06914 22.5 4.99958 21.955C4.05877 21.4757 3.29387 20.7108 2.8145 19.77C2.26953 18.7004 2.26953 17.3003 2.26953 14.5C2.26953 11.6997 2.26953 10.2996 2.8145 9.23005C3.29387 8.28924 4.05877 7.52433 4.99958 7.04497C6.06914 6.5 7.46927 6.5 10.2695 6.5H14.2695C17.0698 6.5 18.4699 6.5 19.5395 7.04497C20.4803 7.52433 21.2452 8.28924 21.7246 9.23005C22.2695 10.2996 22.2695 11.6997 22.2695 14.5C22.2695 17.3003 22.2695 18.7004 21.7246 19.77C21.2452 20.7108 20.4803 21.4757 19.5395 21.955C18.4699 22.5 17.0698 22.5 14.2695 22.5" stroke="#023321" stroke-width="1.25" stroke-linecap="round"/>
@@ -139,9 +139,9 @@ function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, 
                                     </FileUploader>
                                 </label>
                                 {files && 
-                                    <div className='flex flex-col my-4 text-white'>
+                                    <ul className={classNames(style.FileUploadList,'flex flex-col  mt-2 mb-4 text-white')}>
                                         {[...files].map((item, index) => (
-                                            <div key={index} className='flex justify-between'> 
+                                            <li key={index} className='flex justify-between'> 
                                                 <span>{item.name}</span>
                                                 <span onClick={()=>{
                                                     const fileListArr = Array.from(files)
@@ -156,9 +156,9 @@ function SecondOpinionForm({ overlap=false, toEmail, title, formTitle, tagLine, 
                                                         </svg>
 
                                                 </span>
-                                            </div>
+                                            </li>
                                         ))}
-                                    </div>
+                                    </ul>
                                     }
                             </div>
                         </div>

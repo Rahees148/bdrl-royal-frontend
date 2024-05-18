@@ -1,0 +1,75 @@
+@import '../../../scss/colors';
+@import '../../../scss/breakpoints';
+.SortFilterForNews {
+    background: $color-white;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 90px;
+    padding: 17px;
+    position: relative;
+    display: inline-flex;
+    align-items: center; 
+    margin-top: -53px;
+    @media #{$breakpoint-mobile} {
+        border-radius: 20px;
+        margin-top: -20px;
+        padding: 10px;
+    }
+    .SortFilterIcon {
+        display: flex;
+        align-items: center;
+        font-weight: $font-weight-semiBold;
+        color: $color-primary;
+        gap: 12px;
+        margin-left: 9px;
+        margin-right: 16px;
+    }
+    .SortFilterBtnSec{
+        display: flex;
+        align-items: center;
+        background: #F1F1F1;
+        padding: 9px 10px;
+        border-radius: 50px;
+        gap: 7px;
+        .SortFilterDropDown{
+            background: $color-white;
+            padding: 15px 21px;
+            font-weight: $font-weight-medium;
+            color: $color-primary;
+            border-radius: 40px;
+            min-width: 229px;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 15px;
+                height: 15px;
+                background: url(../../../images/icons/dropdown_arw.svg) no-repeat right center;
+                background-size: 100%;
+                transition: all 300ms linear;
+                @media #{$breakpoint-mobile} {
+                    background-size: 100%;
+                    top: 50%;
+                    margin-top: -7px;
+                    right: 12px;
+                    width: 14px;
+                    height: 14px;
+                }
+              }
+        }
+        .SortFilterBtn{
+            background: $color-white;
+            padding: 15px 21px;
+            font-weight: $font-weight-medium;
+            color: $color-primary;
+            border-radius: 40px;
+            min-width: 78px;
+            text-align: center;
+            &.active{
+                background: $color-primary;
+                color: $color-white;
+            }
+        }
+    }
+}
