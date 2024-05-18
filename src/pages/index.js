@@ -43,7 +43,7 @@ const IndexPage = () => {
                 title:"News & events",
                 description: "Get the latest updates from us.",
                 button_label: "View All",
-                button_link:"#"
+                button_link:"/news-and-events/"
             }}/>
         </Layout>
     );

@@ -30,14 +30,22 @@
         padding: 9px 10px;
         border-radius: 50px;
         gap: 7px;
+        cursor: pointer;
         .SortFilterDropDown{
             background: $color-white;
-            padding: 15px 21px;
             font-weight: $font-weight-medium;
             color: $color-primary;
             border-radius: 40px;
             min-width: 229px;
             position: relative;
+            &.open{
+                border-radius: 26px 26px 0 0;
+            }
+            span{
+                width: 100%;
+                padding: 15px 21px;
+                display: inline-block   ;
+            }
             &:before {
                 content: '';
                 position: absolute;
@@ -55,6 +63,22 @@
                     right: 12px;
                     width: 14px;
                     height: 14px;
+                }
+              }
+              .dropdown{
+                position: absolute;
+                width: 100%;
+                background-color: #fff;
+                left: 0;
+                padding: 10px 20px;
+                z-index: 1;
+                border-radius: 0 0 20px 20px;
+                li{
+                    padding: 10px 0;
+                    &:hover{
+                        cursor: pointer;
+                        font-weight: $font-weight-semiBold;
+                    }
                 }
               }
         }

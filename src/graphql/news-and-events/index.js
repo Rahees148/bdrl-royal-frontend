@@ -6,7 +6,7 @@ export const Content = (limit) => {
         allStrapiNewsAndEvent(sort: {updatedAt: DESC}) {
             nodes {
               button_label
-              publishedAt(formatString: "MMM DD, YYYY")
+              article_date(formatString: "MMM DD, YYYY")
               category
               summary
               title

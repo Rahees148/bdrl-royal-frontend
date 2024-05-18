@@ -8,14 +8,31 @@ import { Content } from '../../graphql/news-and-events';
 import { Link } from 'gatsby';
 import ArticleListCard from '../../components/article-list-card';
 import SortFilterForNews from '../../components/global/sort-filter-for-news';
+import { useEffect } from 'react';
 
 const NewsAndEvents = () => {
-    const [searchKey, setSearchKey] = React.useState('')
+    const [selectedCategory, setSelectedCategory] = React.useState('All');
+    const [sort, setSort] = React.useState('Newest');
     const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'News & Events')[0];
     const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
-    console.log(newsAndEvents);
+    const [filteredList, setFilteredList] = React.useState(newsAndEvents);
+
+    useEffect(()=>{
+        console.log(filteredList.sort((a, b) => {
+            return new Date(a.article_date).getTime() - new Date(b.initialRegistration).getTime()
+        }))
+        
+    },[sort])
+
+   useEffect(()=>{
+    if(selectedCategory === 'All'){
+        setFilteredList(newsAndEvents)
+    }else{
+        setFilteredList(newsAndEvents.filter(item => item.category === selectedCategory))
+    }
+   },[selectedCategory])
     return (
-        <Layout  pageTitle="Doctors" template="inner" breadcrumb={{
+        <Layout  pageTitle="News & Events" template="inner" breadcrumb={{
             links: [
                 {
                     title:'Home',
@@ -36,10 +53,16 @@ const NewsAndEvents = () => {
             </Fade>
             <Fade>
                 <div className='pageWrapper'>
-                    <SortFilterForNews/>
+                    <SortFilterForNews 
+                        setSelectedCategory={setSelectedCategory} 
+                        selectedCategory={selectedCategory} 
+                        updateSort={(sort)=>{
+                            setSort(sort);
+                        }}
+                    />
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
-                        {newsAndEvents && newsAndEvents.map((item, index) => (
-                            <ArticleListCard item={item} />
+                        {filteredList && filteredList.map((item, index) => (
+                            <ArticleListCard key={index} item={item} />
                         ))}
                     </div>
                 </div>
