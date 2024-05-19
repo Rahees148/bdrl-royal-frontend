@@ -10,7 +10,7 @@ import SortFilterForNews from '../../components/global/sort-filter-for-news';
 import { useEffect } from 'react';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 
-const NewsAndEvents = () => {
+const BlogsAndVlogs = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
     const [sort, setSort] = React.useState('Newest');
     const { isMobile } = useWindowSize();
@@ -75,4 +75,4 @@ const NewsAndEvents = () => {
     );
 };
 
-export default NewsAndEvents;
+export default BlogsAndVlogs;
