@@ -23,6 +23,12 @@
             &.events{
                 background-color: #B2DDCE;
             }
+            &.blog{
+                background-color: $color-primary;
+            }
+            &.vlog{
+                background-color: #B2DDCE;background: linear-gradient(265.11deg, #886F2F 30.93%, #F3CC98 61.64%, #876E2E 95.6%);
+            }
         }
         .date{
             font-weight: $font-weight-bold;

@@ -5,6 +5,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;  
+    > a{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
     &.related{
         height: auto;
         .ArticleListCardDec{
@@ -15,7 +20,7 @@
     }  
         .ArticleListCardImage{ 
             border-radius: 15px;
-            height: 230px;
+            max-height: 230px;
             overflow: hidden;
             position: relative;
             background-color: $color-bdrlLightGray;
