@@ -23,11 +23,11 @@ const NewsAndEvents = ({ data }) => {
               title: pageData.title
           }}>
             <div className='pageWrapper'>
-              <div className=' py-[43px] grid grid-cols-12 gap-8' >
-                <div className='col-span-8'>
+            <div className=' pt-[43px] pb-[72px]  grid grid-cols-12 gap-8' >
+                <div className='sm:col-span-8 col-span-12'>
                   <Article pageData={pageData} />
                 </div>
-                <div className='col-span-4'>
+                <div className='sm:col-span-4 col-span-12'>
                   {articleList.length > 0 &&
                   <>
                     <h4 className='text-[30px] font-semibold text-primary mb-[22px]'>Related Posts</h4>

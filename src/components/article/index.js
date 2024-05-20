@@ -1,6 +1,8 @@
 import React from 'react'
 import * as style from './article.module.scss'
 import classNames from 'classnames'
+import WhatsAppIcon from '../../images/icons/WhatsApp_icon.svg';
+import DoctorImg from '../../images/Venkateshwaran1.png';
 function Article({pageData}) {
   return (
     <div className={style.articleDetails}>
@@ -17,7 +19,7 @@ function Article({pageData}) {
                 </svg>
             </span>
             <span>
-                whatsapp
+            <img src={WhatsAppIcon} alt='WhatsApp'/> 
             </span>
             <span>
                 <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,6 +34,22 @@ function Article({pageData}) {
             </span>
         </div>
         <div className="postcontent" dangerouslySetInnerHTML={{ __html: pageData.description.data.childMarkdownRemark.html }} />
+        <div className={classNames(style.articleAuthor)}>
+            <h4 className={classNames(style.articleAuthorTitle)}>Author</h4>
+            <div className={classNames(style.articleAuthorInr)}>
+                <div className={classNames(style.articleAuthorImageSec)}>
+                    <div className={classNames(style.DoctorCardImage)}>
+                        <div className={classNames(style.Circle)}></div>
+                        <img src={DoctorImg} alt='Doctor Name'/>
+                    </div>
+                </div>
+                <div className={classNames(style.articleAuthorDec)}>
+                    <h5>Dr. A Venkateshwaran</h5>
+                    <span>Specialist Orthopaedic Surgeon</span>
+                    <a href='#'>View Profile</a>
+                </div>
+            </div>
+        </div>
         
     </div>
   )

@@ -54,7 +54,7 @@ const NewsAndEvents = () => {
             </Fade>
             <Fade>
                 <div className='pageWrapper'>
-                    {!isMobile &&
+                    
                         <SortFilterForNews 
                             setSelectedCategory={setSelectedCategory} 
                             selectedCategory={selectedCategory} 
@@ -62,7 +62,7 @@ const NewsAndEvents = () => {
                                 setSort(sort);
                             }}
                         />
-                    }
+                     
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
                         {filteredList && filteredList.map((item, index) => (
                             <ArticleListCard key={index} item={item} />
