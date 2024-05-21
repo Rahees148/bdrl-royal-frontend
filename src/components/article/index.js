@@ -3,7 +3,7 @@ import * as style from './article.module.scss'
 import classNames from 'classnames'
 import WhatsAppIcon from '../../images/icons/WhatsApp_icon.svg';
 import DoctorImg from '../../images/Venkateshwaran1.png';
-function Article({pageData}) {
+function Article({pageData, author}) {
     const imageURL = pageData.image?.url ? pageData.image?.url : pageData.media?.url
   return (
     <div className={style.articleDetails}>
@@ -35,22 +35,24 @@ function Article({pageData}) {
             </span>
         </div>
         <div className="postcontent" dangerouslySetInnerHTML={{ __html: pageData.description.data.description }} />
-        <div className={classNames(style.articleAuthor)}>
-            <h4 className={classNames(style.articleAuthorTitle)}>Author</h4>
-            <div className={classNames(style.articleAuthorInr)}>
-                <div className={classNames(style.articleAuthorImageSec)}>
-                    <div className={classNames(style.DoctorCardImage)}>
-                        <div className={classNames(style.Circle)}></div>
-                        <img src={DoctorImg} alt='Doctor Name'/>
+        {author &&
+            <div className={classNames(style.articleAuthor)}>
+                <h4 className={classNames(style.articleAuthorTitle)}>Author</h4>
+                <div className={classNames(style.articleAuthorInr)}>
+                    <div className={classNames(style.articleAuthorImageSec)}>
+                        <div className={classNames(style.DoctorCardImage)}>
+                            <div className={classNames(style.Circle)}></div>
+                            <img src={pageData.doctor.Image.url} alt={pageData.doctor.Name}/>
+                        </div>
+                    </div>
+                    <div className={classNames(style.articleAuthorDec)}>
+                        <h5>{pageData.doctor.Name}</h5>
+                        <span>{pageData.doctor.designation}</span>
+                        <a href={'/doctors/'+pageData.doctor.slug}>View Profile</a>
                     </div>
                 </div>
-                <div className={classNames(style.articleAuthorDec)}>
-                    <h5>Dr. A Venkateshwaran</h5>
-                    <span>Specialist Orthopaedic Surgeon</span>
-                    <a href='#'>View Profile</a>
-                </div>
             </div>
-        </div>
+        }
         
     </div>
   )

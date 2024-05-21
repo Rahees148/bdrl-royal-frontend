@@ -25,7 +25,7 @@ const NewsAndEvents = ({ data }) => {
             <div className='pageWrapper'>
             <div className=' pt-[43px] pb-[72px]  grid grid-cols-12 gap-8' >
                 <div className='sm:col-span-8 col-span-12'>
-                  <Article pageData={pageData} />
+                  <Article author={true} pageData={pageData} />
                 </div>
                 <div className='sm:col-span-4 col-span-12'>
                   {articleList.length > 0 &&
@@ -65,7 +65,6 @@ query ($id: String) {
         Name
         slug
         designation
-        publishedAt(formatString: "MMM DD, YYYY")
       }
     }
   }
