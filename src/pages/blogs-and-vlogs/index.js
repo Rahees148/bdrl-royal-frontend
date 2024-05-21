@@ -14,7 +14,7 @@ import { removeDuplicates } from '../../libs/util';
 
 const BlogsAndVlogs = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
-    const [sort, setSort] = React.useState('Newest');
+    const [sort, setSort] = React.useState('Select Speciality');
     const { isMobile } = useWindowSize();
     const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Blogs and Vlogs')[0];
     const blogsAndVlogs = Content().allStrapiBlogAndVlog.nodes;
@@ -30,19 +30,27 @@ const BlogsAndVlogs = () => {
             setCategoryList(removeDuplicates(cat));
         }
     },[blogsAndVlogs]);
-    useEffect(()=>{
-        console.log(filteredList.sort((a, b) => {
-            return new Date(a.article_date).getTime() - new Date(b.initialRegistration).getTime()
-        }))
-    },[sort])
 
    useEffect(()=>{
-    if(selectedCategory === 'All'){
-        setFilteredList(blogsAndVlogs)
-    }else{
-        setFilteredList(blogsAndVlogs.filter(item => item.category === selectedCategory))
+    getFilteredList();
+   },[selectedCategory, sort])
+
+   const getFilteredList = () =>{
+        let tempList = blogsAndVlogs;
+        if(sort === 'Select Speciality'){
+            tempList = tempList
+        }else{
+            tempList = tempList.filter(item => item.specialities[0]?.title === sort);
+        }
+        if(selectedCategory === 'All'){
+            tempList = tempList
+        }else{
+            tempList = tempList.filter(item => item.category === selectedCategory)
+        }
+
+        setFilteredList(tempList)
     }
-   },[selectedCategory])
+
     return (
         <Layout  pageTitle="Blogs and Vlogs" template="inner" breadcrumb={{
             links: [
@@ -67,6 +75,7 @@ const BlogsAndVlogs = () => {
                 <div className='pageWrapper'>
                     {!isMobile &&
                         <SortFilterForNews 
+                            blog={true}
                             categoryList={categoryList}
                             setSelectedCategory={setSelectedCategory} 
                             selectedCategory={selectedCategory} 

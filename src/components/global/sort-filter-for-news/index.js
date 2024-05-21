@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import * as style from './sort-filter-for-news.module.scss'
 import SortFilterIcon from '../../../images/icons/sort-icon.svg'; 
 import useClickOutside from '../../../libs/hooks/useClickOutside';
-function SortFilterForNews({setSelectedCategory, selectedCategory, updateSort, categoryList}) { 
+import SpecialtySelect from '../../speciality-select';
+function SortFilterForNews({setSelectedCategory, blog=false, selectedCategory, updateSort, categoryList}) { 
   const [ isOpen, setIsOpen] = useState(false);
   const [ selectedSort, setSelectedSort] = useState('Newest');
   const selectRef = useRef(null)
@@ -21,23 +22,28 @@ function SortFilterForNews({setSelectedCategory, selectedCategory, updateSort, c
         Sort
       </div>
       <div className={classNames(style.SortFilterBtnSec)}>
-        <div ref={selectRef}  className={classNames(style.SortFilterDropDown, isOpen && style.open)}>
-          <span onClick={()=>{setIsOpen(!isOpen)}}>{selectedSort}</span>
-          {isOpen &&
-            <ul className={style.dropdown}>
-              <li onClick={()=>{
-                setSelectedSort('Newest');
-                setIsOpen(false);
-                updateSort('Newest');
-              }}>Newest</li>
-              <li onClick={()=>{
-                setSelectedSort('Oldest');
-                setIsOpen(false);
-                updateSort('Oldest');
-              }}>Oldest</li>
-            </ul>
-          }
-        </div>
+        {!blog &&
+          <div ref={selectRef}  className={classNames(style.SortFilterDropDown, isOpen && style.open)}>
+            <span onClick={()=>{setIsOpen(!isOpen)}}>{selectedSort}</span>
+            {isOpen &&
+              <ul className={style.dropdown}>
+                <li onClick={()=>{
+                  setSelectedSort('Newest');
+                  setIsOpen(false);
+                  updateSort('Newest');
+                }}>Newest</li>
+                <li onClick={()=>{
+                  setSelectedSort('Oldest');
+                  setIsOpen(false);
+                  updateSort('Oldest');
+                }}>Oldest</li>
+              </ul>
+            }
+          </div>
+        }
+        {blog &&
+          <SpecialtySelect onSpChange={(sp)=>{updateSort(sp)}}  />
+        }
         <div className={classNames(style.SortFilterBtn, selectedCategory === 'All' && style.active)} onClick={()=>{
           setSelectedCategory('All')
         }}>All</div>
