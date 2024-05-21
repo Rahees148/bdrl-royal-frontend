@@ -53,9 +53,7 @@ query ($id: String) {
       article_date(formatString: "MMM DD, YYYY")
       description {
         data {
-          childMarkdownRemark {
-            html
-          }
+          description
         }
       }
       image {

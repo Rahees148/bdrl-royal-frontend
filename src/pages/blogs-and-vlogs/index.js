@@ -4,7 +4,7 @@ import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import InnerBanner from '../../components/inner-banner';
 import { Banners } from '../../graphql/banners';
-import { Content } from '../../graphql/news-and-events';
+import { Content } from '../../graphql/blogs-vlogs';
 import ArticleListCard from '../../components/article-list-card';
 import SortFilterForNews from '../../components/global/sort-filter-for-news';
 import { useEffect } from 'react';
@@ -14,9 +14,9 @@ const BlogsAndVlogs = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
     const [sort, setSort] = React.useState('Newest');
     const { isMobile } = useWindowSize();
-    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'News & Events')[0];
-    const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
-    const [filteredList, setFilteredList] = React.useState(newsAndEvents);
+    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Blogs and Vlogs')[0];
+    const blogsAndVlogs = Content().allStrapiBlogAndVlog.nodes;
+    const [filteredList, setFilteredList] = React.useState(blogsAndVlogs);
 
     useEffect(()=>{
         console.log(filteredList.sort((a, b) => {
@@ -27,20 +27,20 @@ const BlogsAndVlogs = () => {
 
    useEffect(()=>{
     if(selectedCategory === 'All'){
-        setFilteredList(newsAndEvents)
+        setFilteredList(blogsAndVlogs)
     }else{
-        setFilteredList(newsAndEvents.filter(item => item.category === selectedCategory))
+        setFilteredList(blogsAndVlogs.filter(item => item.category === selectedCategory))
     }
    },[selectedCategory])
     return (
-        <Layout  pageTitle="News & Events" template="inner" breadcrumb={{
+        <Layout  pageTitle="Blogs and Vlogs" template="inner" breadcrumb={{
             links: [
                 {
                     title:'Home',
                     url:'/',
                 }
             ],
-            title: 'News & Events'
+            title: 'Blogs and Vlogs',
         }}>
             <Fade> 
                 <InnerBanner waterMark={false} data={

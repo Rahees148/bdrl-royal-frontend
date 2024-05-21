@@ -31,7 +31,7 @@ function Article({pageData}) {
                 </svg>
             </span>
         </div>
-        <div className="postcontent" dangerouslySetInnerHTML={{ __html: pageData.description.data.childMarkdownRemark.html }} />
+        <div className="postcontent" dangerouslySetInnerHTML={{ __html: pageData.description.data.description }} />
         
     </div>
   )

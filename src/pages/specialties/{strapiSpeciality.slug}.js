@@ -272,7 +272,9 @@ export const query = graphql`
                 }
                 category
                 description {
-                    data
+                    data {
+                        description
+                    }
                 }
                 publish_date(formatString: "DD MMM, YYYY")
             }
