@@ -4,12 +4,13 @@ import classNames from 'classnames'
 import WhatsAppIcon from '../../images/icons/WhatsApp_icon.svg';
 import DoctorImg from '../../images/Venkateshwaran1.png';
 function Article({pageData}) {
+    const imageURL = pageData.image?.url ? pageData.image?.url : pageData.media?.url
   return (
     <div className={style.articleDetails}>
-        <img className="rounded-5 mb-[28px]" src={pageData.image?.url} alt={`Cover for ${pageData.title}`} />
+        <img className="rounded-5 mb-[28px]" src={imageURL} alt={`Cover for ${pageData.title}`} />
         <div className={style.tagsWrapper}>
             <span className={classNames(style.tag, style[pageData.category.toLowerCase()])}>{pageData.category}</span>
-            <span className={style.date}>{pageData.article_date}</span>
+            <span className={style.date}>{pageData.article_date?pageData.article_date : pageData.publishedAt }</span>
         </div>
         <h1>{pageData.title}</h1>
         <div className={style.icons}>

@@ -6,6 +6,7 @@ export const Content = () => {
       allStrapiBlogAndVlog(sort: {publish_date: DESC}) {
         nodes {
           title
+          id
           summary {
             data {
               summary
@@ -20,10 +21,10 @@ export const Content = () => {
           doctor {
             Name
             slug
-            speciality {
-              slug
-              title
-            }
+          }
+          specialities {
+            title
+            slug
           }
         }
       }

@@ -9,6 +9,8 @@ import ArticleListCard from '../../components/article-list-card';
 import SortFilterForNews from '../../components/global/sort-filter-for-news';
 import { useEffect } from 'react';
 import useWindowSize from '../../libs/hooks/useWindowSize';
+import { useState } from 'react';
+import { removeDuplicates } from '../../libs/util';
 
 const BlogsAndVlogs = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
@@ -17,12 +19,21 @@ const BlogsAndVlogs = () => {
     const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Blogs and Vlogs')[0];
     const blogsAndVlogs = Content().allStrapiBlogAndVlog.nodes;
     const [filteredList, setFilteredList] = React.useState(blogsAndVlogs);
+    const [categoryList, setCategoryList] = useState([]); 
 
+    useEffect(()=>{
+        if(blogsAndVlogs.length > 0) {
+            const cat = [];
+            blogsAndVlogs.forEach(blogsAndVlog => { 
+                cat.push(blogsAndVlog.category);
+            });
+            setCategoryList(removeDuplicates(cat));
+        }
+    },[blogsAndVlogs]);
     useEffect(()=>{
         console.log(filteredList.sort((a, b) => {
             return new Date(a.article_date).getTime() - new Date(b.initialRegistration).getTime()
         }))
-        
     },[sort])
 
    useEffect(()=>{
@@ -56,6 +67,7 @@ const BlogsAndVlogs = () => {
                 <div className='pageWrapper'>
                     {!isMobile &&
                         <SortFilterForNews 
+                            categoryList={categoryList}
                             setSelectedCategory={setSelectedCategory} 
                             selectedCategory={selectedCategory} 
                             updateSort={(sort)=>{
@@ -65,7 +77,7 @@ const BlogsAndVlogs = () => {
                     }
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
                         {filteredList && filteredList.map((item, index) => (
-                            <ArticleListCard key={index} item={item} />
+                            <ArticleListCard linkTo={'/blogs-and-vlogs/'} key={index} item={item} blog={true} />
                         ))}
                     </div>
                 </div>

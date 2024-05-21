@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import * as style from './sort-filter-for-news.module.scss'
 import SortFilterIcon from '../../../images/icons/sort-icon.svg'; 
 import useClickOutside from '../../../libs/hooks/useClickOutside';
-function SortFilterForNews({setSelectedCategory, selectedCategory, updateSort}) { 
+function SortFilterForNews({setSelectedCategory, selectedCategory, updateSort, categoryList}) { 
   const [ isOpen, setIsOpen] = useState(false);
   const [ selectedSort, setSelectedSort] = useState('Newest');
   const selectRef = useRef(null)
@@ -41,12 +41,13 @@ function SortFilterForNews({setSelectedCategory, selectedCategory, updateSort}) 
         <div className={classNames(style.SortFilterBtn, selectedCategory === 'All' && style.active)} onClick={()=>{
           setSelectedCategory('All')
         }}>All</div>
-        <div className={classNames(style.SortFilterBtn, selectedCategory === 'News' && style.active)} onClick={()=>{
-          setSelectedCategory('News')
-        }}>News</div>
-        <div className={classNames(style.SortFilterBtn, selectedCategory === 'Events' && style.active)} onClick={()=>{
-          setSelectedCategory('Events')
-        }}>Events</div>
+        {categoryList && categoryList.length > 0 && categoryList.map((category, index)=>(
+          <div key={index} className={classNames(style.SortFilterBtn, selectedCategory === category && style.active)} onClick={()=>{
+            setSelectedCategory(category)
+          }}>{category}</div>
+        ))}
+        
+       
       </div>
     </div>
   )

@@ -32,7 +32,7 @@ const NewsAndEvents = ({ data }) => {
                   <>
                     <h4 className='text-[30px] font-semibold text-primary mb-[22px]'>Related Posts</h4>
                     {articleList && articleList.map((article, index) => (
-                      <ArticleListCard related={true} item={article} key={index} />
+                      <ArticleListCard linkTo={'/blogs-and-vlogs'} related={true} item={article} key={index} />
                     ))}
                   </>
                   }

@@ -9,6 +9,7 @@ import ArticleListCard from '../../components/article-list-card';
 import SortFilterForNews from '../../components/global/sort-filter-for-news';
 import { useEffect } from 'react';
 import useWindowSize from '../../libs/hooks/useWindowSize';
+import { removeDuplicates } from '../../libs/util';
 
 const NewsAndEvents = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
@@ -17,7 +18,17 @@ const NewsAndEvents = () => {
     const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'News & Events')[0];
     const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
     const [filteredList, setFilteredList] = React.useState(newsAndEvents);
+    const [categoryList, setCategoryList] = React.useState([]); 
 
+    useEffect(()=>{
+        if(newsAndEvents.length > 0) {
+            const cat = [];
+            newsAndEvents.forEach(newsAndEvent => { 
+                cat.push(newsAndEvent.category);
+            });
+            setCategoryList(removeDuplicates(cat));
+        }
+    },[newsAndEvents]);
     useEffect(()=>{
         console.log(filteredList.sort((a, b) => {
             return new Date(a.article_date).getTime() - new Date(b.initialRegistration).getTime()
@@ -58,6 +69,7 @@ const NewsAndEvents = () => {
                         <SortFilterForNews 
                             setSelectedCategory={setSelectedCategory} 
                             selectedCategory={selectedCategory} 
+                            categoryList={categoryList}
                             updateSort={(sort)=>{
                                 setSort(sort);
                             }}
@@ -65,7 +77,7 @@ const NewsAndEvents = () => {
                      
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
                         {filteredList && filteredList.map((item, index) => (
-                            <ArticleListCard key={index} item={item} />
+                            <ArticleListCard linkTo={'/news-and-events/'} key={index} item={item} />
                         ))}
                     </div>
                 </div>

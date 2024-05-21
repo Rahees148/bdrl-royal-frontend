@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { Content } from '../../graphql/news-and-events';
+import { Content } from '../../graphql/blogs-vlogs';
 import Layout from '../../components/global/layout'
 import Article from '../../components/article';
 import ArticleListCard from '../../components/article-list-card';
 
 const NewsAndEvents = ({ data }) => {
-  const pageData = data.strapiNewsAndEvent;
-  const articleList = Content().allStrapiNewsAndEvent.nodes.filter(item =>item.category === pageData.category && item.id !== pageData.id);
+  const pageData = data.strapiBlogAndVlog;
+  const articleList = Content().allStrapiBlogAndVlog.nodes.filter(item =>item.category === pageData.category && item.id !== pageData.id);
     return (
             <Layout pageTitle={pageData.title} template="inner" breadcrumb={{
               links: [
@@ -16,8 +16,8 @@ const NewsAndEvents = ({ data }) => {
                       url:'/',
                   },
                   {
-                    title:'News & Events',
-                    url:'/news-and-events',
+                    title:'Blogs and Vlogs',
+                    url:'/blogs-and-vlogs',
                 }
               ],
               title: pageData.title
@@ -32,7 +32,7 @@ const NewsAndEvents = ({ data }) => {
                   <>
                     <h4 className='text-[30px] font-semibold text-primary mb-[22px]'>Related Posts</h4>
                     {articleList && articleList.map((article, index) => (
-                      <ArticleListCard related={true} item={article} key={index} />
+                      <ArticleListCard blog={true} linkTo={'/blogs-and-vlogs'} related={true} item={article} key={index} />
                     ))}
                   </>
                   }
@@ -46,23 +46,27 @@ const NewsAndEvents = ({ data }) => {
 
 export const query = graphql`
 query ($id: String) {
-    strapiNewsAndEvent(id: {eq: $id}) {
-      button_label
+    strapiBlogAndVlog(id: {eq: $id}) {
       category
       id
-      article_date(formatString: "MMM DD, YYYY")
+      media {
+        url
+      }
+      title
       description {
         data {
           description
         }
       }
-      image {
-        url
+      doctor {
+        Image {
+          url
+        }
+        Name
+        slug
+        designation
+        publishedAt(formatString: "MMM DD, YYYY")
       }
-      slug
-      summary
-      title
-      locale
     }
   }
 `
