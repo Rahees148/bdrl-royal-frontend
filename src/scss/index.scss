@@ -48,7 +48,6 @@ body {
 }
 main{
     position: relative;
-    z-index: 1;
     background-color: #fff;
     @media #{$breakpoint-mobile} {
         overflow: hidden;

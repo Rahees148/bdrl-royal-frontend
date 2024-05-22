@@ -3,6 +3,7 @@
 .FooterSec{
     position: sticky;
     bottom: 0;
+    z-index: -1;
     @media #{$breakpoint-mobile} {
         padding-top: 0px;
         position: static;
