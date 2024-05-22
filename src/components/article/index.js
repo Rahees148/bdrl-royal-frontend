@@ -53,7 +53,7 @@ function Article({pageData, author}) {
                 </svg>
             </span>
         </div>
-        <div className="postcontent" dangerouslySetInnerHTML={{ __html: pageData.description.data.description }} />
+        <div className={classNames(style.articleContent,'postcontent')} dangerouslySetInnerHTML={{ __html: pageData.description.data.description }} />
         {author &&
             <div className={classNames(style.articleAuthor)}>
                 <h4 className={classNames(style.articleAuthorTitle)}>Author</h4>

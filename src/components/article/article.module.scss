@@ -1,6 +1,7 @@
 @import '../../scss/colors';
 @import '../../scss/breakpoints';
 .articleDetails{
+    color: $color-primary;
     h1{
         font-size: $font-h4-small;
         color: $color-primary;
@@ -146,5 +147,18 @@
             }
         }
         
+    }
+    .articleContent {
+        strong{
+            font-weight: $font-weight-bold;
+        }
+        ol{
+            margin-left: 20px;
+            list-style: decimal;
+            ul{
+                margin-left: 25px;
+                list-style: circle;
+            }
+        }
     }
 }
