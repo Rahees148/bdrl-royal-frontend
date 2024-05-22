@@ -175,7 +175,9 @@ export const query = graphql`
                 title
                 slug
                 description {
-                    data
+                    data {
+                        description
+                    }
                 }
                 category
                 doctor {

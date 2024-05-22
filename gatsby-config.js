@@ -64,10 +64,45 @@ const strapiConfig = {
           author_photo:"*",
           image:"*",
           seo: "*",
+          summary:"*",
         }
       },
       author_photo:"*",
       image:"*",
+      seo: "*",
+      summary:"*",
+    },
+    pluginOptions: {
+      i18n: {
+        locale: "all", // Fetch all localizations
+      },
+    },
+  } },
+  { singularName: "blog-and-vlog", queryParams:{
+    populate:{
+      localizations: {
+        populate:{
+          author_photo:"*",
+          media:"*",
+          doctor: "*",
+          category:"*",
+          description:"*",
+          specialities:"*",
+          centers_of_excellences:"*",
+          summary:"*",
+          icon:"*",
+          seo: "*",
+        }
+      },
+      description:"*",
+      icon:"*",
+      doctor: "*",
+      specialities:"*",
+      centers_of_excellences:"*",
+      summary:"*",
+      category:"*",
+      author_photo:"*",
+      media:"*",
       seo: "*",
     },
     pluginOptions: {

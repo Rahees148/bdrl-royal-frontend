@@ -4,54 +4,62 @@ import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import InnerBanner from '../../components/inner-banner';
 import { Banners } from '../../graphql/banners';
-import { Content } from '../../graphql/news-and-events';
+import { Content } from '../../graphql/blogs-vlogs';
 import ArticleListCard from '../../components/article-list-card';
 import SortFilterForNews from '../../components/global/sort-filter-for-news';
 import { useEffect } from 'react';
 import useWindowSize from '../../libs/hooks/useWindowSize';
+import { useState } from 'react';
 import { removeDuplicates } from '../../libs/util';
 
-const NewsAndEvents = () => {
+const BlogsAndVlogs = () => {
     const [selectedCategory, setSelectedCategory] = React.useState('All');
-    const [sort, setSort] = React.useState('Newest');
+    const [sort, setSort] = React.useState('Select Speciality');
     const { isMobile } = useWindowSize();
-    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'News & Events')[0];
-    const newsAndEvents = Content().allStrapiNewsAndEvent.nodes;
-    const [filteredList, setFilteredList] = React.useState(newsAndEvents);
-    const [categoryList, setCategoryList] = React.useState([]); 
+    const pageBanners = Banners().allStrapiBannerForListingPage.nodes.filter(b => b.page_title === 'Blogs and Vlogs')[0];
+    const blogsAndVlogs = Content().allStrapiBlogAndVlog.nodes;
+    const [filteredList, setFilteredList] = React.useState(blogsAndVlogs);
+    const [categoryList, setCategoryList] = useState([]); 
 
     useEffect(()=>{
-        if(newsAndEvents.length > 0) {
+        if(blogsAndVlogs.length > 0) {
             const cat = [];
-            newsAndEvents.forEach(newsAndEvent => { 
-                cat.push(newsAndEvent.category);
+            blogsAndVlogs.forEach(blogsAndVlog => { 
+                cat.push(blogsAndVlog.category);
             });
             setCategoryList(removeDuplicates(cat));
         }
-    },[newsAndEvents]);
-    useEffect(()=>{
-        console.log(filteredList.sort((a, b) => {
-            return new Date(a.article_date).getTime() - new Date(b.initialRegistration).getTime()
-        }))
-        
-    },[sort])
+    },[blogsAndVlogs]);
 
    useEffect(()=>{
-    if(selectedCategory === 'All'){
-        setFilteredList(newsAndEvents)
-    }else{
-        setFilteredList(newsAndEvents.filter(item => item.category === selectedCategory))
+    getFilteredList();
+   },[selectedCategory, sort])
+
+   const getFilteredList = () =>{
+        let tempList = blogsAndVlogs;
+        if(sort === 'Select Speciality'){
+            tempList = tempList
+        }else{
+            tempList = tempList.filter(item => item.specialities[0]?.title === sort);
+        }
+        if(selectedCategory === 'All'){
+            tempList = tempList
+        }else{
+            tempList = tempList.filter(item => item.category === selectedCategory)
+        }
+
+        setFilteredList(tempList)
     }
-   },[selectedCategory])
+
     return (
-        <Layout  pageTitle="News & Events" template="inner" breadcrumb={{
+        <Layout  pageTitle="Blogs and Vlogs" template="inner" breadcrumb={{
             links: [
                 {
                     title:'Home',
                     url:'/',
                 }
             ],
-            title: 'News & Events'
+            title: 'Blogs and Vlogs',
         }}>
             <Fade> 
                 <InnerBanner waterMark={false} data={
@@ -65,19 +73,20 @@ const NewsAndEvents = () => {
             </Fade>
             <Fade>
                 <div className='pageWrapper'>
-                    
+                    {!isMobile &&
                         <SortFilterForNews 
+                            blog={true}
+                            categoryList={categoryList}
                             setSelectedCategory={setSelectedCategory} 
                             selectedCategory={selectedCategory} 
-                            categoryList={categoryList}
                             updateSort={(sort)=>{
                                 setSort(sort);
                             }}
                         />
-                     
+                    }
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8 py-8 sm:py-[60px]'>
                         {filteredList && filteredList.map((item, index) => (
-                            <ArticleListCard linkTo={'/news-and-events/'} key={index} item={item} />
+                            <ArticleListCard linkTo={'/blogs-and-vlogs/'} key={index} item={item} blog={true} />
                         ))}
                     </div>
                 </div>
@@ -87,4 +96,4 @@ const NewsAndEvents = () => {
     );
 };
 
-export default NewsAndEvents;
+export default BlogsAndVlogs;

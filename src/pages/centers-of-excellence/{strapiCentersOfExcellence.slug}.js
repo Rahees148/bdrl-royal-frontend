@@ -214,7 +214,9 @@ export const query = graphql`
                 slug
               }
               description {
-                data
+                data {
+                  description
+                }
               }
               publish_date(formatString: "DD MMM, YYYY")
             }
