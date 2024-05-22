@@ -6,13 +6,16 @@
     width: 100%;
     max-width: 366px;
     font-weight: $font-weight-semiBold;
-
+    >div {
+    font-weight: $font-weight-semiBold;
+    color: $color-primary;
+    }
     @media #{$breakpoint-mobile} {
         padding: 13px 25px 13px 15px;
         border-radius: 10px;
         width: 50%;
         font-size: $font-medium;
-        font-weight: $font-weight-semiBold;
+        font-weight: $font-weight-medium;
     }
       &:before {
         content: '';
@@ -34,9 +37,22 @@
       }
 
       &.standalone{
+        border-radius: 49px;
+        padding: 16px 50px 16px 24px;
         @media #{$breakpoint-mobile} {
           max-width: 100%;
           width: 100%;
+        }
+        &::before{
+          top: 16px;
+          right: 15px;
+          @media #{$breakpoint-mobile} {
+            top: 24px;
+            right: 15px;
+          }
+        }
+        &.isOpen{
+          border-radius: 26px 26px 0 0;
         }
       }
       &.inForm{
@@ -47,8 +63,40 @@
         min-height: 49px;
         margin-bottom: 48px;
         background: #fff;
+        >div {
+          font-weight: $font-weight-regular; 
+          }
         &::before{
           top: 14px;
+          @media #{$breakpoint-mobile} {
+            top: 24px;
+            right: 15px;
+          }
+        }
+        &.isOpen{
+          border-radius: 26px 26px 0 0;
+        }
+        .SpecialitySelectBoxOpen {
+          background: #fff;
+        }
+      }
+      &.inWhiteBg{
+        width: 100%;
+        min-width: 250px;
+        max-width: 100%;
+        padding: 15px 50px 15px 21px;
+        border-radius: 49px;
+        min-height: 49px; 
+        background: #fff;
+        >div {
+          font-weight: $font-weight-medium; 
+          }
+        &::before{
+          top: 19px;
+          right: 17px;
+          width: 15px;
+          height: 15px;
+          background-size: 100%;
           @media #{$breakpoint-mobile} {
             top: 24px;
             right: 15px;

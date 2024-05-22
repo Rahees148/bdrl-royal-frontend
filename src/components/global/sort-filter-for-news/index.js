@@ -42,7 +42,7 @@ function SortFilterForNews({setSelectedCategory, blog=false, selectedCategory, u
           </div>
         }
         {blog &&
-          <SpecialtySelect onSpChange={(sp)=>{updateSort(sp)}}  />
+          <SpecialtySelect variant={'inWhiteBg'} onSpChange={(sp)=>{updateSort(sp)}}  />
         }
         <div className={classNames(style.SortFilterBtn, selectedCategory === 'All' && style.active)} onClick={()=>{
           setSelectedCategory('All')
