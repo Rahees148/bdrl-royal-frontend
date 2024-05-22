@@ -4,8 +4,10 @@ import classNames from 'classnames'
 import WhatsAppIcon from '../../images/icons/WhatsApp_icon.svg';
 import ModalDialog from '../global/modal-dialog';
 import Share from '../global/share';
+import YoutubeVideo from '../youtube-player';
 function Article({pageData, author}) {
     const [modalOpen, setModalOpen] = useState(false);
+    const [videoModalOpen, setVideoModalOpen] = useState(false);
     const [pageURL, setPageURL] = useState(null);
     useEffect(()=>{
         if (typeof window !== `undefined`) {
@@ -15,7 +17,21 @@ function Article({pageData, author}) {
     const imageURL = pageData.image?.url ? pageData.image?.url : pageData.media?.url
   return (
     <div className={style.articleDetails}>
-        <img className="rounded-5 mb-[28px]" src={imageURL} alt={`Cover for ${pageData.title}`} />
+        <div className={style.imageWrapper} onClick={()=>{
+                    if(pageData.category.toLowerCase() === 'vlog'){
+                        setVideoModalOpen(true)
+                    }
+                }}>
+            <img className="rounded-5 mb-[28px]" src={imageURL} alt={`Cover for ${pageData.title}`} />
+            {pageData.category.toLowerCase() === 'vlog' &&
+                <span className={style.play}>
+                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.4655 12.1251C30.1705 13.5961 30.1705 17.4039 27.4655 18.8749L11.1331 27.7564C8.50418 29.186 5.27344 27.3253 5.27344 24.3815L5.27344 6.61847C5.27344 3.67473 8.50418 1.81399 11.1331 3.24359L27.4655 12.1251Z" fill="white"/>
+                    </svg>
+                </span>
+            }
+            
+        </div>
         <div className={style.tagsWrapper}>
             <span className={classNames(style.tag, style[pageData.category.toLowerCase()])}>{pageData.category}</span>
             <span className={style.date}>{pageData.article_date?pageData.article_date : pageData.publishedAt }</span>
@@ -58,6 +74,10 @@ function Article({pageData, author}) {
         }
         <ModalDialog title={'Share on'} body={<Share description={pageData.title} />} isOpen={modalOpen} setIsOpen={(val) => {
             setModalOpen(val)
+        }} />
+
+        <ModalDialog styles={{maxWidth:'900px'}}  body={ <>{videoModalOpen && <YoutubeVideo embedId={pageData.youtube_video_id} autoplay={true} />}</>} isOpen={videoModalOpen} setIsOpen={(val) => {
+            setVideoModalOpen(val)
         }} />
     </div>
   )

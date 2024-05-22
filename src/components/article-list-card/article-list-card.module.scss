@@ -19,6 +19,7 @@
         }
     }  
         .ArticleListCardImage{ 
+            position: relative;
             border-radius: 15px;
             max-height: 230px;
             overflow: hidden;
@@ -31,6 +32,37 @@
             img{
                 width: 100%;
             }
+            .icon{
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                background-color: #fff;
+                bottom: 15px; right: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                overflow: hidden;
+                img{
+                    max-width: 30px;
+                }
+            }
+            .play{
+                position: absolute;
+                width: 86px;
+                height: 86px;
+                background-color: #ffffff70;
+                bottom: 0; right: 0; left: 0; top: 0;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                overflow: hidden;
+                svg{
+                    max-width: 30px;
+                }
+            }
         }
         .ArticleListCardDec{
             box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
@@ -41,6 +73,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            height: 100%;
             @media #{$breakpoint-mobile} { 
                 background-color: $color-white;  
             }
@@ -51,6 +84,22 @@
                 margin-bottom: 24px;
             }
             aside{
+                color: $color-bodyCopy;
+                    margin-bottom: 25px;
+                    font-weight: $font-weight-medium;
+                    font-size: $font-medium;
+                    line-height: $font-medium + 10;
+                    line-clamp: 2; 
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    display: -webkit-box;
+    
+                    
+                    @media #{$breakpoint-mobile} { 
+                        font-size: $font-medium;
+                        line-height: $font-medium + 5;
+                    }
                 *{
                     color: $color-bodyCopy;
                     margin-bottom: 25px;
@@ -96,8 +145,23 @@
                 }
                 &.Vlog{
                     color: $color-white;
-                    background: $color-brook-green;
+                    background: linear-gradient(265.11deg, #886F2F 30.93%, #F3CC98 61.64%, #876E2E 95.6%);
                 }
+            }
+
+            .specialities{
+                padding: 8px 15px;
+                background-color: #F5F5F7;
+                border-radius: 60px;
+                color: $color-primary;
+                font-size: $font-base;
+                font-weight: $font-weight-semiBold;
+            }
+            .doctor{
+                color:#929292;
+                padding-left: 5px;
+                font-size: $font-base;
+                font-weight: $font-weight-semiBold;
             }
 
             .ArticleListCardFtr{

@@ -5,7 +5,7 @@ import Layout from '../../components/global/layout'
 import Article from '../../components/article';
 import ArticleListCard from '../../components/article-list-card';
 
-const NewsAndEvents = ({ data }) => {
+const BlogsAndVlogs = ({ data }) => {
   const pageData = data.strapiBlogAndVlog;
   const articleList = Content().allStrapiBlogAndVlog.nodes.filter(item =>item.category === pageData.category && item.id !== pageData.id);
     return (
@@ -32,7 +32,7 @@ const NewsAndEvents = ({ data }) => {
                   <>
                     <h4 className='text-[30px] font-semibold text-primary mb-[22px]'>Related Posts</h4>
                     {articleList && articleList.map((article, index) => (
-                      <ArticleListCard blog={true} linkTo={'/blogs-and-vlogs'} related={true} item={article} key={index} />
+                      <ArticleListCard blog={true} linkTo={'/blogs-and-vlogs/'} related={true} item={article} key={index} />
                     ))}
                   </>
                   }
@@ -58,6 +58,7 @@ query ($id: String) {
           description
         }
       }
+      youtube_video_id
       doctor {
         Image {
           url
@@ -70,6 +71,6 @@ query ($id: String) {
   }
 `
 
-export const Head = ({ data }) => <title>test</title>
+export const Head = ({ data }) => <title>{data.strapiBlogAndVlog.title}</title>
 
-export default NewsAndEvents
+export default BlogsAndVlogs

@@ -67,6 +67,6 @@ query ($id: String) {
   }
 `
 
-export const Head = ({ data }) => <title>test</title>
+export const Head = ({ data }) => <title>{data.strapiNewsAndEvent.title}</title>
 
 export default NewsAndEvents

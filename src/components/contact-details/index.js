@@ -19,11 +19,11 @@ function ContactDetails({pageData}) {
         </div>
       </section>
       <div className={classNames('pageWrapper')}>
-        <Parallax speed={100} translateY={100} >
-            <ParallaxElement variant='circle' style={{left:'40%'}} />
+        <Parallax speed={10} translateY={10} >
+            <ParallaxElement variant='circle' style={{left:'40%', top:'-200px'}} />
         </Parallax>
-        <Parallax speed={100} translateY={-100} >
-            <ParallaxElement variant='circle' style={{left:'60%', top:'-300px'}} />
+        <Parallax speed={10} translateY={-10} >
+            <ParallaxElement variant='circle' style={{left:'80%', top:'-350px'}} />
         </Parallax>
        </div>
       <section className='pt-[45px] sm:pt-[66px] pb-[45px] sm:pb-[81px] bg-bdrlGray '>
