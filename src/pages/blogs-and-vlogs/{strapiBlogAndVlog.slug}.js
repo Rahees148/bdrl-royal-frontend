@@ -32,7 +32,7 @@ const BlogsAndVlogs = ({ data }) => {
                   <>
                     <h4 className='text-[30px] font-semibold text-primary mb-[22px]'>Related Posts</h4>
                     {articleList && articleList.map((article, index) => (
-                      <ArticleListCard blog={true} linkTo={'/blogs-and-vlogs'} related={true} item={article} key={index} />
+                      <ArticleListCard blog={true} linkTo={'/blogs-and-vlogs/'} related={true} item={article} key={index} />
                     ))}
                   </>
                   }
@@ -58,6 +58,7 @@ query ($id: String) {
           description
         }
       }
+      youtube_video_id
       doctor {
         Image {
           url

@@ -4,8 +4,10 @@ import classNames from 'classnames'
 import WhatsAppIcon from '../../images/icons/WhatsApp_icon.svg';
 import ModalDialog from '../global/modal-dialog';
 import Share from '../global/share';
+import YoutubeVideo from '../youtube-player';
 function Article({pageData, author}) {
     const [modalOpen, setModalOpen] = useState(false);
+    const [videoModalOpen, setVideoModalOpen] = useState(false);
     const [pageURL, setPageURL] = useState(null);
     useEffect(()=>{
         if (typeof window !== `undefined`) {
@@ -15,7 +17,11 @@ function Article({pageData, author}) {
     const imageURL = pageData.image?.url ? pageData.image?.url : pageData.media?.url
   return (
     <div className={style.articleDetails}>
-        <div className={style.imageWrapper}>
+        <div className={style.imageWrapper} onClick={()=>{
+                    if(pageData.category.toLowerCase() === 'vlog'){
+                        setVideoModalOpen(true)
+                    }
+                }}>
             <img className="rounded-5 mb-[28px]" src={imageURL} alt={`Cover for ${pageData.title}`} />
             {pageData.category.toLowerCase() === 'vlog' &&
                 <span className={style.play}>
@@ -24,6 +30,7 @@ function Article({pageData, author}) {
                     </svg>
                 </span>
             }
+            
         </div>
         <div className={style.tagsWrapper}>
             <span className={classNames(style.tag, style[pageData.category.toLowerCase()])}>{pageData.category}</span>
@@ -67,6 +74,10 @@ function Article({pageData, author}) {
         }
         <ModalDialog title={'Share on'} body={<Share description={pageData.title} />} isOpen={modalOpen} setIsOpen={(val) => {
             setModalOpen(val)
+        }} />
+
+        <ModalDialog styles={{maxWidth:'900px'}}  body={ <>{videoModalOpen && <YoutubeVideo embedId={pageData.youtube_video_id} autoplay={true} />}</>} isOpen={videoModalOpen} setIsOpen={(val) => {
+            setVideoModalOpen(val)
         }} />
     </div>
   )
