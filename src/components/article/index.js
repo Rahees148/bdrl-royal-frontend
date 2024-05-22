@@ -15,7 +15,16 @@ function Article({pageData, author}) {
     const imageURL = pageData.image?.url ? pageData.image?.url : pageData.media?.url
   return (
     <div className={style.articleDetails}>
-        <img className="rounded-5 mb-[28px]" src={imageURL} alt={`Cover for ${pageData.title}`} />
+        <div className={style.imageWrapper}>
+            <img className="rounded-5 mb-[28px]" src={imageURL} alt={`Cover for ${pageData.title}`} />
+            {pageData.category.toLowerCase() === 'vlog' &&
+                <span className={style.play}>
+                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.4655 12.1251C30.1705 13.5961 30.1705 17.4039 27.4655 18.8749L11.1331 27.7564C8.50418 29.186 5.27344 27.3253 5.27344 24.3815L5.27344 6.61847C5.27344 3.67473 8.50418 1.81399 11.1331 3.24359L27.4655 12.1251Z" fill="white"/>
+                    </svg>
+                </span>
+            }
+        </div>
         <div className={style.tagsWrapper}>
             <span className={classNames(style.tag, style[pageData.category.toLowerCase()])}>{pageData.category}</span>
             <span className={style.date}>{pageData.article_date?pageData.article_date : pageData.publishedAt }</span>

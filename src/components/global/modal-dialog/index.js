@@ -23,7 +23,12 @@ function ModalDialog({ title, body, isOpen, closeOnOutsideClick = true, setIsOpe
         <div className={classNames(style.modalWrapper, isOpen ? style.fadeIn : style.fadeOut)}>
             <div className={style.modalContainer} ref={modalRef}>
                 {title &&
-                  <div className={style.modalHeader}>{title}</div>
+                    <div className={style.modalHeader}>
+                        {title}
+                        <svg onClick={()=>{setIsOpen(false)}} width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7573 1.00008L1.00008 20.1112M1 1L19.7572 20.1112" stroke="black" stroke-width="1.75427" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                 }
                 {body &&
                   <div className={style.modalBody}>{body}</div>

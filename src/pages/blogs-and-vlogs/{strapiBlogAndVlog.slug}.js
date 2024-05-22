@@ -5,7 +5,7 @@ import Layout from '../../components/global/layout'
 import Article from '../../components/article';
 import ArticleListCard from '../../components/article-list-card';
 
-const NewsAndEvents = ({ data }) => {
+const BlogsAndVlogs = ({ data }) => {
   const pageData = data.strapiBlogAndVlog;
   const articleList = Content().allStrapiBlogAndVlog.nodes.filter(item =>item.category === pageData.category && item.id !== pageData.id);
     return (
@@ -70,6 +70,6 @@ query ($id: String) {
   }
 `
 
-export const Head = ({ data }) => <title>test</title>
+export const Head = ({ data }) => <title>{data.strapiBlogAndVlog.title}</title>
 
-export default NewsAndEvents
+export default BlogsAndVlogs

@@ -11,6 +11,18 @@ function ArticleListCard({item, related, blog, linkTo}) {
       <Link to={linkTo+item.slug}>
         <div className={classNames(style.ArticleListCardImage)}>
           <img src={imageUrl} alt={item.title} />
+          {blog && item.category?.toLowerCase() === 'vlog' &&
+            <span className={style.play}>
+              <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.4655 12.1251C30.1705 13.5961 30.1705 17.4039 27.4655 18.8749L11.1331 27.7564C8.50418 29.186 5.27344 27.3253 5.27344 24.3815L5.27344 6.61847C5.27344 3.67473 8.50418 1.81399 11.1331 3.24359L27.4655 12.1251Z" fill="white"/>
+              </svg>
+            </span>
+          }
+          {blog && item.icon?.url &&
+            <span className={style.icon}>
+              <img src={item.icon?.url} alt={item.title} />
+            </span>
+          }
         </div>
         <div className={classNames(style.ArticleListCardDec)}>
           <div className={classNames(style.ArticleListCardTag, style[item.category])}>{item.category}</div>
@@ -18,7 +30,7 @@ function ArticleListCard({item, related, blog, linkTo}) {
 
           {!related && !blog &&
             <>
-              <aside dangerouslySetInnerHTML={{__html: item.summary}} />
+              <aside>{item.summary}</aside>
               <div className={classNames(style.ArticleListCardFtr)}>
                   <Link to={linkTo+item.slug}>{item.button_label} 
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,9 +43,13 @@ function ArticleListCard({item, related, blog, linkTo}) {
             </>
           }
           {blog && !related &&
-            <div className='flex flex-col'>
-                <Link to={'/specialties/'+item.specialities[0]?.slug}>{item.specialities[0]?.title}</Link>
-                <Link to={'/doctors/'+item.doctor.slug}>{item.doctor.Name}</Link>
+            <div className='flex flex-col gap-3' style={{margin: 'auto 0 0 0'}}>
+              {item.specialities[0]?.title &&
+                <Link className={style.specialities} to={'/specialties/'+item.specialities[0]?.slug}>{item.specialities[0]?.title}</Link>
+              }
+              {item.doctor?.Name &&
+                <Link className={style.doctor} to={'/doctors/'+item.doctor.slug}>{item.doctor.Name}</Link>
+              }
             </div>
           }
         </div>

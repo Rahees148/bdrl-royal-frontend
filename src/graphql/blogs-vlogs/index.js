@@ -17,6 +17,9 @@ export const Content = () => {
           media {
             url
           }
+          icon {
+            url
+          }
           category
           doctor {
             Name
