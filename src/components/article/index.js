@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as style from './article.module.scss'
 import classNames from 'classnames'
 import WhatsAppIcon from '../../images/icons/WhatsApp_icon.svg';
 import ModalDialog from '../global/modal-dialog';
 import Share from '../global/share';
 function Article({pageData, author}) {
-    const [modalOpen, setModalOpen] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false);
+    const [pageURL, setPageURL] = useState(null);
+    useEffect(()=>{
+        if (typeof window !== `undefined`) {
+            setPageURL(window.location.href)
+        }
+    },[])
     const imageURL = pageData.image?.url ? pageData.image?.url : pageData.media?.url
   return (
     <div className={style.articleDetails}>
@@ -17,7 +23,7 @@ function Article({pageData, author}) {
         <h1>{pageData.title}</h1>
         <div className={style.icons}>
             <span>
-                <a target='_blank' href={`https://api.whatsapp.com/send?text=${window.location.href}`} data-action="share/whatsapp/share"><img src={WhatsAppIcon} alt='WhatsApp'/> </a>
+                <a target='_blank' href={`https://api.whatsapp.com/send?text=${pageURL}`} data-action="share/whatsapp/share"><img src={WhatsAppIcon} alt='WhatsApp'/> </a>
             </span>
             <span onClick={()=>{setModalOpen(true)}}>
                 <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">

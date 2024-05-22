@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Share({description}) {
-    const url = window.location.href;
+    const url = typeof window !== "undefined" ? window.location.href : '';
     const ShareWebAPI = () => {
         if (navigator.share) {
             navigator.share({
