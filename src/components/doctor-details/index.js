@@ -16,8 +16,10 @@ function DoctorDetails({ data }) {
     const {isMobile} = useWindowSize();
     return (
         <div className={classNames('pageWrapper',style.doctorDetails)}> 
+           <div className='pt-8'>
+            <DoctorDetailCard data={data}  />
+           </div>
            
-           <DoctorDetailCard data={data}  />
 
             <div className=" grid-cols-12 pt-[40px] sm:pt-[55px] grid gap-8">
                 <div className="col-span-12 lg:col-span-6">

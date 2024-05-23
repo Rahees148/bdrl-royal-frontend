@@ -7,7 +7,7 @@ import ShareIcon from '../../images/icons/share-icon.svg'
 
 function DoctorDetailCard({data, variant="doctorDetail"}) {
   return (
-    <div className={classNames(style[variant], "rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6 mt-8 grid items-start gap-4 lg:gap-8")}>
+    <div className={classNames(style[variant], "rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6  grid items-start gap-4 lg:gap-8")}>
         <div className="col-span-12 lg:col-span-5 flex justify-center">
             {variant === 'slider' &&
                 <div className={classNames(style.DoctorCardShare,'rounded-full hidden')}>

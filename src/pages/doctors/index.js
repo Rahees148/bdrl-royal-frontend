@@ -41,7 +41,7 @@ const doctors = () => {
             </Fade>
             <div className='pt-[35px]'>
                 <div className='pageWrapper flex justify-end'>
-                    <SpecialtySelect onSpChange={(sp)=>{onSpecialtyChange(sp)}}  />
+                    <SpecialtySelect variant={'standalone'} onSpChange={(sp)=>{onSpecialtyChange(sp)}}  />
                 </div>
             </div>
             <Fade>
