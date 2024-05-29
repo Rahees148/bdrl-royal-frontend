@@ -1,0 +1,81 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.banner{
+    min-height: 320px;
+    padding: 80px 0 100px 0;
+    background-color: $color-primary;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    &:before{
+        content: '';
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: .3;
+        background-image: url(../../images/circle-pattern.svg);
+        z-index: 0;
+    }
+    span{
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+    }
+    h2{
+        color: $color-white;
+        font-weight: $font-weight-semiBold;
+        font-size: $font-h2;
+        max-width: 600px;
+        margin: 10px auto 0;
+        line-height: $font-h2 + 2;
+        position: relative;
+        z-index: 1;
+    }
+    
+}
+.dateSelection{
+
+    h4{
+        font-size: $font-h5;
+        font-weight: $font-weight-semiBold;
+        color: $color-primary;
+        margin-bottom: 22px;
+    }
+    
+    .dateWrapper{
+        width: 100%;
+        display: flex;
+        gap: 32px;
+        background: rgba(246, 247, 249, 0.6);
+        box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+        border-radius: 10px;
+        overflow: scroll;
+        >span{
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            min-width: 60px;
+            &.selected{
+                background-color: $color-primary;
+                border-radius: 10px;
+                .day, .date{
+                    color: $color-white;
+                }
+            }
+            .day{
+                color: #848585;
+                font-size: $font-base;
+                font-weight: $font-weight-medium;
+            }
+            .date{
+                font-size: $font-medium;
+                font-weight: $font-weight-bold;
+                color: $color-primary;
+            }
+        }
+    }
+}
