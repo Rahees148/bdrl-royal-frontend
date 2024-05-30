@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames'; 
 import * as s from './footer.module.scss';
 import Footerlogo from '../../../images/footer-logo.svg';
@@ -13,8 +13,10 @@ import NewsletterSubscribe from '../../newsletter-subscribe';
 import Accordion from '../accordion';
 import useWindowSize from '../../../libs/hooks/useWindowSize';
 import ModalDialog from '../modal-dialog';
+import AppointmentContext from '../../../context/bookAnAppointment';
 function Footer() {
-    const {isMobile} = useWindowSize()
+    const {isMobile} = useWindowSize();
+    const {isPatientTypeOpen, setIsPatientTypeOpen, updatePatientType} = useContext(AppointmentContext)
     
     return (
         <> 
@@ -151,6 +153,24 @@ function Footer() {
                     </div>
                 </div>
             </footer>
+            <ModalDialog 
+                body={ 
+                    <div className={s.modelButton}>
+                        <button onClick={()=>{
+                            updatePatientType('Cash Patient')
+                        }}>Cash Patient <span>(Real Time Booking)</span></button>
+                        <button onClick={()=>{
+                            updatePatientType('Insurance Patient')
+                        }}>Insurance Patient <span>(Request Call Back)</span></button>
+                    </div>
+                } 
+                title={'Select Patient Type'}
+                isOpen={isPatientTypeOpen} 
+                setIsOpen={(val) => {
+                    setIsPatientTypeOpen(val)
+                }} 
+                styles={{maxWidth:'360px'}}
+            />
         </>
     );
 }

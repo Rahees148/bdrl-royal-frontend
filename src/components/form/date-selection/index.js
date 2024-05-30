@@ -1,12 +1,14 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState, useRef, useContext} from 'react'
 import * as style from './date-selection.module.scss'
 import classNames from 'classnames'
 import { getNext30Days } from '../../../libs/util';
+import AppointmentContext from '../../../context/bookAnAppointment';
 
 function DateSelection() {
+    const { selectedDate, updateDate} = useContext(AppointmentContext)
     const divRef = useRef(null);
     const monthDates = getNext30Days();
-    const [selectedDate, setSelectedDate] = useState(monthDates[0]);
+    const [slctdDate, setSlctdDate] = useState(selectedDate.toDateString());
     const [disableLeftButton, setDisableLeftButton] = useState(true);
     const [disableRightButton, setDisableRightButton] = useState(false);
     const [direction, setDirection] = useState('left')
@@ -59,7 +61,7 @@ function DateSelection() {
     }
   return (
     <div className={classNames(style.dateSelection, 'py-4')}>
-        <h4>{selectedDate}</h4>
+        <h4>{slctdDate}</h4>
         <div className={style.datesSlidingButtonWrapper}>
             <button disabled={disableLeftButton} className={classNames(style.datesSlidingButton, style.prev)} onClick={prev}>prev</button>
             <button disabled={disableRightButton} className={style.datesSlidingButton} onClick={next}>next</button>
@@ -68,8 +70,11 @@ function DateSelection() {
             {monthDates && monthDates.map((date, index)=>(
                 <span 
                     key={index} 
-                    className={classNames(selectedDate === date && style.selected, style[direction])}
-                    onClick={()=>{setSelectedDate(date)}}
+                    className={classNames(slctdDate === date && style.selected, style[direction])}
+                    onClick={()=>{
+                        setSlctdDate(date)
+                        updateDate(new Date(date));
+                    }}
                 >
                     <span className={style.day}>{getDateValue(date, 'day')}</span>
                     <span className={style.date} >{getDateValue(date, 'date')}</span>

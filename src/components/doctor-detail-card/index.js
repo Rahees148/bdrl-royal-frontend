@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BookAnAppointmentBtn from '../global/button';
 import * as style from './doctor-detail-card.module.scss';
 import classNames from 'classnames';
@@ -7,8 +7,10 @@ import ShareIcon from '../../images/icons/share-icon.svg'
 import { useState } from 'react';
 import Share from '../global/share';
 import ModalDialog from '../global/modal-dialog';
+import AppointmentContext from '../../context/bookAnAppointment';
 
 function DoctorDetailCard({data, variant="doctorDetail"}) {
+    const {setIsPatientTypeOpen, updateDoctor} = useContext(AppointmentContext)
     const [modalOpen, setModalOpen] = useState(false)
   return (
     <div className={classNames(style[variant], "rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6  grid items-start gap-4 lg:gap-8")}>
@@ -65,14 +67,20 @@ function DoctorDetailCard({data, variant="doctorDetail"}) {
 
                 {variant === 'slider' &&
                     <div className={classNames(style.doctorSliderDecftr, 'flex items-center')}>
-                        <BookAnAppointmentBtn icon  className='justify-center'/>
+                        <BookAnAppointmentBtn  callback={()=>{
+                    setIsPatientTypeOpen(true);
+                    updateDoctor(data)
+                }} icon  className='justify-center'/>
                         <span>View profile</span>
                     </div>
                 }
                 
             </div>
             {variant !== 'slider' &&
-                <BookAnAppointmentBtn icon  className='justify-center'/>
+                <BookAnAppointmentBtn callback={()=>{
+                    setIsPatientTypeOpen(true);
+                    updateDoctor(data)
+                }} icon  className='justify-center'/>
             }
         </div>
 

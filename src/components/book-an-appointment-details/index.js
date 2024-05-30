@@ -43,27 +43,10 @@ function BookAnAppointmentDetails() {
             </Parallax>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[12px] sm:gap-x-8 gap-y-[86px] py-[98px]'>
                 {filteredDoctor && filteredDoctor.map((doctor, index) =>(
-                    <DoctorCard doctor={doctor} key={index} onBookAnAppointment={(id)=>{
-                        setDoctorId(id)
-                        setIsOpen(true)
-                    }} />
+                    <DoctorCard doctor={doctor} key={index} />
                 ))}
             </div>
         </div>
-        <ModalDialog 
-            body={ 
-                <div className={style.modelButton}>
-                    <button>Cash Patient <span>(Real Time Booking)</span></button>
-                    <button>Insurance Patient <span>(Request Call Back)</span></button>
-                </div>
-            } 
-            title={'Select Patient Type'}
-            isOpen={isOpen} 
-            setIsOpen={(val) => {
-                setIsOpen(val)
-            }} 
-            styles={{maxWidth:'360px'}}
-        />
     </>
   )
 }
