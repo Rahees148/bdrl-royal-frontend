@@ -2,9 +2,9 @@ import React from 'react'
 import * as style from './button.module.scss';
 import classNames from 'classnames';
 
-function BookAnAppointmentBtn({icon = false, className}) {
+function BookAnAppointmentBtn({icon = false, className, callback}) {
   return (
-    <button className={classNames(style.BookAnAppointmentBtn, className)}>
+    <button onClick={callback} className={classNames(style.BookAnAppointmentBtn, className)}>
         {icon && 
             <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.2462 17.902L18.1045 17.902M18.1045 17.902L15.9629 17.902M18.1045 17.902L18.1045 15.7671M18.1045 17.902L18.1045 20.0369" stroke="white" stroke-width="1.3543" stroke-linecap="round"/>

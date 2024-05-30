@@ -68,9 +68,9 @@ function Header({ pageTitle, breadcrumb, template  }) {
                         </ul>
                         <ul className="flex items-center">
                         <li>
-                            <a className={classNames(s.headerBtn, 'button ml-6 mr-4 bg-black')} href="#">
+                            <Link to='/book-an-appointment' className={classNames(s.headerBtn, 'button ml-6 mr-4 bg-black')}>
                                 Book appointment
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <img onClick={()=>{setIsOpen(true)}} src={menuIcon} alt="Menu" className={s.menuIcon} />

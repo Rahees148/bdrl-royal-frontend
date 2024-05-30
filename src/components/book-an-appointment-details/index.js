@@ -1,23 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import * as style from './book-an-appointment-details.module.scss'
 import BookAnAppointment from '../book-an-appointment'
-import classNames from 'classnames'
-import { getNext30Days } from '../../libs/util';
+import classNames from 'classnames';
+import DateSelection from '../form/date-selection';
+import { AllDoctors } from '../../graphql/doctors/doctors';
+import DoctorCard from '../doctor-card';
+import { Parallax } from 'react-scroll-parallax';
+import ParallaxElement from '../parallax-element';
+import ModalDialog from '../global/modal-dialog';
 
 function BookAnAppointmentDetails() {
-    const monthDates = getNext30Days();
-    const [selectedDate, setSelectedDate] = useState(monthDates[0]);
-    useEffect(() => {
-        console.log("monthDates", monthDates)
-    },[]);
-    const getDateValue = (date, val) =>{
-        const index = {
-            day: 0,
-            month: 1,
-            date: 2,
-            year: 3
-        }
-        return date.split(" ")[index[val]]
+    const doctors = AllDoctors().allStrapiDoctor.nodes;
+    const [filteredDoctor, setFilteredDoctor] = useState(doctors);
+    const [isOpen, setIsOpen] = useState(false);
+    const [doctorId, setDoctorId] = useState(null);
+    const onSpecialtyChange = (selectedSpecialty) =>{
+        const tempFilter = selectedSpecialty === 'Select Speciality' ? doctors : doctors.filter(c => (c.speciality?.title === selectedSpecialty || c.centers_of_excellence?.title === selectedSpecialty));
+        setFilteredDoctor([...tempFilter]);
     }
   return (
     <>
@@ -25,24 +24,37 @@ function BookAnAppointmentDetails() {
             <span className='button gold'>Book Appointment</span>
             <h2>Schedule Your Appointments Today.</h2>
         </section>
-        <BookAnAppointment />
+        <BookAnAppointment buttonLabel={'Search'} selectedSpecialty={(selectedSpecialty)=>{
+            onSpecialtyChange(selectedSpecialty)
+        }} />
         <div className='pageWrapper'>
-            <div className={classNames(style.dateSelection, 'py-4')}>
-                <h4>{selectedDate}</h4>
-                <div className={style.dateWrapper}>
-                    {monthDates && monthDates.map((date, index)=>(
-                        <span 
-                            key={index} 
-                            className={classNames(selectedDate === date && style.selected)}
-                            onClick={()=>{setSelectedDate(date)}}
-                        >
-                            <span className={style.day}>{getDateValue(date, 'day')}</span>
-                            <span className={style.date} >{getDateValue(date, 'date')}</span>
-                        </span>
-                    ))}
-                </div>
+            <DateSelection />
+            <Parallax speed={10} translateY={-600}>
+                <ParallaxElement />
+            </Parallax>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[12px] sm:gap-x-8 gap-y-[86px] py-[98px]'>
+                {filteredDoctor && filteredDoctor.map((doctor, index) =>(
+                    <DoctorCard doctor={doctor} key={index} onBookAnAppointment={(id)=>{
+                        setDoctorId(id)
+                        setIsOpen(true)
+                    }} />
+                ))}
             </div>
         </div>
+        <ModalDialog 
+            body={ 
+                <div className={style.modelButton}>
+                    <button>Cash Patient <span>(Real Time Booking)</span></button>
+                    <button>Insurance Patient <span>(Request Call Back)</span></button>
+                </div>
+            } 
+            title={'Select Patient Type'}
+            isOpen={isOpen} 
+            setIsOpen={(val) => {
+                setIsOpen(val)
+            }} 
+            styles={{maxWidth:'360px'}}
+        />
     </>
   )
 }

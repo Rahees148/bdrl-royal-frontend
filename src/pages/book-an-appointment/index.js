@@ -11,7 +11,7 @@ function BookAnAppointment() {
                 url:'/',
             },
         ],
-        title: 'Second Opinion'
+        title: 'Book an Appointment'
     }}>
         <BookAnAppointmentDetails />
     </Layout>

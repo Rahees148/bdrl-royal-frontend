@@ -6,7 +6,7 @@ import BookAnAppointmentBtn from '../global/button';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import ShareIcon from '../../images/icons/share-icon.svg'
 
-function DoctorCard({doctor}) { 
+function DoctorCard({doctor, onBookAnAppointment}) { 
     const {isMobile} = useWindowSize();
     const contentHeight = useRef()
     const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +43,9 @@ function DoctorCard({doctor}) {
                 </ul>
             </div>
             <div className={classNames(style.DoctorCardFooter)}>
-                <BookAnAppointmentBtn />
+                <BookAnAppointmentBtn callback={()=>{
+                    onBookAnAppointment(doctor.id)
+                }} />
                 <div className={classNames(style.DoctorCardFooterLink)}>
                     <Link to={'/doctors/'+doctor.slug}>View Profile</Link>
                 </div>

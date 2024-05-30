@@ -35,47 +35,22 @@
     }
     
 }
-.dateSelection{
-
-    h4{
-        font-size: $font-h5;
-        font-weight: $font-weight-semiBold;
-        color: $color-primary;
-        margin-bottom: 22px;
-    }
-    
-    .dateWrapper{
+.modelButton{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    button{
         width: 100%;
-        display: flex;
-        gap: 32px;
-        background: rgba(246, 247, 249, 0.6);
-        box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
-        border-radius: 10px;
-        overflow: scroll;
-        >span{
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            min-width: 60px;
-            &.selected{
-                background-color: $color-primary;
-                border-radius: 10px;
-                .day, .date{
-                    color: $color-white;
-                }
-            }
-            .day{
-                color: #848585;
-                font-size: $font-base;
-                font-weight: $font-weight-medium;
-            }
-            .date{
-                font-size: $font-medium;
-                font-weight: $font-weight-bold;
-                color: $color-primary;
-            }
+        padding: 35px 0;
+        text-align: center;
+        font-weight: $font-weight-semiBold;
+        border: 1px solid $color-primary;
+        border-radius: 20px;
+        span{
+            font-weight: $font-weight-regular;
+        }
+        &:hover{
+            background-color: #e5ff8519;
         }
     }
 }
