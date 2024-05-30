@@ -12,7 +12,6 @@ import ModalDialog from '../global/modal-dialog';
 function BookAnAppointmentDetails() {
     const doctors = AllDoctors().allStrapiDoctor.nodes;
     const [filteredDoctor, setFilteredDoctor] = useState(doctors);
-    const [isOpen, setIsOpen] = useState(false);
     const [doctorId, setDoctorId] = useState(null);
     useEffect(()=>{
         if (typeof window !== `undefined`) {

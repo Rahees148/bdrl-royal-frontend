@@ -1,16 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import Layout from '../../components/global/layout'
 import PatientBookingDetails from '../../components/patient-booking-details'
 import PatientForm from '../../components/form/patient-form'
-import AppointmentContext from '../../context/bookAnAppointment'
-import { navigate } from 'gatsby'
 function InsurancePatient() {
-  const { doctor, patientType} = useContext(AppointmentContext)
-  useEffect(()=>{
-    if(!doctor|| patientType !== 'Insurance Patient'){
-      navigate('/book-an-appointment');
-    }
-  },[doctor, patientType])
   return (
     <Layout  pageTitle="Book an Appointment" template="inner" breadcrumb={{
       links: [
@@ -24,7 +16,7 @@ function InsurancePatient() {
                     url:'/book-an-appointment',
                 }
       ],
-      title: 'INSURANCE PATIENT'
+      title: 'CASH PATIENT'
   }}>
       <div className=' circle-pattern-bg-2 bg-primary h-[210px]'></div>
       <section className='pageWrapper'>

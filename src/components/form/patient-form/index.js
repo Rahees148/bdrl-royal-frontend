@@ -28,10 +28,11 @@ function PatientForm() {
                         <option>2</option> 
                     </select>
                 </div>
-                <div className={classNames(style.PatientFormGroup,'grid col-span-6')}>
+                <div className={classNames(style.PatientFormGroup,'grid col-span-6 relative')}>
                     <label className={classNames(style.PatientFormLabel)}>DOB*</label>
-                    <input className={classNames(style.PatientFormControl,style.FormCalendar)} type="text"  placeholder="dd-mm-yyyy"></input>
+                    <input className={classNames(style.PatientFormControl,style.FormCalendar)} type="date"  placeholder="dd-mm-yyyy"></input>
                 </div>
+
                 <div className={classNames(style.PatientFormGroup,'grid col-span-12')}>
                     <label className={classNames(style.PatientFormLabel)}>Mobile*</label>
                     <input className={classNames(style.PatientFormControl)} type="text"  placeholder="Enter you mobile number"></input>
@@ -64,7 +65,7 @@ function PatientForm() {
                 </div>
                 <div className={classNames(style.PatientFormGroup,'grid col-span-6')}>
                     <label className={classNames(style.PatientFormLabel)}>Policy Expiry*</label>
-                    <input className={classNames(style.PatientFormControl,style.FormCalendar)} type="text"  placeholder="dd-mm-yyyy"></input>
+                    <input className={classNames(style.PatientFormControl,style.FormCalendar)} type="date"  placeholder="dd-mm-yyyy"></input>
                 </div>
             </div>
             <div className={classNames(style.PatientFormBtnSec)}>
@@ -73,7 +74,7 @@ function PatientForm() {
             
         </div>
         {/* Question */}
-        <div className={classNames(style.PatientFormSecMain)}>
+        {/* <div className={classNames(style.PatientFormSecMain)}>
             <div className={classNames(style.PatientFormIcon)}>
                 <img src={QuestionIcon} alt='Question Icon'/>
             </div>
@@ -88,7 +89,7 @@ function PatientForm() {
                 <button className='button light-green btn-fill'>Next <img src={NextArrowIcon} alt='Next'/></button>
             </div>
             
-        </div>
+        </div> */}
         </div>
     )
   }

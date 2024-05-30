@@ -49,11 +49,24 @@
                     margin-bottom: 5px;
                 }
                 .PatientFormControl{
+                    position: relative;
                     padding: 14px 24px;
                     border: 1px solid rgba(2, 51, 33, 0.16);
                     border-radius: 100px;
                     outline: none;
                     color:#02332190 ;
+                    &[type="date"]::-webkit-calendar-picker-indicator {
+                        background: transparent;
+                        bottom: 0;
+                        color: transparent;
+                        cursor: pointer;
+                        height: auto;
+                        left: 0;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: auto;
+                    }
                 }
                 select{
                     &.PatientFormControl{

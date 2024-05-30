@@ -14,6 +14,7 @@ import Accordion from '../accordion';
 import useWindowSize from '../../../libs/hooks/useWindowSize';
 import ModalDialog from '../modal-dialog';
 import AppointmentContext from '../../../context/bookAnAppointment';
+import { navigate } from 'gatsby';
 function Footer() {
     const {isMobile} = useWindowSize();
     const {isPatientTypeOpen, setIsPatientTypeOpen, updatePatientType} = useContext(AppointmentContext)
@@ -157,10 +158,14 @@ function Footer() {
                 body={ 
                     <div className={s.modelButton}>
                         <button onClick={()=>{
-                            updatePatientType('Cash Patient')
+                            updatePatientType('Cash Patient');
+                            setIsPatientTypeOpen(false);
+                            navigate('/book-an-appointment/cash-patient/')
                         }}>Cash Patient <span>(Real Time Booking)</span></button>
                         <button onClick={()=>{
-                            updatePatientType('Insurance Patient')
+                            updatePatientType('Insurance Patient');
+                            setIsPatientTypeOpen(false);
+                            navigate('/book-an-appointment/insurance-patient/')
                         }}>Insurance Patient <span>(Request Call Back)</span></button>
                     </div>
                 } 
