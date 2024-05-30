@@ -48,6 +48,13 @@
             border: 1px solid transparent;
             -webkit-transition: all 0.5s;
             transition: all 0.5s;
+            &.btn-fill{ 
+                &:hover{
+                    background: $color-brook-green;
+                    color: $color-black;
+                    border-color: transparent;
+                }
+            }
             &:hover{
                 background: transparent;
                 color: $color-light-green;
