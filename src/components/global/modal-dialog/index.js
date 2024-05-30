@@ -25,8 +25,8 @@ function ModalDialog({ styles, title, body, isOpen, closeOnOutsideClick = true, 
                
                     <div className={style.modalHeader}>
                         <h5>{title}</h5>
-                        <svg onClick={()=>{setIsOpen(false)}} width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.7573 1.00008L1.00008 20.1112M1 1L19.7572 20.1112" stroke="black" stroke-width="1.75427" stroke-linecap="round"/>
+                        <svg onClick={()=>{setIsOpen(false)}} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.7682 1.61627L1.51172 17.1606M1.51165 1.61621L16.7681 17.1605" stroke="#023321" stroke-width="1.51495" stroke-linecap="round"/>
                         </svg>
                     </div>
               

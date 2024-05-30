@@ -4,18 +4,17 @@ import * as style from './doctor-detail-card.module.scss';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
 import ShareIcon from '../../images/icons/share-icon.svg'
+import { useState } from 'react';
+import Share from '../global/share';
+import ModalDialog from '../global/modal-dialog';
 
 function DoctorDetailCard({data, variant="doctorDetail"}) {
+    const [modalOpen, setModalOpen] = useState(false)
   return (
     <div className={classNames(style[variant], "rounded-5 px-[15px] lg:px-0 bg-bdrlGray  grid-cols-12  lg:grid-cols-12 py-6  grid items-start gap-4 lg:gap-8")}>
         <div className="col-span-12 lg:col-span-5 flex justify-center">
-            {variant === 'slider' &&
-                <div className={classNames(style.DoctorCardShare,'rounded-full hidden')}>
-                    <img src={ShareIcon} alt='Share'/>
-                </div>
-            }
             {variant !== 'slider' &&
-                <div className={classNames(style.DoctorCardShare,'rounded-full')}>
+                <div onClick={()=>{setModalOpen(true)}} className={classNames(style.DoctorCardShare,'rounded-full')}>
                     <img src={ShareIcon} alt='Share'/>
                 </div>
             }
@@ -36,13 +35,13 @@ function DoctorDetailCard({data, variant="doctorDetail"}) {
                 {variant !== 'slider' &&
                     <span className={classNames(style.tags,'bg-white my-[20px] sm:my-[24px] px-[16px] py-[6px] sm:py-[9px] rounded-[60px] ')}>
                         {data.speciality &&
-                            <Link to={data.speciality?.slug}>
+                            <Link to={'/specialties/'+ data.speciality?.slug}>
                                 <img src={data.speciality?.icon?.url} alt={data.speciality?.title}/>
                                 {data.speciality?.title}
                             </Link>
                         }
                         {data.centers_of_excellence &&
-                            <Link to={data.centers_of_excellence?.slug}>
+                            <Link to={'/centers-of-excellence/'+ data.centers_of_excellence?.slug}>
                                 {data.centers_of_excellence?.title}
                             </Link>
                         }
@@ -76,6 +75,10 @@ function DoctorDetailCard({data, variant="doctorDetail"}) {
                 <BookAnAppointmentBtn icon  className='justify-center'/>
             }
         </div>
+
+        <ModalDialog title={'Share on'} body={<Share description={data.Name} />} isOpen={modalOpen} setIsOpen={(val) => {
+            setModalOpen(val)
+        }} />
     </div>
   )
 }

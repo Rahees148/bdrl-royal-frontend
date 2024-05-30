@@ -14,6 +14,15 @@ function BookAnAppointmentDetails() {
     const [filteredDoctor, setFilteredDoctor] = useState(doctors);
     const [isOpen, setIsOpen] = useState(false);
     const [doctorId, setDoctorId] = useState(null);
+    useEffect(()=>{
+        if (typeof window !== `undefined`) {
+            const params = new URLSearchParams(window.location.search);
+            if(params.get("specialty")){
+                const tempFilter = params.get("specialty") === 'Select Speciality' ? doctors : doctors.filter(c => (c.speciality?.title === params.get("specialty") || c.centers_of_excellence?.title === params.get("specialty")));
+                setFilteredDoctor([...tempFilter]);
+            }
+        }
+    },[])
     const onSpecialtyChange = (selectedSpecialty) =>{
         const tempFilter = selectedSpecialty === 'Select Speciality' ? doctors : doctors.filter(c => (c.speciality?.title === selectedSpecialty || c.centers_of_excellence?.title === selectedSpecialty));
         setFilteredDoctor([...tempFilter]);

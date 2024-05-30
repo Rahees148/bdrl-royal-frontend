@@ -5,14 +5,17 @@ import { Link } from 'gatsby';
 import BookAnAppointmentBtn from '../global/button';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 import ShareIcon from '../../images/icons/share-icon.svg'
+import ModalDialog from '../global/modal-dialog';
+import Share from '../global/share';
 
 function DoctorCard({doctor, onBookAnAppointment}) { 
     const {isMobile} = useWindowSize();
     const contentHeight = useRef()
     const [isOpen, setIsOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
     return (
         <div className={classNames(style.DoctorCard)}>
-            <div className={classNames(style.DoctorCardShare,'rounded-full')}>
+            <div onClick={()=>{setModalOpen(true)}} className={classNames(style.DoctorCardShare,'rounded-full')}>
                 <img src={ShareIcon} alt='Share'/>
             </div>
             <div className={classNames(style.DoctorCardImage)}>
@@ -50,6 +53,9 @@ function DoctorCard({doctor, onBookAnAppointment}) {
                     <Link to={'/doctors/'+doctor.slug}>View Profile</Link>
                 </div>
             </div>
+            <ModalDialog title={'Share on'} body={<Share description={doctor.Name} />} isOpen={modalOpen} setIsOpen={(val) => {
+                setModalOpen(val)
+            }} />
         </div>   
     )
   }

@@ -15,6 +15,15 @@ function SpecialtySelect({onSpChange, variant, ...props}) {
     const selectRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedSP, setSelectedSP] = useState('Select Speciality');
+
+   useEffect(()=>{
+    if (typeof window !== `undefined`) {
+      const params = new URLSearchParams(window.location.search);
+      if(params.get("specialty")){
+        setSelectedSP(params.get("specialty"));
+      }
+    }
+   },[])
    
     useEffect(()=>{
             setIsOpen(false);
