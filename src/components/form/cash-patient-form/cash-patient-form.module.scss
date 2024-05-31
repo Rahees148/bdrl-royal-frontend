@@ -36,6 +36,13 @@
                 font-size: $font-base;
                 line-height: $font-base + 11;
                 margin-top: 6px;
+                >span{
+                    display: block;
+                    font-size: $font-h5-small;
+                    font-weight: $font-weight-semiBold;
+                    color: $color-primary;
+                    margin-top: 5px;
+                }
             }
         }
         .PatientFormSec{
@@ -47,6 +54,9 @@
                     font-size: $font-base;
                     line-height: $font-base + 11;
                     margin-bottom: 5px;
+                    strong{
+                        font-weight: $font-weight-semiBold;
+                    }
                 }
                 .PatientFormControl{
                     position: relative;
@@ -85,6 +95,19 @@
                         padding-right: 45px;
                     }
                 }
+                .OtpForm{
+                    gap: 12px;
+                    .PatientFormControl{
+                        width: 55px;
+                        height: 55px;
+                        border-radius: 16px;
+                        padding: 10px;
+                        text-align: center;
+                        font-weight: $font-weight-bold;
+                        font-size: $font-h5;
+                        color: $color-primary;
+                    }
+                }
             }
         }
         .PatientFormBtnSec{
@@ -96,6 +119,32 @@
                 gap: 20px;
                 padding-right: 20px;
             }
+            .PatientFormBtnSecText{
+                display: flex;
+                align-items: center; 
+                gap: 10px;
+                font-weight: $font-weight-semiBold;
+            }
+            h5{
+                color: $color-primary;
+                font-size: $font-base;
+                line-height: $font-base + 11;
+                margin-top: 50px;
+            }
+            .OtpBtnSec{
+                display: flex;
+                gap: 56px;
+                .ResendOtp{
+                    span{
+                        color: rgba(2, 51, 33, 0.5);
+                        display: flex;
+                        width: 100%;
+                        font-weight: $font-weight-semiBold;
+                        gap: 5px;
+                    }
+                }
+            }
+            
         }
         .PatientFormMidSec{
             gap: 10px;
@@ -127,6 +176,7 @@
                 font-weight: $font-weight-semiBold;
                 color: $color-primary;
                 width: 100%;
+                margin-bottom: 8px;
             }
             >span{
                 display: flex;
