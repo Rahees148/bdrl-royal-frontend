@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/global/layout'
 import PatientBookingDetails from '../../components/patient-booking-details'
-import PatientForm from '../../components/form/patient-form'
+import PatientForm from '../../components/form/cash-patient-form'
 import AppointmentContext from '../../context/bookAnAppointment'
 import { navigate } from 'gatsby'
+import InsurancePatientForm from '../../components/form/insurance-patient-form'
 function InsurancePatient() {
   const { doctor, patientType} = useContext(AppointmentContext)
   useEffect(()=>{
@@ -34,7 +35,7 @@ function InsurancePatient() {
               <PatientBookingDetails/>
             </div>
             <div className='sm:col-span-6 col-span-12'>
-              <PatientForm/>
+              <InsurancePatientForm/>
             </div>
           </div>
         </div>

@@ -1,14 +1,13 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import classNames from 'classnames' 
-import * as style from './patient-form.module.scss'; 
+import * as style from './insurance-patient-form.module.scss'; 
 import CalendarIcon from '../../../images/icons/CalendarIcon.svg'; 
-import QuestionIcon from '../../../images/icons/QuestionSquare.svg'; 
-import NextArrowIcon from '../../../images/icons/NextArrow.svg'; 
-function PatientForm() {
+
+function InsurancePatientForm() {
     return (
         <div className={classNames(style.PatientFormWrap)}>
          {/* Form */}
-        <div className={classNames(style.PatientFormSecMain,'hidden')}>
+            <div className={classNames(style.PatientFormSecMain,'hidden')}>
             <div className={classNames(style.PatientFormIcon)}>
                 <img src={CalendarIcon} alt='Calendar Icon'/>
             </div>
@@ -72,26 +71,9 @@ function PatientForm() {
                 <button className='button light-green btn-fill'>Submit</button>
             </div>
             
-        </div>
-        {/* Question */}
-        {/* <div className={classNames(style.PatientFormSecMain)}>
-            <div className={classNames(style.PatientFormIcon)}>
-                <img src={QuestionIcon} alt='Question Icon'/>
             </div>
-            <div className={classNames(style.PatientFormTitleSec)}>
-                <h4>Are you already registered with Badr Al Samaa Royal Hospital ?</h4> 
-            </div>
-            <div className={classNames(style.PatientFormMidSec)}>
-                <button className={classNames(style.PatientFormBtn1)}>Yes</button>
-                <button className={classNames(style.PatientFormBtn2)}>No</button>
-            </div>
-            <div className={classNames(style.PatientFormBtnSec)}>
-                <button className='button light-green btn-fill'>Next <img src={NextArrowIcon} alt='Next'/></button>
-            </div>
-            
-        </div> */}
         </div>
     )
   }
   
-  export default PatientForm 
+  export default InsurancePatientForm 

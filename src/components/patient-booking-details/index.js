@@ -5,6 +5,7 @@ import ArrowLeftIcon from '../../images/icons/ArrowLeft.svg'
 import CalendarIcon from '../../images/icons/Calendar.svg'
 import WalletMoneyIcon from '../../images/icons/WalletMoney.svg'
 import AppointmentContext from '../../context/bookAnAppointment';
+import { navigate } from 'gatsby';
 function PatientBookingDetails() {
     const {selectedDate, doctor, patientType, formData, specialty, updateFormData} = useContext(AppointmentContext)
 
@@ -14,7 +15,7 @@ function PatientBookingDetails() {
     return (
       <div className={classNames(style.PatientBookingDetails)}>
         <div className={classNames(style.BackBtn)}>
-            <img src={ArrowLeftIcon} alt='Back Button'/>
+            <img onClick={()=>{navigate(-1)}} src={ArrowLeftIcon} alt='Back Button'/>
         </div>
         <h4>Appointment Details</h4>
         <div className={classNames(style.AppointmentDetails)}>

@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/global/layout'
 import PatientBookingDetails from '../../components/patient-booking-details'
-import PatientForm from '../../components/form/patient-form'
+import AppointmentContext from '../../context/bookAnAppointment'
+import { navigate } from 'gatsby'
+import CashPatientForm from '../../components/form/cash-patient-form'
 function InsurancePatient() {
+  const { doctor, patientType} = useContext(AppointmentContext)
+  useEffect(()=>{
+    if(!doctor|| patientType !== 'Cash Patient'){
+      navigate('/book-an-appointment');
+    }
+  },[doctor, patientType])
   return (
     <Layout  pageTitle="Book an Appointment" template="inner" breadcrumb={{
       links: [
@@ -26,7 +34,7 @@ function InsurancePatient() {
               <PatientBookingDetails/>
             </div>
             <div className='sm:col-span-6 col-span-12'>
-              <PatientForm/>
+              <CashPatientForm />
             </div>
           </div>
         </div>
