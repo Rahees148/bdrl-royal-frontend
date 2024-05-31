@@ -18,7 +18,7 @@ function CashPatientForm() {
              {!formData.selectedSlot &&
                 <div className={classNames(style.PatientFormSecMain)}>
                 
-                <DateSelection />
+                <DateSelection gutter={12} />
                 
                 <div className={style.availableSlots}>
                     <h5>Available Slots</h5>

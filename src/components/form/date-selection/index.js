@@ -4,9 +4,10 @@ import classNames from 'classnames'
 import { getNext30Days } from '../../../libs/util';
 import AppointmentContext from '../../../context/bookAnAppointment';
 
-function DateSelection() {
+function DateSelection({ gutter=32}) {
     const { selectedDate, updateDate} = useContext(AppointmentContext)
     const divRef = useRef(null);
+    const selectedRef = useRef(null);
     const monthDates = getNext30Days();
     const [slctdDate, setSlctdDate] = useState(selectedDate.toDateString());
     const [disableLeftButton, setDisableLeftButton] = useState(true);
@@ -29,13 +30,15 @@ function DateSelection() {
                     setDisableRightButton(false)
                 }
             });
+            const scrollOffset =  selectedRef.current.offsetLeft - divRef.current.offsetLeft;
+            divRef.current.scrollLeft = scrollOffset - (divRef.current.clientWidth / 2.25);
         }
-    },[divRef])
+    },[divRef, selectedRef])
 
     const next = ()=>{
         divRef.current.scrollTo({
             top: 0,
-            left: divRef.current.scrollLeft + 92,
+            left: divRef.current.scrollLeft + (60+gutter),
             behavior: 'smooth'
           });
          // setDirection('left');
@@ -44,7 +47,7 @@ function DateSelection() {
       //  setDirection('right');
         divRef.current.scrollTo({
             top: 0,
-            left: divRef.current.scrollLeft - 92,
+            left: divRef.current.scrollLeft - (60+gutter),
             behavior: 'smooth'
         })
        
@@ -66,20 +69,25 @@ function DateSelection() {
             <button disabled={disableLeftButton} className={classNames(style.datesSlidingButton, style.prev)} onClick={prev}>prev</button>
             <button disabled={disableRightButton} className={style.datesSlidingButton} onClick={next}>next</button>
         </div>
-        <div className={style.dateWrapper} ref={divRef}>
-            {monthDates && monthDates.map((date, index)=>(
-                <span 
-                    key={index} 
-                    className={classNames(slctdDate === date && style.selected, style[direction])}
-                    onClick={()=>{
-                        setSlctdDate(date)
-                        updateDate(new Date(date));
-                    }}
-                >
-                    <span className={style.day}>{getDateValue(date, 'day')}</span>
-                    <span className={style.date} >{getDateValue(date, 'date')}</span>
-                </span>
-            ))}
+        <div className={style.dateWrapper} style={{gap:gutter}} ref={divRef}>
+            {monthDates && monthDates.map((date, index)=> {
+                const itemProps = slctdDate === date ? { ref: selectedRef } : {}
+                    return (
+                        <span 
+                            key={index} 
+                            {...itemProps}
+                            className={classNames(slctdDate === date && style.selected, style[direction])}
+                            onClick={()=>{
+                                setSlctdDate(date)
+                                updateDate(new Date(date));
+                            }}
+                        >
+                            <span className={style.day}>{getDateValue(date, 'day')}</span>
+                            <span className={style.date} >{getDateValue(date, 'date')}</span>
+                        </span>
+                    )
+                }
+            )}
         </div>
     </div>
   )
