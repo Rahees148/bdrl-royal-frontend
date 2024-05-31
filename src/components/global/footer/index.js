@@ -14,7 +14,7 @@ import Accordion from '../accordion';
 import useWindowSize from '../../../libs/hooks/useWindowSize';
 import ModalDialog from '../modal-dialog';
 import AppointmentContext from '../../../context/bookAnAppointment';
-import { navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 function Footer() {
     const {isMobile} = useWindowSize();
     const {isPatientTypeOpen, setIsPatientTypeOpen, updatePatientType} = useContext(AppointmentContext)
@@ -22,8 +22,8 @@ function Footer() {
     return (
         <> 
                 <ul className={classNames(s.floatingIcons,'fixed')}>
-                    <li className='rounded-full bg-white'><img src={floatingIcon1} alt='Calendar' /></li>
-                    <li className='rounded-full bg-white'><img src={floatingIcon2} alt='Calendar' /></li>
+                    <li className='rounded-full bg-white'><Link to='/book-an-appointment/' ><img src={floatingIcon1} alt='Book an appointment' /></Link></li>
+                    <li className='rounded-full bg-white'><Link to='/contact/' ><img src={floatingIcon2} alt='Calendar' /></Link></li>
                     <li className='rounded-full bg-white'><img src={floatingIcon3} alt='Calendar' /></li>
                 </ul> 
             <footer className={classNames(s.FooterSec, 'bg-primary')}>
