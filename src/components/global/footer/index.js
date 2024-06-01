@@ -17,7 +17,7 @@ import AppointmentContext from '../../../context/bookAnAppointment';
 import { Link, navigate } from 'gatsby';
 function Footer() {
     const {isMobile} = useWindowSize();
-    const {isPatientTypeOpen, setIsPatientTypeOpen, updatePatientType} = useContext(AppointmentContext)
+    const {isPatientTypeOpen,formData, setIsPatientTypeOpen, updatePatientType, updateFormData} = useContext(AppointmentContext)
     
     return (
         <> 
@@ -160,6 +160,7 @@ function Footer() {
                         <button onClick={()=>{
                             updatePatientType('Cash Patient');
                             setIsPatientTypeOpen(false);
+                            updateFormData({...formData, formStep: "1"})
                             navigate('/book-an-appointment/cash-patient/')
                         }}>Cash Patient <span>(Real Time Booking)</span></button>
                         <button onClick={()=>{
