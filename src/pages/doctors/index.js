@@ -3,8 +3,6 @@ import * as React from 'react';
 import Layout from '../../components/global/layout';
 import { Fade } from 'react-awesome-reveal';
 import InnerBanner from '../../components/inner-banner';
-import DoctorBanner from '../../images/banner/doctor-banner.jpeg'
-import useWindowSize from '../../libs/hooks/useWindowSize';
 import DoctorCard from '../../components/doctor-card';
 import {AllDoctors} from '../../graphql/doctors/doctors';
 import { Banners } from '../../graphql/banners';

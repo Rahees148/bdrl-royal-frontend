@@ -1,0 +1,37 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.banner{
+    min-height: 320px;
+    padding: 80px 0 100px 0;
+    background-color: $color-primary;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    &:before{
+        content: '';
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: .3;
+        background-image: url(../../images/circle-pattern.svg);
+        z-index: 0;
+    }
+    span{
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+    }
+    h2{
+        color: $color-white;
+        font-weight: $font-weight-semiBold;
+        font-size: $font-h2;
+        max-width: 600px;
+        margin: 10px auto 0;
+        line-height: $font-h2 + 2;
+        position: relative;
+        z-index: 1;
+    }
+    
+}

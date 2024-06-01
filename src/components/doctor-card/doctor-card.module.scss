@@ -79,6 +79,12 @@
             padding: 8px 15px;
             display: inline-block;
             margin-bottom: 8px;
+            *{
+                font-size: $font-base;
+                line-height: $font-base + 3;
+                font-weight: $font-weight-semiBold;
+                color: $color-primary;
+            }
         }
         .DoctorCardTagbtm {
             font-size: $font-medium;

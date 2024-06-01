@@ -20,7 +20,7 @@ const IndexPage = () => {
             <Fade>
                 <HeroBanner sliderItems={pageData?.banner} />
             </Fade>
-            <BookAnAppointment />
+            <BookAnAppointment linkTo={true} />
             <Fade triggerOnce >
                 <CentresOfExcellence data={pageData.centres_excellence} />
             </Fade>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames'; 
 import * as s from './footer.module.scss';
 import Footerlogo from '../../../images/footer-logo.svg';
@@ -13,14 +13,17 @@ import NewsletterSubscribe from '../../newsletter-subscribe';
 import Accordion from '../accordion';
 import useWindowSize from '../../../libs/hooks/useWindowSize';
 import ModalDialog from '../modal-dialog';
+import AppointmentContext from '../../../context/bookAnAppointment';
+import { Link, navigate } from 'gatsby';
 function Footer() {
-    const {isMobile} = useWindowSize()
+    const {isMobile} = useWindowSize();
+    const {isPatientTypeOpen,formData, setIsPatientTypeOpen, updatePatientType, updateFormData} = useContext(AppointmentContext)
     
     return (
         <> 
                 <ul className={classNames(s.floatingIcons,'fixed')}>
-                    <li className='rounded-full bg-white'><img src={floatingIcon1} alt='Calendar' /></li>
-                    <li className='rounded-full bg-white'><img src={floatingIcon2} alt='Calendar' /></li>
+                    <li className='rounded-full bg-white'><Link to='/book-an-appointment/' ><img src={floatingIcon1} alt='Book an appointment' /></Link></li>
+                    <li className='rounded-full bg-white'><Link to='/contact/' ><img src={floatingIcon2} alt='Calendar' /></Link></li>
                     <li className='rounded-full bg-white'><img src={floatingIcon3} alt='Calendar' /></li>
                 </ul> 
             <footer className={classNames(s.FooterSec, 'bg-primary')}>
@@ -151,6 +154,29 @@ function Footer() {
                     </div>
                 </div>
             </footer>
+            <ModalDialog 
+                body={ 
+                    <div className={s.modelButton}>
+                        <button onClick={()=>{
+                            updatePatientType('Cash Patient');
+                            setIsPatientTypeOpen(false);
+                            updateFormData({...formData, formStep: "1"})
+                            navigate('/book-an-appointment/cash-patient/')
+                        }}>Cash Patient <span>(Real Time Booking)</span></button>
+                        <button onClick={()=>{
+                            updatePatientType('Insurance Patient');
+                            setIsPatientTypeOpen(false);
+                            navigate('/book-an-appointment/insurance-patient/')
+                        }}>Insurance Patient <span>(Request Call Back)</span></button>
+                    </div>
+                } 
+                title={'Select Patient Type'}
+                isOpen={isPatientTypeOpen} 
+                setIsOpen={(val) => {
+                    setIsPatientTypeOpen(val)
+                }} 
+                styles={{maxWidth:'360px'}}
+            />
         </>
     );
 }

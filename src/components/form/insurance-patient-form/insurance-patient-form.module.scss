@@ -1,0 +1,129 @@
+@import '../../../scss/colors';
+@import '../../../scss/breakpoints';
+.PatientFormWrap{
+    background: $color-bdrlGray;
+    padding: 24px;
+    border-radius: 24px;
+    height: 100%;
+    .PatientFormSecMain{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .PatientFormIcon{
+            width: 52px;
+            height: 52px;
+            background: $color-white;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            img{
+                max-width: 24px;
+                height: auto;
+            }
+           
+        }
+        .PatientFormTitleSec{
+            color:$color-primary ;
+            margin-bottom: 24px;
+            h4{
+                font-size: $font-h5;
+                line-height: $font-h5 + 5;
+                font-weight: $font-weight-semiBold;
+            }
+            h5{
+                font-size: $font-base;
+                line-height: $font-base + 11;
+                margin-top: 6px;
+            }
+        }
+        .PatientFormSec{
+            color:$color-primary ;
+            gap: 15px 20px;
+            margin-bottom: 30px;
+            .PatientFormGroup{ 
+                .PatientFormLabel{
+                    font-size: $font-base;
+                    line-height: $font-base + 11;
+                    margin-bottom: 5px;
+                }
+                .PatientFormControl{
+                    position: relative;
+                    padding: 14px 24px;
+                    border: 1px solid rgba(2, 51, 33, 0.16);
+                    border-radius: 100px;
+                    outline: none;
+                    color:#02332190 ;
+                    &[type="date"]::-webkit-calendar-picker-indicator {
+                        background: transparent;
+                        bottom: 0;
+                        color: transparent;
+                        cursor: pointer;
+                        height: auto;
+                        left: 0;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: auto;
+                    }
+                }
+                select{
+                    &.PatientFormControl{
+                        appearance: none;
+                        background-image: url(../../../images/icons/SelectArrowDown.svg);
+                        background-repeat: no-repeat;
+                        padding-right: 30px;
+                        background-position: calc(100% - 16px) center;
+                    }
+                }
+                .FormCalendar{
+                    &.PatientFormControl{
+                        background-image: url(../../../images/icons/CalendarForm.svg);
+                        background-repeat: no-repeat;
+                        background-position: calc(100% - 16px) center;
+                        padding-right: 45px;
+                    }
+                }
+            }
+        }
+        .PatientFormBtnSec{
+            margin-top: auto;
+            button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                // padding-right: 20px;
+            }
+        }
+        .PatientFormMidSec{
+            gap: 10px;
+            display: flex;
+            .PatientFormBtn1{
+                background-color: $color-primary;
+                color: $color-white;
+                font-weight: $font-weight-semiBold;
+                font-size: $font-base;
+                text-align: center;
+                padding: 17px;
+                border-radius: 10px;
+                min-width: 96px;
+                box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+            }
+            .PatientFormBtn2{
+                background-color: $color-white;
+                color: $color-primary;
+                font-weight: $font-weight-semiBold;
+                font-size: $font-base;
+                text-align: center;
+                padding: 17px;
+                border-radius: 10px;
+                min-width: 96px;
+                box-shadow: 0px 18.74px 46.9632px rgba(15, 20, 36, 0.06);
+                
+            }
+        }
+    }
+ 
+}

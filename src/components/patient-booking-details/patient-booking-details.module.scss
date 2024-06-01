@@ -1,0 +1,106 @@
+@import '../../scss/colors';
+@import '../../scss/breakpoints';
+.PatientBookingDetails{
+    padding:20px 23px;
+    .BackBtn{
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    h4{
+        font-size:$font-h5 ;
+        line-height:$font-h5 + 5 ;
+        color: $color-primary;
+        font-weight: $font-weight-semiBold;
+        margin-bottom: 27px;
+    }
+    .AppointmentDetails{
+        display: grid;
+        gap: 15px;
+        .AppointmentDetailsSec{
+            .AppointmentDetailsTitle{
+                font-weight: $font-weight-semiBold;
+                font-size: $font-medium; 
+                line-height:$font-medium + 3 ;
+                color: #A2A2A2;
+                margin-bottom: 4px;
+            }
+            .AppointmentDetailsData{
+                font-weight: $font-weight-semiBold;
+                font-size: $font-base; 
+                line-height:$font-base + 3 ;
+                color: $color-primary;
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                
+            }
+            .SpecialityTag {
+                font-size: $font-base;
+                line-height: $font-base + 3;
+                font-weight: $font-weight-semiBold;
+                color: $color-primary;
+                background: #F5F5F7;
+                border-radius: 60px;
+                text-align: center;
+                padding: 8px 15px;
+                display: inline-block;
+                margin-top: 4px;
+                *{
+                    font-size: $font-base;
+                    line-height: $font-base + 3;
+                    font-weight: $font-weight-semiBold;
+                    color: $color-primary;
+                }
+            }
+            .AppointmentDetailsDoctorInr{
+                display: flex;
+                align-items: center;
+                gap: 26px;
+                margin-top: 4px;
+                .DoctorCardImage{
+                    width: 102px;
+                    position: relative;  
+                    display: grid;
+                    align-items: end;
+                    border-radius: 0 0 100vw 100vw;
+                    overflow: hidden; 
+                    .Circle {
+                        width: 102px;
+                        height: 102px;
+                        background: linear-gradient(264.85deg, #FFD59D 23.35%, #876E2E 89.39%);
+                        border-radius: 50px;
+                        position: absolute;
+                    }
+                    img {
+                        position: relative;
+                        z-index: 2;
+                        margin: 0 auto;
+                        transition: all 0.25s ease;
+                        max-width: 80px;
+                    }
+                }
+                .AppointmentDetailsDoctorDec{
+                    display: flex;
+                    flex-direction: column;
+                    color: $color-primary;
+                    h5{
+                        font-weight: $font-weight-semiBold;
+                        font-size: $font-h5;
+                        line-height:$font-h5 + 4 ;
+                        margin-bottom: 6px;
+                    }
+                    h6{
+                        font-size: $font-base;
+                        font-weight: $font-weight-medium;
+                    } 
+                    span{
+                        font-size: $font-medium;
+                        font-weight: $font-weight-medium;
+                        margin-top: 18px;
+                    } 
+                }
+            
+        }
+    }
+    }
+}
