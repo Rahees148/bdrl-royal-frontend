@@ -9,6 +9,7 @@ import IsAlreadyRegisteredForm from './already-registered';
 import RegisteredPatient from './registered-patient';
 import OTPVerification from './otp-verification';
 import NewRegistration from './new-registration';
+import ConfirmAndPay from './confirm-and-pay';
 function CashPatientForm() {
     const {formData} = useContext(AppointmentContext);
     return (
@@ -31,17 +32,24 @@ function CashPatientForm() {
                <RegisteredPatient />
             }
 
-            {/* Step 4 */}
-            {/* OTP Verification */}
-            {formData.formStep === "4" &&
-                <OTPVerification />
-            }
-
             {/* Step 3 */}
             {/* New Registration */}
             {formData.formStep === "3" && formData.isAlreadyRegistered === 'No' &&
                 <NewRegistration />
             }
+
+            {/* Step 4 */}
+            {/* OTP Verification */}
+            {formData.formStep === "4" &&
+                <OTPVerification />
+            }
+            {/* Step 5 */}
+            {/* Confirm and Pay now */}
+            {formData.formStep === "5" &&
+                <ConfirmAndPay />
+            }
+
+            
         </div>
     )
   }

@@ -6,7 +6,8 @@ import NextArrowIcon from '../../../images/icons/NextArrow.svg';
 import AppointmentContext from '../../../context/bookAnAppointment';
 function IsAlreadyRegisteredForm() {
     const {formData, updateFormData} = useContext(AppointmentContext);
-    const [isAlreadyRegistered, setIsAlreadyRegistered] = useState(null);
+    const [isValidationTriggered, setIsValidationTriggered] = useState(false);
+    const [isAlreadyRegistered, setIsAlreadyRegistered] = useState(formData.isAlreadyRegistered ? formData.isAlreadyRegistered : null);
     return (
         <div className={classNames(style.PatientFormSecMain)}>
                 <div className={classNames(style.PatientFormIcon)}>
@@ -23,11 +24,21 @@ function IsAlreadyRegisteredForm() {
                         setIsAlreadyRegistered('No'); 
                     }} className={classNames(style.PatientFormBtn, isAlreadyRegistered === 'No' && style.selected)}>No</button>
                 </div>
-
+                {isValidationTriggered && !isAlreadyRegistered &&
+                    <div className={'error'}>
+                        This field is mandatory
+                    </div>
+                }
 
                 <div className={classNames(style.PatientFormBtnSec)}>
                     <button onClick={()=>{
-                        updateFormData({...formData, isAlreadyRegistered: isAlreadyRegistered, formStep: "3"  })
+                        updateFormData({...formData, formStep: "1"  })
+                    }} className={classNames('button light-green btn-fill', style.backButton)}><img src={NextArrowIcon} className={style.backIcon} alt='Back'/> Back</button>
+                    <button onClick={()=>{
+                        setIsValidationTriggered(true);
+                        if(isAlreadyRegistered){
+                            updateFormData({...formData, isAlreadyRegistered: isAlreadyRegistered, formStep: "3"  })
+                        }
                     }} className='button light-green btn-fill'>Next <img src={NextArrowIcon} alt='Next'/></button>
                 </div>
                 

@@ -7,7 +7,7 @@ import WalletMoneyIcon from '../../images/icons/WalletMoney.svg'
 import AppointmentContext from '../../context/bookAnAppointment';
 import { navigate } from 'gatsby';
 function PatientBookingDetails() {
-    const {selectedDate, doctor, patientType, formData, specialty, updateFormData} = useContext(AppointmentContext)
+    const {selectedDate, doctor, patientType, formData, updateFormData} = useContext(AppointmentContext)
 
     useEffect(() =>{
         console.log('doctor',doctor);
@@ -29,7 +29,15 @@ function PatientBookingDetails() {
             </div>
             <div className={classNames(style.AppointmentDetailsSec)}>
                 <div className={classNames(style.AppointmentDetailsTitle)}>Date</div>
-                <div className={classNames(style.AppointmentDetailsData)}><img src={CalendarIcon} alt='Calendar Icon'/>{selectedDate.toDateString()}</div>
+                <div className={classNames(style.AppointmentDetailsData)}>
+                    <img src={CalendarIcon} alt='Calendar Icon'/>
+                    {selectedDate.toDateString()}
+                    {formData.selectedSlot &&
+                        <>
+                        , {formData.selectedSlot}
+                        </>
+                    }
+                </div>
             </div>
             {patientType === 'Cash Patient' &&
                 <div className={classNames(style.AppointmentDetailsSec)}>
