@@ -1,0 +1,17 @@
+@import '../../../scss/colors';
+@import '../../../scss/breakpoints';
+.QuoteTag{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding:5px 15px 5px 12px;
+    border-radius: 12px;
+    font-size: $font-base;
+    line-height: $font-base + 16;
+    font-weight: $font-weight-semiBold;
+    color: $color-bodyCopy;
+    background: $color-bdrlGray-3;
+    img{
+        width: 32px;
+    }
+}

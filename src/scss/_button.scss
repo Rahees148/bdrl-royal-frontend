@@ -104,3 +104,14 @@
         border-color: $color-black;
     }
 }
+.labelTag{
+    padding: 6px 18px;
+    font-size: $font-base;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+    border-radius: 32px;
+    display: inline-block;
+    &.grey{
+        background-color: $color-bdrlGray-3;
+    }
+}
