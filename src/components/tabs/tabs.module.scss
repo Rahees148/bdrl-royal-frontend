@@ -29,6 +29,10 @@
                 color: $color-primary;
                 justify-content:flex-start;
                 cursor: pointer;
+                *{
+                    font-weight: $font-weight-semiBold;
+                    line-height: $font-base + 3;
+                }
                 i{
                     width: 15px;
                     height: 15px;

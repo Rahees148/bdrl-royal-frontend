@@ -55,6 +55,10 @@
                     border-radius: 100px;
                     outline: none;
                     color:#02332190 ;
+                    &.formError{
+                        border: 1px solid red;
+                        
+                    }
                     &[type="date"]::-webkit-calendar-picker-indicator {
                         background: transparent;
                         bottom: 0;

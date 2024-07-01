@@ -7,7 +7,8 @@ import DateSelection from '../date-selection';
 
 function SelectAvailableSlot() {
     const {formData, updateFormData} = useContext(AppointmentContext);
-    const [selectedSlot, setSelectedSlot] = useState(null);
+    const [isValidationTriggered, setIsValidationTriggered] = useState(false);
+    const [selectedSlot, setSelectedSlot] = useState(formData.selectedSlot ? formData.selectedSlot : null);
 
     const availableSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM'];
 
@@ -28,13 +29,17 @@ function SelectAvailableSlot() {
                         </span>
                     ))}  
                 </div>
-                
-                <div className={'error'}>
-                    Please select a slot
-                </div>
+                    {!selectedSlot && isValidationTriggered &&
+                        <div className={'error'}>
+                            Please select a slot
+                        </div>
+                    }
                     <div className={classNames(style.PatientFormBtnSec)}>
                         <button onClick={()=>{
-                            updateFormData({...formData, selectedSlot: selectedSlot, formStep: "2" })
+                            setIsValidationTriggered(true);
+                            if(selectedSlot){
+                                updateFormData({...formData, selectedSlot: selectedSlot, formStep: "2" })
+                            }
                         }} className='button light-green btn-fill'>Next <img src={NextArrowIcon} alt='Next'/></button>
                     </div>
                 </div>

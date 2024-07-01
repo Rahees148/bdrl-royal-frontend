@@ -162,12 +162,12 @@ function Footer() {
                             setIsPatientTypeOpen(false);
                             updateFormData({...formData, formStep: "1"})
                             navigate('/book-an-appointment/cash-patient/')
-                        }}>Cash Patient <span>(Real Time Booking)</span></button>
+                        }}>Cash Patient</button>
                         <button onClick={()=>{
                             updatePatientType('Insurance Patient');
                             setIsPatientTypeOpen(false);
                             navigate('/book-an-appointment/insurance-patient/')
-                        }}>Insurance Patient <span>(Request Call Back)</span></button>
+                        }}>Insurance Patient</button>
                     </div>
                 } 
                 title={'Select Patient Type'}

@@ -72,6 +72,8 @@
     display: inline-block;
     -webkit-transition: all 0.5s;
     transition: all 0.5s; 
+    position: relative;
+    z-index: 1;
     @media #{$breakpoint-mobile} {
         font-size: $font-medium;
         line-height: $font-medium - 1;
@@ -102,5 +104,16 @@
     &.black{
         color: $color-black;
         border-color: $color-black;
+    }
+}
+.labelTag{
+    padding: 6px 18px;
+    font-size: $font-base;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+    border-radius: 32px;
+    display: inline-block;
+    &.grey{
+        background-color: $color-bdrlGray-3;
     }
 }

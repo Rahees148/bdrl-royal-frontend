@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames' 
 import * as style from './cash-patient-form.module.scss';  
 import NextArrowIcon from '../../../images/icons/NextArrow.svg'; 
 import CalendarIcon from '../../../images/icons/CalendarIcon.svg'; 
+import AppointmentContext from '../../../context/bookAnAppointment';
 function NewRegistration() {
+    const { formData, updateFormData} = useContext(AppointmentContext)
     return (
         <div className={classNames(style.PatientFormSecMain)}>
         <div className={classNames(style.PatientFormIcon)}>
@@ -64,7 +66,14 @@ function NewRegistration() {
 
 
         <div className={classNames(style.PatientFormBtnSec)}>
-            <button className='button light-green btn-fill'>Next <img src={NextArrowIcon} alt='Next'/></button>
+            <button onClick={()=>{
+                updateFormData({...formData, formStep: "2"  })
+            }} className={classNames('button light-green btn-fill', style.backButton)}><img src={NextArrowIcon} className={style.backIcon} alt='Back'/> Back</button>
+            <button
+                onClick={()=>{
+                    updateFormData({...formData, formStep: "4"  })
+                }} 
+            className='button light-green btn-fill'>Next <img src={NextArrowIcon} alt='Next'/></button>
         </div>
         
         </div>
