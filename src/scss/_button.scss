@@ -72,6 +72,8 @@
     display: inline-block;
     -webkit-transition: all 0.5s;
     transition: all 0.5s; 
+    position: relative;
+    z-index: 1;
     @media #{$breakpoint-mobile} {
         font-size: $font-medium;
         line-height: $font-medium - 1;
